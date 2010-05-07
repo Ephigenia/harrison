@@ -1,0 +1,23 @@
+# this .htaccess file will silently redirect users to the html folder
+# where additional rewrite actions happen
+# ----------------------------------------------------------------------------
+
+# 1und1 PHP5 Handling for php files
+# AddType x-mapp-php5 .php
+# AddHandler x-mapp-php5 .php
+
+# get if local server
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+	# domainfactory
+	# RewriteBase /
+	
+	# reach existing files in root
+	# RewriteCond %{REQUEST_FILENAME} -f
+	# RewriteRule (.+) $1 [L]
+	
+	# ephFrame rewrite rules
+	RewriteRule ^$		html/	[L]
+	RewriteRule (.*)	html/$1	[E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+</IfModule>

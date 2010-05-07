@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+.simplePreviewToolbar {
+	background-color: #cdcdcd;
+	padding: 0px 5px 0px 5px;
+	height: 25px;
+	clear: both;
+}
+.simplePreviewToolbar a {
+	margin-top: 3px;
+	border: 1px solid #cdcdcd !important;
+}
+.simplePreviewToolbar a:hover {
+	background-color: #ffffff !important;
+}
+.simplePreviewToolbar a span {
+	display: none;
+}
+.simplePreviewToolbar a.bold {
+	background: url('../img/simplePreview/text_bold.png') no-repeat 2px 2px;	
+}
+.simplePreviewToolbar a.italic {
+	background: url('../img/simplePreview/text_italic.png') no-repeat 2px 2px;	
+}
+.simplePreviewToolbar a.code {
+	background: url('../img/simplePreview/script_code.png') no-repeat 2px 2px;	
+}
+.simplePreviewToolbar a.comment {
+	background: url('../img/simplePreview/comment.png') no-repeat 2px 2px;	
+}
+.simplePreviewToolbar a.url {
+	background: url('../img/simplePreview/link.png') no-repeat 2px 2px;	
+}
+.simplePreviewToolbar a.image {
+	background: url('../img/simplePreview/picture.png') no-repeat 2px 2px;	
+}
+.simplePreviewToolbar a.quote {
+	background: url('../img/simplePreview/quote.png') no-repeat 2px 2px;	
+}
+.simplePreviewToolbar a {
+	text-decoration: none;
+	display: table;
+	width: 22px;
+	height: 20px;
+	float: left;	
+}
+.simplePreview {
+	border: 1px solid rgb(230,230,230);
+	padding: 6px 6px 5px 6px;
+}

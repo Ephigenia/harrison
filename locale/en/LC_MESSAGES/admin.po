@@ -1,0 +1,854 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NMS.Update\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-15 20:17+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Marcel Eichner <love@ephigenia.de>\n"
+"Language-Team: Marcel Eichner <love@ephigenia.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-KeywordsList: gettext;__;__n\n"
+"X-Poedit-SearchPath-0: ../../../view/theme/admin\n"
+"X-Poedit-SearchPath-1: ../../../lib/controller\n"
+"X-Poedit-SearchPath-2: ../../../lib/component/Form\n"
+
+#: ../../../view/theme/admin/app/index.php:3
+msgid ""
+"Willkommen in der Administrationsoberfläche von <q>:1!</q>\n"
+"\tWenn irgendwelche Fragen entstehen sollten, schreiben sie uns: :2"
+msgstr ""
+"Welcome in the administration Area of <q>:1!</q>\n"
+"If you encounter any question please don’t hesitate and write a mail to: :2"
+
+#: ../../../view/theme/admin/app/index.php:13
+msgid "Neue Kommentare"
+msgstr "Latest Comments"
+
+#: ../../../view/theme/admin/app/index.php:15
+msgid "Alle Kommentare anzeigen"
+msgstr "Show all comments"
+
+#: ../../../view/theme/admin/app/index.php:20
+msgid "Neue Blogeinträge"
+msgstr "Latest blog posts"
+
+#: ../../../view/theme/admin/app/index.php:22
+msgid "Alle Blogeinträge anzeigen"
+msgstr "Show all blog posts"
+
+#: ../../../view/theme/admin/app/index.php:27
+msgid "Neue Dateien"
+msgstr "Latest files"
+
+#: ../../../view/theme/admin/app/index.php:30
+msgid "Alle Dateien anzeigen"
+msgstr "Show all files"
+
+#: ../../../view/theme/admin/blogPost/create.php:1
+#: ../../../view/theme/admin/blogPost/create.php:5
+msgid "Blogeintrag erstellen"
+msgstr "Create new blog post"
+
+#: ../../../view/theme/admin/blogPost/create.php:3
+#: ../../../view/theme/admin/blogPost/edit.php:3
+#: ../../../view/theme/admin/blogPost/index.php:3
+#: ../../../view/theme/admin/comment/edit.php:3
+#: ../../../view/theme/admin/comment/index.php:9
+msgid "Home"
+msgstr "Home"
+
+#: ../../../view/theme/admin/blogPost/create.php:4
+#: ../../../view/theme/admin/blogPost/edit.php:4
+#: ../../../view/theme/admin/blogPost/index.php:1
+#: ../../../view/theme/admin/blogPost/index.php:4
+msgid "Blogeinträge"
+msgstr "Blogposts"
+
+#: ../../../view/theme/admin/blogPost/edit.php:1
+#: ../../../view/theme/admin/blogPost/edit.php:5
+msgid "Blogeintrag editieren"
+msgstr "Edit blog post"
+
+#: ../../../view/theme/admin/blogPost/index.php:7
+msgid "Es sind noch keine Blogeinträge vorhanden."
+msgstr "There are no blog posts to display."
+
+#: ../../../view/theme/admin/comment/edit.php:1
+#: ../../../view/theme/admin/comment/edit.php:5
+msgid "Kommentar editieren"
+msgstr "Edit comment"
+
+#: ../../../view/theme/admin/comment/edit.php:4
+#: ../../../view/theme/admin/comment/index.php:3
+#: ../../../view/theme/admin/comment/index.php:14
+msgid "Kommentare"
+msgstr "Comments"
+
+#: ../../../view/theme/admin/comment/index.php:5
+msgid "Kommentare zu :1"
+msgstr "Comments on :1"
+
+#: ../../../view/theme/admin/comment/index.php:11
+msgid "Blog"
+msgstr "Blog"
+
+#: ../../../view/theme/admin/comment/index.php:18
+msgid "Es sind noch keine Kommentare vorhanden."
+msgstr "There are no comments to display."
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:11
+msgid "anschauen"
+msgstr "view"
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:14
+#: ../../../view/theme/admin/element/commentMenu.php:17
+msgid "editieren"
+msgstr "edit"
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:19
+#: ../../../view/theme/admin/element/commentMenu.php:22
+#: ../../../view/theme/admin/element/folderMenu.php:17
+#: ../../../view/theme/admin/element/imageMenu.php:10
+msgid "löschen"
+msgstr "delete"
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:22
+msgid "Den Blogeintrag <q>:1</q> wirklich löschen?"
+msgstr "Are you sure you want to delete the user :1?"
+
+#: ../../../view/theme/admin/element/blogPosts.php:31
+msgid ":1 Kommentar"
+msgstr ":1 comment"
+
+#: ../../../view/theme/admin/element/commentMenu.php:13
+msgid "Kommentar freischalten"
+msgstr "approve comment"
+
+#: ../../../view/theme/admin/element/commentMenu.php:25
+msgid "Wollen Sie diesen Kommentar wirklich löschen?"
+msgstr "Are you sure you want to delete this comment?"
+
+#: ../../../view/theme/admin/element/comments.php:23
+msgid ":1 in :2"
+msgstr ":1 in :2"
+
+#: ../../../view/theme/admin/element/folderMenu.php:12
+msgid "Kategorie editieren"
+msgstr "Edit category"
+
+#: ../../../view/theme/admin/element/folderMenu.php:13
+msgid "Datei hochladen"
+msgstr "Upload file"
+
+#: ../../../view/theme/admin/element/folderMenu.php:20
+msgid "Die Kategorie <q>:1</q> wirklich löschen? Alle Dateien dieser Kategorie verlieren ihre Zuordnung, werden aber nicht gelöscht."
+msgstr "Are you sure you want to delete the category <q>:1</q>? All files in this category loose their assignment to the category but don’t get deleted."
+
+#: ../../../view/theme/admin/element/footer.php:2
+msgid "Content-Management-System update :1"
+msgstr "content-management-system update :1"
+
+#: ../../../view/theme/admin/element/header.php:3
+msgid "← zurück"
+msgstr "← back"
+
+#: ../../../view/theme/admin/element/header.php:4
+msgid "Administration :1"
+msgstr "Administration :1"
+
+#: ../../../view/theme/admin/element/header.php:9
+msgid "logout"
+msgstr "logout"
+
+#: ../../../view/theme/admin/element/header.php:7
+msgid "Eingloggt als: :1 :2"
+msgstr "logged in as: :1 :2"
+
+#: ../../../view/theme/admin/element/logEntries.php:8
+msgid "vor :1"
+msgstr "before :1"
+
+#: ../../../view/theme/admin/element/mainMenu.php:10
+#: ../../../view/theme/admin/element/userMenu.php:3
+msgid "Seiten"
+msgstr "Pages"
+
+#: ../../../view/theme/admin/element/mainMenu.php:13
+msgid "Bearbeiten/Verschieben"
+msgstr "edit/move"
+
+#: ../../../view/theme/admin/element/mainMenu.php:16
+msgid "Neue Seite erstellen"
+msgstr "Create new page"
+
+#: ../../../view/theme/admin/element/mainMenu.php:30
+msgid "Neuer Blogeintrag"
+msgstr "New blog post"
+
+#: ../../../view/theme/admin/element/mainMenu.php:38
+#: ../../../view/theme/admin/element/mainMenu.php:40
+#: ../../../view/theme/admin/folder/create.php:4
+#: ../../../view/theme/admin/folder/edit.php:4
+#: ../../../view/theme/admin/folder/view.php:1
+#: ../../../view/theme/admin/folder/view.php:4
+msgid "Dateien & Bilder"
+msgstr "Files and Images"
+
+#: ../../../view/theme/admin/element/mainMenu.php:41
+msgid "Neue Kategorie"
+msgstr "New category"
+
+#: ../../../view/theme/admin/element/mainMenu.php:54
+msgid "Benutzer"
+msgstr "User"
+
+#: ../../../view/theme/admin/element/mainMenu.php:57
+msgid "Benutzerliste"
+msgstr "Users"
+
+#: ../../../view/theme/admin/element/mainMenu.php:60
+msgid "Benutzer erstellen"
+msgstr "Create user"
+
+#: ../../../view/theme/admin/element/mainMenu.php:63
+msgid "Mein Profil"
+msgstr "My Profile"
+
+#: ../../../view/theme/admin/element/mainMenu.php:71
+msgid "Einstellungen"
+msgstr "Configuration"
+
+#: ../../../view/theme/admin/element/mainMenu.php:74
+msgid "Gruppen"
+msgstr "Groups"
+
+#: ../../../view/theme/admin/element/mainMenu.php:77
+#: ../../../view/theme/admin/language/create.php:4
+#: ../../../view/theme/admin/language/edit.php:4
+#: ../../../view/theme/admin/language/index.php:1
+#: ../../../view/theme/admin/language/index.php:4
+msgid "Sprachen"
+msgstr "Languages"
+
+#: ../../../view/theme/admin/element/mediaFile.php:18
+msgid "?"
+msgstr "?"
+
+#: ../../../view/theme/admin/element/mediaFile.php:23
+msgid "Datei editieren"
+msgstr "edit file"
+
+#: ../../../view/theme/admin/element/mediaFile.php:45
+msgid "Datei neu hochladen oder Angaben zur Datei ändern"
+msgstr "Upload a new file or edit file meta data"
+
+#: ../../../view/theme/admin/element/mediaFile.php:51
+msgid "Wollen Sie Datei <q>:1</q> wirklich löschen?"
+msgstr "Are you sure you want to delete the file <q>:1</q>?"
+
+#: ../../../view/theme/admin/element/mediaFile.php:56
+msgid "Ganz nach vorne bewegen"
+msgstr "move to the top"
+
+#: ../../../view/theme/admin/element/mediaFile.php:57
+msgid "Nach vorne bewegen"
+msgstr "move left"
+
+#: ../../../view/theme/admin/element/mediaFile.php:58
+msgid "Nach hinten bewegen"
+msgstr "move right"
+
+#: ../../../view/theme/admin/element/mediaFile.php:59
+msgid "Ganz nach hinten bewegen"
+msgstr "move to the back"
+
+#: ../../../view/theme/admin/element/nodeMenu.php:14
+msgid "view"
+msgstr "view"
+
+#: ../../../view/theme/admin/element/nodeMenu.php:28
+msgid "Unterseite hinzufügen"
+msgstr "add sub-page"
+
+#: ../../../view/theme/admin/element/pagination.php:19
+msgid "« zurück"
+msgstr "« previous"
+
+#: ../../../view/theme/admin/element/pagination.php:23
+msgid "weiter »"
+msgstr "next »"
+
+#: ../../../view/theme/admin/element/userMenu.php:2
+msgid "Editieren"
+msgstr "edit"
+
+#: ../../../view/theme/admin/element/userMenu.php:4
+msgid "Log-Einträge"
+msgstr "log entries"
+
+#: ../../../view/theme/admin/element/userMenu.php:6
+msgid "Neues Passwort zuschicken"
+msgstr "send new password"
+
+#: ../../../view/theme/admin/element/userMenu.php:8
+msgid "Sperren"
+msgstr "Lock"
+
+#: ../../../view/theme/admin/element/userMenu.php:10
+msgid "Freigeben"
+msgstr "approve"
+
+#: ../../../view/theme/admin/element/userMenu.php:14
+msgid "Löschen"
+msgstr "delete"
+
+#: ../../../view/theme/admin/element/userMenu.php:17
+msgid "Wollen Sie den Benutzer :1 wirklich löschen?"
+msgstr "Do you really want to delete user :1?"
+
+#: ../../../view/theme/admin/folder/create.php:1
+#: ../../../view/theme/admin/folder/create.php:5
+msgid "Kategorie erstellen"
+msgstr "create category"
+
+#: ../../../view/theme/admin/folder/create.php:8
+msgid ""
+"Kategorien sind dazu gedacht viele Dateien in eine gewisse Ordnung zu bringen. Sie können Dateien jeder Zeit\n"
+"\tin andere Kategorien verschieben."
+msgstr "Categories are meant to add some order to files and can be changed at any time."
+
+#: ../../../view/theme/admin/folder/view.php:17
+msgid "Kategorien"
+msgstr "Categories"
+
+#: ../../../view/theme/admin/folder/view.php:38
+msgid "Dateien & Bilder ohne Kategorie"
+msgstr "Files and Images without category"
+
+#: ../../../view/theme/admin/language/create.php:1
+#: ../../../view/theme/admin/language/create.php:5
+msgid "Sprache erstellen"
+msgstr "Create language"
+
+#: ../../../view/theme/admin/language/create.php:9
+msgid "Erstellen Sie hier eine neue Sprache um für diese unter Seiten und Dateibeschreibungen hinzuzufügen."
+msgstr "Create a new language to add new texts in this language at pages or file meta data."
+
+#: ../../../view/theme/admin/language/create.php:10
+msgid "Deaktivierte Sprachen sind für den Besucher Ihrer Website nicht sichtbar oder auswählbar."
+msgstr "Disable a language to not hide it in the website."
+
+#: ../../../view/theme/admin/language/index.php:10
+msgid "Id"
+msgstr "Id"
+
+#: ../../../view/theme/admin/language/index.php:11
+msgid "Locale"
+msgstr "Locale"
+
+#: ../../../view/theme/admin/language/index.php:12
+msgid "Name"
+msgstr "name"
+
+#: ../../../view/theme/admin/mediaFile/edit.php:15
+msgid "Klicken um Originalauflösung zu sehen."
+msgstr "Click to see in original size."
+
+#: ../../../view/theme/admin/mediaFile/edit.php:23
+msgid ""
+"Ersetzen Sie mit dem Upload-Formular diese Datei durch eine andere oder wählen Sie eine neue Kategorie aus um diese Datei\n"
+"\tin diese zu schieben."
+msgstr "Replace the file using the upload form or choose an other category."
+
+#: ../../../view/theme/admin/mediaFile/edit.php:28
+msgid "Beschreibung & Titel"
+msgstr "Description and title"
+
+#: ../../../view/theme/admin/mediaFile/edit.php:30
+msgid "Folgende Angaben sind optional und werden nur auf bestimmten Seiten oder gar nicht ausgegeben (Abhängig vom ausgewähltem Template)."
+msgstr "The following things are optional and are only used if the template uses them."
+
+#: ../../../view/theme/admin/mediaFile/edit.php:31
+msgid "Vergessen sie nicht nach jeder Änderung die sie speichern möchten <strong>Speichern</strong> zu drücken!"
+msgstr "Don’t forget to push <strong>save</strong> after you changed something!"
+
+#: ../../../view/theme/admin/mediaFile/edit.php:38
+#: ../../../view/theme/admin/node/edit.php:14
+msgid "Vergleichend"
+msgstr "Comparative"
+
+#: ../../../view/theme/admin/mediaFile/index.php:1
+msgid "Dateien und Bilder"
+msgstr "Files and Images"
+
+#: ../../../view/theme/admin/mediaFile/upload.php:24
+msgid "Bitte beachten Sie beim Hochladen von Bildern, dasss diese nicht größer als <em>1024x1024 Pixel</em> sein sollten."
+msgstr "Please note that images should not be larger than <em>1024x1024</em> pixels."
+
+#: ../../../view/theme/admin/mediaFile/upload.php:26
+msgid "Generell dürfen Dateien die hochgeladen werden sollen nicht größer als <em>:1</em> sein."
+msgstr "Files shouldn’t be larger than <em>:1</em>"
+
+#: ../../../view/theme/admin/node/create.php:2
+msgid "Neue Unterseite erstellen"
+msgstr "Add sub-page"
+
+#: ../../../view/theme/admin/node/edit.php:26
+msgid "Seiten-Informationen & Einstellungen"
+msgstr "Page-informations and configuration"
+
+#: ../../../view/theme/admin/node/edit.php:29
+msgid "Angehangene Dateien"
+msgstr "Attached files"
+
+#: ../../../view/theme/admin/node/edit.php:32
+msgid "An diese Seite sind noch keine Dateien angehangen. Manche Templates erlauben das Anzeigen von Dateien."
+msgstr "There are no files attached to this file. Some templates use attached files."
+
+#: ../../../view/theme/admin/permission/create.php:1
+#: ../../../view/theme/admin/permission/edit.php:1
+#: ../../../view/theme/admin/permission/edit.php:4
+#: ../../../view/theme/admin/permission/index.php:1
+#: ../../../view/theme/admin/permission/index.php:4
+msgid "Zugriffsrechte"
+msgstr "Permissions"
+
+#: ../../../view/theme/admin/user/create.php:9
+msgid "Wenn Sie kein Passwort für den neuen Benutzer angeben wird ein Passwort erzeugt."
+msgstr "A password will be created if you leave the password field empty."
+
+#: ../../../view/theme/admin/user/create.php:13
+msgid "Der Benutzer konnte nicht erstellt werden!"
+msgstr "Unable to create the user"
+
+#: ../../../view/theme/admin/user/create.php:14
+msgid "Es ist ein Fehler beim Versenden der Email aufgetreten. Bitte versuchen Sie es später erneut."
+msgstr "There was an error sending the email. Please try again later."
+
+#: ../../../view/theme/admin/user/create.php:15
+msgid "Sollte dieser Fehler dauerhaft auftreten wenden Sie sich bitte an den System-Administrator."
+msgstr "Please contact an admin if you encounter this error again."
+
+#: ../../../view/theme/admin/user/index.php:13
+msgid "Gruppe"
+msgstr "Group"
+
+#: ../../../view/theme/admin/user/index.php:14
+msgid "Letzter Login"
+msgstr "last login"
+
+#: ../../../view/theme/admin/user/log.php:6
+msgid "Log"
+msgstr "log"
+
+#: ../../../view/theme/admin/user/login.php:1
+msgid "Login"
+msgstr "login"
+
+#: ../../../view/theme/admin/user/nodes.php:11
+msgid "Hier sind alle Seiten zu sehen die von :1 angelegt wurden"
+msgstr "This is the page where you can see all pages created by :1"
+
+#: ../../../view/theme/admin/user/view.php:15
+msgid "Der Benutzer :1 ist zur Zeit gesperrt und kann sich nicht einloggen."
+msgstr "The user :1 is currently locked and can not login."
+
+#: ../../../view/theme/admin/user/view.php:16
+msgid ":1 wieder freischalten"
+msgstr "unlock :1"
+
+#: ../../../view/theme/admin/user/view.php:27
+msgid "Email"
+msgstr "email"
+
+#: ../../../view/theme/admin/user/view.php:34
+msgid "noch nie"
+msgstr "never"
+
+#: ../../../view/theme/admin/userGroup/create.php:5
+msgid "Gruppe erstellen"
+msgstr "Create group"
+
+#: ../../../view/theme/admin/userGroup/index.php:8
+msgid "Sie können Benutzer in verschiedene Gruppen stecken um deren Zugriffsrechte zu verändern. Jede Gruppe hat andere Zugriffsrechte zu bestimmten Bereichen."
+msgstr "You can change a users permissions by putting him into different groups. Every group has different permissions."
+
+#: ../../../view/theme/admin/userGroup/index.php:13
+msgid "Es wurden noch keine Gruppen angelegt."
+msgstr "There are no users that have been created."
+
+#: ../../../lib/controller/AdminBlogPostController.php:53
+msgid "Blogeintrag erfolgreich erstellt!"
+msgstr "New blog post successfully created."
+
+#: ../../../lib/controller/AdminBlogPostController.php:68
+msgid "Blogeintrag erfolgreich editiert."
+msgstr "Successfully edited blog post."
+
+#: ../../../lib/controller/AdminBlogPostController.php:77
+msgid "Blogeintrag erfolgreich gelöscht."
+msgstr "Blog post successfully deleted."
+
+#: ../../../lib/controller/AdminBlogPostController.php:79
+msgid "Fehler beim Löschen des Blogeintrags."
+msgstr "Error deleting this blog entry."
+
+#: ../../../lib/controller/AdminCommentController.php:33
+msgid "Blogpost wurde nicht gefunden"
+msgstr "The desired blog post could not be found."
+
+#: ../../../lib/controller/AdminCommentController.php:56
+msgid "Kommentar erfolgreich gespeichert."
+msgstr "Comment successfully saved."
+
+#: ../../../lib/controller/AdminCommentController.php:66
+msgid "Der Kommentar wurde erfolgreich gelöscht."
+msgstr "Comment successfully deleted."
+
+#: ../../../lib/controller/AdminCommentController.php:68
+msgid "Fehler beim Löschen des Kommentars"
+msgstr "Error while deleting the comment."
+
+#: ../../../lib/controller/AdminFolderController.php:30
+msgid "Das Verzeichnis <q>:1</q> erfolgreich erstellt."
+msgstr "The folder <q>:1</q> was successfully deleted."
+
+#: ../../../lib/controller/AdminFolderController.php:45
+msgid "Verzeichnisnamen erfolgreich geändert."
+msgstr "Changed folder name successfully."
+
+#: ../../../lib/controller/AdminFolderController.php:87
+msgid "Die Kategorie wurde erfolgreich gelöscht. Dateien die in dieser Kategorie waren sind nun nicht mehr zugeordnet"
+msgstr "The category was successfully delted. All files in this category lost their assignment to ist."
+
+#: ../../../lib/controller/AdminFolderController.php:89
+msgid "Fehler beim Löschen der Kategorie"
+msgstr "Error while deleting category."
+
+#: ../../../lib/controller/AdminLanguageController.php:49
+msgid "Die neue Sprache wurde erfolgreich angelegt."
+msgstr "New language successfully created."
+
+#: ../../../lib/controller/AdminMediaFileController.php:70
+msgid "Datei erfolgreich hochgeladen."
+msgstr "Successfully uploaded file."
+
+#: ../../../lib/controller/AdminMediaFileController.php:91
+msgid "Die Datei wurde erfolgreich gelöscht."
+msgstr "File successfully deleted."
+
+#: ../../../lib/controller/AdminMediaFileController.php:93
+msgid "Fehler beim Löschen der Datei."
+msgstr "Error while deleting the file."
+
+#: ../../../lib/controller/AdminMediaFileController.php:120
+msgid "Erfolgreich :1 gespeichert"
+msgstr "Successfully saved :1."
+
+#: ../../../lib/controller/AdminMediaFileController.php:135
+msgid "Erfolgreich gespeichert"
+msgstr "Successfully saved"
+
+#: ../../../lib/controller/AdminNodeController.php:68
+msgid "Erfolgreich Seite <q>:1</q> (:2) gespeichert"
+msgstr "Successfully saved page <q>:1</q> (:2)."
+
+#: ../../../lib/controller/AdminNodeController.php:79
+msgid "Änderungen erfolgreich gespeichert."
+msgstr "Changes successfully saved."
+
+#: ../../../lib/controller/AdminNodeController.php:104
+msgid "Die Seite wurde erfolgreich angelegt."
+msgstr "The new page has been created."
+
+#: ../../../lib/controller/AdminNodeController.php:114
+msgid "Die Seite <q>:1</q> und Unterseiten wurden erfolgreich gelöscht."
+msgstr "The page <q>:1</q> and all the subpages of it succcessfully deleted."
+
+#: ../../../lib/controller/AdminUserController.php:45
+msgid "Dieser Benutzeraccount ist zur Zeit gesperrt und kann sich nicht einloggen!"
+msgstr "This user account is currently locked and can’t login."
+
+#: ../../../lib/controller/AdminUserController.php:47
+msgid "Fehler beim Einloggen. Bitte überprüfen Sie Ihre Eingaben!"
+msgstr "Error while logging in, please check your inputs."
+
+#: ../../../lib/controller/AdminUserController.php:81
+msgid "Die Änderungen an :1 wurden erfolgreich gespeichert."
+msgstr "The changes on :1 were successfully saved."
+
+#: ../../../lib/controller/AdminUserController.php:105
+msgid "Neue Zugangsdaten für :1"
+msgstr "New login data for :1"
+
+#: ../../../lib/controller/AdminUserController.php:112
+msgid "Benutzer <q>:1</q> erfolgreich angelegt."
+msgstr "User :1 successfully created."
+
+#: ../../../lib/controller/AdminUserController.php:138
+#, php-format
+msgid "Neues Passwort für %s"
+msgstr "New Password for %s"
+
+#: ../../../lib/controller/AdminUserController.php:140
+msgid "Fehler beim Versenden der Email - Bitte versuchen Sie es später erneut."
+msgstr "There was an error sendind the mail. Please try again later."
+
+#: ../../../lib/controller/AdminUserController.php:144
+msgid "Der Benutzer :1 sollte in wenigen Minuten eine Email mit seinem neuem Passwort erhalten."
+msgstr "The user :1 should receive an email with his/her new password."
+
+#: ../../../lib/controller/AdminUserController.php:151
+msgid "Benutzer <q>:1</q> erfolgreich gelöscht."
+msgstr "User <q>:1</q> successfully deleted."
+
+#: ../../../lib/controller/AdminUserController.php:158
+msgid "Benutzer <q>:1</q> erfolgreich blockiert."
+msgstr "User <q>:1</q> successfully blocked."
+
+#: ../../../lib/controller/AdminUserController.php:166
+msgid "Benutzer <q>:1</q> erfolgreich freigegeben."
+msgstr "User <q>:1</q> successfully un-blocked."
+
+#: ../../../lib/controller/AdminUserGroupController.php:28
+msgid "Die neue Gruppe wurde erfolgreich angelegt"
+msgstr "The new group has been successfully created."
+
+#: ../../../lib/controller/AdminUserGroupController.php:41
+msgid "Änderungen wurden erfolgreich gespeichert."
+msgstr "Changes have been saved sucessfully."
+
+#: ../../../lib/controller/BlogPostController.php:60
+msgid "Seite :1"
+msgstr "Page :1"
+
+#: ../../../lib/controller/BlogPostController.php:114
+#: ../../../lib/controller/CommentController.php:32
+msgid "Neuer Kommentar"
+msgstr "Latest Comments"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:21
+#: ../../../lib/component/Form/AdminMediaTextForm.php:20
+msgid "Titel"
+msgstr "Title"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:25
+msgid "URI"
+msgstr "URI"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:38
+msgid "Veröffentlichungsdatum"
+msgstr "Date of publication"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:47
+msgid "Tags (SEO, optional)"
+msgstr "Tag (for SEO, optional)"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:53
+#: ../../../lib/component/Form/AdminNodeForm.php:79
+msgid "Kommentare erlauben"
+msgstr "Allow comments"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:59
+msgid "Diesen Eintrag oben halten (sticky)"
+msgstr "Keep this entry on top (sticky)"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:63
+#: ../../../lib/component/Form/AdminCommentForm.php:29
+#: ../../../lib/component/Form/AdminFolderForm.php:25
+#: ../../../lib/component/Form/AdminLanguageForm.php:26
+#: ../../../lib/component/Form/AdminMediaTextForm.php:34
+#: ../../../lib/component/Form/AdminNodeForm.php:83
+msgid "Speichern"
+msgstr "Save"
+
+#: ../../../lib/component/Form/AdminBlogPostForm.php:77
+#: ../../../lib/component/Form/AdminNodeForm.php:44
+msgid "Autor"
+msgstr "Author"
+
+#: ../../../lib/component/Form/AdminLanguageForm.php:34
+msgid "Aktiviert"
+msgstr "activated"
+
+#: ../../../lib/component/Form/AdminMediaFileForm.php:23
+msgid "Kategorie (optional)"
+msgstr "Category (optional)"
+
+#: ../../../lib/component/Form/AdminMediaFileForm.php:24
+msgid "kein Kategorie"
+msgstr "No category"
+
+#: ../../../lib/component/Form/AdminMediaFileForm.php:34
+msgid "Hochladen"
+msgstr "Upload"
+
+#: ../../../lib/component/Form/AdminMediaTextForm.php:24
+msgid "Beschreibung"
+msgstr "Description"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:21
+#: ../../../lib/component/Form/AdminNodeTextForm.php:21
+msgid "Überschrift"
+msgstr "Headline"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:25
+#: ../../../lib/component/Form/AdminNodeTextForm.php:25
+msgid "Unter-Überschrift (optional)"
+msgstr "Subline (optional)"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:29
+#: ../../../lib/component/Form/AdminNodeTextForm.php:30
+msgid "Text/Beschreibung"
+msgstr "Text/Description"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:33
+#: ../../../lib/component/Form/AdminNodeTextForm.php:33
+msgid "Auszug/Zusammenfassung (optional)"
+msgstr "Excerpt/Summary (optional)"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:37
+#: ../../../lib/component/Form/AdminNodeTextForm.php:42
+msgid "Stichwörter (SEO)"
+msgstr "Keywords (SEO)"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:52
+msgid "Datum"
+msgstr "Date"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:58
+msgid "URL (verlinkungen)"
+msgstr "URL (for links)"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:74
+msgid "In RSS Feed integrieren"
+msgstr "Integrate into RSS-Feed"
+
+#: ../../../lib/component/Form/AdminNodeForm.php:93
+msgid "Vater-Artikel"
+msgstr "Parent-Page"
+
+#: ../../../lib/component/Form/AdminNodeTextForm.php:37
+msgid "URL (optional)"
+msgstr "URL (optional)"
+
+#: ../../../lib/component/Form/AdminUserForm.php:23
+msgid "Benutzergruppe"
+msgstr "Usergroup"
+
+#: ../../../lib/component/Form/AdminUserForm.php:30
+#: ../../../lib/component/Form/LoginForm.php:20
+msgid "Passwort"
+msgstr "Password"
+
+#: ../../../lib/component/Form/AdminUserForm.php:33
+msgid "Sprache"
+msgstr "Language"
+
+#: ../../../lib/component/Form/LoginForm.php:26
+msgid "Eingeloggt bleiben"
+msgstr "stay logged in"
+
+#: ../../../lib/component/Form/LoginForm.php:30
+msgid "Einloggen"
+msgstr "Login"
+
+#~ msgid "Hier werden alle Seiten angezeigt die der Benutzer erstellt hat."
+#~ msgstr "All pages created by this user are listed here."
+
+#~ msgid "ADMIN_WELCOME_MESSAGE"
+#~ msgstr ""
+#~ "Willkommen in der Administrationsoberfläche von <q>:1!</q>\n"
+#~ "Wenn irgendwelche Fragen entstehen sollten, schreiben sie uns: :2"
+
+#~ msgid "ADMIN_NEW_COMMENTS_HEADLINE"
+#~ msgstr "Neue Kommentare"
+
+#~ msgid "ADMIN_SHOW_ALL_COMMENTS"
+#~ msgstr "Alle Kommentare anzeigen"
+
+#~ msgid "ADMIN_NEW_BLOGPOSTS"
+#~ msgstr "Neue Blogbeiträge"
+
+#~ msgid "ADMIN_SHOW_ALL_BLOGPOSTS"
+#~ msgstr "Alle Blogeinträge anzeigen"
+
+#~ msgid "ADMIN_NEW_MEDIAFILES"
+#~ msgstr "Neue Dateien"
+
+#~ msgid "ADMIN_SHOW_ALL_MEDIAFILES"
+#~ msgstr "Alle Dateien anzeigen"
+
+#~ msgid "ADMIN_CREATE_BLOGPOST"
+#~ msgstr "Neuen Blogeintrag erstellen"
+
+#~ msgid "ADMIN_HOME"
+#~ msgstr "Home"
+
+#~ msgid "ADMIN_BLOGPOST"
+#~ msgstr "Blogeintrag"
+
+#~ msgid "ADMIN_BLOGPOST_EDIT"
+#~ msgstr "Blogeintrag editieren"
+
+#~ msgid "ADMIN_BLOGPOSTS"
+#~ msgstr "Blogeinträge"
+
+#~ msgid "ADMIN_NO_BLOGPOSTS_THERE"
+#~ msgstr "Es sind noch keine Blogeinträge vorhanden."
+
+#~ msgid "ADMIN_COMMENT_EDIT"
+#~ msgstr "Kommentar editieren"
+
+#~ msgid "ADMIN_COMMENTS"
+#~ msgstr "Kommentare"
+
+#~ msgid "ADMIN_COMMENTS_ON"
+#~ msgstr "Kommentare zu :1"
+
+#~ msgid "ADMIN_BLOG"
+#~ msgstr "Blog"
+
+#~ msgid "ADMIN_NO_COMMENTS_THERE"
+#~ msgstr "Es sind noch keine Kommentare vorhanden."
+
+#, fuzzy
+#~ msgid "ADMIN_VIEW"
+#~ msgstr "Home"
+
+#, fuzzy
+#~ msgid "ADMIN_EDIT"
+#~ msgstr "Kommentar editieren"
+
+#, fuzzy
+#~ msgid "ADMIN_DELETE"
+#~ msgstr "Home"
+
+#, fuzzy
+#~ msgid "ADMIN_COMMENTS_COUNT"
+#~ msgstr "Kommentare zu :1"
+
+#, fuzzy
+#~ msgid "ADMIN_APPROVE"
+#~ msgstr "Home"
+
+#~ msgid "ADMIN_CATEGORY_EDIT"
+#~ msgstr "Kategorie editieren"
+
+#~ msgid "ADMIN_UPLOAD_FILE"
+#~ msgstr "Datei hochladen"
+
+#~ msgid "ADMIN_CATEGORY_DELETE"
+#~ msgstr "Kategorie löschen"
+
+#~ msgid "ADMIN_BACK_TO_FRONTEND"
+#~ msgstr "← zurück"
+
+#~ msgid "ADMIN_LOGGED_IN_AS"
+#~ msgstr "Eingeloggt als: :1 :2"

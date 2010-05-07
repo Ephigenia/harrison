@@ -1,0 +1,124 @@
+@CHARSET "UTF-8";
+
+/**
+ * @project Harrison Default App Theme
+ * @media	Screen
+ * @author 	Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * @since 	2010-05-07
+ */
+body {
+	font: normal 14px/1.5em Lucida Sans Unicode, Lucida Grande, Verdana, Arial, Sans Serif;
+	background: #F8F8F8;
+	color: #4C4C4C;
+}
+
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+a {
+	color: #0080FF;
+}
+
+/** quoting **/
+body.en_EN q:before,
+body.en_EN blockquote p:before {
+	content: '“'
+}
+body.en_EN q:after,
+body.en_EN blockquote p:after {
+	content: '“'
+}
+body.de_DE q:before,
+body.de_DE blockquote p:before, {
+	content: '„'
+}
+body.de_DE q:after,
+body.de_DE blockquote p:after {
+	content: '“'
+}
+blockquote {
+	border-top: 2px solid #999;
+	border-bottom: 2px solid #999;
+}
+blockquote > p {
+	font-style: italic;
+}
+blockquote > cite {
+	text-align: right;
+	display: block;
+	color: #7F7F7F;
+	padding-top: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	color: #ffffff;
+}
+h1 {
+	font-size: 1.5em;
+	line-height: 1.25em;
+}
+h2 {
+	font-size: 1.35em;
+	line-height: 1.15em;
+}
+h3 {
+	font-size: 1em;
+	line-height: 1.5em;
+}
+h4 {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+/* Notification Boxes */
+p.error, p.hint, p.description, p.success {
+	color: #000;
+	padding: 0.4em 0.5em;
+	margin: 1em 0em;
+	border: 2px solid #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+p.error a, p.hint a, p.description a, p.success a {
+	color: #000;
+}
+p.error {
+	border-color: #FF8000;
+	background-color: #800000;
+}
+p.hint {
+	background-color: #fff7dd;
+	border-color: #ffa500;
+}
+p.success {
+	background-color: #a8ec87;
+	border-color: #007511;
+}
+
+/* Pagination style **/
+ul.pagination {
+	font-size: 0.8em;
+	padding: 10px 0px 10px 0px;
+}
+ul.pagination li {
+	display: inline;
+	margin: 10px 1px 0px 0px;
+}
+ul.pagination li a {
+	padding: 2px 4px;
+	border: 2px solid #000;
+	text-decoration: none;
+}
+ul.pagination li a:hover {
+	border: 2px solid #000;
+}
+ul.pagination a.current {
+	border: 2px solid #00F;
+	background-color: #AFDEFD;
+}

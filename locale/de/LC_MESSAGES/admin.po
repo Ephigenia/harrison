@@ -1,0 +1,571 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NMS.Update\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 01:00+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Marcel Eichner <love@ephigenia.de>\n"
+"Language-Team: Marcel Eichner <love@ephigenia.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-KeywordsList: gettext;__;__n\n"
+"X-Poedit-SearchPath-0: ../../../view/theme/admin\n"
+"X-Poedit-SearchPath-1: ../../../lib/controller/Admin*\n"
+"X-Poedit-SearchPath-2: ../../../lib/component/Form/*\n"
+
+#: ../../../view/theme/admin/app/index.php:3
+msgid ""
+"Willkommen in der Administrationsoberfläche von <q>:1!</q>\n"
+"\tWenn irgendwelche Fragen entstehen sollten, schreiben sie uns: :2"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.php:13
+msgid "Neue Kommentare"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.php:15
+msgid "Alle Kommentare anzeigen"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.php:20
+msgid "Neue Blogeinträge"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.php:22
+msgid "Alle Blogeinträge anzeigen"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.php:27
+msgid "Neue Dateien"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.php:30
+msgid "Alle Dateien anzeigen"
+msgstr ""
+
+#: ../../../view/theme/admin/blogPost/create.php:1
+#: ../../../view/theme/admin/blogPost/create.php:5
+msgid "Blogeintrag erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/blogPost/create.php:3
+#: ../../../view/theme/admin/blogPost/edit.php:3
+#: ../../../view/theme/admin/blogPost/index.php:3
+#: ../../../view/theme/admin/comment/edit.php:3
+#: ../../../view/theme/admin/comment/index.php:9
+msgid "Home"
+msgstr ""
+
+#: ../../../view/theme/admin/blogPost/create.php:4
+#: ../../../view/theme/admin/blogPost/edit.php:4
+#: ../../../view/theme/admin/blogPost/index.php:1
+#: ../../../view/theme/admin/blogPost/index.php:4
+msgid "Blogeinträge"
+msgstr ""
+
+#: ../../../view/theme/admin/blogPost/edit.php:1
+#: ../../../view/theme/admin/blogPost/edit.php:5
+msgid "Blogeintrag editieren"
+msgstr ""
+
+#: ../../../view/theme/admin/blogPost/index.php:7
+msgid "Es sind noch keine Blogeinträge vorhanden."
+msgstr ""
+
+#: ../../../view/theme/admin/comment/edit.php:1
+#: ../../../view/theme/admin/comment/edit.php:5
+msgid "Kommentar editieren"
+msgstr ""
+
+#: ../../../view/theme/admin/comment/edit.php:4
+#: ../../../view/theme/admin/comment/index.php:3
+#: ../../../view/theme/admin/comment/index.php:14
+msgid "Kommentare"
+msgstr ""
+
+#: ../../../view/theme/admin/comment/index.php:5
+msgid "Kommentare zu :1"
+msgstr ""
+
+#: ../../../view/theme/admin/comment/index.php:11
+msgid "Blog"
+msgstr ""
+
+#: ../../../view/theme/admin/comment/index.php:18
+msgid "Es sind noch keine Kommentare vorhanden."
+msgstr ""
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:11
+msgid "anschauen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:14
+#: ../../../view/theme/admin/element/commentMenu.php:17
+msgid "editieren"
+msgstr ""
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:19
+#: ../../../view/theme/admin/element/commentMenu.php:22
+#: ../../../view/theme/admin/element/folderMenu.php:17
+#: ../../../view/theme/admin/element/imageMenu.php:10
+msgid "löschen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:22
+msgid "Den Blogeintrag <q>:1</q> wirklich löschen?"
+msgstr ""
+
+#: ../../../view/theme/admin/element/blogPosts.php:31
+msgid ":1 Kommentar"
+msgstr ""
+
+#: ../../../view/theme/admin/element/commentMenu.php:13
+msgid "Kommentar freischalten"
+msgstr ""
+
+#: ../../../view/theme/admin/element/commentMenu.php:25
+msgid "Wollen Sie diesen Kommentar wirklich löschen?"
+msgstr ""
+
+#: ../../../view/theme/admin/element/comments.php:23
+msgid ":1 in :2"
+msgstr ""
+
+#: ../../../view/theme/admin/element/folderMenu.php:12
+msgid "Kategorie editieren"
+msgstr ""
+
+#: ../../../view/theme/admin/element/folderMenu.php:13
+msgid "Datei hochladen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/folderMenu.php:20
+msgid "Die Kategorie <q>:1</q> wirklich löschen? Alle Dateien dieser Kategorie verlieren ihre Zuordnung, werden aber nicht gelöscht."
+msgstr ""
+
+#: ../../../view/theme/admin/element/footer.php:2
+msgid "Content-Management-System NMS.Update :1"
+msgstr ""
+
+#: ../../../view/theme/admin/element/header.php:3
+msgid "← zurück"
+msgstr ""
+
+#: ../../../view/theme/admin/element/header.php:4
+msgid "Administration :1"
+msgstr ""
+
+#: ../../../view/theme/admin/element/header.php:9
+msgid "logout"
+msgstr ""
+
+#: ../../../view/theme/admin/element/header.php:7
+msgid "Eingloggt als: :1 :2"
+msgstr ""
+
+#: ../../../view/theme/admin/element/logEntries.php:8
+msgid "vor :1"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:10
+#: ../../../view/theme/admin/element/userMenu.php:5
+msgid "Seiten"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:13
+msgid "Bearbeiten/Verschieben"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:16
+msgid "Neue Seite erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:30
+msgid "Neuer Blogeintrag"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:38
+#: ../../../view/theme/admin/element/mainMenu.php:40
+#: ../../../view/theme/admin/folder/create.php:4
+#: ../../../view/theme/admin/folder/edit.php:4
+#: ../../../view/theme/admin/folder/view.php:1
+#: ../../../view/theme/admin/folder/view.php:4
+msgid "Dateien & Bilder"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:41
+msgid "Neue Kategorie"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:54
+msgid "Benutzer"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:57
+msgid "Benutzerliste"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:61
+msgid "Benutzer erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:65
+msgid "Mein Profil"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:73
+msgid "Einstellungen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:76
+#: ../../../view/theme/admin/group/create.php:1
+#: ../../../view/theme/admin/group/create.php:4
+#: ../../../view/theme/admin/group/edit.php:1
+#: ../../../view/theme/admin/group/edit.php:4
+#: ../../../view/theme/admin/group/index.php:1
+#: ../../../view/theme/admin/group/index.php:4
+msgid "Gruppen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mainMenu.php:79
+#: ../../../view/theme/admin/language/create.php:4
+msgid "Sprachen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:18
+msgid "?"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:23
+msgid "Datei editieren"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:45
+msgid "Datei neu hochladen oder Angaben zur Datei ändern"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:51
+msgid "Wollen Sie Datei <q>:1</q> wirklich löschen?"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:56
+msgid "Ganz nach vorne bewegen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:57
+msgid "Nach vorne bewegen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:58
+msgid "Nach hinten bewegen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:59
+msgid "Ganz nach hinten bewegen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/nodeMenu.php:14
+msgid "view"
+msgstr ""
+
+#: ../../../view/theme/admin/element/nodeMenu.php:28
+msgid "Unterseite hinzufügen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/pagination.php:19
+msgid "« zurück"
+msgstr ""
+
+#: ../../../view/theme/admin/element/pagination.php:23
+msgid "weiter »"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:3
+msgid "Editieren"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:6
+msgid "Log-Einträge"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:10
+msgid "Neues Passwort zuschicken"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:12
+msgid "Sperren"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:14
+msgid "Freigeben"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:18
+msgid "Löschen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:21
+msgid "Wollen Sie den Benutzer :1 wirklich löschen?"
+msgstr ""
+
+#: ../../../view/theme/admin/folder/create.php:1
+#: ../../../view/theme/admin/folder/create.php:5
+msgid "Kategorie erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/folder/create.php:8
+msgid ""
+"Kategorien sind dazu gedacht viele Dateien in eine gewisse Ordnung zu bringen. Sie können Dateien jeder Zeit\n"
+"\tin andere Kategorien verschieben."
+msgstr ""
+
+#: ../../../view/theme/admin/folder/view.php:17
+msgid "Kategorien"
+msgstr ""
+
+#: ../../../view/theme/admin/folder/view.php:38
+msgid "Dateien & Bilder ohne Kategorie"
+msgstr ""
+
+#: ../../../view/theme/admin/group/create.php:5
+msgid "Gruppe erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/group/index.php:8
+msgid ""
+"Sie können Benutzer in verschiedene Gruppen stecken um deren Zugriffsrechte zu verändern. Jede Gruppe hat andere\n"
+"\tZugriffsrechte zu bestimmten Bereichen."
+msgstr ""
+
+#: ../../../view/theme/admin/group/index.php:14
+msgid "Es wurden noch keine Gruppen angelegt."
+msgstr ""
+
+#: ../../../view/theme/admin/language/create.php:1
+#: ../../../view/theme/admin/language/create.php:5
+msgid "Sprache erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/language/create.php:9
+msgid "Erstellen Sie hier eine neue Sprache um für diese unter Seiten und Dateibeschreibungen hinzuzufügen."
+msgstr ""
+
+#: ../../../view/theme/admin/language/create.php:10
+msgid "Deaktivierte Sprachen sind für den Besucher Ihrer Website nicht sichtbar oder auswählbar."
+msgstr ""
+
+#: ../../../view/theme/admin/language/index.php:9
+msgid "Id"
+msgstr ""
+
+#: ../../../view/theme/admin/language/index.php:10
+msgid "Locale"
+msgstr ""
+
+#: ../../../view/theme/admin/language/index.php:11
+#: ../../../view/theme/admin/user/index.php:12
+msgid "Name"
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/edit.php:15
+msgid "Klicken um Originalauflösung zu sehen."
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/edit.php:23
+msgid ""
+"Ersetzen Sie mit dem Upload-Formular diese Datei durch eine andere oder wählen Sie eine neue Kategorie aus um diese Datei\n"
+"\tin diese zu schieben."
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/edit.php:28
+msgid "Beschreibung & Titel"
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/edit.php:30
+msgid "Folgende Angaben sind optional und werden nur auf bestimmten Seiten oder gar nicht ausgegeben (Abhängig vom ausgewähltem Template)."
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/edit.php:31
+msgid "Vergessen sie nicht nach jeder Änderung die sie speichern möchten <strong>Speichern</strong> zu drücken!"
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/edit.php:38
+#: ../../../view/theme/admin/node/edit.php:14
+msgid "Vergleichend"
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/index.php:1
+msgid "Dateien und Bilder"
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/upload.php:24
+msgid "Bitte beachten Sie beim Hochladen von Bildern, dasss diese nicht größer als <em>1024x1024 Pixel</em> sein sollten."
+msgstr ""
+
+#: ../../../view/theme/admin/mediaFile/upload.php:26
+msgid "Generell dürfen Dateien die hochgeladen werden sollen nicht größer als <em>:1</em> sein."
+msgstr ""
+
+#: ../../../view/theme/admin/node/create.php:2
+msgid "Neue Unterseite erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/node/edit.php:26
+msgid "Seiten-Informationen & Einstellungen"
+msgstr ""
+
+#: ../../../view/theme/admin/node/edit.php:29
+msgid "Angehangene Dateien"
+msgstr ""
+
+#: ../../../view/theme/admin/node/edit.php:32
+msgid "An diese Seite sind noch keine Dateien angehangen. Manche Templates erlauben das Anzeigen von Dateien."
+msgstr ""
+
+#: ../../../view/theme/admin/user/create.php:9
+msgid "Wenn Sie kein Passwort für den neuen Benutzer angeben wird ein Passwort erzeugt."
+msgstr ""
+
+#: ../../../view/theme/admin/user/create.php:13
+msgid "Der Benutzer konnte nicht erstellt werden!"
+msgstr ""
+
+#: ../../../view/theme/admin/user/create.php:14
+msgid "Es ist ein Fehler beim Versenden der Email aufgetreten. Bitte versuchen Sie es später erneut."
+msgstr ""
+
+#: ../../../view/theme/admin/user/create.php:15
+msgid "Sollte dieser Fehler dauerhaft auftreten wenden Sie sich bitte an den System-Administrator."
+msgstr ""
+
+#: ../../../view/theme/admin/user/index.php:13
+msgid "Benutzerrolle"
+msgstr ""
+
+#: ../../../view/theme/admin/user/index.php:14
+msgid "Letzter Login"
+msgstr ""
+
+#: ../../../view/theme/admin/user/log.php:8
+msgid "Log"
+msgstr ""
+
+#: ../../../view/theme/admin/user/login.php:1
+msgid "Login"
+msgstr ""
+
+#: ../../../view/theme/admin/user/nodes.php:13
+msgid "Hier sind alle Seiten zu sehen die von :1 angelegt wurden"
+msgstr ""
+
+#: ../../../view/theme/admin/user/view.php:16
+msgid "Dieser Benutzer ist zur Zeit gesperrt und kann sich nicht einloggen."
+msgstr ""
+
+#: ../../../view/theme/admin/user/view.php:18
+msgid ":1 wieder freischalten"
+msgstr ""
+
+#: ../../../view/theme/admin/user/view.php:30
+msgid "Email"
+msgstr ""
+
+#: ../../../view/theme/admin/user/view.php:37
+msgid "noch nie"
+msgstr ""
+
+#~ msgid "ADMIN_WELCOME_MESSAGE"
+#~ msgstr ""
+#~ "Willkommen in der Administrationsoberfläche von <q>:1!</q>\n"
+#~ "Wenn irgendwelche Fragen entstehen sollten, schreiben sie uns: :2"
+
+#~ msgid "ADMIN_NEW_COMMENTS_HEADLINE"
+#~ msgstr "Neue Kommentare"
+
+#~ msgid "ADMIN_SHOW_ALL_COMMENTS"
+#~ msgstr "Alle Kommentare anzeigen"
+
+#~ msgid "ADMIN_NEW_BLOGPOSTS"
+#~ msgstr "Neue Blogbeiträge"
+
+#~ msgid "ADMIN_SHOW_ALL_BLOGPOSTS"
+#~ msgstr "Alle Blogeinträge anzeigen"
+
+#~ msgid "ADMIN_NEW_MEDIAFILES"
+#~ msgstr "Neue Dateien"
+
+#~ msgid "ADMIN_SHOW_ALL_MEDIAFILES"
+#~ msgstr "Alle Dateien anzeigen"
+
+#~ msgid "ADMIN_CREATE_BLOGPOST"
+#~ msgstr "Neuen Blogeintrag erstellen"
+
+#~ msgid "ADMIN_HOME"
+#~ msgstr "Home"
+
+#~ msgid "ADMIN_BLOGPOST"
+#~ msgstr "Blogeintrag"
+
+#~ msgid "ADMIN_BLOGPOST_EDIT"
+#~ msgstr "Blogeintrag editieren"
+
+#~ msgid "ADMIN_BLOGPOSTS"
+#~ msgstr "Blogeinträge"
+
+#~ msgid "ADMIN_NO_BLOGPOSTS_THERE"
+#~ msgstr "Es sind noch keine Blogeinträge vorhanden."
+
+#~ msgid "ADMIN_COMMENT_EDIT"
+#~ msgstr "Kommentar editieren"
+
+#~ msgid "ADMIN_COMMENTS"
+#~ msgstr "Kommentare"
+
+#~ msgid "ADMIN_COMMENTS_ON"
+#~ msgstr "Kommentare zu :1"
+
+#~ msgid "ADMIN_BLOG"
+#~ msgstr "Blog"
+
+#~ msgid "ADMIN_NO_COMMENTS_THERE"
+#~ msgstr "Es sind noch keine Kommentare vorhanden."
+
+#, fuzzy
+#~ msgid "ADMIN_VIEW"
+#~ msgstr "Home"
+
+#, fuzzy
+#~ msgid "ADMIN_EDIT"
+#~ msgstr "Kommentar editieren"
+
+#, fuzzy
+#~ msgid "ADMIN_DELETE"
+#~ msgstr "Home"
+
+#, fuzzy
+#~ msgid "ADMIN_COMMENTS_COUNT"
+#~ msgstr "Kommentare zu :1"
+
+#, fuzzy
+#~ msgid "ADMIN_APPROVE"
+#~ msgstr "Home"
+
+#~ msgid "ADMIN_CATEGORY_EDIT"
+#~ msgstr "Kategorie editieren"
+
+#~ msgid "ADMIN_UPLOAD_FILE"
+#~ msgstr "Datei hochladen"
+
+#~ msgid "ADMIN_CATEGORY_DELETE"
+#~ msgstr "Kategorie löschen"
+
+#~ msgid "ADMIN_BACK_TO_FRONTEND"
+#~ msgstr "← zurück"
+
+#~ msgid "ADMIN_LOGGED_IN_AS"
+#~ msgstr "Eingeloggt als: :1 :2"

@@ -1,0 +1,288 @@
+@CHARSET "UTF-8";
+
+/**
+ * Project: Harrison Admin
+ * Media:	Screen
+ * Author:	Marcel Eichner // Ephigenia <love@ephigenia.de>
+ */
+body {
+	font: normal 14px/1.5em Lucida Sans Unicode, Lucida Grande, Verdana, Arial, Sans Serif;
+	background: #F8F8F8;
+}
+
+/** site wide styles **/
+a {
+	color: #0080FF;
+}
+
+/** quoting **/
+body.en_EN q:before { content: '“' }
+body.en_EN q:after { content: '”' }
+body.de_DE q:before { content: '„' }
+body.de_DE q:after { content: '“' }
+
+h1, h2, h3 {
+	font-weight: bold;
+}
+h1 {
+	margin: 0em 0em 0.2em 0em;
+	font-size: 2em;
+	line-height: 1.5em;
+	border-bottom: 5px solid #000;
+}
+h1 a {
+	color: #000000;
+	text-decoration: none;
+}
+h2 {
+	font-size: 1.3em;
+	line-height: 1.5em;
+	border-bottom: 1px solid #333; 
+	color: #333;
+	margin: 1em 0em 0.5em 0em;
+}
+
+em {
+	font-weight: bold;
+}
+
+dt {
+	font-weight: bold;
+	float: left;
+	width: 200px;
+}
+
+#header {
+	background: #191919;
+	line-height: 2.3em;
+	height: 2.4em;
+	padding: 0em 0.5em;
+	margin: 0em 0em 0.5em 0em;
+	border-bottom: 2px solid #7F7F7F;
+}
+#header a, #header {
+	color: #ffffff;
+}
+#leftColumn {
+	margin: 0em 0.5em 0em 0.5em;
+	float: left;
+	width: 160px;	
+}
+#content {
+	background: #ffffff;
+	padding: 0.5em;
+	margin: 0em 0.5em 0em 175px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+#footer, #footer a {
+	color: #afafaf;
+}
+#footer {
+	font-size: 0.8em;
+	clear: both;
+	position: relative;
+	top: 20px;
+	width: 97%;
+	display: table;
+	line-height: 2.5em;
+	border-top: 1px solid #999999;
+	margin: 2em 1em;
+}
+
+/** Error, Hint, Flashmessages styles **/
+p.error, p.hint, p.success, #flashMessage {
+	display: inline-block;
+	padding: 0.5em 0.75em;
+	margin: 1em 0.5em 1em 0em;
+	border: 1px solid #000;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+p.error, #flashMessage.error {
+	background-color: #F1B7B7;
+	color: #561E17;
+	border-color: #A7160C;
+}
+p.hint, #flashMessage.hint {
+	border-color: #e6db55;
+	background-color: #ffffe0;
+	color: #000000;
+}
+p.success, #flashMessage.success {
+	background-color: #dcffdc;
+	border-color: #b5f782;
+}
+#flashMessage .close {
+	font-size: 0.75em;
+	float: right;
+	color: #666;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/** pagination style **/
+.pagination, .pagination li {
+	margin: 0.5em 0em;
+	display: inline-block;
+}
+.pagination li.active_page, .pagination li.active_page a {
+	font-weight: bold;
+	color: #000;
+}
+.pagination li a, .pagination {
+	color: #6C6C6C;
+}
+.pagination li a {
+	background-color: #D7D7D7;
+	text-decoration: none;
+	padding: 0.2em 0.4em 0.15em 0.4em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+.pagination li a.current, .pagination li a:hover {
+	background-color: #C0C0C0;
+}
+
+/** admin buttons **/
+ul.admin li {
+	display: inline-block;
+	margin-bottom: 0.2em;
+}
+ul.admin li a, .button, form fieldset input.submit {
+	color: #000 !important;
+	font-size: 0.7em;
+	text-decoration: none;
+	text-align: center;
+	padding: 0.4em 0.5em;
+	margin: 0em 0.2em 0.2em 0em;
+	background: #35527b;
+	background: -webkit-gradient(linear, 0% 45%, 0% 100%, from(#ffffff), to(#E6E6E6));
+	background: -moz-linear-gradient(19% 75% 270deg, #FFFFFF, #E6E6E6);
+	border: 1px solid #CCC;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+ul.admin li a:hover, .button:hover, input.submit:hover {
+	color: #000;
+	border-color: #000;
+	background-color: #fff;
+	background-color: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#CFCFCF));
+	background-color: -moz-linear-gradient(19% 75% 270deg, #FEFEFE, #CFCFCF);
+}
+/** delete buttons are red **/
+ul.admin li a.delete {
+	border-color: #800000;
+	color: #fff !important;
+	background: #B7190D;
+	background: -webkit-gradient(linear, 0% 45%, 0% 100%, from(#C22916), to(#861E12));
+	background: -moz-linear-gradient(19% 75% 270deg, #C22916, #861E12);
+}
+ul.admin li a.delete:hover {
+	background: #E77059;
+	background: -webkit-gradient(linear, 0% 45%, 0% 100%, from(#E77059), to(#E12711));
+	background: -moz-linear-gradient(19% 75% 270deg, #E34735, #C32415);
+}
+
+.Node ul.admin li {
+	display: inline-block;
+}
+
+
+/** RSS Button **/
+ul.admin a.rss, ul.admin a.rss:hover {
+	background-image: url('../img/btns.png'); 
+	background-position: 6px -142px;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+}
+
+/** breadcrumb styles **/
+ul.breadcrumb {
+	line-height: 2.0em;
+}
+ul.breadcrumb li:first-child {
+	background: none;
+	padding-left: 0px;
+}
+ul.breadcrumb li {
+	background: transparent url(../img/breadcrumb.png) no-repeat center left;
+	display: inline-block;
+	padding-left: 1em;
+}
+
+
+/** Buttons **/
+.mediaFile ul.admin {
+	display: table;
+	text-align: center;
+	margin: 0px auto 0px auto;
+}
+.mediaFile ul.admin a {
+	width: 23px;
+	display: table !important;
+	line-height: 1.3em;
+	float: left;
+	text-decoration: none;
+	background-image: url('../img/btns.png');
+	background-position: 5px 0px;
+	background-repeat: no-repeat;
+}
+.mediaFile ul.admin a.edit, .mediaFile ul.admin a.edit:hover {
+	background-position: 5px 0px;
+}
+.mediaFile ul.admin a.delete, .mediaFile ul.admin a.delete:hover {
+	background-color: #B7190D;
+	background-image: url('../img/btns.png') !important;
+	background-position: 5px -16px !important;
+	background-repeat: no-repeat !important;
+}
+.mediaFile ul.admin a.left, .mediaFile ul.admin a.left:hover {
+	background-position: 5px -32px;
+}
+.mediaFile ul.admin a.topLeft, .mediaFile ul.admin a.topLeft:hover {
+	background-position: 5px -48px;
+}
+.mediaFile ul.admin a.right, .mediaFile ul.admin a.right:hover {
+	background-position: 5px -80px;
+}
+.mediaFile ul.admin a.topRight, .mediaFile ul.admin a.topRight:hover {
+	background-position: 5px -64px;
+}
+
+
+/** gravatar image styles **/
+.gravatar {
+	vertical-align: text-bottom;
+}
+
+
+.tabs {
+}
+
+.tabList {
+	border: 3px solid #666;
+	padding: 1em;
+}
+.tabs ul {
+	margin-bottom: 0.25em;
+	margin-top: 1em;
+}
+.tabs ul li {
+	display: inline;
+}
+
+.tabs ul li a {
+	background: #B3B3B3;
+	color: #666;
+	text-decoration: none;
+	padding: 4px 0.5em 5px 0.5em;
+}
+.tabs ul li a.selected, .tabs ul li a:hover {
+	color: #ffffff;
+	background: #666;
+}

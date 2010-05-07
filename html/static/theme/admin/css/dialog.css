@@ -1,0 +1,112 @@
+@CHARSET "UTF-8";
+
+/**
+ *	Styles for dialog windows created by jquery.dialog.js
+ *	@author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ */
+
+#dialogOverlay {
+	position: fixed;
+	z-index: 100;
+	left: 0px;
+	top: 0px;
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+}
+
+/** dialog window pane **/
+.dialog {
+	position: fixed;
+	z-index: 101;
+	background: #ffffff;
+	border: 3px solid #1A1A1A;
+	-webkit-box-shadow: 3px 3px 15px #4D4D4D;
+	-moz-box-shadow: 3px 3px 15px #4D4D4D;
+	-khtml-box-shadow: 3px 3px 15px #4D4D4D;
+	box-shadow: 3px 3px 15px #4D4D4D;
+}
+.dialog iframe {
+	border: 0px;
+	margin: 0px;
+}
+
+/** content of dialog window **/
+.dialog .content {
+	padding: 10px;
+}
+.dialog.iframe .content {
+	padding: 0px;
+	margin: 0px;
+	float: left;
+	display: inline;
+}
+
+/** dialog title bar **/
+.dialog .titleBar {
+	border: none;
+	margin: 0px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0em 0.2em 0.1em 0.2em;
+	line-height: 22px;
+	font-size: 12px;
+	background: #1A1A1A;
+}
+.dialog .titleBar a, .dialog .titleBar {
+	text-decoration: none;
+	color: #ffffff;
+}
+.dialog .titleBar .closeBtn {
+	float: right;
+	position: relative;
+	margin-left: 30px;
+}
+
+/** special dialog windows **/
+/** dialog confirmation options **/
+.dialog .modal {
+	clear: both;
+	margin-top: 1em;
+	line-height: 30px;
+	text-align: center;
+}
+.dialog a.btn {
+	color: #ffffff;
+	margin: 0em 1em;
+	background: #1a345b url('../img/buttonBg.gif') repeat-x 0px 0px;
+	border: 1px solid #000000;
+	padding: 0.1em 0.5em;
+	text-align: center;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+/** prompt **/
+.prompt input.value {
+	width: 84%;
+	margin: 5px 5px 0px 0px;
+	border: 1px solid #cdcdcd;
+	border-bottom-color: #E4E4E4;
+	border-right-color: #E4E4E4;
+	line-height: 20px;
+	font-size: 18px;
+	color: #464646;
+	background: #fbfbfb url(../img/inputBG.png) repeat-x top left;
+}
+.prompt a.btn {
+	width: 5%;
+	margin: 0px;
+}
+
+/** message styling **/
+.dialog.error {
+	border-color: #87231F;
+}
+.dialog.error .titleBar {
+	background-color: #87231F;
+}

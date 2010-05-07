@@ -1,0 +1,13 @@
+<div id="header">
+	<span class="fl">
+		<?php echo $HTML->link(Router::getRoute('root'), __('← zurück'), array('class' => 'button'))?>
+		<?php echo $HTML->link(Router::getRoute('admin'), Sanitizer::HTML(__('Administration :1', String::truncate(AppController::NAME, 40, '…')))); ?>
+	</span>
+	<span class="fr">
+		<?=	__('Eingloggt als: :1 :2',
+				$HTML->link($Me->adminDetailPageUri(), $Me->get('name')),
+				$HTML->link(Router::getRoute('adminLogout'), __('logout'), array('class' => 'button'))
+			);
+		?>
+	</span>
+</div>

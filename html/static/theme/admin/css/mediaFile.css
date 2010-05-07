@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+/**
+ *	Styles for nms.update admin media files
+ */
+.mediaFile {
+	display: block;
+	float: left;
+	width: 170px;
+	height: 250px;
+	text-align: center;
+	padding: 0px;
+	margin: 0px 0.1em 1em 0px;
+}
+.mediaFile .thumb {
+	text-align: center;
+	width: 170px;
+	height: 130px;
+}
+.thumb img {
+	border: 1px solid #E6E6E6;
+	padding: 2px;
+}
+.mediaFile .thumb .filetype {
+	color: #686868;
+	font-size: 1.5em;
+	line-height: 130px;
+	height: 130px;
+	display: block;
+	background: url(../img/file_big.png) no-repeat center center;
+}
+.mediaFile ul.admin li {
+	display: inline-block;
+}
+
+.mediaFile .meta {
+	font-size: 0.75em;
+}
+
+.Folders .Folder {
+	background: transparent url(../img/folder.png) no-repeat center left;
+	padding-left: 20px;
+}

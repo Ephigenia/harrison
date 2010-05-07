@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+/**
+ * 	Table Styles for nms.update admin
+ */
+table thead tr {
+	border-bottom: 3px solid #e6e6e6;
+	font-weight: bold;
+}
+table td, table th {
+	vertical-align: top;
+	padding: 0.4em 0.2em;
+	color: #000000;
+}
+table td {
+	color: #4c4c4c;
+}
+
+/**
+ * 	row-specific styles
+ */
+tbody tr td {
+	border-bottom: 1px solid #DFDFDF;
+}
+td.date, td.created {
+	width: 130px;
+}
+
+table tr .admin {
+	display: none;
+}
+table tr:hover .admin {
+	display: block;
+}
+
+.pending { /** pending comments **/
+	background-color: #FBF0EF;
+}
+.draft {
+	background-color: #FDFDF8;
+}

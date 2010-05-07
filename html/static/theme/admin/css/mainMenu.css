@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+/**
+ * 	Styles for the main menu of nms.update admin
+ * 	@author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ */
+#mainMenu {
+	background: #EFEFEF;
+	border: 1px solid #DCDCDC;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+
+#leftColumn ul li:first-child a {
+	border-top: none;
+}
+
+#mainMenu a {
+	color: #4C4C4C;
+	text-decoration: none;
+}
+#mainMenu a:hover {
+	text-decoration: none;
+}
+#mainMenu ul li.selected a, #mainMenu a:hover {
+	color: #000;
+	background: #D2D2D2;
+	font-weight: bold;
+}
+
+/* main menu entries */
+#mainMenu li a {
+	border-bottom: 1px solid #D7D7D7;
+	display: block;
+	line-height: 2em;
+	padding: 0px 0px 0em 0.5em;
+}
+
+/** minimize button **/
+#mainMenu li.minimize {
+	font-size: 0.75em;
+}
+#leftColumn.minimized {
+	width: 1.4em;
+}
+
+/* sub menu toggle */
+#mainMenu li a.toggle {
+	float: right;
+	padding: 0em 0.4em;
+}
+
+/* sub menu entries */
+#mainMenu li ul {
+	font-size: 0.75em;
+	background: #fff;
+}
+#mainMenu li ul li a {
+	color: #999;
+	padding: 0px 1.5em 0em 1.5em;
+	border-bottom: none;
+}
+#mainMenu li ul li.selected a {
+	background: #D2D2D2 url(../img/menuSelectedBg.gif) no-repeat center left;
+}
