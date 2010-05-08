@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------------
--- structure file for a harrison cms 0.3.3
+-- structure file for a harrison cms 0.4
 --
 -- this file should be used to create a initial database tables that can be
 -- used with nms.update. Example data should be possible as well as
@@ -20,29 +20,29 @@
 DROP TABLE IF EXISTS harrison_users;
 CREATE TABLE harrison_users (
 	id int(6) unsigned NOT NULL auto_increment,
-	user_group_id int(6) unsigned NULL default NULL,	-- group user belongs to
-	flags int(6) unsigned NOT NULL default 0,	-- deleted/blocked etc.
-	locale varchar(5) NOT NULL,					-- locale id for translations
+	user_group_id int(6) unsigned NULL default NULL,-- group user belongs to
+	flags int(6) unsigned NOT NULL default 0,		-- deleted/blocked etc.
+	locale varchar(5) NOT NULL,						-- locale id for translations
 	name varchar(255) NOT NULL,
 	email varchar(255) NOT NULL,
-	password varchar(32) NOT NULL,				-- password should be md5!
+	password varchar(32) NOT NULL,					-- password should be md5!
 	description TEXT NULL default NULL,
 	ip int(11) unsigned NULL default NULL,
-	permanent_key varchar(32) NULL default NULL, -- key for permanent cookie
-	logins int(11) unsigned NOT NULL default 0,  -- number of logins
-	lastlogin int(11) NOT NULL,					 -- timestamp of last login
+	permanent_key varchar(32) NULL default NULL,	-- key for permanent cookie
+	logins int(6) unsigned NOT NULL default 0,		-- number of logins
+	lastlogin int(11) NOT NULL,					 	-- timestamp of last login
 	created int(11) unsigned NOT NULL,
 	updated int(11) unsigned NULL default NULL,
 	PRIMARY KEY (id),
 	KEY (user_group_id),
+	KEY (flags),
 	KEY (locale),
 	KEY (name),
 	KEY (email),
-	KEY (permanent_key),
-	KEY (flags)
+	KEY (permanent_key)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO harrison_users (flags, locale, group_id, name, email, password) VALUES 
+INSERT INTO harrison_users (flags, locale, user_group_id, name, email, password) VALUES 
 	 (16, 'de_DE', 1, 'Marcel Eichner', 'love@ephigenia.de', 'f7060fdb27e08dfbc97c9fa5c8b55365')
 ;
 
@@ -59,19 +59,18 @@ CREATE TABLE harrison_user_groups (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- initial groups
-INSERT INTO harrison_groups (id, name) VALUES
-	 (1, 'Administratoren')
- 	,(2, 'Autoren')
-	,(3, 'Benutzer')
+INSERT INTO harrison_user_groups (id, name) VALUES
+	(1, 'Administratoren'),
+ 	(2, 'Autoren'),
+	(3, 'Benutzer')
 ;
 
 -- user group rights (rights are assigned to groups)
 DROP TABLE IF EXISTS harrison_permissions;
 CREATE TABLE harrison_permissions (
 	id int(6) unsigned NOT NULL auto_increment,
-	name varchar(40),
+	name varchar(40) NULL default NULL,
 	rule varchar(128) NOT NULL default '',
-	action varchar(60) NOT NULL default '',
 	created int(11) unsigned NULL default NULL,
 	updated int(11) unsigned NULL default NULL,
 	PRIMARY KEY (id),
@@ -79,7 +78,7 @@ CREATE TABLE harrison_permissions (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS harrison_user_groups_permissions;
-CREATE TABLE harrison_permissions_groups (
+CREATE TABLE harrison_user_groups_permissions (
 	id int(6) unsigned NOT NULL auto_increment,
 	user_group_id int(6) unsigned NOT NULL,
 	permission_id int(6) unsigned NOT NULL,
@@ -96,10 +95,11 @@ CREATE TABLE harrison_permissions_groups (
 DROP TABLE IF EXISTS harrison_languages;
 CREATE TABLE IF NOT EXISTS harrison_languages (
 	id varchar(2) NOT NULL,
-	locale varchar(5) NOT NULL,
+	locale varchar(5) NOT NULL,	-- locale strings
 	status int(6) NOT NULL default 0,
 	name varchar(255) NOT NULL default '',
 	PRIMARY KEY  (id),
+	UNIQUE KEY (locale),
 	KEY (status)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -140,7 +140,7 @@ CREATE TABLE harrison_nodes (
 
 INSERT INTO `harrison_nodes`
 	(id, parent_id, lft, rgt, level, flags, status, user_id, name) VALUES
-	(1,  NULL, 1, 2, 0, 32, 1, 1, 'root', NULL, NULL, NULL, NULL);
+	(1,  NULL, 1, 2, 0, 32, 1, 1, 'root');
 
 -- texts for nodes
 DROP TABLE IF EXISTS harrison_node_texts;
@@ -152,11 +152,11 @@ CREATE TABLE IF NOT EXISTS harrison_node_texts (
 	revision int(6) unsigned NOT NULL default 0,
 	uri varchar(255) NULL default NULL,
 	headline varchar(255) NULL default NULL,
-	pagetitle varchar(255) NULL default NULL,
 	subline varchar(255) NULL default NULL,
+	pagetitle varchar(255) NULL default NULL,
 	text text NULL default NULL,
 	excerpt text NULL default NULL,
-	keywords text NULL default NULL,
+	tags text NULL default NULL,
 	created int(11) unsigned default NULL,
 	updated int(11) unsigned default NULL,
 	PRIMARY KEY (id),
@@ -172,17 +172,18 @@ INSERT INTO `harrison_node_texts` VALUES(1, 1, 'de', 1, 0, '', 'root', NULL, NUL
 DROP TABLE IF EXISTS harrison_blog_posts;
 CREATE TABLE IF NOT EXISTS harrison_blog_posts (
 	id int(6) unsigned NOT NULL auto_increment,
-	flags int(6) unsigned NULL default NULL,
-	status int(6) unsigned NULL default NULL,
-	views int(6) unsigned NULL default 0,
-	user_id int(6) unsigned default NULL,
+	flags int(6) unsigned NOT NULL default 0,
+	status int(6) unsigned NOT NULL default 2,
+	language_id varchar(2) NOT NULL default 'de',
+	user_id int(6) unsigned NULL default NULL,
 	uri varchar(255) NULL default NULL,
-	headline varchar(255) NULL default NULL, 
+	headline varchar(255) NULL default NULL,
 	text text NULL default NULL,
-	tags varchar(255) default NULL,
-	published int(11) unsigned default NULL, -- date when blog entry gets published
+	tags text NULL default NULL,
+	views int(6) unsigned NOT NULL default 0,	-- counter for views
 	created int(11) unsigned default NULL,
 	updated int(11) unsigned default NULL,
+	published int(11) unsigned default NULL,	-- date when blog entry gets published
 	PRIMARY KEY (id),
 	KEY (user_id),
 	KEY (status),
@@ -195,10 +196,10 @@ CREATE TABLE IF NOT EXISTS harrison_blog_posts (
 DROP TABLE IF EXISTS harrison_comments;
 CREATE TABLE IF NOT EXISTS harrison_comments (
 	id int(6) unsigned NOT NULL auto_increment,
-	status int(6) unsigned NOT NULL default 0,
-	foreign_id int(6) unsigned NOT NULL,
+	status int(6) unsigned NOT NULL default 2,	-- default comment status to pending
 	model varchar(32) NOT NULL,
-	user_id int(6) unsigned default NULL,
+	foreign_id int(6) unsigned NOT NULL,
+	user_id int(6) unsigned NULL default NULL,
 	ip int(10) unsigned NULL default NULL,
 	name varchar(255) NOT NULL,
 	email varchar(255) NOT NULL,
@@ -208,10 +209,9 @@ CREATE TABLE IF NOT EXISTS harrison_comments (
 	updated int(11) unsigned default NULL,
 	PRIMARY KEY (id),
 	KEY (ip),
-	KEY (user_id),
 	KEY (status),
-	KEY (model),
-	KEY (foreign_id)
+	KEY (model, foreign_id),
+	KEY (user_id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- tags
@@ -226,9 +226,9 @@ CREATE TABLE IF NOT EXISTS harrison_tags (
 DROP TABLE IF EXISTS harrison_tags_model;
 CREATE TABLE IF NOT EXISTS harrison_tags_model (
 	id int(6) unsigned NOT NULL auto_increment,
+	model varchar(30) NOT NULL,
 	tag_id int(6) unsigned NOT NULL,
 	foreign_id int(6) unsigned NOT NULL,
-	model varchar(30) NOT NULL,
 	PRIMARY KEY (id),
 	UNIQUE KEY (model, tag_id, foreign_id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
