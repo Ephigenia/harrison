@@ -24,7 +24,7 @@ ephFrame::loadClass('ephFrame.lib.model.Model');
  */
 class AppModel extends Model
 {
-	public $tablenamePrefix = 'horrorblog_';
+	public $tablenamePrefix = 'harrison_';
 	
 	/**
 	 *	Uses the router and the name of the model to return a detail page

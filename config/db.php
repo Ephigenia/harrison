@@ -65,7 +65,7 @@ class DBConfig
 	public function __construct()
 	{
 		if (strtolower(get_current_user()) == 'ephigenia') {
-			$this->default = 'mysql://root:@localhost:3306/theweinmeister/#utf8';
+			$this->default = 'mysql://root:@localhost:3306/weinmeister/#utf8';
 		}
 	}
 }
