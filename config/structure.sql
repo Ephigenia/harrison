@@ -22,6 +22,7 @@ CREATE TABLE harrison_users (
 	id int(6) unsigned NOT NULL auto_increment,
 	user_group_id int(6) unsigned NULL default NULL,-- group user belongs to
 	flags int(6) unsigned NOT NULL default 0,		-- deleted/blocked etc.
+	status int(6) unsigned NOT NULL default 1,		-- default user status
 	locale varchar(5) NOT NULL,						-- locale id for translations
 	name varchar(255) NOT NULL,
 	email varchar(255) NOT NULL,
@@ -36,6 +37,7 @@ CREATE TABLE harrison_users (
 	PRIMARY KEY (id),
 	KEY (user_group_id),
 	KEY (flags),
+	KEY (status),
 	KEY (locale),
 	KEY (name),
 	KEY (email),

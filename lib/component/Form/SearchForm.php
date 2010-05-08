@@ -19,12 +19,6 @@ class SearchForm extends AppForm
 		),
 	);
 	
-	public function afterConfig()
-	{
-		// skips the submit buton
-		return true;
-	}
-	
 	public function beforeRender()
 	{
 		$this->attributes->action = Router::uri('blogSearch', array('q' => ''));

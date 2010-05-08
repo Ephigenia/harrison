@@ -12,15 +12,13 @@ echo -ne 'cleaning cache directories and files ...'
 rm -f tmp/log/*
 rm -f tmp/model/*.json
 rm -f tmp/cache/*
-rm -f tmp/cache/views/*
 rm -f tmp/log/*
-find . -not -name "*svn*" -name "p_*" -exec rm -f {} \;
-echo 'done'
 
-echo -ne 'chmodding files and directories ...'
+echo -ne 'deleting cached and packed css and js files ...'
+find . -name "p_*.css" -exec rm -f {} \;
+find . -name "p_*.js" -exec rm -f {} \;
+
+echo -ne 'chmodding some files and directories ...'
 chmod -R 777 tmp html/static
-echo 'done'
-
-echo -ne 'chmodding zip and deploy jobs ...'
-find . -name "*.sh" -exec chmod +x {} \;
+chmod -R 777 tmp tmp/
 echo 'done'

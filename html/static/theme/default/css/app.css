@@ -10,6 +10,8 @@ body {
 	font: normal 14px/1.5em Lucida Sans Unicode, Lucida Grande, Verdana, Arial, Sans Serif;
 	background: #F8F8F8;
 	color: #4C4C4C;
+	margin: 1em;
+	width: 960px;
 }
 
 strong {
@@ -55,7 +57,7 @@ blockquote > cite {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
-	color: #ffffff;
+	color: #000;
 }
 h1 {
 	font-size: 1.5em;
