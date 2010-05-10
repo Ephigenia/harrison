@@ -18,8 +18,8 @@ class AdminController extends AppController
 	);
 	
 	public $components = array(
-		'PermissionCheck',
 		'UserLogin',
+		'PermissionCheck',
 		'FlashMessage',
 		'AutoLog',
 	);

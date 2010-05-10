@@ -27,6 +27,7 @@ class PermissionCheck extends AppComponent
 			$this->UserLogin->User->UserGroup = $this->controller->UserGroup->findById($this->UserLogin->User->user_group_id);
 			$this->Permissions = $this->UserLogin->User->UserGroup->Permissions;
 		}
+		$this->controller->data->set(get_class($this), $this);
 		return parent::startup();
 	}
 	
@@ -43,8 +44,14 @@ class PermissionCheck extends AppComponent
 	public function check($testRoute)
 	{
 		foreach($this->Permissions as $Permission) {
-			Log::write(Log::VERBOSE, sprintf('%s: checking "%s" against "%s"', get_class($this), $testRoute, $Permission->rule));
-			if (preg_match('@'.$Permission->rule.'@i', $testRoute)) return true;
+			$regexp = '@'.$Permission->rule.'@i';
+			Log::write(Log::VERBOSE, sprintf('%s: checking "%s" against "%s"', get_class($this), $testRoute, $regexp));
+			if (preg_match($regexp, $testRoute)) return true;
+		}
+		if ($this->controller instanceof AdminController) {
+			$this->controller->redirect(Router::uri('admin'));
+		} else {
+			$this->controller->redirect(Router::uri('root'));
 		}
 		return false;
 	}

@@ -56,9 +56,9 @@ class AdminUserGroupForm extends AdminForm
 	
 	public function toModel(Model $model, $fields = null, $ignore = null)
 	{
+		$model->Permissions = array();
 		if (!empty($this->controller->request->data['permission_id'])) {
 			$permissionIds = $this->controller->request->data['permission_id'];
-			$model->Permissions = array();
 			foreach($permissionIds as $permissionId) {
 				$model->Permissions[] = new Permission($permissionId);
 			}
