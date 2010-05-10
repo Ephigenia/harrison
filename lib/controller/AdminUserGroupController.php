@@ -12,11 +12,23 @@ class_exists('AdminController') or require dirname(__FILE__).'/AdminController.p
  */
 class AdminUserGroupController extends AdminController
 {
+	/**
+	 * List all {@link UserGroup}
+	 * 
+	 * @return array(UserGroup)
+	 */
 	public function index()
 	{
-		$this->data->set('UserGroups', $this->UserGroup->findAll());
+		$UserGroups = $this->UserGroup->findAll();
+		$this->data->set('UserGroups', $UserGroups);
+		return $UserGroups;
 	}
 	
+	/**
+	 * Create new {@link UserGroup}
+	 * 
+	 * @return boolean
+	 */
 	public function create()
 	{
 		$this->addForm('AdminUserGroupForm');
@@ -26,28 +38,47 @@ class AdminUserGroupController extends AdminController
 				$this->AdminUserGroupForm->errors = $this->UserGroup->validationErrors;
 			} else {
 				$this->FlashMessage->set(__('Die neue Gruppe wurde erfolgreich angelegt'), FlashMessageType::SUCCESS);
-				$this->redirect(Router::getRoute('adminScaffold', array('controller' => $this->name)));
+				return $this->redirect(Router::getRoute('adminScaffold', array('controller' => $this->name)));
 			}
 		}
+		return true;
 	}
 	
+	/**
+	 * Edit single {@link UserGroup}
+	 * 
+	 * @param integer $id
+	 * @return boolean
+	 */
 	public function edit($id = null)
 	{
 		$this->addForm('AdminUserGroupForm');
 		$this->AdminUserGroupForm->fillModel($this->UserGroup);
 		if ($this->AdminUserGroupForm->ok()) {
 			$this->AdminUserGroupForm->toModel($this->UserGroup);
-			if (!$this->UserGroup->save()) {
+			if (!$this->UserGroup->saveAll()) {
 				$this->FlashMessage->set(__('Änderungen wurden erfolgreich gespeichert.'), FlashMessageType::SUCCESS);
 				$this->AdminUserGroupForm->errors = $this->UserGroup->validationErrors;
 			} else {
-				$this->redirect(Router::getRoute('adminScaffold', array('controller' => $this->name)));
+				return $this->redirect(Router::getRoute('adminScaffold', array('controller' => $this->name)));
 			}
 		}
+		return true;
 	}
 	
+	/**
+	 * Delete single {@link UserGroup}
+	 * 
+	 * @param integer $id
+	 * @return boolean
+	 */
 	public function delete($id = null)
 	{
-		die('THIS ACTION IS NOT FINISHED');
+		if ($this->UserGroup->delete()) {
+			$this->FlashMessage->set(__('Die Benutzergruppe <q>:1</q> wurder erfolgreich gelöscht.', $this->UserGroup->get('name')), FlashMessageType::SUCCESS);
+		} else {
+			$this->FlashMessage->set(__('Es ist ein Fehler beim Löschen der Benutzergruppe aufgetreten.'), FlashMessageType::ERROR);
+		}
+		return $this->redirect(Router::getRoute('adminScaffold', array('controller' => $this->name)));
 	}
 }

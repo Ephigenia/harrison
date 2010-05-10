@@ -68,7 +68,6 @@ class AdminMediaFileController extends AdminController
 				return $this->AdminMediaFileForm->errors = $MediaFile->validationErrors;
 			}
 			$this->FlashMessage->set(__('Datei erfolgreich hochgeladen.'), FlashMessageType::HINT);
-			
 			if (@$this->request->data['uploadify'] !== '1') {
 				$this->redirect($redirectUrl);
 			} else {

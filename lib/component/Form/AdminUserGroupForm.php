@@ -33,6 +33,7 @@ class AdminUserGroupForm extends AdminForm
 				'type' => 'DropDown',
 				'options' => $this->controller->Permission->listAll('name'),
 				'multiple' => true,
+				'mandatory' => false,
 			),
 			array(
 				'type' => 'submit',
@@ -42,11 +43,26 @@ class AdminUserGroupForm extends AdminForm
 		return parent::startUp();
 	}
 	
+	public function fillModel(Model $model) {
+		if (count($model->Permissions) > 0) {
+			foreach($model->Permissions as $Permission) {
+				$permissionIds[] = $Permission->id;
+			}
+			$permissionField = $this->fieldset->childWithAttribute('name', 'permission_id[]');
+			$permissionField->select($permissionIds);
+		}
+		parent::fillModel($model);
+	}
+	
 	public function toModel(Model $model, $fields = null, $ignore = null)
 	{
-		$PermissionField = $this->childWithAttribute('permission_id[]');
-		var_dump($PermissionField);
-		die(var_dump($PermissionField->value()));
+		if (!empty($this->controller->request->data['permission_id'])) {
+			$permissionIds = $this->controller->request->data['permission_id'];
+			$model->Permissions = array();
+			foreach($permissionIds as $permissionId) {
+				$model->Permissions[] = new Permission($permissionId);
+			}
+		}
 		return parent::toModel($model, $fields, $ignore);
 	}
 }
