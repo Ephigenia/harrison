@@ -42,7 +42,8 @@ class AdminBlogPostController extends AdminController
 		$this->AdminBlogPostForm->delete('uri');
 		if ($this->AdminBlogPostForm->ok()) {
 			$BlogPost = new BlogPost(array(
-				'User' => $this->UserLogin->User
+				'User' => $this->UserLogin->User,
+				'Language' => new Language($AdminBlogPostForm->language_id),
 			));
 			$this->AdminBlogPostForm->toModel($BlogPost);
 			if ($BlogPost->saveAll()) {
@@ -62,6 +63,7 @@ class AdminBlogPostController extends AdminController
 			$this->AdminBlogPostForm->toModel($this->BlogPost);
 			if ($this->BlogPost->saveAll()) {
 				$this->FlashMessage->set(__('Blogeintrag erfolgreich editiert.'), FlashMessageType::SUCCESS);
+				$this->redirect(Router::getRoute('adminBlogPost'));
 			}
 			$this->AdminBlogPostForm->errors = $this->BlogPost->validationErrors;
 		}

@@ -177,7 +177,7 @@ ul.admin li a:hover, .button:hover, input.submit:hover {
 }
 /** delete buttons are red **/
 ul.admin li a.delete {
-	color: #fff;
+	color: #fff !important;
 	border-color: #800000;
 	background: #B7190D;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#B7190D), to(#800000));

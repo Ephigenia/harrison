@@ -2,7 +2,6 @@
 
 // Admin-Menu for Blog Posts
 if (empty($BlogPost)) return false;
-
 $detailPageUri = $BlogPost->adminDetailPageUri();
 
 ?>

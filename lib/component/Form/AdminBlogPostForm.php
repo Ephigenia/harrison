@@ -33,6 +33,11 @@ class AdminBlogPostForm extends AdminForm
 						'options' => Status::$list,
 						'value' => Status::PUBLISHED,
 					),
+					'language_id' => array(
+						'type' => 'DropDown',
+						'label' => __('Sprache').':',
+						'options' => $this->controller->Language->listAll('name', null, 'name ASC'),
+					),
 					'user_id' => array(
 						'type' => 'DropDown',
 						'label' => __('Autor').':',
@@ -99,9 +104,6 @@ class AdminBlogPostForm extends AdminForm
 		if (!$this->submitted() && $model) {
 			$this->allowComments->checked($model->hasFlag(BlogPostFlag::ALLOW_COMMENTS));
 			$this->sticky->checked($model->hasFlag(BlogPostFlag::FLAG_STICKY));
-			if ($this->hasField('user_id')) {
-				$this->user_id->value($model->get('user_id'));
-			}
 			// tags
 			if (!empty($model->Tags)) {
 				$tags = new IndexedArray();
