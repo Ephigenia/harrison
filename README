@@ -2,4 +2,14 @@ Harrison
 ==============================================================================
 2010-05-08, Marcel Eichner // Ephigenia <love@ephigenia.de>
 
-http://code.marceleichner.de/project/harrison
+This is the readme file for the Harrison CMS. It should contain basic information about setting up a simple Harrison project. If you don’t find what you need, please check the [official Harrison project website](http://code.marceleichner.de/project/harrison).
+
+# Installation
+
+* Get the sources
+* Copy everything, including .htaccess file to an empty folder
+	* edit the .htaccess files as described in it
+* Run `cleanup.sh` to set all directory permissions
+* Run `config/structure.sql` to create basic database config
+* Edit path to ephFrame in `html/ephFrame.php`
+* Edit your database settings in `config/db.php`
