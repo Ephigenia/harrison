@@ -21,7 +21,6 @@ class AdminController extends AppController
 		'UserLogin',
 		'FlashMessage',
 		'AutoLog',
-		'SimpleSearch',
 	);
 	
 	public $uses = array(

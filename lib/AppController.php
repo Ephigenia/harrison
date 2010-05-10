@@ -99,7 +99,7 @@ class AppController extends Controller
 			// reset locale to default if browser language not default language
 			if (!empty($this->params['language_id'])) foreach($this->Languages as $Language) {
 				if ($Language->id != $this->params['language_id']) continue;
-				I18n::locale($this->params['language_id']);
+				I18n::locale($Language->locale);
 			}
 		}
 		// detect desired content type and return headers and change
@@ -140,8 +140,7 @@ class AppController extends Controller
 			$rendered = preg_replace('@</body>@', '<!-- '.ephFrame::compileTime(4).' --></body>', $rendered);
 		}
 		return parent::afterRender($rendered);
-	}
-	
+	}	
 }
 
 /**

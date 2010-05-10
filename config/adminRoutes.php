@@ -63,7 +63,7 @@ Router::addRoute('adminMediaFileMove',	$aP.'files/:id/:action/(?P<direction>up|d
 Router::addRoute('adminFolderCreate',	$aP.'folder/create/',			array('controller' => 'AdminFolder', 'action' => 'create'));
 Router::addRoute('adminFolderView',		$aP.'folder/:id/',				array('controller' => 'AdminFolder', 'action' => 'view'));
 Router::addRoute('adminFolderViewPaged',$aP.'folder/:id/page-:page',	array('controller' => 'AdminFolder', 'action' => 'view'));
-Router::addRoute('adminFolderUpload',	$aP.'folder/:id/upload',		array('controller' => 'AdminMediaFile', 'action' => 'upload'));
+Router::addRoute('adminFolderUpload',	$aP.'folder/:folder_id/upload',		array('controller' => 'AdminMediaFile', 'action' => 'upload'));
 Router::addRoute('adminFolderId',		$aP.'folder/:id/:action',		array('controller' => 'AdminFolder'));
 
 /** scaffold **/

@@ -44,7 +44,7 @@ $JavaScript->jQuery("
 		method: 'POST',
 		scriptData: {
 			'".$Session->name()."': '".$Session->id()."',
-			'folder_id': ''
+			'folder_id' : ''
 		},
 		'onAllComplete': function(event, data) {
 			document.location.href = '".$redirectUrl."';
@@ -58,7 +58,7 @@ $JavaScript->jQuery("
 			$('#AdminMediaFileForm input[type=submit]').hide();
 		}
 	});
-	$('input.folder_id').change(function() {
-		$('#uploadify').uploadifySettings('scriptData', { 'folder_id' : $(this).val() });
+	$('select.folder_id').change(function() {
+		$('#uploadify').uploadifySettings('scriptData', { 'folder_id': $(this).val() });
 	});
 ");

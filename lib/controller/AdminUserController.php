@@ -102,7 +102,7 @@ class AdminUserController extends AdminController
 				return true;
 			}
 			// send optional email
-			if ($this->UserForm->sendMail->value()) {
+			if ($this->AdminUserForm->sendMail->value()) {
 				$this->ViewMailer->subject = __('Neue Zugangsdaten für :1', AppController::NAME);
 				if (!$this->ViewMailer->send($this->User->email, 'adminUserCreate')) {
 					$this->set('errorEmail', true);

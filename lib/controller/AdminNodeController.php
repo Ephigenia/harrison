@@ -24,7 +24,7 @@ class AdminNodeController extends AdminController
 	public function index()
 	{
 		$this->Node->unbind('MediaFile');
-		$this->data->set('Nodes', $this->Node->tree(null, 1));	
+		$this->data->set('Nodes', $this->Node->tree(null, 1));
 	}
 	
 	public function beforeAction()
@@ -90,16 +90,13 @@ class AdminNodeController extends AdminController
 		}
 		if ($this->AdminNodeForm->ok()) {
 			$Node = new Node();
-			$Node->addFlag(NodeFlag::ALLOW_CHILDREN, NodeFlag::ALLOW_DELETE, NodeFlag::ALLOW_EDIT, NodeFlag::ALLOW_IMAGES);
-			$NodeText = $Node->NodeTextDe;
-			$NodeText->User = $this->UserLogin->User;
-			$this->AdminNodeForm->toModel($Node);
-			$this->AdminNodeForm->toModel($NodeText);
-			$NodeText->Node = $Node;
-			$NodeText->language_id = 'de';
 			$Node->User = $this->UserLogin->User;
 			$Node->Parent = new Node((int) $this->AdminNodeForm->parent->value());
-			if ($Node->save() && $NodeText->save()) {
+			$Node->addFlag(NodeFlag::ALLOW_CHILDREN, NodeFlag::ALLOW_DELETE, NodeFlag::ALLOW_EDIT, NodeFlag::ALLOW_IMAGES);
+			$Node->NodeTextDe->User = $this->UserLogin->User;
+			$this->AdminNodeForm->toModel($Node);
+			$this->AdminNodeForm->toModel($Node->NodeTextDe);
+			if ($Node->saveAll()) {
 				$this->FlashMessage->set(__('Die Seite wurde erfolgreich angelegt.'), FlashMessageType::SUCCESS);
 				$this->redirect(Router::getRoute('adminNode'));
 			}

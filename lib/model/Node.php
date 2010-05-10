@@ -74,13 +74,14 @@ class Node extends AppModel
 	{
 		foreach($this->Language->findAll() as $Language) {
 			$modelName = 'NodeText'.ucFirst($Language->id);
-			$this->hasOne[$modelName] = array(
+			$this->bind($modelName, 'hasOne', array(
 				'class' => 'NodeText',
 				'dependent' => true,
 				'conditions' => array(
 					$modelName.'.language_id' => DBQuery::quote($Language->id),
 				),
-			);
+			));
+			$this->{$modelName}->language_id = $Language->id;
 		}
 		return parent::afterConstruct();
 	}
@@ -150,19 +151,12 @@ class Node extends AppModel
 	 */
 	public function findNode($idOrNodeName)
 	{
+		$this->depth = 1;
 		if (is_int($idOrNodeName)) {
-			$Node = new Node($idOrNodeName);
+			$conditions = array('id' => $idOrNodeName);
 		} else {
-			$this->depth = 1;
-			$conditions = array(
-				'NodeText'.ucfirst(substr(I18n::locale(), 0, 2)).'.uri' => DBQuery::quote($idOrNodeName)
-			);
-			$Node = $this->find($conditions);
+			$conditions = array('NodeText'.ucfirst(substr(I18n::locale(), 0, 2)).'.uri' => DBQuery::quote($idOrNodeName));
 		}
-		// display 404 on missing nodes
-		if (!$Node) {
-			return false;
-		}
-		return $Node;
+		return $this->find($conditions);
 	}
 }

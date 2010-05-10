@@ -8,17 +8,18 @@
 # Date: 2009-07-18
 ##############################################################################
 
-echo -ne 'cleaning cache directories and files ...'
+echo 'cleaning cache directories and files ...'
 rm -f tmp/log/*
 rm -f tmp/model/*.json
 rm -f tmp/cache/*
+rm -f tmp/cache/views/*
 rm -f tmp/log/*
 
-echo -ne 'deleting cached and packed css and js files ...'
+echo 'deleting cached and packed css and js files ...'
 find . -name "p_*.css" -exec rm -f {} \;
 find . -name "p_*.js" -exec rm -f {} \;
 
-echo -ne 'chmodding some files and directories ...'
+echo 'chmodding some files and directories ...'
 chmod -R 777 tmp html/static
 chmod -R 777 tmp tmp/
 echo 'done'

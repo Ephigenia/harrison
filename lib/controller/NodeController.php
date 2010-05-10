@@ -32,6 +32,23 @@ class NodeController extends AppController
 	public $publicActions = array(
 		 'all',
 	);
+		
+	public function index()
+	{
+		$this->Node->unbind('MediaFile');
+		// node root points
+		$nodeNames = array(
+			'Footer' => 'FooterNodes',
+			'Hauptmenü' => 'MainMenuNodes',
+		);
+		foreach($nodeNames as $nodeName => $viewVar) {
+			$Node = $this->Node->findByName($nodeName);
+			if ($Children = $Node->tree(null, 1)) {
+				$this->data->set($viewVar, $Children);
+			}
+		}
+		return true;
+	}
 	
 	public function view($idOrNodeName = null)
 	{

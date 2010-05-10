@@ -48,6 +48,7 @@ class BlogPost extends AppModel
 	
 	public $belongsTo = array(
 		'User',
+		'Language',
 	);
 	
 	public $hasAndBelongsToMany = array(

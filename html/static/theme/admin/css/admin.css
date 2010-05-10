@@ -157,6 +157,7 @@ ul.admin li a, .button, form fieldset input.submit {
 	font-size: 0.7em;
 	text-decoration: none;
 	text-align: center;
+	line-height: 1.2em;
 	padding: 0.4em 0.5em;
 	margin: 0em 0.2em 0.2em 0em;
 	background: #35527b;
@@ -170,22 +171,22 @@ ul.admin li a, .button, form fieldset input.submit {
 ul.admin li a:hover, .button:hover, input.submit:hover {
 	color: #000;
 	border-color: #000;
-	background-color: #fff;
-	background-color: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#CFCFCF));
-	background-color: -moz-linear-gradient(19% 75% 270deg, #FEFEFE, #CFCFCF);
+	background: #fff;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#CFCFCF));
+	background: -moz-linear-gradient(19% 75% 270deg, #FEFEFE, #CFCFCF);
 }
 /** delete buttons are red **/
 ul.admin li a.delete {
+	color: #fff;
 	border-color: #800000;
-	color: #fff !important;
 	background: #B7190D;
-	background: -webkit-gradient(linear, 0% 45%, 0% 100%, from(#C22916), to(#861E12));
-	background: -moz-linear-gradient(19% 75% 270deg, #C22916, #861E12);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#B7190D), to(#800000));
+	background: -moz-linear-gradient(19% 75% 270deg, #B7190D, #800000);
 }
 ul.admin li a.delete:hover {
-	background: #E77059;
-	background: -webkit-gradient(linear, 0% 45%, 0% 100%, from(#E77059), to(#E12711));
-	background: -moz-linear-gradient(19% 75% 270deg, #E34735, #C32415);
+	background: #FF8000;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F00), to(#800000));
+	background: -moz-linear-gradient(19% 75% 270deg, #F00, #800000);
 }
 
 .Node ul.admin li {
@@ -223,10 +224,8 @@ ul.breadcrumb li {
 	margin: 0px auto 0px auto;
 }
 .mediaFile ul.admin a {
-	width: 23px;
-	display: table !important;
-	line-height: 1.3em;
-	float: left;
+	display: table;
+	padding: 3px 10px;
 	text-decoration: none;
 	background-image: url('../img/btns.png');
 	background-position: 5px 0px;
@@ -235,11 +234,14 @@ ul.breadcrumb li {
 .mediaFile ul.admin a.edit, .mediaFile ul.admin a.edit:hover {
 	background-position: 5px 0px;
 }
-.mediaFile ul.admin a.delete, .mediaFile ul.admin a.delete:hover {
+.mediaFile ul.admin a.delete {
 	background-color: #B7190D;
 	background-image: url('../img/btns.png') !important;
 	background-position: 5px -16px !important;
 	background-repeat: no-repeat !important;
+}
+.mediaFile ul.admin a.delete:hover {
+	background-color: #f00;
 }
 .mediaFile ul.admin a.left, .mediaFile ul.admin a.left:hover {
 	background-position: 5px -32px;

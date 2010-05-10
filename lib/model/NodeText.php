@@ -10,7 +10,9 @@ class NodeText extends AppModel
 {
 	public $behaviors = array(
 		'Timestampable',
-		'Versionable',
+		'Versionable' => array(
+			'field' => 'revision',
+		),
 		'Sluggable' => array(
 			'fields' => array('headline'),
 			'maxLength' => 60,
@@ -22,8 +24,11 @@ class NodeText extends AppModel
 	);
 	
 	public $belongsTo = array(
-		'User',
 		'Node',
+	);
+	
+	public $hasOne = array(
+		'User',
 		'Language',
 	);
 }

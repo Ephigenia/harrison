@@ -35,8 +35,8 @@ class AdminMediaFileController extends AdminController
 	public function upload()
 	{
 		// upload to a folder
-		if (!empty($this->params['id'])) {
-			if (!$this->Folder->fromId((int) $this->params['id'])) {
+		if (!empty($this->params['folder_id'])) {
+			if (!$this->Folder->fromId((int) $this->params['folder_id'])) {
 				return false;
 			}
 			$this->data->set('Folder', $this->Folder);

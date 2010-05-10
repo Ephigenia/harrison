@@ -45,14 +45,15 @@ class MediaFile extends AppModel
 	{
 		foreach($this->Language->findAll() as $Language) {
 			$modelName = 'Text'.ucFirst($Language->id);
-			$this->hasOne[$modelName] = array(
+			$this->bind($modelName, 'hasOne', array(
 				'class' => 'MediaText',
-				'foreignKey'	=> 'media_file_id',
+				'foreignKey' => 'media_file_id',
 				'dependent' => true,
 				'conditions' => array(
 					$modelName.'.language_id' => DBQuery::quote($Language->id),
 				),
-			);
+			));
+			$this->{$modelName}->language_id = $Language->id;
 		}
 		return parent::afterConstruct();
 	}
