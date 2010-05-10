@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NMS.Update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 01:00+0100\n"
+"POT-Creation-Date: 2010-05-10 19:20+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Marcel Eichner <love@ephigenia.de>\n"
 "Language-Team: Marcel Eichner <love@ephigenia.de>\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Den Blogeintrag <q>:1</q> wirklich löschen?"
 msgstr ""
 
-#: ../../../view/theme/admin/element/blogPosts.php:31
+#: ../../../view/theme/admin/element/blogPosts.php:32
 msgid ":1 Kommentar"
 msgstr ""
 
@@ -132,8 +132,8 @@ msgstr ""
 msgid "Wollen Sie diesen Kommentar wirklich löschen?"
 msgstr ""
 
-#: ../../../view/theme/admin/element/comments.php:23
-msgid ":1 in :2"
+#: ../../../view/theme/admin/element/comments.php:26
+msgid "IP Adresse des Benutzers."
 msgstr ""
 
 #: ../../../view/theme/admin/element/folderMenu.php:12
@@ -146,10 +146,6 @@ msgstr ""
 
 #: ../../../view/theme/admin/element/folderMenu.php:20
 msgid "Die Kategorie <q>:1</q> wirklich löschen? Alle Dateien dieser Kategorie verlieren ihre Zuordnung, werden aber nicht gelöscht."
-msgstr ""
-
-#: ../../../view/theme/admin/element/footer.php:2
-msgid "Content-Management-System NMS.Update :1"
 msgstr ""
 
 #: ../../../view/theme/admin/element/header.php:3
@@ -173,7 +169,7 @@ msgid "vor :1"
 msgstr ""
 
 #: ../../../view/theme/admin/element/mainMenu.php:10
-#: ../../../view/theme/admin/element/userMenu.php:5
+#: ../../../view/theme/admin/element/userMenu.php:3
 msgid "Seiten"
 msgstr ""
 
@@ -210,30 +206,27 @@ msgstr ""
 msgid "Benutzerliste"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mainMenu.php:61
+#: ../../../view/theme/admin/element/mainMenu.php:60
 msgid "Benutzer erstellen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mainMenu.php:65
+#: ../../../view/theme/admin/element/mainMenu.php:63
 msgid "Mein Profil"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mainMenu.php:73
+#: ../../../view/theme/admin/element/mainMenu.php:71
 msgid "Einstellungen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mainMenu.php:76
-#: ../../../view/theme/admin/group/create.php:1
-#: ../../../view/theme/admin/group/create.php:4
-#: ../../../view/theme/admin/group/edit.php:1
-#: ../../../view/theme/admin/group/edit.php:4
-#: ../../../view/theme/admin/group/index.php:1
-#: ../../../view/theme/admin/group/index.php:4
-msgid "Gruppen"
+#: ../../../view/theme/admin/element/mainMenu.php:74
+msgid "Gruppen & Rechte"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mainMenu.php:79
+#: ../../../view/theme/admin/element/mainMenu.php:77
 #: ../../../view/theme/admin/language/create.php:4
+#: ../../../view/theme/admin/language/edit.php:4
+#: ../../../view/theme/admin/language/index.php:1
+#: ../../../view/theme/admin/language/index.php:4
 msgid "Sprachen"
 msgstr ""
 
@@ -285,31 +278,37 @@ msgstr ""
 msgid "weiter »"
 msgstr ""
 
-#: ../../../view/theme/admin/element/userMenu.php:3
+#: ../../../view/theme/admin/element/permissionMenu.php:2
+#: ../../../view/theme/admin/element/userMenu.php:2
 msgid "Editieren"
 msgstr ""
 
-#: ../../../view/theme/admin/element/userMenu.php:6
-msgid "Log-Einträge"
-msgstr ""
-
-#: ../../../view/theme/admin/element/userMenu.php:10
-msgid "Neues Passwort zuschicken"
-msgstr ""
-
-#: ../../../view/theme/admin/element/userMenu.php:12
-msgid "Sperren"
-msgstr ""
-
+#: ../../../view/theme/admin/element/permissionMenu.php:5
 #: ../../../view/theme/admin/element/userMenu.php:14
-msgid "Freigeben"
-msgstr ""
-
-#: ../../../view/theme/admin/element/userMenu.php:18
 msgid "Löschen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/userMenu.php:21
+#: ../../../view/theme/admin/element/permissionMenu.php:8
+msgid "Wollen Sie das Zugriffsrecht mit dem Namen <q>:1</q> wirklich löschen?"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:4
+msgid "Log-Einträge"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:6
+msgid "Neues Passwort zuschicken"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:8
+msgid "Sperren"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:10
+msgid "Freigeben"
+msgstr ""
+
+#: ../../../view/theme/admin/element/userMenu.php:17
 msgid "Wollen Sie den Benutzer :1 wirklich löschen?"
 msgstr ""
 
@@ -332,20 +331,6 @@ msgstr ""
 msgid "Dateien & Bilder ohne Kategorie"
 msgstr ""
 
-#: ../../../view/theme/admin/group/create.php:5
-msgid "Gruppe erstellen"
-msgstr ""
-
-#: ../../../view/theme/admin/group/index.php:8
-msgid ""
-"Sie können Benutzer in verschiedene Gruppen stecken um deren Zugriffsrechte zu verändern. Jede Gruppe hat andere\n"
-"\tZugriffsrechte zu bestimmten Bereichen."
-msgstr ""
-
-#: ../../../view/theme/admin/group/index.php:14
-msgid "Es wurden noch keine Gruppen angelegt."
-msgstr ""
-
 #: ../../../view/theme/admin/language/create.php:1
 #: ../../../view/theme/admin/language/create.php:5
 msgid "Sprache erstellen"
@@ -360,15 +345,18 @@ msgid "Deaktivierte Sprachen sind für den Besucher Ihrer Website nicht sichtbar
 msgstr ""
 
 #: ../../../view/theme/admin/language/index.php:9
+msgid "Neue Sprache erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/language/index.php:16
 msgid "Id"
 msgstr ""
 
-#: ../../../view/theme/admin/language/index.php:10
+#: ../../../view/theme/admin/language/index.php:17
 msgid "Locale"
 msgstr ""
 
-#: ../../../view/theme/admin/language/index.php:11
-#: ../../../view/theme/admin/user/index.php:12
+#: ../../../view/theme/admin/language/index.php:18
 msgid "Name"
 msgstr ""
 
@@ -427,6 +415,23 @@ msgstr ""
 msgid "An diese Seite sind noch keine Dateien angehangen. Manche Templates erlauben das Anzeigen von Dateien."
 msgstr ""
 
+#: ../../../view/theme/admin/permission/create.php:1
+#: ../../../view/theme/admin/permission/create.php:4
+#: ../../../view/theme/admin/permission/edit.php:1
+#: ../../../view/theme/admin/permission/edit.php:4
+#: ../../../view/theme/admin/permission/index.php:1
+#: ../../../view/theme/admin/permission/index.php:4
+msgid "Zugriffsrechte"
+msgstr ""
+
+#: ../../../view/theme/admin/permission/create.php:5
+msgid "erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/permission/index.php:9
+msgid "Neues Zugriffsrecht erstellen"
+msgstr ""
+
 #: ../../../view/theme/admin/user/create.php:9
 msgid "Wenn Sie kein Passwort für den neuen Benutzer angeben wird ein Passwort erzeugt."
 msgstr ""
@@ -443,15 +448,19 @@ msgstr ""
 msgid "Sollte dieser Fehler dauerhaft auftreten wenden Sie sich bitte an den System-Administrator."
 msgstr ""
 
-#: ../../../view/theme/admin/user/index.php:13
-msgid "Benutzerrolle"
+#: ../../../view/theme/admin/user/index.php:9
+msgid "Neuen Benutzer erstellen"
 msgstr ""
 
-#: ../../../view/theme/admin/user/index.php:14
+#: ../../../view/theme/admin/user/index.php:19
+msgid "Gruppe"
+msgstr ""
+
+#: ../../../view/theme/admin/user/index.php:20
 msgid "Letzter Login"
 msgstr ""
 
-#: ../../../view/theme/admin/user/log.php:8
+#: ../../../view/theme/admin/user/log.php:6
 msgid "Log"
 msgstr ""
 
@@ -459,24 +468,47 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: ../../../view/theme/admin/user/nodes.php:13
+#: ../../../view/theme/admin/user/nodes.php:11
 msgid "Hier sind alle Seiten zu sehen die von :1 angelegt wurden"
 msgstr ""
 
-#: ../../../view/theme/admin/user/view.php:16
-msgid "Dieser Benutzer ist zur Zeit gesperrt und kann sich nicht einloggen."
+#: ../../../view/theme/admin/user/view.php:15
+msgid "Der Benutzer :1 ist zur Zeit gesperrt und kann sich nicht einloggen."
 msgstr ""
 
-#: ../../../view/theme/admin/user/view.php:18
+#: ../../../view/theme/admin/user/view.php:16
 msgid ":1 wieder freischalten"
 msgstr ""
 
-#: ../../../view/theme/admin/user/view.php:30
+#: ../../../view/theme/admin/user/view.php:27
 msgid "Email"
 msgstr ""
 
-#: ../../../view/theme/admin/user/view.php:37
+#: ../../../view/theme/admin/user/view.php:34
 msgid "noch nie"
+msgstr ""
+
+#: ../../../view/theme/admin/userGroup/create.php:1
+#: ../../../view/theme/admin/userGroup/edit.php:1
+#: ../../../view/theme/admin/userGroup/index.php:1
+#: ../../../view/theme/admin/userGroup/index.php:4
+msgid "Gruppen"
+msgstr ""
+
+#: ../../../view/theme/admin/userGroup/create.php:5
+msgid "Gruppe erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/userGroup/index.php:9
+msgid "Neue Benutzergruppe erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/userGroup/index.php:14
+msgid "Sie können Benutzer in verschiedene Gruppen stecken um deren Zugriffsrechte zu verändern. Jede Gruppe hat andere Zugriffsrechte zu bestimmten Bereichen."
+msgstr ""
+
+#: ../../../view/theme/admin/userGroup/index.php:19
+msgid "Es wurden noch keine Gruppen angelegt."
 msgstr ""
 
 #~ msgid "ADMIN_WELCOME_MESSAGE"
