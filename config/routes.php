@@ -34,6 +34,10 @@ Router::addRoute('imageSrc',
 	array('controller' => 'MediaFile', 'action' => 'thumb')
 );
 
+/** Node Routes **/
+Router::addRoute('root', 		'/', 						array('controller' => 'Node'));
+Router::addRoute('nodeView',		'page/:uri',					array('controller' => 'Node', 'action' => 'view'));
+
 /** Blog Routes **/
 Router::addRoute('root', 				'/', 							array('controller' => 'BlogPost'));
 Router::addRoute('blog', 				'blog', 						array('controller' => 'BlogPost'));
@@ -48,7 +52,5 @@ Router::addRoute('BlogPostPaged',		'blog/page-:page',				array('controller' => '
 Router::addRoute('blogEntryId',			'blog/:id/',					array('controller' => 'BlogPost', 'action' => 'view'));
 Router::addRoute('blogEntryUri',		'blog/:uri/',					array('controller' => 'BlogPost', 'action' => 'view'));
 
-/** Node Routes **/
-Router::addRoute('contact',			'vorschlagen/',					array('controller' => 'Contact', 'action' => 'index'));
-Router::addRoute('imprint',			'impressum/',					array('controller' => 'Node', 'action' => 'view', 'impressum'));
-Router::addRoute('nodeView',		'page/:uri',					array('controller' => 'Node', 'action' => 'view'));
+/** Language Change **/
+Router::addRoute('rootLanguage', '/:language_id/', array('controller' => 'Node'));

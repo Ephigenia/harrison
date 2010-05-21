@@ -40,7 +40,7 @@ class User extends AppModel
 	public $behaviors = array(
 		'Timestampable',
 		'Flagable',
-		'Hitcount',
+		'HitCount',
 	);
 	
 	public $findConditions = array(

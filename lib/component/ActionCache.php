@@ -34,7 +34,7 @@ class ActionCache extends AppComponent
 			'search' => WEEK,
 		),
 		'Comment' => array(
-			'rss' => HOUR,
+			'rss' => WEEK,
 		),
 	);
 	

@@ -44,8 +44,9 @@ CREATE TABLE harrison_users (
 	KEY (permanent_key)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- default user with password 'adminadmin'
 INSERT INTO harrison_users (flags, locale, user_group_id, name, email, password) VALUES 
-	 (16, 'de_DE', 1, 'Marcel Eichner', 'love@ephigenia.de', 'f7060fdb27e08dfbc97c9fa5c8b55365')
+	 (0, 'de_DE', 1, 'Admin', 'admin@ephigenia.de', '79949e89c31d984d44ccc2d4be4aefdf')
 ;
 
 -- user groups
@@ -193,6 +194,9 @@ CREATE TABLE IF NOT EXISTS harrison_blog_posts (
 	KEY (uri),
 	KEY (published)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `harrison_blog_posts` (`id`, `flags`, `status`, `language_id`, `user_id`, `uri`, `headline`, `text`, `tags`, `views`, `created`, `updated`, `published`) VALUES
+(1, 512, 1, 'de', 1, 'simple-first-blog-post', 'Simple First Blog Post', 'This is the first Blog Post! You can use every single <strong>HTML Tag</strong> to format content and also set Links to other Websites. Such as the <a href="http://code.marceleichner.de/project/harrison" rel="external" title="Harrison Website">Harrison Website</a>.', '', 0, 1274438505, 1274438533, 1274438400);
 
 -- comments
 DROP TABLE IF EXISTS harrison_comments;

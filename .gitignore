@@ -1,3 +1,5 @@
+/static/img/public/*
+/static/img/upload/*
 /tmp/model/*.json
 /tmp/log/*.log
 p_*

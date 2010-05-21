@@ -43,7 +43,7 @@ class AdminBlogPostController extends AdminController
 		if ($this->AdminBlogPostForm->ok()) {
 			$BlogPost = new BlogPost(array(
 				'User' => $this->UserLogin->User,
-				'Language' => new Language($AdminBlogPostForm->language_id),
+				'Language' => new Language($this->AdminBlogPostForm->language_id),
 			));
 			$this->AdminBlogPostForm->toModel($BlogPost);
 			if ($BlogPost->saveAll()) {

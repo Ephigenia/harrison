@@ -10,7 +10,6 @@ body {
 	font: normal 14px/1.5em Lucida Sans Unicode, Lucida Grande, Verdana, Arial, Sans Serif;
 	background: #F8F8F8;
 	color: #4C4C4C;
-	margin: 1em;
 	width: 960px;
 }
 
@@ -55,13 +54,17 @@ blockquote > cite {
 	padding-top: 0.5em;
 }
 
+/** Headline styles **/
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	color: #000;
 }
 h1 {
-	font-size: 1.5em;
-	line-height: 1.25em;
+	font-size: 2.5em;
+	line-height: 1.3em;
+	margin: 0.5em 0em 0.5em 0em;
+	border-bottom: 5px solid #323232;
+	text-shadow: #eee 2px 2px 2px;
 }
 h2 {
 	font-size: 1.35em;
@@ -101,6 +104,14 @@ p.hint {
 p.success {
 	background-color: #a8ec87;
 	border-color: #007511;
+}
+
+
+#app {
+	padding: 20px;
+	width: 620px;
+	margin: 0em auto;
+	background: #fff;
 }
 
 /* Pagination style **/

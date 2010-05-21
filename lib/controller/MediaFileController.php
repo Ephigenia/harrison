@@ -51,8 +51,8 @@ class MediaFileController extends Controller
 		// resize Image
 		try {
 			$ImageFile->$method($width, $height, true, false);
-			// apply sharpen filter if available
-			if (function_exists('imageconvolution')) {
+			// apply sharpen filter if available and image is small
+			if (function_exists('imageconvolution') && $width < 400 && $height < 400) {
 				ephFrame::loadClass('ephFrame.lib.ImageSharpenFilter');
 				$sharpenFilter = new ImageSharpenFilter();
 				$ImageFile->applyFilter($sharpenFilter);

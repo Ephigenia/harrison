@@ -20,7 +20,7 @@ class AppMetaTags extends MetaTags
 		'ICBM' => '52.5106052;13.4525567',
 		// SEO
 		'keywords' => '@keywords.txt',
-		'generator' => 'harrison 0.3.2, ephFrame',
+		'generator' => 'harrison 0.4, ephFrame',
 		'author' => 'Marcel Eichner',
 		'copyright' => '© 2009 Marcel Eichner // Ephigenia',
 		'description' => 'Das deutsche Blog rund um Horror- und Fantasy Filme, neueste Film Trailer, Teaser, Kritiken und Hintergrundinformationen!',

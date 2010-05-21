@@ -140,7 +140,7 @@ class AppController extends Controller
 			$rendered = preg_replace('@</body>@', '<!-- '.ephFrame::compileTime(4).' --></body>', $rendered);
 		}
 		return parent::afterRender($rendered);
-	}	
+	}
 }
 
 /**

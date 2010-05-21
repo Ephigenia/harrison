@@ -1,4 +1,4 @@
-Harrison
+Harrison CMS Readme
 ==============================================================================
 2010-05-08, Marcel Eichner // Ephigenia <love@ephigenia.de>
 
@@ -6,10 +6,20 @@ This is the readme file for the Harrison CMS. It should contain basic informatio
 
 # Installation
 
-* Get the sources
 * Copy everything, including .htaccess file to an empty folder
 	* edit the .htaccess files as described in it
 * Run `cleanup.sh` to set all directory permissions
-* Run `config/structure.sql` to create basic database config
-* Edit path to ephFrame in `html/ephFrame.php`
-* Edit your database settings in `config/db.php`
+* Local Setup
+	* modify `html/ephFrame.php` to find [ephFrame](github.com/Ephigenia/ephFrame)
+	* modify `.htaccess` files if needed
+* Database Setup
+	* create new data base and import `config/structure.sql` to create basic Harrison tables
+	* modify `config/db.php` to have access to the db
+	
+After this you should be able to call http://localhost/[your_installation_path]/admin/ to access the administration area and can login with 'admin@ephigenia.de' and 'adminadmin'.
+
+# Where to Start?
+
+You can start by creating your very own template for Harrison by changing the `$theme` variable of the `AppController` and then create a directory under `views/theme/[themename]`. In there you can do whatever you want.
+
+Use the Node/Pages Tree for creating static content in multiple languages and read them with the NodesController and render them with your Node Views. All files from the `views/node/` directory get listet in the Node-Edit Form.
