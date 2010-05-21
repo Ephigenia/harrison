@@ -35,10 +35,13 @@ class BlogPostFormater extends Helper
 	
 	public function codeReplace($text)
 	{
+		// check if geshi available
+		$geshiPath = dirname(__FILE__).'/../vendor/geshi/geshi.php';
+		if (!file_exists($geshiPath)) return $text;
 		$regexp = '@<code class="(\w+)">(.+?)<\/code>@s';
 		// replace codes
 		if (preg_match_all($regexp, $text, $found)) {
-			require_once dirname(__FILE__).'/../vendor/geshi/geshi.php';
+			require_once $geshiPath;
 			for($index = 0; $index < count($found)-1; $index++) {
 				if (!isset($found[1][$index])) continue;
 				$language = $found[1][$index];
