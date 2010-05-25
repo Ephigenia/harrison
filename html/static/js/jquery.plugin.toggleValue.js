@@ -19,12 +19,10 @@
 				toggleClass: 'active'
 			};
 			var options = $.extend({}, defaults, options);
-			return this.each(function() {
-				$(this).focus(function() {
-					if ($(this).val() == options.value) $(this).val('').toggleClass(options.toggleClass);
-				}).blur(function () {
-					if ($.trim($(this).val()) == '') $(this).val(options.value).toggleClass(options.toggleClass);
-				});
+			return $(this).live('focus.toggleValue', function() {
+				if ($(this).val() == options.value) $(this).val('').toggleClass(options.toggleClass);
+			}).blur(function () {
+				if ($.trim($(this).val()) == '') $(this).val(options.value).toggleClass(options.toggleClass);
 			});
 		}
 	});

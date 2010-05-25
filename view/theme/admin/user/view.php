@@ -20,13 +20,13 @@ if ($User->hasFlag(UserFlag::BLOCKED)) { ?>
 
 <?php echo $this->renderElement('gravatar', array('User' => $User, 'size' => 60)); ?>
 <dl>
-	<dt><?php echo __('Name') ?>:</dt>
+	<dt><?php echo __('Name') ?></dt>
 	<dd><?php echo $User->get('name') ?></dd>
-	<dt><?php echo __('Gruppe'); ?>:</dt>
+	<dt><?php echo __('Gruppe'); ?></dt>
 	<dd><?php echo $User->UserGroup->get('name'); ?></dd>
-	<dt><?php echo __('Email') ?>:</dt>
+	<dt><?php echo __('Email') ?></dt>
 	<dd><?php echo $HTML->email($User->get('email')) ?></dd>
-	<dt><?php echo __('Letzter Login') ?>:</dt>
+	<dt><?php echo __('Letzter Login') ?></dt>
 	<dd><?php
 		if ($User->lastlogin) {
 			echo Time::timeAgoInWords($User->lastlogin).' ('.strftime('%x %H:%M', $User->lastlogin).')';

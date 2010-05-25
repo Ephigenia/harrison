@@ -22,6 +22,7 @@ class AdminController extends AppController
 		// 'PermissionCheck',
 		'FlashMessage',
 		'AutoLog',
+		'Wall',
 	);
 	
 	public $uses = array(
@@ -78,6 +79,7 @@ class AdminController extends AppController
 		$this->CSS->clear();
 		$this->JavaScript->addFiles(array(
 			'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',
+			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js',
 			'js.class.core',
 			'php.custom.min',
 			'swfobject.js',
@@ -93,10 +95,16 @@ class AdminController extends AppController
 		
 	public function index()
 	{
+		// get data for the admin wall
 		if (get_class($this) == 'AdminController') {
-			$this->data->set('BlogPosts', $this->BlogPost->findAll(null, null, 0, 5, 0));
-			$this->data->set('Comments', $this->Comment->findAll(null, null, 0, 5, 0));
-			$this->data->set('Files', $this->MediaFile->findAll(null, array('MediaFile.created DESC'), 0, 4, 0));
+			$WallItems = $this->Wall->read($WallModels = array(
+				$this->BlogPost,
+				$this->Comment,
+				$this->User,
+				$this->MediaFile,
+			));
+			$this->set('WallItems', $WallItems);
+			$BlogPosts = $this->BlogPost->findAll(null, null, 0, 5, 0);
 		}
 	}
 }

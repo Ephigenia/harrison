@@ -17,33 +17,12 @@
 		<tr>
 			<th class="name"><?php echo __('Name')?></th>
 			<th class="role"><?php echo __('Gruppe') ?></th>
-			<th class="lastlogin"><?php echo __('Letzter Login'); ?></th>
 		</tr>
 	</thead>
 	<tbody>
-	<?php if (!empty($Users)) foreach($Users as $User) { ?>
-		<tr id="User-<?php echo $User->id; ?>" class="user">
-			<td class="name">
-				<?php echo $this->renderElement('gravatar', array('User' => $User))?>
-				<?php echo $HTML->link($User->adminDetailPageUri(), $User->get('name')); ?>
-			</td>
-			<td class="userRole">
-				<?php echo $User->UserGroup->get('name'); ?>
-			</td>
-			<td class="lastlogin">
-				<?php
-				if (!$User->lastlogin) {
-					echo 'noch nie';
-				} else {
-					echo Time::timeAgoInWords($User->get('lastlogin'));
-					if ($User->get('lastlogin') > (time() - WEEK * 4)) {
-						echo ' ('.strftime('%x %H:%M', $User->get('lastlogin')).')';
-					}
-				}
-				?>
-			</td>
-		</tr>
-	<?php } ?>
+	<?php if (!empty($Users)) foreach($Users as $User) {
+		echo $this->element('user', array('User' => $User));
+	} ?>
 	</tbody>
 </table><br />
 <br />

@@ -6,26 +6,23 @@
 		$HTML->email(Registry::get('AdminEmail').'?subject='.AppController::NAME.' Administration', Registry::get('AdminEmail'))
 		)); ?>
 </p>
-<?php
-
-// list newest comments
-if (!empty($Comments)) {
-	echo $HTML->tag('h2', __('Neue Kommentare'));
-	echo $this->renderElement('comments', array('Comments' => $Comments));
-	echo $HTML->link(Router::url('adminComment'), __('Alle Kommentare anzeigen')); 
-}
-
-// list newest blog posts
-if (!empty($BlogPosts)) {
-	echo $HTML->tag('h2', __('Neue Blogeinträge'));
-	echo $this->renderElement('blogPosts', array('BlogPosts' => $BlogPosts));
-	echo $HTML->link(Router::url('adminBlogPost'), __('Alle Blogeinträge anzeigen')); 
-}
-
-// list newest files
-if (!empty($Files)) {
-	echo $HTML->tag('h2', __('Neue Dateien'));
-	foreach($Files as $File) echo $this->renderElement('mediaFile', array('MediaFile' => $File));
-	echo '<br class="c" />'.LF;
-	echo $HTML->link(Router::url('adminMediaFiles'), __('Alle Dateien anzeigen'));
+<h2><?php echo __('Aktuelles'); ?></h2>
+<?php if (empty($WallItems)) {
+	echo $HTML->tag('p', __('Es gibt bisher noch keine aktuallen Einträge. Sobald es neue Einträge gibt, werden diese hier chronologisch angezeigt. So bleiben Sie immer auf dem Laufenden!'), array('class' => 'hint'));
+} else {
+	?>
+	<table>
+		<tbody>
+			<?php foreach($WallItems as $WallItem) { 
+				$elementName = get_class($WallItem);
+				echo $this->element($elementName, array($elementName => $WallItem));
+			} ?>
+		</tbody>
+	</table>
+	<ul>
+		<li><?php echo $HTML->link(Router::url('adminComment'), __('Alle Kommentare anzeigen')); ?></li>
+		<li><?php echo $HTML->link(Router::url('adminBlogPost'), __('Alle Blogeinträge anzeigen')); ?></li>
+		<li><?php echo $HTML->link(Router::url('adminMediaFiles'), __('Alle Dateien anzeigen')); ?></li>
+	</ul>
+	<?php
 }

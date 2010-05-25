@@ -15,9 +15,15 @@ class SearchForm extends AppForm
 			'type' => 'text',
 			'name' => 'q',
 			'label' => false,
-			'value' => 'search',
+			'value' => 'suche',
 		),
 	);
+	
+	public function afterConfig()
+	{
+		// skips the submit buton
+		return true;
+	}
 	
 	public function beforeRender()
 	{

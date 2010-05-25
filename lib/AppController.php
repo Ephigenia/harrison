@@ -32,7 +32,7 @@ class AppController extends Controller
 {	
 	const NAME = 'Harrison';
 	
-	const VERSION = '0.4';
+	const VERSION = '0.4.1';
 	
 	public $helpers = array(
 		'HTML',

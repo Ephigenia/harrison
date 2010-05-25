@@ -1,17 +1,43 @@
 /**
- * 	Javascripts for admin-mode only
- * 	@author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * Javascripts for admin-mode only
+ * @project Harrison
+ * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  */
 $(document).ready(function() {
 	
+	/** toggle value **/
 	$.getScript($('base').attr('href') + '../static/js/jquery.plugin.toggleValue.js', function() {
 		$('input.q').toggleValue();
+	});
+	
+	/** jQuery UI **/
+	$('#AdminSearchForm input.q').autocomplete({
+		minLength: 3,
+		delay: 500,
+		source: function(request, response) {
+			$.ajax({
+				url: $('#AdminSearchForm').attr('action') + '/search/' + request.term,
+				success: function(data) {
+					response(data);
+				}
+			});
+		},
+		select: function(event, ui) {
+			document.location.href = ui.item.value;
+		}
+	});
+	
+	/* auto-grow **/
+	$.getScript($('base').attr('href') + '../static/theme/admin/js/jquery.autogrow.js', function() {
+		if ($.browser.msie) { // autogrow has problems with padding in textareas in IE and Opera!
+			$('textarea').css('padding', '0');
+		}
+		$('textarea').autogrow();
 	});
 	
 	/**
 	 * Main menu
 	 */
-	// mainmenu toggle
 	$('#mainMenu a.toggle').click(function() {
 		var subMenu = $(this).parent().find('ul');
 		if (!subMenu.length) return;
@@ -23,14 +49,6 @@ $(document).ready(function() {
 			$(this).html('+');
 		}
 	}).html('-');
-	
-	// Flashmessage auto-hide
-	if ($('#flashMessage').length > 0) {
-		$('#flashMessage').click(function() {
-			$(this).fadeOut('fast');
-		});
-		window.setTimeout("$('#flashMessage').trigger('click');", 10000);
-	}
 	
 	// minimize button
 	$('.minimize a').click(function() {
@@ -46,36 +64,6 @@ $(document).ready(function() {
 			$('#content').css('margin-left', '175px');
 		}
 		$('#leftColumn').toggleClass('minimized');
-	});
-	
-	
-	// search form
-	$('#AdminSearchForm input').bind('keyup', function() {
-		var value = $(this).val();
-		if (value.length < 3) return false;
-		var url = $('#AdminSearchForm').attr('action') + '/search/' + value;
-		$.getJSON(url, function(data) {
-			var html = '';
-			if (data.length == 0) {
-				html += '<li>No results</li>';
-			} else {
-				for (i = 0; i < data.length; i++) {
-					html += '<li><a href="' + data[i].uri + '">';
-					if ('undefined' != typeof(data[i].img)) {
-						html += data[i].img;
-					}
-					html += data[i].title;
-					html += '</a></li>';
-				}
-			}
-			$('#AdminSearchForm #results').remove();
-			$('#AdminSearchForm').append('<ul id="results">' + html + '</ul>');
-		});
-		return true;
-	}).bind('focus', function() {
-		$('#AdminSearchForm #results').slideDown();
-	}).bind('blur', function() {
-		$('#AdminSearchForm #results').slideUp().hide();
 	});
 	
 	// delete confirmation when in admin mode
@@ -103,14 +91,6 @@ $(document).ready(function() {
 	// submit button ’...sending’
 	$('form').submit(function() {
 		$('form input[type=submit]').attr('value', 'sending…').attr('disabled','disabled').addClass('loading');
-	});
-	
-	// automatic form field resizing on typing
-	$.getScript($('base').attr('href') + '../static/theme/admin/js/jquery.autogrow.js', function() {
-		if($.browser.msie) { // autogrow has problems with padding in textareas in IE and Opera!
-			$('textarea').css('padding', '0');
-		}
-		$('textarea').autogrow();
 	});
 	
 	/** headline replacement as you type **/

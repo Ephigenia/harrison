@@ -37,6 +37,6 @@
 		<li><?php echo $HTML->link($Node->adminDetailPageUri().'upload/', __('Datei hochladen')) ?></li>
 	</ul><br class="c" />
 	<?php foreach($Node->MediaFiles as $File) {
-		echo $this->element('mediaFile', array('MediaFile' => $File, 'displayMoveLinks' => true));
+		echo $this->element('mediaFile', array('mediaFileIcon' => $File, 'displayMoveLinks' => true));
 	}
 } ?>

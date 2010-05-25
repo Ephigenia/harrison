@@ -95,6 +95,7 @@ class BlogPostController extends AppController
 				$this->ViewMailer->send(Registry::get('AdminEmail'), 'commentAdminNotification', __('Neuer Kommentar'), array('Comment' => $this->Comment));
 				if ($this->hasComponent('ActionCache')) {
 					$this->ActionCache->clear($this->name, $this->action);
+					$this->ActionCache->clear($this->name, 'index');
 				}
 				$this->redirect($this->BlogPost->detailPageUri().'#Comments');
 			}

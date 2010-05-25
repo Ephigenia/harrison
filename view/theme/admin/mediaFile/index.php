@@ -18,7 +18,7 @@ if (!empty($Files)) { ?>
 <h2><?php echo Sanitize::html(__('Dateien & Bilder')) ?></h2>
 <div class="MediaFiles">
 	<?php foreach($Files as $MediaFile) {
-		echo $this->renderElement('mediaFile', array('MediaFile' => $MediaFile));
+		echo $this->renderElement('mediaFileIcon', array('MediaFile' => $MediaFile));
 	} ?>
 </div>
 <?php } ?>

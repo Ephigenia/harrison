@@ -40,8 +40,8 @@
 			if (isset($Me) && $action !== 'login') {
 				echo $this->renderElement('header');
 				echo $this->renderElement('mainMenu'); 
-			} ?>
-			<?php echo $this->renderElement('flashMessage') ?>
+			}
+			echo $this->renderElement('flashMessage') ?>
 			<div id="content">
 				<?php echo @$content ?>
 			</div>

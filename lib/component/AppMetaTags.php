@@ -13,17 +13,11 @@ ephFrame::loadClass('ephFrame.lib.component.MetaTags');
 class AppMetaTags extends MetaTags
 {	
 	public $data = array(
-		// geo-tagging
-		'geo.position' => '52.5106052;13.4525567',
-		'geo.placename' => 'Kopernikusstraße 8, 10245 Berlin, Deutschland',
-		'geo.region' => 'DE-BE',
-		'ICBM' => '52.5106052;13.4525567',
 		// SEO
 		'keywords' => '@keywords.txt',
-		'generator' => 'harrison 0.4, ephFrame',
 		'author' => 'Marcel Eichner',
 		'copyright' => '© 2009 Marcel Eichner // Ephigenia',
-		'description' => 'Das deutsche Blog rund um Horror- und Fantasy Filme, neueste Film Trailer, Teaser, Kritiken und Hintergrundinformationen!',
+		'description' => '',
 	);
 		
 	public function __construct($data = null)
@@ -34,6 +28,7 @@ class AppMetaTags extends MetaTags
 	
 	public function startup()
 	{
+		$this->data['generator'] = 'harrison '.AppController::VERSION.', ephFrame';
 		$this->data['contact'] = Registry::get('ContactEmail');
 		// load keywords from file when @ is used in keywords name
 		if (!is_array($this->keywords) && preg_match('/^@/', $this->keywords)) {

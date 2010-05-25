@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NMS.Update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 19:20+0100\n"
+"POT-Creation-Date: 2010-05-26 00:20+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Marcel Eichner <love@ephigenia.de>\n"
 "Language-Team: Marcel Eichner <love@ephigenia.de>\n"
@@ -24,27 +24,23 @@ msgid ""
 "\tWenn irgendwelche Fragen entstehen sollten, schreiben sie uns: :2"
 msgstr ""
 
-#: ../../../view/theme/admin/app/index.php:13
-msgid "Neue Kommentare"
+#: ../../../view/theme/admin/app/index.php:9
+msgid "Aktuelles"
 msgstr ""
 
-#: ../../../view/theme/admin/app/index.php:15
+#: ../../../view/theme/admin/app/index.php:11
+msgid "Es gibt bisher noch keine aktuallen Einträge. Sobald es neue Einträge gibt, werden diese hier chronologisch angezeigt. So bleiben Sie immer auf dem Laufenden!"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.php:23
 msgid "Alle Kommentare anzeigen"
 msgstr ""
 
-#: ../../../view/theme/admin/app/index.php:20
-msgid "Neue Blogeinträge"
-msgstr ""
-
-#: ../../../view/theme/admin/app/index.php:22
+#: ../../../view/theme/admin/app/index.php:24
 msgid "Alle Blogeinträge anzeigen"
 msgstr ""
 
-#: ../../../view/theme/admin/app/index.php:27
-msgid "Neue Dateien"
-msgstr ""
-
-#: ../../../view/theme/admin/app/index.php:30
+#: ../../../view/theme/admin/app/index.php:25
 msgid "Alle Dateien anzeigen"
 msgstr ""
 
@@ -100,28 +96,31 @@ msgstr ""
 msgid "Es sind noch keine Kommentare vorhanden."
 msgstr ""
 
-#: ../../../view/theme/admin/element/blogPostMenu.php:11
+#: ../../../view/theme/admin/element/blogPost.php:28
+msgid ":1 Kommentar"
+msgstr ""
+
+#: ../../../view/theme/admin/element/blogPostMenu.php:10
 msgid "anschauen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/blogPostMenu.php:14
+#: ../../../view/theme/admin/element/blogPostMenu.php:13
 #: ../../../view/theme/admin/element/commentMenu.php:17
 msgid "editieren"
 msgstr ""
 
-#: ../../../view/theme/admin/element/blogPostMenu.php:19
+#: ../../../view/theme/admin/element/blogPostMenu.php:18
 #: ../../../view/theme/admin/element/commentMenu.php:22
 #: ../../../view/theme/admin/element/folderMenu.php:17
-#: ../../../view/theme/admin/element/imageMenu.php:10
 msgid "löschen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/blogPostMenu.php:22
+#: ../../../view/theme/admin/element/blogPostMenu.php:21
 msgid "Den Blogeintrag <q>:1</q> wirklich löschen?"
 msgstr ""
 
-#: ../../../view/theme/admin/element/blogPosts.php:32
-msgid ":1 Kommentar"
+#: ../../../view/theme/admin/element/comment.php:21
+msgid "IP Adresse des Benutzers."
 msgstr ""
 
 #: ../../../view/theme/admin/element/commentMenu.php:13
@@ -130,10 +129,6 @@ msgstr ""
 
 #: ../../../view/theme/admin/element/commentMenu.php:25
 msgid "Wollen Sie diesen Kommentar wirklich löschen?"
-msgstr ""
-
-#: ../../../view/theme/admin/element/comments.php:26
-msgid "IP Adresse des Benutzers."
 msgstr ""
 
 #: ../../../view/theme/admin/element/folderMenu.php:12
@@ -161,7 +156,7 @@ msgid "logout"
 msgstr ""
 
 #: ../../../view/theme/admin/element/header.php:7
-msgid "Eingloggt als: :1 :2"
+msgid "Eingeloggt als: :1 :2"
 msgstr ""
 
 #: ../../../view/theme/admin/element/logEntries.php:8
@@ -187,10 +182,6 @@ msgstr ""
 
 #: ../../../view/theme/admin/element/mainMenu.php:38
 #: ../../../view/theme/admin/element/mainMenu.php:40
-#: ../../../view/theme/admin/folder/create.php:4
-#: ../../../view/theme/admin/folder/edit.php:4
-#: ../../../view/theme/admin/folder/view.php:1
-#: ../../../view/theme/admin/folder/view.php:4
 msgid "Dateien & Bilder"
 msgstr ""
 
@@ -223,43 +214,52 @@ msgid "Gruppen & Rechte"
 msgstr ""
 
 #: ../../../view/theme/admin/element/mainMenu.php:77
-#: ../../../view/theme/admin/language/create.php:4
-#: ../../../view/theme/admin/language/edit.php:4
-#: ../../../view/theme/admin/language/index.php:1
-#: ../../../view/theme/admin/language/index.php:4
 msgid "Sprachen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:18
-msgid "?"
+#: ../../../view/theme/admin/element/mediaFile.php:13
+msgid "Dateiname"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:23
+#: ../../../view/theme/admin/element/mediaFile.php:14
+#: ../../../view/theme/admin/element/mediaFileIcon.php:6
 msgid "Datei editieren"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:45
+#: ../../../view/theme/admin/element/mediaFile.php:19
+msgid "Abmessungen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFile.php:22
+msgid "Dateigröße"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFileMenu.php:12
 msgid "Datei neu hochladen oder Angaben zur Datei ändern"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:51
+#: ../../../view/theme/admin/element/mediaFileMenu.php:18
 msgid "Wollen Sie Datei <q>:1</q> wirklich löschen?"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:56
+#: ../../../view/theme/admin/element/mediaFileMenu.php:23
 msgid "Ganz nach vorne bewegen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:57
+#: ../../../view/theme/admin/element/mediaFileMenu.php:24
 msgid "Nach vorne bewegen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:58
+#: ../../../view/theme/admin/element/mediaFileMenu.php:25
 msgid "Nach hinten bewegen"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mediaFile.php:59
+#: ../../../view/theme/admin/element/mediaFileMenu.php:26
 msgid "Ganz nach hinten bewegen"
+msgstr ""
+
+#: ../../../view/theme/admin/element/mediaFileThumb.php:16
+msgid "?"
 msgstr ""
 
 #: ../../../view/theme/admin/element/nodeMenu.php:14
@@ -324,6 +324,7 @@ msgid ""
 msgstr ""
 
 #: ../../../view/theme/admin/folder/view.php:17
+#: ../../../view/theme/admin/mediaFile/index.php:2
 msgid "Kategorien"
 msgstr ""
 
@@ -453,11 +454,8 @@ msgid "Neuen Benutzer erstellen"
 msgstr ""
 
 #: ../../../view/theme/admin/user/index.php:19
+#: ../../../view/theme/admin/user/view.php:25
 msgid "Gruppe"
-msgstr ""
-
-#: ../../../view/theme/admin/user/index.php:20
-msgid "Letzter Login"
 msgstr ""
 
 #: ../../../view/theme/admin/user/log.php:6
@@ -482,6 +480,10 @@ msgstr ""
 
 #: ../../../view/theme/admin/user/view.php:27
 msgid "Email"
+msgstr ""
+
+#: ../../../view/theme/admin/user/view.php:29
+msgid "Letzter Login"
 msgstr ""
 
 #: ../../../view/theme/admin/user/view.php:34

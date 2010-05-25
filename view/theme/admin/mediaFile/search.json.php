@@ -3,8 +3,8 @@
 $data = array();
 if (!empty($MediaFiles)) foreach($MediaFiles as $result) {
 	$data[] = array(
-		'title' => $result->get('filename'),
-		'uri' => $result->adminDetailPageUri(),
+		'label' => $result->get('filename'),
+		'value' => $result->adminDetailPageUri(),
 		'img' => $HTML->image((string) $result->src(64, 64)),
 	);
 }
