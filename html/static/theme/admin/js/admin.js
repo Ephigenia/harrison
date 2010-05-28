@@ -1,5 +1,5 @@
 /**
- * Javascripts for admin-mode only
+ * Javascripts for Harrison Admin
  * @project Harrison
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  */
@@ -11,7 +11,7 @@ $(document).ready(function() {
 	});
 	
 	/** jQuery UI **/
-	$('#AdminSearchForm input.q').autocomplete({
+	if ($.autocomplete) $('#AdminSearchForm input.q').autocomplete({
 		minLength: 3,
 		delay: 500,
 		source: function(request, response) {

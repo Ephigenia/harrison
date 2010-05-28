@@ -36,7 +36,7 @@ class Wall extends AppComponent
 			// read items and add them with ordered time index to return array
 			$Model->order = array();
 			$Items = $Model->findAll(null, $order, 0, 10, 1);
-			foreach ($Items as $Item) {
+			if ($Items) foreach ($Items as $Item) {
 				$WallItems[$Item->get($timeField)] = $Item;
 			}
 		}

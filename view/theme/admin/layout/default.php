@@ -51,6 +51,19 @@
 		</div>
 		<?php
 		if (isset($JavaScript)) {
+			$JavaScript->addFiles(array(
+				'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',
+				'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js',
+				'js.class.core',
+				'php.custom.min',
+				'swfobject.js',
+				'jquery.plugin.fieldselection',
+				'jquery.plugin.dialog',
+				'jquery.plugin.simplePreview',
+				'jquery.uploadify.v2.1.0.min.js', // uploadify
+				'admin',
+				'tabs',
+			));
 			echo String::indent($JavaScript->render(), 2, TAB, 1);
 		} ?>
 	</body>

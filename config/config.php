@@ -22,7 +22,7 @@ switch(strtolower(@get_current_user())) {
 		break;
 	// add your own host here
 	case 'ephigenia':
-		Registry::set('DEBUG', DEBUG_VERBOSE);
+		Registry::set('DEBUG', DEBUG_DEBUG);
 		Registry::set('AdminEmail', 'ephigenia@me.com');
 		break;
 }

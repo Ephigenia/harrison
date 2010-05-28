@@ -127,6 +127,8 @@ class AppController extends Controller
 		if (Registry::read('DEBUG') >= DEBUG_VERBOSE) {
 			$this->CSS->addFile('debug');
 		}
+		$this->CSS->compress = $this->CSS->pack = false;
+		$this->JavaScript->compress = $this->JavaScript->pack = false;
 		$this->data->set('theme', $this->theme);
 		return parent::beforeRender();
 	}

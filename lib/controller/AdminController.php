@@ -76,20 +76,8 @@ class AdminController extends AppController
 	{
 		$r = parent::beforeRender();
 		$this->set('Session', $this->Session);
+		$this->JavaScript->pack = $this->JavaScript->compress = false;
 		$this->CSS->clear();
-		$this->JavaScript->addFiles(array(
-			'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',
-			'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js',
-			'js.class.core',
-			'php.custom.min',
-			'swfobject.js',
-			'jquery.plugin.fieldselection',
-			'jquery.plugin.dialog',
-			'jquery.plugin.simplePreview',
-			'jquery.uploadify.v2.1.0.min.js', // uploadify
-			'admin',
-			'tabs',
-		));
 		return $r;
 	}
 		

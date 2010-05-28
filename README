@@ -10,7 +10,7 @@ This is the readme file for the Harrison CMS. It should contain basic informatio
 	* edit the .htaccess files as described in it
 * Run `cleanup.sh` to set all directory permissions
 * Local Setup
-	* modify `html/ephFrame.php` to find [ephFrame](github.com/Ephigenia/ephFrame)
+	* modify `html/ephFrame.php` to find [ephFrame PHP Framework](github.com/Ephigenia/ephFrame)
 	* modify `.htaccess` files if needed
 * Database Setup
 	* create new data base and import `config/structure.sql` to create basic Harrison tables

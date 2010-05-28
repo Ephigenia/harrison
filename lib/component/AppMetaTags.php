@@ -5,6 +5,13 @@ ephFrame::loadClass('ephFrame.lib.component.MetaTags');
 /**
  * Application MetaTags Collection
  * 
+ * This is the application metatags wrapper that can be used to add application
+ * specific meta tags. It also consumes meta tags values from every attribute
+ * value beginning with an @. The example shows how:
+ * <code>
+ * 
+ * </code>
+ * 
  * @package harrison
  * @subpackage harrison.lib.component
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
@@ -16,7 +23,7 @@ class AppMetaTags extends MetaTags
 		// SEO
 		'keywords' => '@keywords.txt',
 		'author' => 'Marcel Eichner',
-		'copyright' => '© 2009 Marcel Eichner // Ephigenia',
+		'copyright' => '© 2010 Marcel Eichner // Ephigenia',
 		'description' => '',
 	);
 		
@@ -30,11 +37,12 @@ class AppMetaTags extends MetaTags
 	{
 		$this->data['generator'] = 'harrison '.AppController::VERSION.', ephFrame';
 		$this->data['contact'] = Registry::get('ContactEmail');
-		// load keywords from file when @ is used in keywords name
-		if (!is_array($this->keywords) && preg_match('/^@/', $this->keywords)) {
-			$f = new File(substr($this->keywords, 1));
-			if ($f->exists()) {
-				$this->data['keywords'] = $f->toArray();
+		// iterate over metatags to find @[files] ?
+		foreach($this->data as $key => $value) {
+			if (!is_string($value) || !($filename = preg_match_first($value, '/^@(.+)/'))) continue;
+			$File = new File($filename);
+			if ($File->exists()) {
+				$this->data[$key] = $File->toArray();
 			}
 		}
 		return parent::startup();
