@@ -25,7 +25,7 @@ echo $Form->renderOpenTag();
 	</ul>
 	<?php
 	if (!empty($SubmitField)) {
-		$SubmitField->attributes->class .= ' whiteButton';
+		$SubmitField->attributes->class .= ' grayButton';
 		echo $SubmitField;
 	}
 	?>

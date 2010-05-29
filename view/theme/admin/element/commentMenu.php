@@ -21,7 +21,7 @@ if (empty($Comment)) return false;
 			Router::getRoute('adminCommentId', array('id' => $Comment->id, 'action' => 'delete')),
 			__('löschen'),
 			array(
-				'class' => 'deleteConfirm delete',
+				'class' => 'confirm delete',
 				'title' => __('Wollen Sie diesen Kommentar wirklich löschen?'),
 			)
 		); ?>

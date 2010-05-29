@@ -56,7 +56,7 @@ class AdminController extends AppController
 	
 	public function beforeAction()
 	{
-		if ($this->layout == 'mobile') {
+		if ($this->layout == 'mobile' && !empty($this->{$this->name})) {
 			$this->{$this->name}->perPage = 50;
 			$this->{$this->name}->depth = 0;
 		}
@@ -88,15 +88,27 @@ class AdminController extends AppController
 	public function index()
 	{
 		// get data for the admin wall
-		if (get_class($this) == 'AdminController') {
-			$WallItems = $this->Wall->read($WallModels = array(
-				$this->BlogPost,
-				$this->Comment,
-				$this->User,
-				$this->MediaFile,
-			));
-			$this->set('WallItems', $WallItems);
-			$BlogPosts = $this->BlogPost->findAll(null, null, 0, 5, 0);
+		if (get_class($this) == 'AdminController' && $this->layout !== 'mobile') {
+			$this->wall();
 		}
+		// get total counts for all
+		foreach(array('BlogPost', 'Node', 'MediaFile', 'Node', 'User', 'Comment') as $modelName) {
+			$count = $this->{$modelName}->countAll();
+			$this->data->set($modelName.'TotalCount', $count);
+		}
+	}
+	
+	public function wall()
+	{
+		$WallItems = $this->Wall->read($this->WallModels = array(
+			$this->Node,
+			$this->BlogPost,
+			$this->Comment,
+			$this->User,
+			$this->MediaFile,
+		));
+		$this->set('pageTitle', __('Aktuelles/Wall'));
+		$this->set('WallItems', $WallItems);
+		$BlogPosts = $this->BlogPost->findAll(null, null, 0, 5, 0);
 	}
 }

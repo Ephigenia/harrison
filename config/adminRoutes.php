@@ -17,6 +17,7 @@ $aP = '/admin/';
 Router::addRoute('admin', 				$aP.'',							array('controller' => 'Admin'));
 Router::addRoute('adminLogin', 			$aP.'login',					array('controller' => 'AdminUser', 'action' => 'login'));
 Router::addRoute('adminLogout', 		$aP.'logout',					array('controller' => 'AdminUser', 'action' => 'logout'));
+Router::addRoute('adminWall',			$aP.'wall',						array('controller' => 'Admin', 'action' => 'wall'));
 
 /** User Administration Routes **/
 Router::addRoute('adminUserPaged',		$aP.'user/page-:page',			array('controller' => 'AdminUser', 'action' => 'index'));

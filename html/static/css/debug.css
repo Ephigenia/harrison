@@ -25,7 +25,7 @@
 	margin: 20px;
 	white-space: normal;
 	font-weight: normal;
-	display: none;
+	display: table;
 }
 
 .debugOutput .queryHistory {

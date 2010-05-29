@@ -8,12 +8,18 @@
 	echo $HTML->tag('div', __('Es sind noch keine Kommentare vorhanden.'), array('class' => 'info'));
 } else {
 	?>
-	<ul class="rounded">
-		<?php foreach($Comments as $Comment) { ?>
-			<li class="forward">
-				<?php echo $Comment->get('name'); ?>
-			</li>
-		<?php } ?>
+	<ul class="edgetoedge">
+	<?php foreach($Comments as $Comment) {
+		if (@$lastDate != date('dmy', $Comment->created)) {
+			echo $HTML->tag('li', strftime('%x %H:%M', $Comment->created), array('class' => 'sep'));
+		}
+		?>
+		<li class="forward">
+			<?php echo $HTML->link($Comment->adminDetailPageUri('edit'), $Comment->get('name')); ?>
+		</li>
+		<?php
+		$lastDate = date('dmy', $Comment->created);
+	} ?>
 	</ul>
 	<?php
 }

@@ -1,6 +1,6 @@
 <div class="toolbar">
 	<?php
-	echo $HTML->link(Router::uri('admin'), __('back'), array('class' => 'back flip'));
+	echo $HTML->link('#', __('zurück'), array('class' => 'back flip'));
 	echo $HTML->tag('h1', $pageTitle);
 	echo $HTML->link(Router::getRoute('adminBlogPostCreate', array('action' => 'create')), '+', array('class' => 'button slide')); ?>
 	?>
@@ -11,7 +11,7 @@
 	?>
 	<ul class="edgetoedge">
 	<?php foreach($BlogPosts as $BlogPost) {
-		if (@$lastDate != date('d.m.Y', $BlogPost->published)) {
+		if (@$lastDate != date('dmy', $BlogPost->published)) {
 			echo $HTML->tag('li', strftime('%x %H:%M', $BlogPost->published), array('class' => 'sep'));
 		}
 		?>
@@ -21,7 +21,7 @@
 			</a>
 		</li>
 		<?php
-		$lastDate = date('d.m.Y', $BlogPost->published);
+		$lastDate = date('dmy', $BlogPost->published);
 	} ?>
 	</ul>
 	<?php

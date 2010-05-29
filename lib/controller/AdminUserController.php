@@ -53,7 +53,11 @@ class AdminUserController extends AdminController
 	public function logout()
 	{
 		$this->UserLogin->logout();
-		$this->redirect(Router::getRoute('root'));
+		if (!$this->request->isAjax()) {
+			$this->redirect(Router::getRoute('root'));
+		} else {
+			$this->action('login');
+		}
 	}
 	
 	public function index() 
@@ -64,6 +68,7 @@ class AdminUserController extends AdminController
 		$pagination['url'] = Router::getRoute('adminUserPaged');
 		$this->data->set('pagination', $pagination);
 		$this->data->set('Users', $this->User->findAll(null, null, ($page-1) * $perPage, $perPage));
+		$this->data->set('pageTitle', __n(':1 Benutzer', ':1 Benutzer', $pagination['total']));
 	}
 	
 	public function edit($id = null)

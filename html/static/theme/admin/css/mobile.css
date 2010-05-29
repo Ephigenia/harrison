@@ -33,8 +33,29 @@ div.error {
     -webkit-box-shadow: rgba(0,0,0,.3) 1px 1px 3px;
 }
 
+ul a .gravatar {
+	border: 1px solid #333;
+	padding: 1px;
+	vertical-align: text-bottom;
+}
+
 /** form button auto style **/
 form input.submit {
 	margin: 0 10px;
-	color: rgba(0,0,0,.9);
+}
+
+/** possible additions to jqtouch standard theme **/
+body {
+	background: -moz-linear-gradient(270deg, #333, #5e5e65);
+}
+ul li {
+	background-color: #f00;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#404142));
+	background: -moz-linear-gradient(270deg, #4c4d4e, #404142);
+}
+.button, .back, .cancel, .add {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	background: -moz-linear-gradient(0% 100% 270deg, #4c4d4e, #404142);
 }

@@ -67,26 +67,17 @@ $(document).ready(function() {
 	});
 	
 	// delete confirmation when in admin mode
-	$('.deleteConfirm').each(function() {
-		var url = $(this).attr('href');
-		$(this).attr('href', 'javascript:void(0);');
-		$(this).click(function() {
-			var message = $(this).attr('title');
-			if (message.length == 0 || message === '&nbsp;') {
-				var message = 'Sind Sie sicher das Sie das löschen möchten?';
-			}
-			var diag = window.DialogManager.create('Confirm', {
-				'title': 'Bitte bestätigen',
-				'content': message,
-				'class' : 'error',
-				callback: function(dialog, result) {
-					if (result == true) {
-						document.location.href = url;
-					}
-				}
-			});
-		});
-	}); // deleteConfirm
+	$('.confirm').live('click', function(e) {
+		var message = $(this).attr('title');
+		var result = window.confirm(message);
+		if (message.length == 0) {
+			var message = 'Sind Sie sicher das Sie das löschen möchten?';
+		}
+		if (result) {
+			document.location.href = $(this).attr('url');
+		}
+		e.preventDefault();
+	});
 	
 	// submit button ’...sending’
 	$('form').submit(function() {

@@ -36,7 +36,6 @@ class AdminCommentController extends AdminController
 			$this->Comment->findConditions['Comment.foreign_id'] = $blogPostId;
 			$this->data->set('BlogPost', $BlogPost);
 		}
-		$this->Comment->perPage = 10;
 		$page = intval((@$this->params['page'] > 1) ? $this->params['page'] : 1);
 		$this->data->set('Comments', $this->Comment->findAll(null, null, ($page - 1) * $this->Comment->perPage, $this->Comment->perPage));
 		$pagination = $this->Comment->paginate($page, $this->Comment->perPage);

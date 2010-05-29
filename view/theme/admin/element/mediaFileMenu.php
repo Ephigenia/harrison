@@ -14,7 +14,7 @@ if (empty($MediaFile)) return false; ?>
 		$MediaFile->adminDetailPageUri('delete'),
 		'&nbsp;',
 		array(
-			'class' => 'deleteConfirm delete',
+			'class' => 'confirm delete',
 			'title' => __('Wollen Sie Datei <q>:1</q> wirklich löschen?', $MediaFile->filename),
 		)
 	); ?></li>
