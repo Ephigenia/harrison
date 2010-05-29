@@ -1,0 +1,14 @@
+/**
+ * Some additions to the default jQTouch Styles
+ *
+ * @project Harrison Admin Mobile Stylesheet
+ * @media	Screen
+ * @author 	Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * @since 	2009-07-01
+ */
+
+/** form button auto style **/
+form input.submit {
+	margin: 0 10px;
+	color: rgba(0,0,0,.9);
+}

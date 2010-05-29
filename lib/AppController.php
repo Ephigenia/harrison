@@ -78,7 +78,8 @@ class AppController extends Controller
 	public function afterConstruct()
 	{
 		// mobile content
-		if (!empty($this->request->data['mobile']) || $this->request->header->get('host') == 'm.horrorblog.org') {
+		if (!empty($this->request->data['mobile']) || $this->request->header->get('host') == 'm.'.$this->request->host
+			|| $this->Browser->isType(BrowserTypes::MOBILE) || 1 == 1) {
 			$this->layout = 'mobile';
 			$this->data->set('isMobile', true);
 			$this->params['mobile'] = true;
@@ -130,6 +131,10 @@ class AppController extends Controller
 		$this->CSS->compress = $this->CSS->pack = false;
 		$this->JavaScript->compress = $this->JavaScript->pack = false;
 		$this->data->set('theme', $this->theme);
+		// mobile additions
+		if ($this->layout == 'mobile') {
+			$this->action .= '.mobile';
+		}
 		return parent::beforeRender();
 	}
 	

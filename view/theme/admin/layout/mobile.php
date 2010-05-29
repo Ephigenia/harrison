@@ -8,35 +8,19 @@
 		if (isset($MetaTags)) echo String::indent($MetaTags->render(), 2, TAB, 1);
 		if (isset($CSS)) {
 			$CSS->addFiles(array(
+				'reset.css',
 				'jqtouch.min.css',
+				'mobile.css',
 			));
 			echo String::indent($CSS->render(), 2, TAB, 1);	
 		}
         ?>
-		<style type="text/css" media="screen">@import "<?php echo WEBROOT; ?>static/theme/apple/theme.min.css";</style>
+		<link rel="stylesheet" type="text/css" href="<?php echo WEBROOT; ?>static/theme/jqt/theme.min.css" media="screen" />
 	</head>
 	<body class="<?php echo I18n::locale(); ?>">
-		<div id="page1">
-			<div class="toolbar">
-				<h1>Harrison Admin</h1>
-				<a class="back" href="<?php echo Router::getRoute('root') ?>"><?php echo __('Frontend'); ?></a>
-				<a class="button flip" href="#login"><?php echo __('Logout'); ?></a>
-			</div>
-			<ul class="edgetoedge">
-				<li class="arrow"><?php echo $HTML->link(Router::getRoute('adminNode'), __('Seiten')) ?></li>
-				<li class="arrow"><?php echo $HTML->link(Router::getRoute('adminBlogPost'), __('Blog')) ?></li>
-				<li class="arrow"><?php echo $HTML->link(Router::getRoute('adminMediaFiles'), __('Dateien &amp; Bilder')) ?></li>
-				<li class="arrow"><?php echo $HTML->link(Router::getRoute('adminComment'), __('Kommentare')) ?></li>
-				<li class="arrow"><?php echo $HTML->link(Router::getRoute('adminUser'), __('Benutzer')) ?></li>
-				<li class="arrow"><?php echo $HTML->link(Router::getRoute('adminScaffold', array('controller' => 'UserGroup')), __('Einstellungen')) ?></li>
-            </ul>
-			<div class="info">
-				<?php echo $this->element('footer'); ?>
-			</div>
+		<div id="<?php echo $controller.$action; ?>" class="current">
+			<?php echo $content; ?>
         </div>
-		<div id="login">
-			Login galore!
-		</div>
 		<?php
 		if (isset($JavaScript)) {
 			$JavaScript->addFiles(array(

@@ -7,7 +7,4 @@
  * @package harrison
  * @subpackage harrison.lib.component.forms
  */
-class AdminForm extends AppForm
-{
-	
-}
+class AdminForm extends AppForm {}

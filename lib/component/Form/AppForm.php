@@ -29,4 +29,4 @@ ephFrame::loadClass('ephFrame.lib.component.Form.Form');
  * @package app
  * @subpackage app.lib.component
  */
-class AppForm extends Form { }
+class AppForm extends Form {}
