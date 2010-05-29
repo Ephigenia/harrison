@@ -16,7 +16,7 @@ if (empty($Folder)) return false;
 			$Folder->adminDetailPageUri(array('action' => 'delete')),
 			__('löschen'),
 			array(
-				'class' => 'delete deleteConfirm',
+				'class' => 'delete confirm',
 				'title' => __('Die Kategorie <q>:1</q> wirklich löschen? Alle Dateien dieser Kategorie verlieren ihre Zuordnung, werden aber nicht gelöscht.', $Folder->get('name')),
 			));
 	?></li>

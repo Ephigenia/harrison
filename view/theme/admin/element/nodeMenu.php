@@ -30,7 +30,7 @@ $detailPageUri = $Node->adminDetailPageUri();
 	
 	// delete Node
 	if ($Node->flags & NodeFlag::ALLOW_DELETE || $Me->user_group_id == 1) {
-		echo '<li>'.$HTML->link($Node->adminDetailPageUri(array('action' => 'delete')), __('löschen'), array('class' => 'deleteConfirm delete',
+		echo '<li>'.$HTML->link($Node->adminDetailPageUri(array('action' => 'delete')), __('löschen'), array('class' => 'confirm delete',
 			'title' => 'Seite „'.$Node->getText('headline').'“ und alle Unterartikel wirklich löschen?'
 		)).'</li>';
 	}

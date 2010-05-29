@@ -7,7 +7,7 @@ if (isset($Me)) {
 	 	<?php foreach($Languages as $Language) { ?>
 	 	<li><?php echo $HTML->link($detailPageUri.'edit/'.$Language->code.'/', '&nbsp;', array('class' => 'buttonEdit', 'title' => 'editieren ('.$Language->code.')')); ?></li>
 	 	<?php } ?>
-		<li><?php echo $HTML->link($detailPageUri.'delete/', '&nbsp;', array('class' => 'deleteConfirm delete buttonDelete', 'title' => __('löschen'))); ?></li>
+		<li><?php echo $HTML->link($detailPageUri.'delete/', '&nbsp;', array('class' => 'confirm delete buttonDelete', 'title' => __('löschen'))); ?></li>
 		<?php if (!empty($displayMoveLinks)) { ?>
 		<li><?php echo $HTML->link($detailPageUri.'move/'.PositionableBehavior::MOVE_DIRECTION_TOP.'/', '&nbsp;', array('class' => 'buttonTopLeft')); ?></li>
 		<li><?php echo $HTML->link($detailPageUri.'move/'.PositionableBehavior::MOVE_DIRECTION_UP.'/', '&nbsp;', array('class' => 'buttonLeft')); ?></li>

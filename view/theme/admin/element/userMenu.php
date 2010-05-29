@@ -13,7 +13,7 @@
 		array('action' => 'delete')),
 		__('Löschen'),
 		array(
-			'class' => 'delete deleteConfirm',
+			'class' => 'delete confirm',
 			'title' => __('Wollen Sie den Benutzer :1 wirklich löschen?', $User->get('name'))
 		));
 	?></li>

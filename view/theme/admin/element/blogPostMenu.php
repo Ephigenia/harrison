@@ -17,7 +17,7 @@ $detailPageUri = $BlogPost->adminDetailPageUri();
 				$detailPageUri.'delete/',
 				__('löschen'),
 				array(
-					'class' => 'deleteConfirm delete',
+					'class' => 'confirm delete',
 					'title' => __('Den Blogeintrag <q>:1</q> wirklich löschen?', $BlogPost->get('headline', 'BlogPost #'.$BlogPost->id))
 				)
 			); ?>

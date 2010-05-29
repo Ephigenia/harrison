@@ -4,7 +4,7 @@
 		array('action' => 'delete')),
 		__('Löschen'),
 		array(
-			'class' => 'delete deleteConfirm',
+			'class' => 'delete confirm',
 			'title' => __('Wollen Sie das Zugriffsrecht mit dem Namen <q>:1</q> wirklich löschen?', $Permission->get('name'))
 		));
 	?></li>
