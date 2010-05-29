@@ -10,3 +10,8 @@ var jQT = new $.jQTouch({
     statusBar: 'black',
 	fullscreen: true
 });
+
+$(document).ready(function() {
+	// ajax load every content that is not allready there
+	
+});

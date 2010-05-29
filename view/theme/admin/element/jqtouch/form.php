@@ -1,6 +1,6 @@
 <?php
 if (!empty($Form->errors)) {
-	echo $HTML->tag('div', implode('<br />', $Form->errors, array('class' => 'info error')));
+	echo $HTML->tag('div', implode('<br />', (array) $Form->errors), array('class' => 'error'));
 }
 echo $Form->renderOpenTag();
 	?>

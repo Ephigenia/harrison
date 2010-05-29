@@ -1,7 +1,7 @@
 <h1><?php echo Sanitizer::html(sprintf('Willkommen %s!', $Me->get('name'))); ?></h1>
 <p class="hint">
-	<?php echo nl2br(__('Willkommen in der Administrationsoberfläche von <q>:1!</q>
-	Wenn irgendwelche Fragen entstehen sollten, schreiben sie uns: :2',
+	<?php echo nl2br(__('Willkommen im Admin von <q>:1</q>!
+	Wenn irgendwelche Fragen entstehen sollten, schreiben sie an: :2',
 		AppController::NAME,
 		$HTML->email(Registry::get('AdminEmail').'?subject='.AppController::NAME.' Administration', Registry::get('AdminEmail'))
 		)); ?>

@@ -111,7 +111,7 @@ class AppController extends Controller
 			'vcal' => 'text/calendar',
 			'txt' => 'text/plain',
 		);
-		if ($this->request->isAjax()) {
+		if ($this->layout !== 'mobile' && $this->request->isAjax()) {
 			$this->layout = 'json';
 			Registry::set('DEBUG', DEBUG_PRODUCTION);
 		}
@@ -132,7 +132,7 @@ class AppController extends Controller
 		$this->JavaScript->compress = $this->JavaScript->pack = false;
 		$this->data->set('theme', $this->theme);
 		// mobile additions
-		if ($this->layout == 'mobile') {
+		if ($this->layout == 'mobile' && $this instanceof AdminController) {
 			$this->action .= '.mobile';
 		}
 		return parent::beforeRender();

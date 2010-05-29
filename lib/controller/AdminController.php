@@ -56,6 +56,10 @@ class AdminController extends AppController
 	
 	public function beforeAction()
 	{
+		if ($this->layout == 'mobile') {
+			$this->{$this->name}->perPage = 50;
+			$this->{$this->name}->depth = 0;
+		}
 		// auto find model entry when id passed
 		if (isset($this->params['id'])) {
 			if (!$this->{$this->name}->fromId($this->params['id'])) return false;

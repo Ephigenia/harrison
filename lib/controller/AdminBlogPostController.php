@@ -30,14 +30,18 @@ class AdminBlogPostController extends AdminController
 	{
 		$this->BlogPost->unbind('Tag');
 		$page = @$this->params['page'] or 1;
-		$this->data->set('BlogPosts', $this->BlogPost->findAll(null, null, ($page-1) * $this->BlogPost->perPage, $this->BlogPost->perPage));
+		$BlogPosts = $this->BlogPost->findAll(null, null, ($page-1) * $this->BlogPost->perPage, $this->BlogPost->perPage);
+		$this->data->set('BlogPosts', $BlogPosts);
 		$pagination = $this->BlogPost->paginate($page, $this->BlogPost->perPage);
 		$pagination['url'] = Router::getRoute('adminBlogPostPaged');
 		$this->data->set('pagination', $pagination);
+		// page title
+		$this->data->set('pageTitle', __n(':1 Blogeintrag', ':1 Blogeinträge', $pagination['total']));
 	}
 	
 	public function create()
 	{
+		$this->data->set('pageTitle', __('Blogeintrag erstellen'));
 		$this->addForm('AdminBlogPostForm');
 		$this->AdminBlogPostForm->delete('uri');
 		if ($this->AdminBlogPostForm->ok()) {

@@ -1,4 +1,4 @@
-<h1><?php echo __('Blogeinträge'); ?></h1>
+<h1><?php echo $pageTitle ?></h1>
 <ul class="breadcrumb">
 	<li><?php echo $HTML->link(Router::getRoute('admin'), __('Home'))?></li>
 	<li><?php echo __('Blogeinträge'); ?></li>
