@@ -42,7 +42,7 @@ class Wall extends AppComponent
 		}
 		ksort($WallItems);
 		$WallItems = array_reverse($WallItems);
-		$WallItems = array_slice($WallItems, 0, 10);
+		$WallItems = array_slice($WallItems, 0, 20);
 		return $WallItems;
 	}
 }

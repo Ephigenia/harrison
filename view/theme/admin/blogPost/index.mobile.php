@@ -15,10 +15,13 @@
 			echo $HTML->tag('li', strftime('%x %H:%M', $BlogPost->published), array('class' => 'sep'));
 		}
 		?>
-		<li class="slide">
+		<li>
 			<a href="<?php echo $BlogPost->adminDetailPageUri('edit'); ?>">
 				<?php echo Sanitizer::html($BlogPost->get('headline')); ?>
 			</a>
+			<?php if (count($BlogPost->Comments) > 0) {
+				echo $HTML->tag('small', count($BlogPost->Comments), array('class' => 'counter'));
+			} ?>
 		</li>
 		<?php
 		$lastDate = date('dmy', $BlogPost->published);
