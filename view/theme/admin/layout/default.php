@@ -11,6 +11,7 @@
 				'reset',
 				'simplePreview',
 				'mainMenu',
+				'debug',
 				'admin',
 				'form',
 				'login',
@@ -65,6 +66,8 @@
 				'tabs',
 			));
 			echo String::indent($JavaScript->render(), 2, TAB, 1);
-		} ?>
+		}
+		echo $this->element('debug/dump');
+		?>
 	</body>
 </html>

@@ -10,12 +10,12 @@
 			$CSS->addFiles(array(
 				'reset.css',
 				'jqtouch.min.css',
+				'mobile.css',
 			));
 			echo String::indent($CSS->render(), 2, TAB, 1);	
 		}
         ?>
 		<link rel="stylesheet" type="text/css" href="<?php echo WEBROOT; ?>static/theme/jqt/theme.min.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<?php echo WEBROOT; ?>static/theme/admin/css/mobile.css" media="screen" />
 	</head>
 	<body class="<?php echo I18n::locale(); ?>">
 		<div id="<?php echo $controller.$action; ?>" class="current">

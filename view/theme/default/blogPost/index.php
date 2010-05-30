@@ -1,5 +1,4 @@
-<div id="<?php echo Inflector::plural($controller); ?>">
-<?php
+<div id="<?php echo Inflector::pluralize($controller); ?>"><?php
 	// empty message
 	if (empty($BlogPosts)) {
 		if (!empty($q)) {

@@ -1,10 +1,7 @@
-@CHARSET "UTF-8";
-
 /**
- *	Styles for dialog windows created by jquery.dialog.js
- *	@author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * Styles for dialog windows created by jquery.dialog.js
+ * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  */
-
 #dialogOverlay {
 	position: fixed;
 	z-index: 100;

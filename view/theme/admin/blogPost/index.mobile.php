@@ -2,7 +2,7 @@
 	<?php
 	echo $HTML->link('#', __('zurück'), array('class' => 'back flip'));
 	echo $HTML->tag('h1', $pageTitle);
-	echo $HTML->link(Router::getRoute('adminBlogPostCreate', array('action' => 'create')), '+', array('class' => 'button slide')); ?>
+	echo $HTML->link(Router::getRoute('adminBlogPostCreate', array('action' => 'create')), '+', array('class' => 'button slide'));
 	?>
 </div>
 <?php if (empty($BlogPosts)) { 

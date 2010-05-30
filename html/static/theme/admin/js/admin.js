@@ -7,16 +7,17 @@ $(document).ready(function() {
 	
 	/** toggle value **/
 	$.getScript($('base').attr('href') + '../static/js/jquery.plugin.toggleValue.js', function() {
-		$('input.q').toggleValue();
+		if (jQuery().toggleValue) $('input.q').toggleValue();
 	});
 	
 	/** jQuery UI **/
-	if ($.autocomplete) $('#AdminSearchForm input.q').autocomplete({
+	if (jQuery().autocomplete) $('#AdminSearchForm input.q').autocomplete({
 		minLength: 3,
 		delay: 500,
 		source: function(request, response) {
 			$.ajax({
 				url: $('#AdminSearchForm').attr('action') + '/search/' + request.term,
+				dataType: 'json',
 				success: function(data) {
 					response(data);
 				}
@@ -32,7 +33,7 @@ $(document).ready(function() {
 		if ($.browser.msie) { // autogrow has problems with padding in textareas in IE and Opera!
 			$('textarea').css('padding', '0');
 		}
-		$('textarea').autogrow();
+		if (jQuery().autogrow) $('textarea').autogrow();
 	});
 	
 	/**

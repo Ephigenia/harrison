@@ -1,10 +1,8 @@
-@CHARSET "UTF-8";
-
 /**
- * @project Harrison Default App Theme
- * @media	Screen
- * @author 	Marcel Eichner // Ephigenia <love@ephigenia.de>
- * @since 	2010-05-07
+ * Example Application Theme
+ * @since  2010-05-30
+ * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * @theme  default
  */
 body {
 	font: normal 14px/1.5em Lucida Sans Unicode, Lucida Grande, Verdana, Arial, Sans Serif;
@@ -24,16 +22,18 @@ a {
 }
 
 /** quoting **/
+body q:before,
 body.en_EN q:before,
 body.en_EN blockquote p:before {
 	content: '“'
 }
+body q:after,
 body.en_EN q:after,
 body.en_EN blockquote p:after {
 	content: '“'
 }
 body.de_DE q:before,
-body.de_DE blockquote p:before, {
+body.de_DE blockquote p:before {
 	content: '„'
 }
 body.de_DE q:after,
@@ -81,29 +81,27 @@ h4 {
 }
 
 /* Notification Boxes */
-p.error, p.hint, p.description, p.success {
-	color: #000;
-	padding: 0.4em 0.5em;
-	margin: 1em 0em;
-	border: 2px solid #fff;
-	-webkit-border-radius: 3px;
+p.error, p.hint, p.success, #flashMessage {
+	display: inline-block;
+	padding: 0.5em 0.75em;
+	margin: 1em 0.5em 1em 0em;
+	border: 1px solid #000;
 	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	-khtml-border-radius: 3px;
 }
-p.error a, p.hint a, p.description a, p.success a {
-	color: #000;
+p.error, #flashMessage.error {
+	color: #A41910;
+	border-color: #AA1A10;
+	background-color: #FBF3F0;
 }
-p.error {
-	border-color: #FF8000;
-	background-color: #800000;
+p.hint, #flashMessage.hint {
+	border-color: #F8E995;
+	background-color: #FAF8EE;
 }
-p.hint {
-	background-color: #fff7dd;
-	border-color: #ffa500;
-}
-p.success {
-	background-color: #a8ec87;
-	border-color: #007511;
+p.success, #flashMessage.success {
+	border-color: #b5f782;
+	background-color: #dcffdc;
 }
 
 

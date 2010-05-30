@@ -23,6 +23,7 @@ class AdminController extends AppController
 		'FlashMessage',
 		'AutoLog',
 		'Wall',
+		'Browser',
 	);
 	
 	public $uses = array(
@@ -50,16 +51,19 @@ class AdminController extends AppController
 	public function afterConstruct()
 	{
 		$this->Language->findConditions = array();
+		// setting I18N domain to use admin.po files
 		$this->I18n->domain(null, 'admin');
+		// Serve Mobile Content as soon m.[hostname] called or mobile browser requested
+		if ($this->request->header->get('host') == 'm.'.$this->request->host
+			|| $this->Browser->isType(BrowserTypes::MOBILE)) {
+			$this->layout = 'mobile';
+			$this->data->set('isMobile', true);
+		}
 		return parent::afterConstruct();
 	}
 	
 	public function beforeAction()
 	{
-		if ($this->layout == 'mobile' && !empty($this->{$this->name})) {
-			$this->{$this->name}->perPage = 50;
-			$this->{$this->name}->depth = 0;
-		}
 		// auto find model entry when id passed
 		if (isset($this->params['id'])) {
 			if (!$this->{$this->name}->fromId($this->params['id'])) return false;
@@ -78,9 +82,15 @@ class AdminController extends AppController
 	
 	public function beforeRender()
 	{
+		if ($this->layout == 'mobile') {
+			$this->action .= '.mobile';
+			if (!empty($this->{$this->name})) {
+				$this->{$this->name}->perPage = 50;
+				$this->{$this->name}->depth = 0;
+			}
+		}
 		$r = parent::beforeRender();
 		$this->set('Session', $this->Session);
-		$this->JavaScript->pack = $this->JavaScript->compress = false;
 		$this->CSS->clear();
 		return $r;
 	}

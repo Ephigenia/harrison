@@ -7,7 +7,12 @@
 		<?php
 		if (isset($MetaTags)) echo String::indent($MetaTags->render(), 2, TAB, 1);
 		if (isset($CSS)) {
-			$CSS->addFiles('reset', 'app', 'form');
+			$CSS->addFiles(array(
+				'reset',
+				'app',
+				'form',
+				'debug',
+			));
 			echo String::indent($CSS->render(), 2, TAB, 1);
 		}
 		// Favicon
@@ -33,6 +38,8 @@
 			));
 			echo String::indent($JavaScript->render(), 2, TAB, 1).LF;
 		}
+		echo $this->element('debug/dump');
 		?>
+		<!-- <?php echo ephFrame::compileTime(4) ?> -->
 	</body>
 </html>

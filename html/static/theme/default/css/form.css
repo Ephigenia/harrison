@@ -1,7 +1,11 @@
-@CHARSET "UTF-8";
-
+/**
+ * Example Application Form Styles
+ * @since  2010-05-30
+ * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * @theme  default
+ */
 form {
-	margin: 1em 0px;
+	margin: 1em 0em;
 }
 form fieldset p {
 	clear: both;

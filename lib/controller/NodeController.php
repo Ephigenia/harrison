@@ -19,7 +19,6 @@ class NodeController extends AppController
 	
 	public $components = array(
 		'SEOKeywords',
-		'ViewMailer',
 	);
 	
 	public $helpers = array(
@@ -32,7 +31,20 @@ class NodeController extends AppController
 	public $publicActions = array(
 		 'all',
 	);
-		
+	
+	public function beforeAction()
+	{
+		// find all nodes if logged in @todo add PermissionCheck to this
+		if (isset($this->Node) && $this->UserLogin->loggedin()) {
+			$this->Node->findConditions = array();
+		}
+		return parent::beforeAction();
+	}
+	
+	/**
+	 * Node Index Action
+	 * @return void
+	 */
 	public function index()
 	{
 		$this->Node->unbind('MediaFile');
