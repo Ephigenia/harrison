@@ -70,12 +70,11 @@ $(document).ready(function() {
 	// delete confirmation when in admin mode
 	$('.confirm').live('click', function(e) {
 		var message = $(this).attr('title');
-		var result = window.confirm(message);
 		if (message.length == 0) {
 			var message = 'Sind Sie sicher das Sie das löschen möchten?';
 		}
-		if (result) {
-			document.location.href = $(this).attr('url');
+		if (window.confirm(message)) {
+			document.location.href = $(this).attr('href');
 		}
 		e.preventDefault();
 	});

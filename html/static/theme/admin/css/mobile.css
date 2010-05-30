@@ -32,6 +32,10 @@ div.error {
 	-webkit-border-radius: 8px;
     -webkit-box-shadow: rgba(0,0,0,.3) 1px 1px 3px;
 }
+div.success {
+	color: #209800;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c6d5c6), to(#a1b8a1), color-stop(.6,#c6d5c6));
+}
 
 dl dt {
 	font-weight: bold;

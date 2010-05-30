@@ -14,7 +14,7 @@
 </div>
 <?php if ($Comment->BlogPost->exists()) { ?>
 <ul class="rounded">
-	<li class="forward">
+	<li class="arrow">
 		<?php echo $HTML->link($Comment->BlogPost->adminDetailPageUri('edit'), $Comment->BlogPost->get('headline')); ?>
 	</li>
 </ul>

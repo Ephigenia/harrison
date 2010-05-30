@@ -32,6 +32,7 @@ class AdminUserController extends AdminController
 	
 	public function login()
 	{
+		$this->data->set('pageTitle', __('Login'));
 		$this->addForm('LoginForm');
 		if ($this->LoginForm->ok()) {
 			try {
@@ -62,6 +63,8 @@ class AdminUserController extends AdminController
 	
 	public function index() 
 	{
+		$this->FlashMessage->set(__('Die Änderungen an :1 wurden erfolgreich gespeichert.', 'Marcel Eichner'), FlashMessageType::SUCCESS);
+		
 		$page = (isset($this->params['page'])) ? (int) $this->params['page'] : 1;
 		$perPage = 20;
 		$pagination = $this->User->paginate($page, $perPage);

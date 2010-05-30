@@ -18,6 +18,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo WEBROOT; ?>static/theme/jqt/theme.min.css" media="screen" />
 	</head>
 	<body class="<?php echo I18n::locale(); ?>">
+		<?php echo $this->element('flashMessage'); ?>
 		<div id="<?php echo $controller.$action; ?>" class="current">
 			<?php echo $content; ?>
         </div>

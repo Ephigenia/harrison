@@ -26,6 +26,12 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 	
+	var flashMessageElm = $('#flashMessage');
+	if (flashMessageElm.length > 0) {
+		flashMessageElm.addClass('info');
+		$('.current .toolbar').after(flashMessageElm);
+	}
+	
 	$('body').bind('turn', function(event, info) {
 		$('body').toggleClass(info.orientation);
 	});

@@ -59,7 +59,7 @@ class AdminUserForm extends AdminForm
 	public function fillModel(Model $model)
 	{
 		$r = parent::fillModel($model);
-		if ($this->controller->action == 'edit' && !$this->submitted()) {
+		if (substr($this->controller->action, 0, 4) == 'edit' && !$this->submitted()) {
 			$this->password->value('');
 		}
 		return $r;
