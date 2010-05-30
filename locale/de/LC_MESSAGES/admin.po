@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NMS.Update\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-26 00:20+0100\n"
+"POT-Creation-Date: 2010-05-30 21:10+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Marcel Eichner <love@ephigenia.de>\n"
 "Language-Team: Marcel Eichner <love@ephigenia.de>\n"
@@ -18,10 +18,52 @@ msgstr ""
 "X-Poedit-SearchPath-1: ../../../lib/controller/Admin*\n"
 "X-Poedit-SearchPath-2: ../../../lib/component/Form/*\n"
 
+#: ../../../view/theme/admin/app/index.mobile.php:3
+msgid "Frontend"
+msgstr "Frontend"
+
+#: ../../../view/theme/admin/app/index.mobile.php:5
+msgid "Logout"
+msgstr "Ausloggen"
+
+#: ../../../view/theme/admin/app/index.mobile.php:9
+msgid "Aktuelles/Wall"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.mobile.php:13
+msgid "Seiten"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.mobile.php:19
+#: ../../../view/theme/admin/blogPost/create.php:4
+#: ../../../view/theme/admin/blogPost/edit.php:4
+#: ../../../view/theme/admin/blogPost/index.php:4
+msgid "Blogeinträge"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.mobile.php:25
+#: ../../../view/theme/admin/comment/edit.php:4
+#: ../../../view/theme/admin/comment/index.php:3
+#: ../../../view/theme/admin/comment/index.php:14
+msgid "Kommentare"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.mobile.php:31
+msgid "Dateien"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.mobile.php:37
+msgid "Benutzer"
+msgstr ""
+
+#: ../../../view/theme/admin/app/index.mobile.php:44
+msgid "Einstellungen"
+msgstr ""
+
 #: ../../../view/theme/admin/app/index.php:3
 msgid ""
-"Willkommen in der Administrationsoberfläche von <q>:1!</q>\n"
-"\tWenn irgendwelche Fragen entstehen sollten, schreiben sie uns: :2"
+"Willkommen im Admin von <q>:1</q>!\n"
+"\tWenn irgendwelche Fragen entstehen sollten, schreiben sie an: :2"
 msgstr ""
 
 #: ../../../view/theme/admin/app/index.php:9
@@ -44,9 +86,17 @@ msgstr ""
 msgid "Alle Dateien anzeigen"
 msgstr ""
 
-#: ../../../view/theme/admin/blogPost/create.php:1
-#: ../../../view/theme/admin/blogPost/create.php:5
-msgid "Blogeintrag erstellen"
+#: ../../../view/theme/admin/app/wall.mobile.php:3
+#: ../../../view/theme/admin/blogPost/create.mobile.php:3
+#: ../../../view/theme/admin/blogPost/edit.mobile.php:3
+#: ../../../view/theme/admin/blogPost/index.mobile.php:3
+#: ../../../view/theme/admin/comment/edit.mobile.php:3
+#: ../../../view/theme/admin/comment/index.mobile.php:3
+msgid "zurück"
+msgstr ""
+
+#: ../../../view/theme/admin/app/wall.mobile.php:15
+msgid "Kommentar von :1"
 msgstr ""
 
 #: ../../../view/theme/admin/blogPost/create.php:3
@@ -57,11 +107,19 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: ../../../view/theme/admin/blogPost/create.php:4
-#: ../../../view/theme/admin/blogPost/edit.php:4
-#: ../../../view/theme/admin/blogPost/index.php:1
-#: ../../../view/theme/admin/blogPost/index.php:4
-msgid "Blogeinträge"
+#: ../../../view/theme/admin/blogPost/create.php:5
+msgid "Blogeintrag erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/blogPost/edit.mobile.php:5
+#: ../../../view/theme/admin/comment/edit.mobile.php:7
+#: ../../../view/theme/admin/element/blogPostMenu.php:18
+msgid "löschen"
+msgstr ""
+
+#: ../../../view/theme/admin/blogPost/edit.mobile.php:14
+#: ../../../view/theme/admin/element/blogPost.php:28
+msgid ":1 Kommentar"
 msgstr ""
 
 #: ../../../view/theme/admin/blogPost/edit.php:1
@@ -69,8 +127,13 @@ msgstr ""
 msgid "Blogeintrag editieren"
 msgstr ""
 
+#: ../../../view/theme/admin/blogPost/index.mobile.php:9
 #: ../../../view/theme/admin/blogPost/index.php:7
 msgid "Es sind noch keine Blogeinträge vorhanden."
+msgstr ""
+
+#: ../../../view/theme/admin/comment/edit.mobile.php:10
+msgid "Wollen Sie diesen Kommentar wirklich löschen?"
 msgstr ""
 
 #: ../../../view/theme/admin/comment/edit.php:1
@@ -78,10 +141,9 @@ msgstr ""
 msgid "Kommentar editieren"
 msgstr ""
 
-#: ../../../view/theme/admin/comment/edit.php:4
-#: ../../../view/theme/admin/comment/index.php:3
-#: ../../../view/theme/admin/comment/index.php:14
-msgid "Kommentare"
+#: ../../../view/theme/admin/comment/index.mobile.php:8
+#: ../../../view/theme/admin/comment/index.php:18
+msgid "Es sind noch keine Kommentare vorhanden."
 msgstr ""
 
 #: ../../../view/theme/admin/comment/index.php:5
@@ -92,27 +154,12 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: ../../../view/theme/admin/comment/index.php:18
-msgid "Es sind noch keine Kommentare vorhanden."
-msgstr ""
-
-#: ../../../view/theme/admin/element/blogPost.php:28
-msgid ":1 Kommentar"
-msgstr ""
-
 #: ../../../view/theme/admin/element/blogPostMenu.php:10
 msgid "anschauen"
 msgstr ""
 
 #: ../../../view/theme/admin/element/blogPostMenu.php:13
-#: ../../../view/theme/admin/element/commentMenu.php:17
 msgid "editieren"
-msgstr ""
-
-#: ../../../view/theme/admin/element/blogPostMenu.php:18
-#: ../../../view/theme/admin/element/commentMenu.php:22
-#: ../../../view/theme/admin/element/folderMenu.php:17
-msgid "löschen"
 msgstr ""
 
 #: ../../../view/theme/admin/element/blogPostMenu.php:21
@@ -127,20 +174,25 @@ msgstr ""
 msgid "Kommentar freischalten"
 msgstr ""
 
-#: ../../../view/theme/admin/element/commentMenu.php:25
-msgid "Wollen Sie diesen Kommentar wirklich löschen?"
-msgstr ""
-
 #: ../../../view/theme/admin/element/folderMenu.php:12
 msgid "Kategorie editieren"
 msgstr ""
 
 #: ../../../view/theme/admin/element/folderMenu.php:13
+#: ../../../view/theme/admin/element/mainMenu.php:42
 msgid "Datei hochladen"
 msgstr ""
 
 #: ../../../view/theme/admin/element/folderMenu.php:20
 msgid "Die Kategorie <q>:1</q> wirklich löschen? Alle Dateien dieser Kategorie verlieren ihre Zuordnung, werden aber nicht gelöscht."
+msgstr ""
+
+#: ../../../view/theme/admin/element/footer.php:5
+msgid "Mobile Version"
+msgstr ""
+
+#: ../../../view/theme/admin/element/footer.php:7
+msgid "Standard Version"
 msgstr ""
 
 #: ../../../view/theme/admin/element/header.php:3
@@ -161,11 +213,6 @@ msgstr ""
 
 #: ../../../view/theme/admin/element/logEntries.php:8
 msgid "vor :1"
-msgstr ""
-
-#: ../../../view/theme/admin/element/mainMenu.php:10
-#: ../../../view/theme/admin/element/userMenu.php:3
-msgid "Seiten"
 msgstr ""
 
 #: ../../../view/theme/admin/element/mainMenu.php:13
@@ -189,10 +236,6 @@ msgstr ""
 msgid "Neue Kategorie"
 msgstr ""
 
-#: ../../../view/theme/admin/element/mainMenu.php:54
-msgid "Benutzer"
-msgstr ""
-
 #: ../../../view/theme/admin/element/mainMenu.php:57
 msgid "Benutzerliste"
 msgstr ""
@@ -203,10 +246,6 @@ msgstr ""
 
 #: ../../../view/theme/admin/element/mainMenu.php:63
 msgid "Mein Profil"
-msgstr ""
-
-#: ../../../view/theme/admin/element/mainMenu.php:71
-msgid "Einstellungen"
 msgstr ""
 
 #: ../../../view/theme/admin/element/mainMenu.php:74
@@ -323,8 +362,11 @@ msgid ""
 "\tin andere Kategorien verschieben."
 msgstr ""
 
+#: ../../../view/theme/admin/folder/view.mobile.php:3
+msgid "back"
+msgstr ""
+
 #: ../../../view/theme/admin/folder/view.php:17
-#: ../../../view/theme/admin/mediaFile/index.php:2
 msgid "Kategorien"
 msgstr ""
 
@@ -332,7 +374,6 @@ msgstr ""
 msgid "Dateien & Bilder ohne Kategorie"
 msgstr ""
 
-#: ../../../view/theme/admin/language/create.php:1
 #: ../../../view/theme/admin/language/create.php:5
 msgid "Sprache erstellen"
 msgstr ""
@@ -359,6 +400,10 @@ msgstr ""
 
 #: ../../../view/theme/admin/language/index.php:18
 msgid "Name"
+msgstr ""
+
+#: ../../../view/theme/admin/layout/mobile.php:33
+msgid "Gruppen"
 msgstr ""
 
 #: ../../../view/theme/admin/mediaFile/edit.php:15
@@ -398,10 +443,6 @@ msgstr ""
 
 #: ../../../view/theme/admin/mediaFile/upload.php:26
 msgid "Generell dürfen Dateien die hochgeladen werden sollen nicht größer als <em>:1</em> sein."
-msgstr ""
-
-#: ../../../view/theme/admin/node/create.php:2
-msgid "Neue Unterseite erstellen"
 msgstr ""
 
 #: ../../../view/theme/admin/node/edit.php:26
@@ -490,15 +531,12 @@ msgstr ""
 msgid "noch nie"
 msgstr ""
 
-#: ../../../view/theme/admin/userGroup/create.php:1
-#: ../../../view/theme/admin/userGroup/edit.php:1
-#: ../../../view/theme/admin/userGroup/index.php:1
-#: ../../../view/theme/admin/userGroup/index.php:4
-msgid "Gruppen"
-msgstr ""
-
 #: ../../../view/theme/admin/userGroup/create.php:5
 msgid "Gruppe erstellen"
+msgstr ""
+
+#: ../../../view/theme/admin/userGroup/edit.php:1
+msgid "Benutzergruppe editieren"
 msgstr ""
 
 #: ../../../view/theme/admin/userGroup/index.php:9

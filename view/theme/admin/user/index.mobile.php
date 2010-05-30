@@ -1,6 +1,6 @@
 <div class="toolbar">
 	<?php
-	echo $HTML->link('#', __('back'), array('class' => 'back flip'));
+	echo $HTML->link('#', __('zurück'), array('class' => 'back flip'));
 	echo $HTML->tag('h1', $pageTitle);
 	echo $HTML->link(Router::getRoute('adminUserAction', array('action' => 'create')), '+', array('class' => 'button')); ?>
 	?>
