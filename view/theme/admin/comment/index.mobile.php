@@ -11,11 +11,14 @@
 	<ul class="edgetoedge">
 	<?php foreach($Comments as $Comment) {
 		if (@$lastDate != date('dmy', $Comment->created)) {
-			echo $HTML->tag('li', strftime('%x %H:%M', $Comment->created), array('class' => 'sep'));
+			echo $HTML->tag('li', strftime('%x', $Comment->created), array('class' => 'sep'));
 		}
 		?>
 		<li class="forward">
-			<?php echo $HTML->link($Comment->adminDetailPageUri('edit'), $Comment->get('name')); ?>
+			<a href="<?php echo $Comment->adminDetailPageUri('edit') ?>">
+				<?php echo strftime('%H:%M', $Comment->created); ?>
+				<?php echo $Comment->get('name'); ?>
+			</a>
 		</li>
 		<?php
 		$lastDate = date('dmy', $Comment->created);

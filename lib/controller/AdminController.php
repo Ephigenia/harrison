@@ -77,22 +77,18 @@ class AdminController extends AppController
 		if ($this->hasComponent('I18n') && $this->UserLogin->loggedin() && $this->User->hasField('locale')) {
 			$this->I18n->locale($this->UserLogin->User->locale);
 		}
-		return parent::beforeAction();
-	}
-	
-	public function beforeRender()
-	{
+		// if mobile layout selected, use other action view files
 		if ($this->layout == 'mobile') {
-			$this->action .= '.mobile';
+			// and increase number of returned model entries
 			if (!empty($this->{$this->name})) {
 				$this->{$this->name}->perPage = 50;
-				$this->{$this->name}->depth = 0;
+				if (!in_array($this->action, array('edit', 'view'))) {
+					$this->{$this->name}->depth = 0;
+				}
 			}
+			$this->action .= '.mobile';
 		}
-		$r = parent::beforeRender();
-		$this->set('Session', $this->Session);
-		$this->CSS->clear();
-		return $r;
+		return parent::beforeAction();
 	}
 		
 	public function index()
@@ -106,6 +102,7 @@ class AdminController extends AppController
 			$count = $this->{$modelName}->countAll();
 			$this->data->set($modelName.'TotalCount', $count);
 		}
+		return true;
 	}
 	
 	public function wall()
@@ -119,6 +116,6 @@ class AdminController extends AppController
 		));
 		$this->set('pageTitle', __('Aktuelles/Wall'));
 		$this->set('WallItems', $WallItems);
-		$BlogPosts = $this->BlogPost->findAll(null, null, 0, 5, 0);
+		return $WallItems;
 	}
 }

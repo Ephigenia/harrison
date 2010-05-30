@@ -12,4 +12,9 @@
 	); ?>
 	?>
 </div>
+<ul class="rounded">
+	<li class="forward">
+		<?php echo $HTML->link($Comment->BlogPost->adminDetailPageUri('edit'), $Comment->BlogPost->get('headline')); ?>
+	</li>
+</ul>
 <?php echo $this->element('jqtouch/form', array('Form' => $AdminCommentForm)); ?>
