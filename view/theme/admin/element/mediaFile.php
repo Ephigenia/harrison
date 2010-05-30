@@ -17,7 +17,7 @@
 			</dd>
 			<?php if ($MediaFile instanceof MediaImage) { ?>
 			<dt><?php echo __('Abmessungen'); ?></dt>
-			<dd><?php echo sprintf('%dx%d', $MediaFile->width, $MediaFile->height); ?></dd>
+			<dd><?php echo sprintf('%dx%dpx', $MediaFile->width, $MediaFile->height); ?></dd>
 			<?php } ?>
 			<dt><?php echo __('Dateigröße'); ?></dt>
 			<dd><?php

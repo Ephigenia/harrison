@@ -21,6 +21,7 @@ class AdminUserGroupController extends AdminController
 	{
 		$UserGroups = $this->UserGroup->findAll();
 		$this->data->set('UserGroups', $UserGroups);
+		$this->data->set('pageTitle', __('Benutzergruppen'));
 		return $UserGroups;
 	}
 	
@@ -31,6 +32,7 @@ class AdminUserGroupController extends AdminController
 	 */
 	public function create()
 	{
+		$this->data->set('pageTitle', __('Gruppe erstellen'));
 		$this->addForm('AdminUserGroupForm');
 		if ($this->AdminUserGroupForm->ok()) {
 			$this->AdminUserGroupForm->toModel($this->UserGroup);
@@ -52,6 +54,7 @@ class AdminUserGroupController extends AdminController
 	 */
 	public function edit($id = null)
 	{
+		$this->data->set('pageTitle', __('Benutzergruppe editieren'));
 		$this->addForm('AdminUserGroupForm');
 		$this->AdminUserGroupForm->fillModel($this->UserGroup);
 		if ($this->AdminUserGroupForm->ok()) {

@@ -26,6 +26,7 @@ class AdminMediaFileController extends AdminController
 
 	public function index()
 	{
+		$this->data->set('pageTitle', __('Dateien'));
 		$this->MediaFiles = $this->MediaFile->findAll(null, array('MediaFile.created DESC'), 0, 15);
 		$this->data->set('Files', $this->MediaFiles);
 		$this->Folders = $this->Folder->findById(1)->children();
@@ -97,6 +98,7 @@ class AdminMediaFileController extends AdminController
 	public function edit($id = null)
 	{
 		$this->MediaFile = parent::edit($id);
+		$this->data->set('pageTitle', $this->MediaFile->getText('title', $this->MediaFile->filename));
 		// language and texts
 		foreach($this->Languages as $Language) {
 			$TextModel = $this->MediaFile->{'Text'.String::ucFirst($Language->id)};

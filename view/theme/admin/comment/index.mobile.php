@@ -1,6 +1,6 @@
 <div class="toolbar">
 	<?php
-	echo $HTML->link(Router::uri('admin'), __('back'), array('class' => 'back flip'));
+	echo $HTML->link('#', __('zurück'), array('class' => 'back flip'));
 	echo $HTML->tag('h1', $pageTitle);
 	?>
 </div>
@@ -14,7 +14,7 @@
 			echo $HTML->tag('li', strftime('%x', $Comment->created), array('class' => 'sep'));
 		}
 		?>
-		<li class="forward">
+		<li>
 			<a href="<?php echo $Comment->adminDetailPageUri('edit') ?>">
 				<?php echo strftime('%H:%M', $Comment->created); ?>
 				<?php echo $Comment->get('name'); ?>

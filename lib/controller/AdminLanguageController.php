@@ -27,6 +27,7 @@ class AdminLanguageController extends AdminController
 	
 	public function edit($id = null)
 	{
+		$this->data->set('pageTitle', __(':1 editieren', $this->Language->get('name')));
 		$this->AdminLanguageForm->fillModel($this->Language);
 		if ($this->AdminLanguageForm->ok()) {
 			$this->AdminLanguageForm->toModel($this->Language);
@@ -40,6 +41,7 @@ class AdminLanguageController extends AdminController
 	
 	public function create()
 	{
+		$this->data->set('pageTitle', __('Sprache erstellen'));
 		if ($this->AdminLanguageForm->ok()) {
 			$this->AdminLanguageForm->toModel($this->Language);
 			if (!$this->Language->save()) {

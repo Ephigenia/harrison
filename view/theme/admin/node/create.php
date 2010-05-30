@@ -1,7 +1,4 @@
-<h1><?php
-	$headline = (empty($Node)) ? __('Neue Seite erstellen') : __('Neue Unterseite erstellen');
-	echo $headline;
-?></h1>
+<h1><?php echo $pageTitle; ?></h1>
 <ul class="breadcrumb">
 	<li><?php echo $HTML->link(Router::getRoute('admin'), __('Home'))?></li>
 	<li><?php echo $HTML->link(Router::getRoute('adminNode'), __('Seiten')); ?></li>

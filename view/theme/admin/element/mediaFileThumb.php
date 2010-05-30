@@ -7,7 +7,7 @@ if (empty($MediaFile)) return false;
 	<?php
 	if ($MediaFile->file()) {
 		if ($MediaFile instanceof MediaImage) {
-			$icon = $HTML->image($MediaFile->src(coalesce(@$width, 160), coalesce(@$height, 120)));
+			$icon = $HTML->image($MediaFile->src(coalesce(@$width, 160), coalesce(@$height, 120), coalesce(@$method, 'resize')));
 		} else {
 			$extension = $MediaFile->file()->extension();
 			$icon = $HTML->tag('span', String::upper($extension), array('class' => array($extension, 'filetype')));
@@ -15,6 +15,13 @@ if (empty($MediaFile)) return false;
 	} else {
 		$icon = $HTML->tag('span', __('?'), array('class' => 'filetype'));
 	}
-	echo $HTML->link($MediaFile->adminDetailPageUri(array('action' => 'edit')), $icon);
+	if (!isset($link)) {
+		$link = $MediaFile->adminDetailPageUri(array('action' => 'edit'));
+	}
+	if (!empty($link)) {
+		echo $HTML->link($link, $icon);
+	} else {
+		echo $icon;
+	}
 	?>
 </div>

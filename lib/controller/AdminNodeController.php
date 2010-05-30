@@ -25,6 +25,7 @@ class AdminNodeController extends AdminController
 	{
 		$this->Node->unbind('MediaFile');
 		$this->data->set('Nodes', $this->Node->tree(null, 1));
+		$this->data->set('pageTitle', __('Seiten'));
 	}
 	
 	public function beforeAction()
@@ -39,6 +40,7 @@ class AdminNodeController extends AdminController
 	
 	public function edit($id = null)
 	{
+		$this->data->set('pageTitle', __('Seite editieren'));
 		$this->AdminNodeForm->delete('headline');
 		$this->AdminNodeForm->delete('subline');
 		$this->AdminNodeForm->delete('text');
@@ -87,6 +89,9 @@ class AdminNodeController extends AdminController
 	{
 		if ($this->Node->exists()) {
 			$this->AdminNodeForm->parent->value($this->Node->id);
+			$this->data->set('pageTitle', __('Unterseite erstellen'));
+		} else {
+			$this->data->set('pageTitle', __('Seite erstellen'));
 		}
 		if ($this->AdminNodeForm->ok()) {
 			$Node = new Node();

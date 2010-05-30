@@ -33,10 +33,37 @@ div.error {
     -webkit-box-shadow: rgba(0,0,0,.3) 1px 1px 3px;
 }
 
+dl dt {
+	font-weight: bold;
+	width: 100px;
+	float: left;
+}
+dl dt:after {
+	content: ':';
+}
+
 ul a .gravatar {
 	border: 1px solid #333;
 	padding: 1px;
 	vertical-align: text-bottom;
+}
+
+ul.images li .thumb {
+	
+	margin: -12px -0px 00px -59px;
+	position: absolute;
+}
+ul.images li {
+	padding-left: 60px;
+}
+
+/** fullscreen image **/
+#MediaFileedit .thumb {
+	text-align: center;
+	margin: auto;
+}
+#MediaFileedit .thumb img {
+	width: 99.5%;
 }
 
 /** form button auto style **/

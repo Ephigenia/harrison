@@ -21,6 +21,38 @@
 		<div id="<?php echo $controller.$action; ?>" class="current">
 			<?php echo $content; ?>
         </div>
+		<div id="Configuration">
+			<div class="toolbar">
+				<?php
+				echo $HTML->link('#', __('zurück'), array('class' => 'back flip'));
+				echo $HTML->tag('h1', __('Einstellungen'));
+				?>
+			</div>
+			<ul class="rounded">
+				<li class="arrow">
+					<?php echo $HTML->link(Router::getRoute('adminScaffold', array('controller' => 'UserGroup')), __('Gruppen')); ?>
+				</li>
+				<li class="arrow">
+					<?php echo $HTML->link('#Languages', __('Sprachen')) ?>
+				</li>
+			</ul>
+		</div>
+		<div id="Languages">
+			<div class="toolbar">
+				<?php
+				echo $HTML->link('#', __('zurück'), array('class' => 'back flip'));
+				echo $HTML->tag('h1', __('Sprachen'));
+				echo $HTML->link(Router::getRoute('adminScaffold', array('controller' => 'Language', 'action' => 'create')), '+', array('class' => 'button'));
+				?>
+			</div>
+			<ul class="rounded">
+				<?php foreach($Languages as $Language) { ?>
+				<li class="arrow">
+					<?php echo $HTML->link($Language->adminDetailPageUri('edit'), $Language->get('name')); ?>
+				</li>
+				<?php } ?>
+			</ul>
+		</div>
 		<?php
 		if (isset($JavaScript)) {
 			$JavaScript->addFiles(array(

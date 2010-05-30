@@ -41,5 +41,5 @@
 	</li>
 </ul>
 <ul class="rounded">
-	<li class="arrow"><?php echo $HTML->link(Router::url('adminMediaFiles'), __('Einstellungen')); ?></li>
+	<li class="arrow"><?php echo $HTML->link('#Configuration', __('Einstellungen')); ?></li>
 </ul>

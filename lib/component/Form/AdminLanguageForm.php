@@ -21,8 +21,8 @@ class AdminLanguageForm extends AdminForm
 						'type' => 'DropDown',
 						'options' => Status::$list,
 					),
-					'locale',
 					'name',
+					'locale',
 				),
 			),
 			array(

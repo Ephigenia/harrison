@@ -26,4 +26,8 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 	
+	$('body').bind('turn', function(event, info) {
+		$('body').toggleClass(info.orientation);
+	});
+	
 });
