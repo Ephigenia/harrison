@@ -1,23 +1,20 @@
 /** login page special styles **/
-#app.Login {
-	width: 100%;
-	display: table;
-	text-align: center;
-	margin: 10% auto 0px auto;
+#app.login {
+	margin: 0px;
+	position: relative;
+	top: 20%;
 }
-#app.Login #content {	
-	margin: 0px auto;
+#app.login #content {	
+	margin: 0 auto 0px auto;
 	padding: 1em;
 	width: 360px;
-	min-width: 0px;
-	float: none;
 	text-align: left;
 	-webkit-box-shadow: 0px 0px 30px #D6D6D6;
 	-moz-box-shadow: 0px 0px 30px #D6D6D6;
 	-khtml-box-shadow: 0px 0px 30px #D6D6D6;
 	box-shadow: 0px 0px 30px #D6D6D6;
 }
-#app.Login #flashMessage {
+#app.login #flashMessage {
 	width: 360px;
 	margin: 0px auto 10px auto;
 	text-align: left;

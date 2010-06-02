@@ -18,7 +18,7 @@ class AdminBlogPostForm extends AdminForm
 			'BlogPost' => array(
 				'fields' => array(
 					'headline' => array(
-						'label' => __('Titel').':',
+						'label' => __('Titel'),
 						'mandatory' => true
 					),
 					'uri' => array(
@@ -26,7 +26,13 @@ class AdminBlogPostForm extends AdminForm
 						'mandatory' => false,
 					),
 					'text' => array(
-						'label' => false
+						'label' => false,
+					),
+					'tags' => array(
+						'mandatory' => false,
+						'type' => 'textarea',
+						'rows' => 2,
+						'label' => __('Tags (SEO'),
 					),
 					'status' => array(
 						'type' => 'DropDown',
@@ -35,23 +41,17 @@ class AdminBlogPostForm extends AdminForm
 					),
 					'language_id' => array(
 						'type' => 'DropDown',
-						'label' => __('Sprache').':',
+						'label' => __('Sprache'),
 						'options' => $this->controller->Language->listAll('name', null, 'name ASC'),
 					),
 					'user_id' => array(
 						'type' => 'DropDown',
-						'label' => __('Autor').':',
+						'label' => __('Autor'),
 						'options' => $this->controller->User->listAll('User.name', null, 'User.name ASC'),
 					),
 					'published' => array(
 						'type' => 'DateTime',
-						'label' => __('Veröffentlichungsdatum').':',
-					),
-					'tags' => array(
-						'mandatory' => false,
-						'type' => 'textarea',
-						'rows' => 2,
-						'label' => __('Tags (SEO, optional)').':',
+						'label' => __('Veröffentlichungsdatum'),
 					),
 				),
 			),
@@ -64,7 +64,7 @@ class AdminBlogPostForm extends AdminForm
 			array(
 				'name' => 'sticky',
 				'type' => 'checkbox',
-				'label' => 	__('Diesen Eintrag oben halten (sticky)'),
+				'label' => 	__('Eintrag oben halten (sticky)'),
 			),
 			array(
 				'type' => 'submit',

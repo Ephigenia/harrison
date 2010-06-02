@@ -3,9 +3,9 @@
 	if ($BlogPost->status & Status::DRAFT) echo ' draft';
 	?>">
 	<td class="created">
-		<time datetime="<?php echo date('c', $BlogPost->published); ?>">
+		<abbr title="<?php echo date('c', $BlogPost->published); ?>">
 			<?php echo strftime('%x %H:%M', $BlogPost->published)?>
-		</time>
+		</abbr>
 		<?php
 		if ($BlogPost->status != Status::PUBLISHED) {
 			echo Status::$list[$BlogPost->status].'<br />';

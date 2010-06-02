@@ -1,7 +1,11 @@
-@CHARSET "UTF-8";
-
 /**
- *	Form styles for jefferson
+ * Harrison Form Styles
+ * 
+ * @project Harrison Admin
+ * @media	Screen
+ * @theme	default
+ * @author 	Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * @since 	2009-07-01
  */
 form fieldset p {
 	clear: both;
@@ -10,6 +14,9 @@ form fieldset label {
 	width: 100%;
 	float: left;
 	margin: 0.2em 0px 0px 0.1em;
+}
+form fieldset label:after {
+	content: ':';
 }
 
 form fieldset input[type=text],
@@ -28,16 +35,24 @@ form fieldset textarea {
 	border-right-color: #E4E4E4;
 	padding: 0px 3px 0px 3px;
 	color: #464646;
-	background: #fbfbfb url(../img/inputBG.png) repeat-x top left;
+	background: #fbfbfb;
+	background: -webkit-gradient(linear, 0% 0%, 0% 15%, from(#F5F4F1), to(#FFFFFF));
+	background: -moz-linear-gradient(270deg, #F5F4F1, #FFFFFF);
 	clear: both;
 }
+form fieldset textarea {
+	background: -webkit-gradient(linear, 0% 0%, 0% 30%, from(#F5F4F1), to(#FFFFFF));
+	background: -moz-linear-gradient(270deg, #F5F4F1, #FFFFFF);
+}
 form fieldset input.error, form fieldset textarea.error {
-	border-color: #84190F;
+	border-color: #AA1A10;
+	background: -webkit-gradient(linear, 0% 0%, 0% 30%, from(#F0E7E7), to(#FFFFFF));
+	background: -moz-linear-gradient(270deg, #F0E7E7, #FFFFFF);
 }
 form fieldset textarea:focus, form fieldset input:focus {
 	background-color: #fffff1;
 	border: 1px solid #E1CB53;
-	-webkit-box-shadow: #ffffbb 0px 0px 15px;
+	-webkit-box-shadow: #ffffbb 0px 0px 10px;
 	outline: none;
 }
 
@@ -71,11 +86,15 @@ p.checkbox label {
 }
 
 
-
 #AdminSearchForm {
-	margin: 0.9em 0.5em 0em 0em;
+	margin: -1.9em 0.5em -1em 0em;
 	float: right;
 	width: 200px;
+}
+#AdminSearchForm input.q {
+	background-image: url('../img/magnifying-glass.png');
+	background-repeat: no-repeat;
+	background-position: center right;
 }
 #results {
 	font-size: 0.8em;

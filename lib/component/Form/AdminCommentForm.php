@@ -18,8 +18,13 @@ class AdminCommentForm extends AdminForm
 			'Comment' => array(
 				'fields' => array(
 					'name',
-					'email' => array('mandatory' => false),
-					'url' => array('mandatory' => false),
+					'email' => array(
+						'mandatory' => false,
+						'label' => __('E-Mail'),
+					),
+					'url' => array(
+						'mandatory' => false,
+					),
 					'text',
 				)
 			),

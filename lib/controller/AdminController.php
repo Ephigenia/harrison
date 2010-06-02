@@ -54,7 +54,7 @@ class AdminController extends AppController
 		// setting I18N domain to use admin.po files
 		$this->I18n->domain(null, 'admin');
 		// Serve Mobile Content as soon m.[hostname] called or mobile browser requested
-		if ($this->request->header->get('host') == 'm.'.$this->request->host
+		if (substr($this->request->header->get('host'), 0, 2) == 'm.'
 			|| $this->Browser->isType(BrowserTypes::MOBILE)) {
 			$this->layout = 'mobile';
 			$this->data->set('isMobile', true);

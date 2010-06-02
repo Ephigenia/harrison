@@ -91,9 +91,6 @@ class Node extends AppModel
 		if (isset($this->Parent) && $this->Parent->exists()) {
 			$this->parent_id = $this->Parent->id;
 		}
-		if ($this->isEmpty('name') && !$this->NodeTextDe->isEmpty('headline')) {
-			$this->set('name', $this->NodeTextDe->get('headline'));
-		}
 		return parent::beforeSave();
 	}
 	
@@ -130,15 +127,13 @@ class Node extends AppModel
 	 */
 	public function getText($varname, $languageId = null, $default = null)
 	{
-		if ($languageId == null) {
-			$languageId = I18n::locale();
-		}
+		$languageId = coalesce(@$languageId, I18n::locale());
 		$languageModelName = 'NodeText'.ucFirst(substr($languageId, 0, 2));
-		if (!isset($this->$languageModelName)) {
-			$languageModelName = 'NodeTextDe';
+		if (!isset($this->{$languageModelName})) {
+			$languageModelName = 'NodeText'.ucfirst(substr(Registry::get('I18n.language'), 0, 2));
 		}
-		if ($this->$languageModelName instanceof Model && $this->$languageModelName->hasField($varname)) {
-			return coalesce($this->$languageModelName->get($varname), $default, $this->NodeTextDe->get($varname));
+		if ($this->{$languageModelName} instanceof Model && $this->{$languageModelName}->hasField($varname)) {
+			return coalesce($this->{$languageModelName}->get($varname), $default, false);
 		}
 		return $default;
 	}
@@ -149,13 +144,14 @@ class Node extends AppModel
 	 * 	@param integer|string $idOrNodeName
 	 * 	@return Node|boolean
 	 */
-	public function findNode($idOrNodeName)
+	public function findNode($idOrNodeName, $languageId = null)
 	{
 		$this->depth = 1;
+		$languageId = coalesce(@$languageId, I18n::locale());
 		if (is_int($idOrNodeName)) {
 			$conditions = array('id' => $idOrNodeName);
 		} else {
-			$conditions = array('NodeText'.ucfirst(substr(I18n::locale(), 0, 2)).'.uri' => DBQuery::quote($idOrNodeName));
+			$conditions = array('NodeText'.ucfirst(substr($languageId, 0, 2)).'.uri' => DBQuery::quote($idOrNodeName));
 		}
 		return $this->find($conditions);
 	}

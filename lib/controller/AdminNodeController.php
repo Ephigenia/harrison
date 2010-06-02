@@ -94,13 +94,17 @@ class AdminNodeController extends AdminController
 			$this->data->set('pageTitle', __('Seite erstellen'));
 		}
 		if ($this->AdminNodeForm->ok()) {
+			$defaultLanguageId = ucfirst(substr(Registry::get('I18n.language'), 0, 2));
 			$Node = new Node();
+			$Node->set('name', $this->AdminNodeForm->headline->value());
 			$Node->User = $this->UserLogin->User;
 			$Node->Parent = new Node((int) $this->AdminNodeForm->parent->value());
 			$Node->addFlag(NodeFlag::ALLOW_CHILDREN, NodeFlag::ALLOW_DELETE, NodeFlag::ALLOW_EDIT, NodeFlag::ALLOW_IMAGES);
-			$Node->NodeTextDe->User = $this->UserLogin->User;
 			$this->AdminNodeForm->toModel($Node);
-			$this->AdminNodeForm->toModel($Node->NodeTextDe);
+			$this->AdminNodeForm->toModel($Node->{'NodeText'.$defaultLanguageId});
+			foreach($this->Languages as $Language) {
+				$Node->{'NodeText'.ucFirst($Language->id)}->User = $this->UserLogin->User;
+			}
 			if ($Node->saveAll()) {
 				$this->FlashMessage->set(__('Die Seite wurde erfolgreich angelegt.'), FlashMessageType::SUCCESS);
 				$this->redirect(Router::getRoute('adminNode'));
@@ -111,15 +115,19 @@ class AdminNodeController extends AdminController
 	
 	public function delete($id = null)
 	{
+		$name = $this->Node->getText('headline', null, $this->Node->get('name'));
 		if ($this->Node->delete()) {
-			$this->FlashMessage->set(__('Die Seite <q>:1</q> und Unterseiten wurden erfolgreich gelöscht.', $this->Node->get('name')), FlashMessageType::SUCCESS);
+			$this->FlashMessage->set(__('Die Seite <q>:1</q> und Unterseiten wurden erfolgreich gelöscht.', $name), FlashMessageType::SUCCESS);
 		}
 		$this->redirect(Router::getRoute('adminNode'));
 	}
 	
 	public function move($id = null, $direction = null)
 	{
-		$this->Node->move($direction);
+		if ($this->Node->move($direction)) {
+			$name = $this->Node->getText('headline', null, $this->Node->get('text'));
+			$this->FlashMessage->set(__('Die Seite <q>:1</q> wurde erfolgreich verschoben.', $name), FlashMessageType::SUCCESS);
+		}
 		$this->redirect(Router::getRoute('adminNode'));
 	}
 }

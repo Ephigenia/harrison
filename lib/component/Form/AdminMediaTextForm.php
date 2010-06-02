@@ -16,13 +16,27 @@ class AdminMediaTextForm extends AdminForm
 		$this->config = array(
 			'MediaText' => array(
 				'fields' => array(
-					'title' => array(
-						'label' => __('Titel'),
+					'headline' => array(
 						'mandatory' => false,
+						'label' => __('Überschrift'),
 					),
-					'text'	=> array(
-						'label' => __('Beschreibung').':',
+					'subline' => array(
 						'mandatory' => false,
+						'label' => __('Unter-Überschrift'),
+					),
+					'text' => array(
+						'mandatory' => false,
+						'label' => __('Text/Beschreibung'),
+					),
+					'excerpt' => array(
+						'mandatory' => false,
+						'label' => __('Auszug/Zusammenfassung'),
+					),
+					'tags' => array(
+						'mandatory' => false,
+						'type' => 'textarea',
+						'rows' => 2,
+						'label' => __('Tags (SEO)'),
 					),
 					'language_id' => array(
 						'type' => 'hidden',

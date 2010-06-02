@@ -1,7 +1,5 @@
-@CHARSET "UTF-8";
-
 /**
- * 	Table Styles for nms.update admin
+ * Table Styles for nms.update admin
  */
 table thead tr {
 	border-bottom: 3px solid #e6e6e6;
@@ -17,13 +15,13 @@ table td {
 }
 
 /**
- * 	row-specific styles
+ * row-specific styles
  */
 tbody tr td {
 	border-bottom: 1px solid #DFDFDF;
 }
 td.date, td.created {
-	width: 130px;
+	width: 135px;
 }
 
 table tr .admin {

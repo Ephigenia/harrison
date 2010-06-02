@@ -1,8 +1,8 @@
-<h1><?php echo __('Benutzer erstellen'); ?></h1>
+<h1><?php echo $pageTitle; ?></h1>
 <ul class="breadcrumb">
 	<li><?php echo $HTML->link(Router::getRoute('admin'), __('Home'))?></li>
 	<li><?php echo $HTML->link(Router::getRoute('adminUser'), __('Benutzer')); ?></li>
-	<li><?php echo __('Benutzer erstellen'); ?></li>
+	<li><?php echo $pageTitle; ?></li>
 </ul>
 
 <p class="hint">

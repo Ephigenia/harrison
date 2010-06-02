@@ -70,8 +70,8 @@ class NodeController extends AppController
 		$this->data->set('Node', $this->Node);
 		// add pagetitle and keywords to metatags
 		$this->data->set('pageTitle', $this->Node->getText('headline'). ' - '.AppController::NAME);
-		if ($keywords = $this->Node->getText('keywords')) {
-			$this->AppMetaTags->keywords->prependFromArray(preg_split('/[\s,;]/i', $keywords));
+		if ($tags = $this->Node->getText('tags')) {
+			$this->AppMetaTags->keywords->prependFromArray(preg_split('/[\s]+/i', $tags));
 		}
 		// check if node has any children
 		if ($this->Node->level == 2) {

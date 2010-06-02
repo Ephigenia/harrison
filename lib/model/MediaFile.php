@@ -63,10 +63,10 @@ class MediaFile extends AppModel
 		$languageId = I18n::locale();
 		$languageModelName = 'Text'.ucFirst(substr($languageId, 0, 2));
 		if (!isset($this->$languageModelName)) {
-			$languageModelName = 'TextDe';
+			$languageModelName = 'Text'.ucfirst(substr(Registry::get('I18n.language'), 0, 2));
 		}
 		if ($this->$languageModelName instanceof Model && $this->$languageModelName->hasField($varname)) {
-			return coalesce($this->$languageModelName->get($varname), $default, $this->TextDe->get($varname));
+			return coalesce($this->$languageModelName->get($varname), $default, false);
 		}
 	}
 	

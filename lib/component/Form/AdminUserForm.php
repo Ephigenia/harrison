@@ -27,10 +27,10 @@ class AdminUserForm extends AdminForm
 					'password' => array(
 						'mandatory' => false,
 						'value' => '',
-						'label' => __('Passwort').':',
+						'label' => __('Passwort'),
 					),
 					'locale' => array(
-						'label' => __('Sprache').':',
+						'label' => __('Sprache'),
 						'type' => 'DropDown',
 						'options' => array(
 							'de_DE' => 'Deutsch',
@@ -49,7 +49,7 @@ class AdminUserForm extends AdminForm
 	
 	public function afterConfig()
 	{
-		if ($this->controller->action == 'create') {
+		if (preg_match('@^create@i', $this->controller->action)) {
 			$this->submit->value(__('Benutzer erstellen'));
 			$this->password->insertAfter($this->newField('checkbox', 'sendMail')->label('Passwort zuschicken'));
 		}

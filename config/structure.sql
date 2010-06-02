@@ -45,8 +45,8 @@ CREATE TABLE harrison_users (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- default user with password 'adminadmin'
-INSERT INTO harrison_users (flags, locale, user_group_id, name, email, password) VALUES 
-	 (0, 'de_DE', 1, 'Admin', 'admin@ephigenia.de', '79949e89c31d984d44ccc2d4be4aefdf')
+INSERT INTO harrison_users (flags, locale, user_group_id, name, email, password, created, updated) VALUES 
+	 (0, 'de_DE', 1, 'Admin', 'admin@ephigenia.de', '79949e89c31d984d44ccc2d4be4aefdf', 1262304000, 1262304000)
 ;
 
 -- user groups
@@ -142,8 +142,8 @@ CREATE TABLE harrison_nodes (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `harrison_nodes`
-	(id, parent_id, lft, rgt, level, flags, status, user_id, name) VALUES
-	(1,  NULL, 1, 2, 0, 32, 1, 1, 'root');
+	(id, parent_id, lft, rgt, level, flags, status, user_id, name, created, updated, published) VALUES
+	(1,  NULL, 1, 2, 0, 32, 1, 1, 'root', 1262304000, 1262304000, 1262304000);
 
 -- texts for nodes
 DROP TABLE IF EXISTS harrison_node_texts;
@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS harrison_node_texts (
 	KEY (uri)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `harrison_node_texts` VALUES(1, 1, 'de', 1, 0, '', 'root', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `harrison_node_texts` VALUES(1, 1, 'de', 1, 0, '', 'root', NULL, NULL, NULL, NULL, NULL, 1262304000, 1262304000);
 
 -- blog entries for blog stuff
 DROP TABLE IF EXISTS harrison_blog_posts;
@@ -297,7 +297,7 @@ CREATE TABLE IF NOT EXISTS harrison_folders (
 	KEY (flags)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 -- initial data for folders
-INSERT INTO harrison_folders (id, lft, rgt, level, name) VALUES (id, 1, 2, 0, 'root');
+INSERT INTO harrison_folders (id, lft, rgt, level, name, created, updated) VALUES (id, 1, 2, 0, 'root', 1262304000, 1262304000);
 
 -- media texts
 DROP TABLE IF EXISTS harrison_media_texts;

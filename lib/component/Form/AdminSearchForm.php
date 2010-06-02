@@ -12,18 +12,20 @@ class_exists('AdminForm') or require dirname(__FILE__).'/AdminForm.php';
  */
 class AdminSearchForm extends AdminForm
 {
-	public $config = array(
-		array(
-			'type' => 'text',
-			'name' => 'q',
-			'label' => false,
-			'value' => 'search',
-		),
-	);
+	public function startUp() {
+		$this->config = array(
+			array(
+				'type' => 'text',
+				'name' => 'q',
+				'label' => false,
+				'value' => coalesce(@$this->controller->params['q'], __('Suchbegriff')),
+			),
+		);
+		return parent::startUp();
+	}
 	
 	public function afterConfig()
 	{
-		$this->q->value(@$this->controller->params['q']);
 		return true;
 	}
 }

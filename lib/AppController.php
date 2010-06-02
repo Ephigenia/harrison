@@ -71,7 +71,7 @@ class AppController extends Controller
 	);
 	
 	/**
-	 *	@var Set
+	 * @var Set
 	 */
 	public $Languages = array();
 	
@@ -82,10 +82,19 @@ class AppController extends Controller
 		if ($this->hasModel('Language') && $this->Languages = $this->Language->findAll()) {
 			// make languages available in the view
 			$this->data->set('Languages', $this->Languages);
-			// reset locale to default if browser language not default language
-			if (!empty($this->params['language_id'])) foreach($this->Languages as $Language) {
-				if ($Language->id != $this->params['language_id']) continue;
-				I18n::locale($Language->locale);
+			// set new locale from language_id=[de|en|fr] action
+			foreach($this->Languages as $Language) {
+				if (!empty($this->params['language_id']) && $Language->id == $this->params['language_id']) {
+					I18n::locale($Language->locale);
+					break;
+				}
+			}
+			// reset locale to default if locale not found in languages
+			foreach($this->Languages as $Language) {
+				if ($Language->locale == I18n::locale()) $found = true;
+			}
+			if (@$found !== true) {
+				I18n::locale(Registry::get('I18n.language'));
 			}
 		}
 		// detect desired content type and return headers and change

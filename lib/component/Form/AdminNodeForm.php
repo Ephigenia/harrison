@@ -18,38 +18,39 @@ class AdminNodeForm extends AdminForm
 				'fields' => array(
 					'headline' => array(
 						'mandatory' => false,
-						'label' => __('Überschrift').':',
+						'label' => __('Überschrift'),
 					),
 					'subline' => array(
 						'mandatory' => false,
-						'label' => __('Unter-Überschrift (optional)').':',
+						'label' => __('Unter-Überschrift'),
 					),
 					'text' => array(
 						'mandatory' => false,
-						'label' => __('Text/Beschreibung').':',
+						'label' => __('Text/Beschreibung'),
 					),
 					'excerpt' => array(
 						'mandatory' => false,
-						'label' => __('Auszug/Zusammenfassung (optional)').':',
+						'label' => __('Auszug/Zusammenfassung'),
 					),
-					'keywords' => array(
+					'tags' => array(
 						'mandatory' => false,
-						'label' => __('Stichwörter (SEO)').':',
-						'type' => 'text',
-					),
-					'user_id' => array(
-						'type' => 'DropDown',
-						'options' => $this->controller->User->listAll('User.name', null, 'User.name ASC'),
-						'value' => $this->controller->UserLogin->User->id,
-						'label' => __('Autor').':',
+						'type' => 'textarea',
+						'rows' => 2,
+						'label' => __('Tags (SEO)'),
 					),
 				),
 			),
 			'Node' => array(
 				'fields' => array(
+					'user_id' => array(
+						'type' => 'DropDown',
+						'options' => $this->controller->User->listAll('User.name', null, 'User.name ASC'),
+						'value' => $this->controller->UserLogin->User->id,
+						'label' => __('Autor'),
+					),
 					'published' => array(
 						'type' => 'Date',
-						'label' => __('Datum').':',
+						'label' => __('Datum'),
 						'value' => time(),
 					),
 					'status' => array(
@@ -62,7 +63,8 @@ class AdminNodeForm extends AdminForm
 						'options' => $this->templateNames(),
 						'value' => 'view',
 					),
-			)),
+				),
+			),
 			array(
 				'type' => 'checkbox',
 				'name' => 'allowRSS',

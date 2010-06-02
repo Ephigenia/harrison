@@ -14,14 +14,14 @@ var jQT = new $.jQTouch({
 $(document).ready(function() {
 	// ajax load every content that is not allready there
 	
+	// delete confirmation when in admin mode
 	$('.confirm').live('click', function(e) {
 		var message = $(this).attr('title');
-		var result = window.confirm(message);
 		if (message.length == 0) {
 			var message = 'Sind Sie sicher das Sie das löschen möchten?';
 		}
-		if (result) {
-			document.location.href = $(this).attr('url');
+		if (window.confirm(message)) {
+			document.location.href = $(this).attr('href');
 		}
 		e.preventDefault();
 	});
@@ -31,9 +31,5 @@ $(document).ready(function() {
 		flashMessageElm.addClass('info');
 		$('.current .toolbar').after(flashMessageElm);
 	}
-	
-	$('body').bind('turn', function(event, info) {
-		$('body').toggleClass(info.orientation);
-	});
 	
 });

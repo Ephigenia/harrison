@@ -23,7 +23,7 @@ class AdminUserGroupForm extends AdminForm
 					'description' => array(
 						'type' => 'textarea',
 						'mandatory' => false,
-						'label' => __('Beschreibung').':',
+						'label' => __('Beschreibung'),
 					),
 				),
 			),

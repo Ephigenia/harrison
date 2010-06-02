@@ -36,21 +36,26 @@
         ?>
 	</head>
 	<body class="<?php echo I18n::locale(); ?>">
-		<div id="app" class="<?php echo String::ucFirst($controller) ?> <?php echo String::ucFirst($action) ?>">
-			<?php
-			if (isset($Me) && $action !== 'login') {
-				echo $this->renderElement('header');
-				echo $this->renderElement('mainMenu'); 
-			}
-			echo $this->renderElement('flashMessage') ?>
-			<div id="content">
-				<?php echo @$content ?>
+		<?php if ($action == 'login') { ?>
+			<div id="app" class="login">
+				<div id="content">
+					<?php echo $this->renderElement('flashMessage'); ?>
+					<?php echo @$content ?>
+				</div>
 			</div>
-			<?php if (!in_array($action, array('login', 'lostpass'))) {
-				echo $this->renderElement('footer');
-			} ?>
-		</div>
-		<?php
+		<?php } else {
+			echo $this->renderElement('header');
+			?>
+			<div id="app">
+				<?php echo $this->renderElement('mainMenu'); ?>
+				<?php echo $this->renderElement('flashMessage'); ?>
+				<div id="content">
+					<?php echo @$content ?>
+				</div>
+				<?php echo $this->renderElement('footer'); ?>
+			</div>
+			<?php
+		}
 		if (isset($JavaScript)) {
 			$JavaScript->addFiles(array(
 				'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',

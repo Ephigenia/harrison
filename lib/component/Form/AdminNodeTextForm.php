@@ -18,28 +18,28 @@ class AdminNodeTextForm extends AdminForm
 			'NodeText' => array(
 				'fields' => array(
 					'headline' => array(
-						'label' => __('Überschrift').':',
+						'label' => __('Überschrift'),
 						'mandatory' => false,
 					),
 					'subline' => array(
-						'label' => __('Unter-Überschrift (optional)').':',
+						'label' => __('Unter-Überschrift'),
 						'mandatory' => false,
 					),
 					'text' => array(
 						'mandatory' => false,
-						'label' => __('Text/Beschreibung').':',
+						'label' => __('Text/Beschreibung'),
 					),
 					'excerpt' => array(
-						'label' => __('Auszug/Zusammenfassung (optional)').':',
+						'label' => __('Auszug/Zusammenfassung'),
 						'mandatory' => false,
 					),
 					'url' => array(
-						'label' => __('URL (optional)').':',
+						'label' => __('URL'),
 						'mandatory' => false,
 					),
-					'keywords' => array(
+					'tags' => array(
 						'mandatory' => false,
-						'label' => __('Stichwörter (SEO)').':',
+						'label' => __('Tags (SEO)'),
 						'type' => 'text',
 					),
 					'language_id' => array(

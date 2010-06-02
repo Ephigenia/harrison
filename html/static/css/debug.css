@@ -19,7 +19,7 @@
 	display: table;
 }
 #debugDump h3 {
-	border-bottom: 1px solid #e6db55;
+	border-bottom: 2px solid #e6db55;
 	font-size: 14px;
 	line-height: 20px;
 	margin: 0.4em 0em;
@@ -29,7 +29,14 @@
 	float: left;
 	width: 100px;
 }
+#debugDump dl dt:after {
+	content: ':';
+}
+
 #debugDump table tr td {
+	border-bottom: 1px solid #EFE68B;
+}
+#debugDump table thead tr {
 	border-bottom: 1px solid #EFE68B;
 }
 #debugDump pre,

@@ -74,6 +74,7 @@ class AdminUserController extends AdminController
 	
 	public function edit($id = null)
 	{
+		$this->data->set('pageTitle', __(':1 editieren', $this->User->get('name')));
 		$this->addForm('AdminUserForm');
 		$this->AdminUserForm->fillModel($this->User);
 		if ($this->AdminUserForm->ok()) {

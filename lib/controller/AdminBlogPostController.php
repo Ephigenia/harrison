@@ -61,6 +61,7 @@ class AdminBlogPostController extends AdminController
 	
 	public function edit($id = null)
 	{
+		$this->data->set('pageTitle', $this->BlogPost->get('headline', __('Blogeintrag editieren')));
 		$this->addForm('AdminBlogPostForm');
 		if (!$this->AdminBlogPostForm->ok()) {
 			$this->AdminBlogPostForm->fillModel($this->BlogPost);

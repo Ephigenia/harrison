@@ -2,7 +2,7 @@
 <ul class="breadcrumb">
 	<li><?php echo $HTML->link(Router::getRoute('admin'), __('Home')); ?></li>
 	<li><?php echo $HTML->link(Router::getRoute('adminNode'), __('Seiten')); ?></li>
-	<li><?php echo Sanitizer::html($Node->getText('headline', $Node->get('name'))); ?></li>
+	<li><?php echo Sanitizer::html($Node->getText('headline', null, $Node->get('name'))); ?></li>
 </ul>
 
 <?php $JavaScript->link('tabs.js'); $CSS->link('tabs')?>
@@ -37,6 +37,6 @@
 		<li><?php echo $HTML->link($Node->adminDetailPageUri().'upload/', __('Datei hochladen')) ?></li>
 	</ul><br class="c" />
 	<?php foreach($Node->MediaFiles as $File) {
-		echo $this->element('mediaFile', array('mediaFileIcon' => $File, 'displayMoveLinks' => true));
+		echo $this->element('mediaFileIcon', array('MediaFile' => $File, 'displayMoveLinks' => true));
 	}
 } ?>
