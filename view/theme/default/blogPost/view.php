@@ -18,5 +18,5 @@
 	<?php echo $CommentForm ?>
 </div>
 <?php } else {
-	echo $HTML->tag('p', echo __('Dieser Blogpost wurde für Kommentare gesperrt. Du kannst ihn nicht kommentieren!'), array('class' => 'hint'));
+	echo $HTML->tag('p', __('Dieser Blogpost wurde für Kommentare gesperrt. Du kannst ihn nicht kommentieren!'), array('class' => 'hint'));
 } ?>

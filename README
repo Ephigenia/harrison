@@ -39,6 +39,7 @@ Use the Node/Pages Tree for creating static content in multiple languages and re
 	* User Admin extra Form for Password change
 	* Password Strength Indicator
 	* Complete default Permission Check Data
+	* Shortcuts for Creating, deleting, pagination?
 * 0.6
 	* Better Multilingual Interface for Node
 	* Better Multilingual Interface for MediaFiles

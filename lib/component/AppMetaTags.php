@@ -43,6 +43,8 @@ class AppMetaTags extends MetaTags
 			$File = new File($filename);
 			if ($File->exists()) {
 				$this->data[$key] = $File->toArray();
+			} else {
+				$this->data[$key] = '';
 			}
 		}
 		return parent::startup();
