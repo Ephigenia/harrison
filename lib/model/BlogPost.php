@@ -29,7 +29,7 @@ class BlogPost extends AppModel
 		'HitCount',
 		'Sluggable' => array(
 			'fields' => array('headline'),
-			'autoUpdate' => true,
+			'autoUpdate' => false,
 			'maxLength' => 60,
 		),
 	);

@@ -1,6 +1,6 @@
 #!/bin/bash
 ##############################################################################
-# This will cleanup a nms.update project
+# This will cleanup a harrison project
 #	- setting allmost all directories that should be writeable to 777
 #	- remove cached models, css and js files and old logs
 #

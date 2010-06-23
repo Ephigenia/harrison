@@ -38,7 +38,6 @@ if (empty($Files[0])) {
 		echo '<h2>'.__('Dateien & Bilder ohne Kategorie').'</h2>'.LF;
 	}
 	echo $AdminSearchForm;
-	echo '<br />';
  	echo $this->renderElement('pagination');
 	echo '<br />';
 	foreach($Files as $MediaFile) {

@@ -20,7 +20,7 @@ class LastFMAPI extends CURL
 	protected $user;
 	public $url = 'http://ws.audioscrobbler.com/2.0/';
 	
-	public $userAgent = 'nms.update / ephFrame';
+	public $userAgent = 'harrison, ephFrame';
 	
 	public function __construct($user, $apikey)
 	{

@@ -19,7 +19,7 @@ class NodeText extends AppModel
 			'uniqueFields' => array(
 				'language_id',
 			),
-			'autoUpdate' => true,
+			'autoUpdate' => false,
 		),
 	);
 	

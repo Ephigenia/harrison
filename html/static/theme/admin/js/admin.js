@@ -84,6 +84,11 @@ $(document).ready(function() {
 		$('form input[type=submit]').attr('value', 'sending…').attr('disabled','disabled').addClass('loading');
 	});
 	
+	// uri replace non-ascii chars
+	$('input.uri').keyup(function() {
+		$(this).val($(this).val().replace(/[^a-zA-Z0-9_,.-]+/g, ''));
+	});
+	
 	/** headline replacement as you type **/
 	$('form input.headline').keypress(function(e) {
 		if (e.which <= 0) return false;

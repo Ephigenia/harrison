@@ -2,7 +2,7 @@
 -- structure file for a harrison cms 0.4
 --
 -- this file should be used to create a initial database tables that can be
--- used with nms.update. Example data should be possible as well as
+-- used with harrison. Example data should be possible as well as
 -- descriptions for table fields.
 --
 -- @author Marcel Eichner // Ephigenia <love@ephigenia.de>
@@ -166,7 +166,8 @@ CREATE TABLE IF NOT EXISTS harrison_node_texts (
 	KEY (node_id),
 	KEY (language_id),
 	KEY (user_id),
-	KEY (uri)
+	KEY (uri),
+	KEY (revision)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `harrison_node_texts` VALUES(1, 1, 'de', 1, 0, '', 'root', NULL, NULL, NULL, NULL, NULL, 1262304000, 1262304000);

@@ -38,8 +38,8 @@
 	<body class="<?php echo I18n::locale(); ?>">
 		<?php if ($action == 'login') { ?>
 			<div id="app" class="login">
+				<?php echo $this->renderElement('flashMessage'); ?>
 				<div id="content">
-					<?php echo $this->renderElement('flashMessage'); ?>
 					<?php echo @$content ?>
 				</div>
 			</div>

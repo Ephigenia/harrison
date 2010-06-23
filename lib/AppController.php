@@ -46,6 +46,7 @@ class AppController extends Controller
 		'CSS',
 		'JavaScript',
 		'AppMetaTags',
+		'OpenGraphMetaTags',
 		'UserLogin',
 		'FlashMessage',
 		'I18n',

@@ -5,8 +5,9 @@ if (empty($flashMessage)) return false;
 if (isset($JavaScript)) $JavaScript->jQuery('
 	// Flashmessage auto-hide
 	$("#flashMessage").click(function() {
-		$(this).fadeOut("fast");
+		$(this).slideUp();
 	});
+
 	window.setTimeout("$(\'#flashMessage\').trigger(\'click\');", 10000);
 ');
 ?>

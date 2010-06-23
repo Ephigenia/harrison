@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file stores all admin routes for nms.update
+ * This file stores all admin routes for harrison
  *
  * this file should be included in routes.php file
  * all routes in here should begin with /admin/

@@ -30,8 +30,8 @@ Use the Node/Pages Tree for creating static content in multiple languages and re
 
 * Complete Mobile Admin integration for iPhone and Android
 * Rework of some Forms and Callbacks in the default theme, controllers and admin
-* All Form Fields in admin get an (optional) if they are not required
-* Little 
+* All Form Fields in admin get an (optional) if they are not required and ':' is added via style
+* Default theme is html5 compatible and uses google font api
 
 # Roadmap
 
@@ -40,7 +40,11 @@ Use the Node/Pages Tree for creating static content in multiple languages and re
 	* Password Strength Indicator
 	* Complete default Permission Check Data
 	* Shortcuts for Creating, deleting, pagination?
+	* Optional Fields for Nodes and BlogPosts (completely custom)
+	* Site-wide configuration via admin not config files (page title, meta tags etc.)
+
 * 0.6
+	* Devide Harrison from Application stuff for easier updating
 	* Better Multilingual Interface for Node
 	* Better Multilingual Interface for MediaFiles
 	* Better Forms for Blogs, Node, MediaFiles

@@ -1,15 +1,10 @@
-@CHARSET "UTF-8";
-
-/**
- * 	Styles for the main menu of nms.update admin
- * 	@author Marcel Eichner // Ephigenia <love@ephigenia.de>
- */
 #mainMenu {
 	background: #EFEFEF;
 	border: 1px solid #DCDCDC;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-khtml-border-radius: 5px;
+	border-radius: 5px;
 }
 
 #leftColumn ul li:first-child a {

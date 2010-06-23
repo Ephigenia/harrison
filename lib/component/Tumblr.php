@@ -14,7 +14,7 @@ class Tumblr extends CURL
 	
 	public $baseURL = 'http://www.tumblr.com/api/';
 	
-	public $userAgent = 'nms.update / ephFrame';
+	public $userAgent = 'harrison, ephFrame';
 	
 	public function __construct($email, $password = null)
 	{

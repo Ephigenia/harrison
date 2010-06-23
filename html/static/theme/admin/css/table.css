@@ -1,6 +1,6 @@
-/**
- * Table Styles for nms.update admin
- */
+table {
+	margin: 0em 0em 1em 0em;
+}
 table thead tr {
 	border-bottom: 3px solid #e6e6e6;
 	font-weight: bold;
