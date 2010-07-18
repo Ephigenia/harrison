@@ -2,7 +2,7 @@ Harrison CMS Readme
 ==============================================================================
 2010-05-08, Marcel Eichner // Ephigenia <love@ephigenia.de>
 
-This is the readme file for the Harrison CMS. It should contain basic information about setting up a simple Harrison project. If you don’t find what you need, please check the [official Harrison project website](http://code.marceleichner.de/project/harrison).
+This is the readme file for the Harrison CMS. It should contain basic information about setting up a simple Harrison project. If you don‚Äôt find what you need, please check the [official Harrison project website](http://code.marceleichner.de/project/harrison).
 
 # Installation
 
@@ -44,7 +44,9 @@ Use the Node/Pages Tree for creating static content in multiple languages and re
 	* Site-wide configuration via admin not config files (page title, meta tags etc.)
 
 * 0.6
+	* Put Uploaded Files into sub directories
 	* Devide Harrison from Application stuff for easier updating
 	* Better Multilingual Interface for Node
 	* Better Multilingual Interface for MediaFiles
 	* Better Forms for Blogs, Node, MediaFiles
+	* Slickier Interface for tags (hints, and completion)

@@ -66,7 +66,6 @@
 				'jquery.plugin.fieldselection',
 				'jquery.plugin.dialog',
 				'jquery.plugin.simplePreview',
-				'jquery.uploadify.v2.1.0.min.js', // uploadify
 				'admin',
 				'tabs',
 			));

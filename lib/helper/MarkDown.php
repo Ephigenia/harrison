@@ -12,7 +12,7 @@ class MarkDown extends AppHelper
 {
 	public function format($text)
 	{
-		require APP_VENDOR_DIR.'markdown/markdown.php';
+		function_exists('Markdown') or require APP_VENDOR_DIR.'markdown/markdown.php';
 		$text = Markdown($text);
 		return $text;
 	}

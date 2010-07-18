@@ -19,12 +19,10 @@ form fieldset label:after {
 	content: ':';
 }
 
-form fieldset input[type=text],
-form fieldset input[type=password] {
+form fieldset input {
 	height: 1.6em;
 }
-form fieldset input[type=text],
-form fieldset input[type=password],
+form fieldset input,
 form fieldset select,
 form fieldset textarea {
 	width: 99.05%;
@@ -58,12 +56,14 @@ form fieldset textarea:focus, form fieldset input:focus {
 
 /** submit buttons **/
 form fieldset input[type=submit] {
+	height: auto;
 	border-width: 1px;
 	padding: 0.8em 0.7em;
 	margin: 1em 0em 0em 0em;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-khtml-border-radius: 5px;
+	border-radius: 5px;
 }
 form fieldset input[type=submit]:hover {
 	cursor: pointer;

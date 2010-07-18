@@ -43,6 +43,7 @@ class AppController extends Controller
 	public $theme = 'default';
 	
 	public $components = array(
+		'Scaffold',
 		'CSS',
 		'JavaScript',
 		'AppMetaTags',

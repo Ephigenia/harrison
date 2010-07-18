@@ -9,7 +9,7 @@ class_exists('AdminController') or require dirname(__FILE__).'/AdminController.p
  * @subpackage harrison.controller
  * @since 2009-07-01
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
- **/
+ */
 class AdminMediaFileController extends AdminController
 {	
 	public $uses = array(
@@ -60,7 +60,8 @@ class AdminMediaFileController extends AdminController
 		}
 		$this->set('redirectUrl', $redirectUrl);
 		// process upload
-		if ($this->AdminMediaFileForm->ok()) {
+		$uploadedFile = $this->AdminMediaFileForm->file->value();
+		if (!empty($uploadedFile)) {
 			$this->AdminMediaFileForm->toModel($this->MediaFile);
 			$MediaFile = $this->MediaFile->addFile($this->AdminMediaFileForm->file->value(), $this->AdminMediaFileForm->file->originalFilename());
 			$MediaFile->User = $this->UserLogin->User;
@@ -69,11 +70,11 @@ class AdminMediaFileController extends AdminController
 				return $this->AdminMediaFileForm->errors = $MediaFile->validationErrors;
 			}
 			$this->FlashMessage->set(__('Datei erfolgreich hochgeladen.'), FlashMessageType::HINT);
-			if (@$this->request->data['uploadify'] !== '1') {
-				$this->redirect($redirectUrl);
-			} else {
-				echo '1';
+			if (@$this->request->data['uploadify'] === '1') {
+				echo true;
 				exit;
+			} else {
+				$this->redirect($redirectUrl);
 			}
 		}
 	}

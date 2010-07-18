@@ -73,8 +73,8 @@ class User extends AppModel
 			 'valid' => array(
 				'regexp' => Validator::EMAIL,
 				'message' => 'The email you entered is invalid.',
-			 )
-			,'unique' => array(
+			),
+			'unique' => array(
 				'callback' => 'isUnique',
 				'message' => 'The email is allready in use by a registered user, please use an other email.',
 			),

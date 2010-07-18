@@ -23,7 +23,7 @@ class LightboxController extends AppController
 		if ($Model = $this->{$modelName}->findById($id)) {
 			$this->Lightbox->add($Model);
 		}
-		$this->redirect($this->referer('/'));
+		$this->redirect($this->request->referer('/'));
 	}
 
 	public function remove($modelName, $id)
@@ -31,13 +31,13 @@ class LightboxController extends AppController
 		if ($Model = $this->{$modelName}->findById($id)) {
 			$this->Lightbox->delete($Model);
 		}
-		$this->redirect($this->referer('/'));
+		$this->redirect($this->request->referer('/'));
 	}
 
 	public function delete($id = null)
 	{
 		$this->Lightbox->destroy();
-		$this->redirect($this->referer('/'));
+		$this->redirect($this->request->referer('/'));
 	}
 	
 	public function clear()

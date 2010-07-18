@@ -96,6 +96,7 @@ class AdminUserController extends AdminController
 	public function create()
 	{
 		$this->addForm('AdminUserForm');
+		$this->data->set('pageTitle', __('Neuen Benutzer erstellen'));
 		if ($this->AdminUserForm->ok()) {
 			$this->data->set('User', $this->User);
 			$this->AdminUserForm->toModel($this->User);

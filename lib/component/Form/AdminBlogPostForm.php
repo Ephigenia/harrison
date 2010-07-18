@@ -48,6 +48,7 @@ class AdminBlogPostForm extends AdminForm
 						'type' => 'DropDown',
 						'label' => __('Autor'),
 						'options' => $this->controller->User->listAll('User.name', null, 'User.name ASC'),
+						'value' => $this->controller->UserLogin->User->id,
 					),
 					'published' => array(
 						'type' => 'DateTime',

@@ -3,15 +3,6 @@
 #	if you experience problems successive delete some of the parts
 # ----------------------------------------------------------------------------
 
-# common filetypes for download headers, missing on some servers
-AddType video/x-flv .flv
-AddType application/x-shockwave-flash .swf
-AddType application/octet-stream .chm .bz2
-AddType application/vnd.ms-excel .csv
-AddType application/x-pilot .prc .pdb
-AddType application/x-gzip .gz
-AddType image/x-icon .ico
-
 # default charset for responses
 AddDefaultCharset utf-8
 
@@ -40,14 +31,12 @@ ExpiresDefault A259200
 
 # rewrite rule
 # ----------------------------------------------------------------------------
-<IfModule mod_rewrite.c>
-	RewriteEngine On
+RewriteEngine On
 	
-	# Domainfactoy Rewrite Base needed
-	# RewriteBase /
+# Domainfactoy Rewrite Base needed
+# RewriteBase /
 	
-	#  rewrite for all files
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule	^(.*)$ index.php?__url=$1&PHP_AUTH=%{HTTP:Authorization} [QSA,L]
-</IfModule>
+#  rewrite for all files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule	^(.*)$ index.php?__url=$1&PHP_AUTH=%{HTTP:Authorization} [QSA,L]

@@ -44,7 +44,7 @@ class AdminNodeController extends AdminController
 		$this->AdminNodeForm->delete('headline');
 		$this->AdminNodeForm->delete('subline');
 		$this->AdminNodeForm->delete('text');
-		$this->AdminNodeForm->delete('keywords');
+		$this->AdminNodeForm->delete('tags');
 		$this->AdminNodeForm->delete('url');
 		$this->AdminNodeForm->delete('excerpt');
 		foreach($this->Languages as $Language) {

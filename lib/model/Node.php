@@ -139,10 +139,10 @@ class Node extends AppModel
 	}
 	
 	/**
-	 *	Tries to find a node by the passed $idOrNodeName
+	 * Tries to find a node by the passed $idOrNodeName
 	 *	
-	 * 	@param integer|string $idOrNodeName
-	 * 	@return Node|boolean
+	 * @param integer|string $idOrNodeName
+	 * @return Node|boolean
 	 */
 	public function findNode($idOrNodeName, $languageId = null)
 	{

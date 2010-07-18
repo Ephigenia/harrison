@@ -61,12 +61,4 @@ class DBConfig
 	 *	@var string
 	 */
 	public $default = 'mysql://user:pass@host:3306/db/#utf8';
-
-	public function __construct()
-	{
-		if (strtolower(get_current_user()) == 'ephigenia') {
-			// $this->default = 'mysql://root:@localhost:3306/harrison/#utf8';
-			$this->default = 'mysql://root:@localhost:3306/horrorblog.org/#utf8';
-		}
-	}
 }

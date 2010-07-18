@@ -18,25 +18,13 @@ class ActionCache extends AppComponent
 		'Session',
 	);
 	
-	public $config = array(
-		'Node' => array(
-			'view' => WEEK,
-			'index' => DAY,
-			'press' => WEEK,
-			'contact' => WEEK,
-			'search' => WEEK,
-			'sitemap' => WEEK,
-		),
-		'BlogPost' => array(
-			'index' => WEEK,
-			'rss' => WEEK,
-			'view' => WEEK,
-			'search' => WEEK,
-		),
-		'Comment' => array(
-			'rss' => WEEK,
-		),
-	);
+	public $config = array();
+	
+	public function startUp()
+	{
+		$this->config = Registry::get('ActionCache');
+		return parent::startUp();
+	}
 	
 	public function clear($controllername = null, $actionName = null)
 	{

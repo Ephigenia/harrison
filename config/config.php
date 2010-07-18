@@ -52,3 +52,26 @@ date_default_timezone_set('Europe/Berlin');
  * debug.css must be included as well DEBUG > DEBUG_PRODUCTION
  */
 // Registry::set('debug.showElementName', true);
+
+/**
+ * ActionCache
+ */
+Registry::set('ActionCache', array(
+	'Node' => array(
+		'view' => WEEK,
+		'index' => DAY,
+		'press' => WEEK,
+		'contact' => WEEK,
+		'search' => WEEK,
+		'sitemap' => WEEK,
+	),
+	'BlogPost' => array(
+		'index' => WEEK,
+		'rss' => WEEK,
+		'view' => WEEK,
+		'search' => WEEK,
+	),
+	'Comment' => array(
+		'rss' => WEEK,
+	),
+));
