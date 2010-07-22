@@ -3,40 +3,9 @@
 #	if you experience problems successive delete some of the parts
 # ----------------------------------------------------------------------------
 
-# default charset for responses
-AddDefaultCharset utf-8
-
-# Y-Slow/HTTP Request optimasion
-# ----------------------------------------------------------------------------
-# one year
-<IfModule mod_headers.c>
-ExpiresActive On
-ExpiresDefault A259200
-<FilesMatch "\.(ico|flv|mov|avi|mpg|wmv|mp3)$">
-	Header set Cache-Control "max-age=29030400, public"
-</FilesMatch>
-# one month
-<FilesMatch "\.(gif|jpg|jpeg|png|swf|pdf|ppt)$">
-	Header set Cache-Control "max-age=2851200, public"
-</FilesMatch>
-# two days
-<FilesMatch "\.(css|js)$">
-	Header set Cache-Control "max-age=172800, proxy-revalidate"
-</FilesMatch>
-# 10 seconds
-<FilesMatch "\.(php|cgi|pl|py|htm|html|xhtml|xml|txt|csv)">
-	Header set Cache-Control "max-age=10, private, proxy-revalidate"
-</FilesMatch>
-</IfModule>
-
-# rewrite rule
-# ----------------------------------------------------------------------------
 RewriteEngine On
-	
 # Domainfactoy Rewrite Base needed
 # RewriteBase /
-	
-#  rewrite for all files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule	^(.*)$ index.php?__url=$1&PHP_AUTH=%{HTTP:Authorization} [QSA,L]

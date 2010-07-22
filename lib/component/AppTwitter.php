@@ -39,7 +39,7 @@ class AppTwitter extends Component
 			$Twitter = new Twitter($this->config['username'], $this->config['password']);
 			$Twitter->timeout = 1;
 			try {
-				if ($Posts = $Twitter->timeline($this->username, $this->postCount)) {
+				if ($Posts = $Twitter->timeline($this->config['username'], $this->postCount)) {
 					$this->controller->set('TwitterPosts', $Posts);
 					file_put_contents($cacheFilename, json_encode($Posts));
 				}

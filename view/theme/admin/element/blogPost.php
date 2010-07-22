@@ -9,11 +9,18 @@
 		<?php
 		if ($BlogPost->status != Status::PUBLISHED) {
 			echo Status::$list[$BlogPost->status].'<br />';
-		}?>
+		}
+		?>
 		<?php echo $this->renderElement('blogPostMenu', array('BlogPost' => $BlogPost))?>
 	</td>
 	<td>
-		<?php echo $HTML->link($BlogPost->adminDetailPageUri('edit'), $BlogPost->get('headline', 'BlogPost #'.$BlogPost->id)); ?><br />
+		<?php
+		echo $HTML->link($BlogPost->adminDetailPageUri('edit'), $BlogPost->get('headline', 'BlogPost #'.$BlogPost->id));
+		// sticky note
+		if ($BlogPost->hasFlag(BlogPostFlag::STICKY)) {
+			echo '<em class="label sticky">'.__('Sticky').'</em>';
+		}
+		?><br />
 		<p>
 			<?php echo wordwrap($BlogPost->excerpt(500), 30, LF, true) ?> …
 		</p>

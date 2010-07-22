@@ -82,7 +82,7 @@ class AdminBlogPostForm extends AdminForm
 				$model->setFlag(BlogPostFlag::ALLOW_COMMENTS, $this->allowComments->value());
 			}
 			if ($this->hasField('sticky')) {
-				$model->setFlag(BlogPostFlag::FLAG_STICKY, $this->sticky->value());
+				$model->setFlag(BlogPostFlag::STICKY, $this->sticky->value());
 			}
 		}
 		// saving tags
@@ -104,7 +104,7 @@ class AdminBlogPostForm extends AdminForm
 		parent::fillModel($model);
 		if (!$this->submitted() && $model) {
 			$this->allowComments->checked($model->hasFlag(BlogPostFlag::ALLOW_COMMENTS));
-			$this->sticky->checked($model->hasFlag(BlogPostFlag::FLAG_STICKY));
+			$this->sticky->checked($model->hasFlag(BlogPostFlag::STICKY));
 			// tags
 			if (!empty($model->Tags)) {
 				$tags = new IndexedArray();

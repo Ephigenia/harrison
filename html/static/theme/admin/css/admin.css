@@ -224,6 +224,7 @@ ul.admin li a, .button, form fieldset input.submit {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-khtml-border-radius: 5px;
+	border-radius: 5px;
 }
 ul.admin li a:hover, .button:hover, input.submit:hover {
 	color: #000;
@@ -272,6 +273,24 @@ ul.breadcrumb li:after {
 }
 ul.breadcrumb li:last-child:after {
 	content: '';
+}
+
+/** different labels or markers **/
+em.label {
+	background-color: #E6E6E6;
+	color: #333;
+	font-size: 0.6em;
+	padding: 0.3em 0.4em;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	vertical-align: top;
+	margin: 0em 0em 0.2em 0.2em;
+}
+em.sticky {
+	text-transform: uppercase;
+	background-color: #FFD921;
 }
 
 /** Buttons **/

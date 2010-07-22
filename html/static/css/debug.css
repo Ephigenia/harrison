@@ -6,18 +6,20 @@
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  * @since  2009-05-29
  */
+#debugDump, #debugDump a, #debugDump * {
+	color: #000000;
+}
 #debugDump {
 	font: normal normal normal 11px/14px Lucida Sans Unicode, Lucida Grande, Verdana, Arial, Sans Serif;;
 	clear: both;
-	color: #000000;
 	text-align: left;
 	border: 1px solid #e6db55;
 	background-color: #ffffe0;
+	padding: 5px 10px;
+	display: table;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	padding: 5px 10px;
-	display: table;
 }
 #debugDump h3 {
 	border-bottom: 2px solid #e6db55;

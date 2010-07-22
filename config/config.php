@@ -14,18 +14,8 @@
  * third argument for Registry::set, see {@link Registry}
  * (The Debug Level Constants are set in ephFrame/config/constants.php)
  */
-switch(strtolower(@get_current_user())) {
-	// live mode
-	default:
-		Registry::set('DEBUG', DEBUG_PRODUCTION);
-		Registry::set('AdminEmail', 'love@ephigenia.de');
-		break;
-	// add your own host here
-	case 'ephigenia':
-		Registry::set('DEBUG', DEBUG_VERBOSE);
-		Registry::set('AdminEmail', 'ephigenia@me.com');
-		break;
-}
+Registry::set('DEBUG', DEBUG_PRODUCTION);
+Registry::set('AdminEmail', 'love@ephigenia.de');
 
 Registry::set('ContactEmail', Registry::get('AdminEmail'));
 
@@ -47,14 +37,11 @@ Registry::set('I18n.language', 'de_DE');
  */ 
 date_default_timezone_set('Europe/Berlin');
 
-/**
- * Enable this to render the element names before element itsself,
- * debug.css must be included as well DEBUG > DEBUG_PRODUCTION
- */
-// Registry::set('debug.showElementName', true);
+Registry::set('DB.tablenamePrefix', 'harrison_');
+
 
 /**
- * ActionCache
+ * Action Cache Configuration
  */
 Registry::set('ActionCache', array(
 	'Node' => array(

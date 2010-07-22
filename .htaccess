@@ -6,18 +6,11 @@
 # AddType x-mapp-php5 .php
 # AddHandler x-mapp-php5 .php
 
-# get if local server
-<IfModule mod_rewrite.c>
-	RewriteEngine On
+RewriteEngine On
 	
-	# domainfactory
-	# RewriteBase /
+# Sometimes you need to set rewrite base to current directory or root
+# RewriteBase /
 	
-	# reach existing files in root
-	# RewriteCond %{REQUEST_FILENAME} -f
-	# RewriteRule (.+) $1 [L]
-	
-	# ephFrame rewrite rules
-	RewriteRule ^$		html/	[L]
-	RewriteRule (.*)	html/$1	[E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
-</IfModule>
+# ephFrame rewrite rules
+RewriteRule ^$		html/	[L]
+RewriteRule (.*)	html/$1	[E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
