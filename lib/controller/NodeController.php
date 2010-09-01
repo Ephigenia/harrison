@@ -80,7 +80,7 @@ class NodeController extends AppController
 		}
 		// find children of the node
 		if ($this->Node->hasChildren() && $ChildNodes = $this->Node->tree(0, 0)) {
-			$this->set('ChildNodes', $ChildNodes);
+			$this->data->set('ChildNodes', $ChildNodes);
 		}
 		// custom template
 		if (!$this->Node->isEmpty('template')) {

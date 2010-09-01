@@ -7,7 +7,7 @@ foreach($BlogPosts as $entry) {
 	}	
 	?>
 BEGIN:VEVENT
-UID:<?php echo $entry->uniqueId().LF ?>
+UID:<?php echo md5($entry->id.SALT).LF ?>
 SUMMARY:<?php echo $headline.LF ?>
 LOCATION:Berlin/Germany
 CLASS:PUBLIC

@@ -29,7 +29,7 @@ class CommentController extends AppController
 			} else {
 				// send comment notification to all admins
 				$this->ViewMailer->send(Registry::get('AdminEmail'), 'commentAdminNotification', __('Neuer Kommentar'), array('Comment' => $this->Comment));
-				if ($this->hasComponent('ActionCache')) {
+				if (isset($this->ActionCache)) {
 					$this->ActionCache->clear($this->name, $this->action);
 				}
 				$this->redirect($this->BlogPost->detailPageUri());

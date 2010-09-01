@@ -25,11 +25,11 @@ class ContactController extends AppController
 	public function index()
 	{
 		if ($this->ContactForm->ok() && $this->request->get('md5') == $this->ContactForm->md5Secret) {
-			$this->set('data', $this->request->data);
+			$this->data->set('data', $this->request->data);
 			if (!$this->ViewMailer->send(Registry::get('ContactEmail'), 'contact', 'Kontaktformular', $this->request->data)) {
-				$this->set('error', __('Es ist ein Fehler beim Versenden der E-Mail aufgetreten. Bitte versuche es später noch ein mal.'));
+				$this->data->set('error', __('Es ist ein Fehler beim Versenden der E-Mail aufgetreten. Bitte versuche es später noch ein mal.'));
 			} else {
-				$this->set('success', true);
+				$this->data->set('success', true);
 			}
 		}
 	}

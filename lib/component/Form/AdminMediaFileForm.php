@@ -14,6 +14,13 @@ class AdminMediaFileForm extends AdminForm
 {	
 	public function startUp()
 	{
+		$folderList = array(
+			false => __('kein Kategorie')) +
+			$this->controller->Folder->listAll('name', array(
+			'conditions' => array(
+				'id > 1',
+			),
+		));
 		$this->config = array(
 			'MediaFile' => array(
 				'fields' => array(
@@ -21,12 +28,13 @@ class AdminMediaFileForm extends AdminForm
 						'mandatory' => false,
 						'type' => 'DropDown',
 						'label' => __('Kategorie (optional)'),
-						'options' => array(false => __('kein Kategorie')) + $this->controller->Folder->listAll('name', 'id > 1', null, null, 0, 0),
+						'options' => $folderList,
 					),
 				),
 			),
 			array(
 				'type' => 'file',
+				'name' => 'file',
 				'label' => false,
 			),
 			array(

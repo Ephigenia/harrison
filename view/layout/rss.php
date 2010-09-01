@@ -5,9 +5,9 @@
 		<atom:link href="<?php echo Router::url('root') ?>" rel="self" type="<?php echo $this->contentType ?>" />
 		<link><?php echo Router::url('root') ?></link>
 		<description>RSS Feed from <?php echo AppController::NAME; ?></description>
-		<language><?php echo I18n::locale(); ?></language>
-		<copyright><?php echo $MetaTags->copyright ?></copyright>
-		<generator><?php echo $MetaTags->generator ?></generator>
+		<language><?php echo I18n::$language; ?></language>
+		<copyright><?php echo $AppMetaTags->copyright ?></copyright>
+		<generator><?php echo $AppMetaTags->generator ?></generator>
 		<pubDate><?php echo date('r') ?></pubDate>
 		<?php echo @$content ?>
 	</channel>

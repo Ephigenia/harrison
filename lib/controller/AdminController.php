@@ -75,7 +75,7 @@ class AdminController extends AppController
 			$this->redirect(Router::getRoute('adminLogin'));
 		}
 		// change language on users locale
-		if ($this->hasComponent('I18n') && $this->UserLogin->loggedin() && $this->User->hasField('locale')) {
+		if (isset($this->I18n) && $this->UserLogin->loggedin() && $this->User->hasField('locale')) {
 			$this->I18n->locale($this->UserLogin->User->locale);
 		}
 		// if mobile layout selected, use other action view files
@@ -115,8 +115,8 @@ class AdminController extends AppController
 			$this->User,
 			$this->MediaFile,
 		));
-		$this->set('pageTitle', __('Aktuelles/Wall'));
-		$this->set('WallItems', $WallItems);
+		$this->data->set('pageTitle', __('Aktuelles/Wall'));
+		$this->data->set('WallItems', $WallItems);
 		return $WallItems;
 	}
 }

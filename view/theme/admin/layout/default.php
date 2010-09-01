@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title><?php echo @$pageTitle ?></title>
+		<title><?php echo strtr(@$pageTitle, array('<q>' => '"', '</q>' => '"')); ?></title>
 		<!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=7" /><![endif]-->
 		<base href="<?php echo Router::url('admin'); ?>" />
 		<?php

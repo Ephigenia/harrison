@@ -1,6 +1,6 @@
 <?php
 
-ephFrame::loadClass('ephFrame.lib.component.MetaTags');
+Library::load('ephFrame.lib.component.MetaTags');
 
 /**
  * Application MetaTags Collection
@@ -18,7 +18,7 @@ ephFrame::loadClass('ephFrame.lib.component.MetaTags');
  * @since 2009-03-02
  */	
 class AppMetaTags extends MetaTags
-{	
+{
 	public $data = array(
 		// SEO
 		'keywords' => '@keywords.txt',

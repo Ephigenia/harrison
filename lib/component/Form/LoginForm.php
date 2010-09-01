@@ -10,14 +10,15 @@
  */
 class LoginForm extends AppForm
 {
-	public function startUp() {
+	public function startUp()
+	{
 		$this->config = array(
 			array(
 				'type' => 'email',
 			),
 			array(
 				'type' => 'password',
-				'label' => __('Passwort').':',
+				'label' => __('Passwort'),
 			),
 			array(
 				'type' => 'checkbox',

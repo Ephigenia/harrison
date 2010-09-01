@@ -35,12 +35,11 @@ class AppTwitter extends Component
 			|| (file_exists($cacheFilename)
 			&& filemtime($cacheFilename) < time() - $this->cacheTime)
 			) {
-			ephFrame::loadClass('ephFrame.lib.api.Twitter');
+			Library::load('ephFrame.lib.net.api.Twitter');
 			$Twitter = new Twitter($this->config['username'], $this->config['password']);
 			$Twitter->timeout = 1;
 			try {
 				if ($Posts = $Twitter->timeline($this->config['username'], $this->postCount)) {
-					$this->controller->set('TwitterPosts', $Posts);
 					file_put_contents($cacheFilename, json_encode($Posts));
 				}
 			} catch (TwitterException $e) { }
@@ -48,7 +47,7 @@ class AppTwitter extends Component
 			$Posts = json_decode(file_get_contents($cacheFilename));
 		}
 		if (!empty($Posts)) {
-			$this->controller->set('TwitterPosts', $Posts);
+			$this->controller->data->set('TwitterPosts', $Posts);
 		}
 		return parent::beforeRender();
 	}

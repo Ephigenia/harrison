@@ -12,9 +12,6 @@
  * @filesource
  */
 
-// load parent class
-ephFrame::loadClass('ephFrame.lib.Controller');
-
 /**
  * Applications Main Controller
  * 	
@@ -81,7 +78,7 @@ class AppController extends Controller
 	{
 		// set languages for view
 		// @todo move this to language controller or component
-		if ($this->hasModel('Language') && $this->Languages = $this->Language->findAll()) {
+		if (isset($this->Language) && $this->Languages = $this->Language->findAll()) {
 			// make languages available in the view
 			$this->data->set('Languages', $this->Languages);
 			// set new locale from language_id=[de|en|fr] action
@@ -116,6 +113,40 @@ class AppController extends Controller
 			$this->action .= '.'.$this->layout;
 		}
 		return parent::beforeAction();
+	}
+	
+	/**
+	 * Standard search action, searches for a $key $keyword match and lists
+	 * all matches
+	 * @deprecated move this to component
+	 * @param string $keyword
+	 */
+	public function search($q, $fields = array()) 
+	{
+		$results = new IndexedArray();
+		$this->data->set('q', $q);
+		if (strlen($q) <= 0 || !isset($this->{$this->name}) || empty($fields)) {
+			return $results;
+		}
+		foreach($fields as $fieldname) {
+			if (strstr($fieldname, '.') == false) {
+				$conditions[] = $this->{$this->name}->name.'.'.$fieldname.' LIKE '.DBQuery::quote('%'.$q.'%').' OR';
+			} else {
+				$conditions[] = $fieldname.' LIKE '.DBQuery::quote('%'.$q.'%').' OR';
+			}
+		}
+		$page = (isset($this->params['page'])) ? $this->params['page'] : 1;
+		$pagination = $this->{$this->name}->paginate($page, null, $conditions);
+		$pagination['url'] = Router::getRoute(lcfirst($this->name).'SearchPaged', array('q' => $q));
+		$this->data->set('pagination', $pagination);
+		$params = array(
+			'conditions' => $conditions,
+			'offset' => ($page - 1) * $this->{$this->name}->perPage,
+			'limit' => $this->{$this->name}->perPage,
+		);
+		$results = $this->{$this->name}->findAll($params);
+		$this->data->set(Inflector::pluralize($this->name), $results);
+		return $results;
 	}
 }
 

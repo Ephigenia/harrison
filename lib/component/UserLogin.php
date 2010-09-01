@@ -98,7 +98,7 @@ class UserLogin extends AppComponent
 			Log::write(Log::VERBOSE, get_class($this).': found user id in session: '.$userId);
 			$this->User = $this->controller->User->findById($userId);
 		// check login for permanent cookie value
-		} elseif ($this->permanent && $this->controller->User->hasField('permanent_key') && $permanentCookieValue = $this->Cookie->read($this->permanentCookiename)) {
+		} elseif ($this->permanent && $this->controller->User->hasField('permanent_key') && $permanentCookieValue = $this->Cookie->get($this->permanentCookiename)) {
 			if ($this->validPermanentKey($permanentCookieValue)) {
 				Log::write(Log::VERBOSE, get_class($this).': found permanent cookie: '.$permanentCookieValue);
 				$this->User = $this->controller->User->findByPermanentKey($permanentCookieValue);
@@ -125,10 +125,10 @@ class UserLogin extends AppComponent
 				// refresh user in session
 				$this->Session->set($this->sessionUserIdName, $this->User->get('id'));
 				// 	set Me to the current user that is logged in
-				$this->controller->set('Me', $this->User);
+				$this->controller->data->set('Me', $this->User);
 				// refresh permanent cookie
 				if ($this->permanent && !$this->User->isEmpty('permanent_key')) {
-					$this->Cookie->write($this->permanentCookiename, $this->User->get('permanent_key'));
+					$this->Cookie->set($this->permanentCookiename, $this->User->get('permanent_key'));
 				}
 				if ($this->updateOnAction) {
 					$this->User->save(false);
@@ -169,7 +169,7 @@ class UserLogin extends AppComponent
 		// set permanent login cookie
 		if ($this->permanent && $permanent && $this->User->hasField('permanent_key')) {
 			$this->User->set('permanent_key', md5($this->permanentSalt.$this->User->get($this->usernameField).$this->User->id));
-			$this->Cookie->write($this->permanentCookiename, $this->User->get('permanent_key'));
+			$this->Cookie->set($this->permanentCookiename, $this->User->get('permanent_key'));
 			$updateUser = true;
 		}
 		// save last login time
@@ -247,10 +247,8 @@ class UserLogin extends AppComponent
 		if ($this->permanent && !empty($this->User)) {
 			if ($this->User instanceof User && $this->User->hasField('permanent_key')) {
 				$this->User->set('permanent_key', false);
-				$this->User->save(false);
 			}
 			$this->Cookie->delete($this->permanentCookiename);
-			$this->Cookie->save();
 		}
 		$this->Session->delete($this->sessionUserIdName);
 		unset($this->User);

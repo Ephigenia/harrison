@@ -55,8 +55,7 @@ class ViewMailer extends AppComponent
 			$this->headers->set('From', $this->controller->UserLogin->User->get('email'));
 		}
 		// render content
-		loadClass('ephFrame.lib.HTMLView');
-		$view = new HTMLView($this->viewDir, $template, array_merge($this->controller->data->toArray(), $data));
+		$view = Library::create('ephFrame.lib.view.View', array($this->viewDir, $template, array_merge($this->controller->data->toArray(), $data)));
 		$view->theme = $this->controller->theme;
 		// send mail and return result
 		return @mail(

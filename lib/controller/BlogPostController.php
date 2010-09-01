@@ -34,6 +34,12 @@ class BlogPostController extends AppController
 		'all',
 	);
 	
+	public function afterConstruct()
+	{
+		$this->registerCallback('beforeView', array($this, 'beforeView'));
+		return parent::afterConstruct();
+	}
+	
 	public function beforeAction()
 	{
 		if ($this->UserLogin->loggedin()) {
@@ -93,7 +99,7 @@ class BlogPostController extends AppController
 			} else {
 				// send comment notification to all admins
 				$this->ViewMailer->send(Registry::get('AdminEmail'), 'commentAdminNotification', __('Neuer Kommentar'), array('Comment' => $this->Comment));
-				if ($this->hasComponent('ActionCache')) {
+				if (isset($this->ActionCache)) {
 					$this->ActionCache->clear($this->name, $this->action);
 					$this->ActionCache->clear($this->name, 'index');
 				}
@@ -105,10 +111,10 @@ class BlogPostController extends AppController
 	
 	public function search($q = null, $fields = array())
 	{
-		if ($this->request->get('q')) {
+		if (isset($this->request->data['q'])) {
 			$this->redirect(Router::uri('blogSearch', array(
-				'q' => $this->request->get('q'))
-			));
+				'q' => $this->request->data['q']
+			)));
 		}
 		parent::search($q, array('text', 'headline', 'tags'));
 		$this->action = 'index';

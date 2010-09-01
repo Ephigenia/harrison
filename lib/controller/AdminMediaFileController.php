@@ -27,7 +27,13 @@ class AdminMediaFileController extends AdminController
 	public function index()
 	{
 		$this->data->set('pageTitle', __('Dateien'));
-		$this->MediaFiles = $this->MediaFile->findAll(null, array('MediaFile.created DESC'), 0, 15);
+		$this->MediaFiles = $this->MediaFile->findAll(array(
+			'order' => array(
+				'MediaFile.created' => DBQuery::ORDER_DESC,
+			),
+			'offset' => 0,
+			'limit' => 15,
+		));
 		$this->data->set('Files', $this->MediaFiles);
 		$this->Folders = $this->Folder->findById(1)->children();
 		$this->data->set('Folders', $this->Folders);
@@ -58,7 +64,7 @@ class AdminMediaFileController extends AdminController
 		} else {
 			$redirectUrl = Router::getRoute('adminMediaFiles');
 		}
-		$this->set('redirectUrl', $redirectUrl);
+		$this->data->set('redirectUrl', $redirectUrl);
 		// process upload
 		$uploadedFile = $this->AdminMediaFileForm->file->value();
 		if (!empty($uploadedFile)) {
@@ -112,7 +118,7 @@ class AdminMediaFileController extends AdminController
 			$Form->startup();
 			$Form->configure();
 			$Form->fromModel($TextModel);
-			$Form->attributes->set('action', WEBROOT.$this->request->data['__url']);
+			$Form->attributes->set('action', Router::uri());
 			$Form->language_id->value($Language->id);
 			$this->data->set('AdminMediaTextForm'.String::ucFirst($Language->id), $Form);
 			if ($Form->ok() && $this->request->data['language_id'] == $Language->id) {
@@ -121,7 +127,7 @@ class AdminMediaFileController extends AdminController
 					$Form->errors = $TextModel->validationErrors;
 				} else {
 					$Form->success = __('Erfolgreich :1 gespeichert', $Language->get('name'), FlashMessageType::SUCCESS);
-					$this->redirect(WEBROOT.$this->request->data['__url']);
+					$this->redirect(Router::url());
 				}
 			}
 		}

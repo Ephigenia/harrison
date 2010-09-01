@@ -42,12 +42,20 @@ class AdminBlogPostForm extends AdminForm
 					'language_id' => array(
 						'type' => 'DropDown',
 						'label' => __('Sprache'),
-						'options' => $this->controller->Language->listAll('name', null, 'name ASC'),
+						'options' => $this->controller->Language->listAll('name', array(
+							'order' => array(
+								'name' => DBquery::ORDER_ASC,
+							),
+						)),
 					),
 					'user_id' => array(
 						'type' => 'DropDown',
 						'label' => __('Autor'),
-						'options' => $this->controller->User->listAll('User.name', null, 'User.name ASC'),
+						'options' => $this->controller->User->listAll('User.name', array(
+							'order' => array(
+								'User.name ASC',
+							),
+						)),
 						'value' => $this->controller->UserLogin->User->id,
 					),
 					'published' => array(

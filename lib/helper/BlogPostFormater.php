@@ -155,7 +155,7 @@ class BlogPostFormater extends Helper
 				([^\]]+)?
 			\]{2}@ix', $text, $found, PREG_SET_ORDER)) {
 			foreach($found as $arr) {
-				class_exists('Element') or ephFrame::loadClass('ephFrame.lib.Element');
+				class_exists('Element') or Library::load('ephFrame.lib.view.Element');
 				$videoElement = new Element('video/'.$arr['type'], array('id' => $arr['id']));
 				$text = str_replace($arr[0], $videoElement->render(), $text);
 			}

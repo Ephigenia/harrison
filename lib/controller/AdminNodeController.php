@@ -58,7 +58,7 @@ class AdminNodeController extends AdminController
 			$Form->init($this);
 			$Form->configure();
 			$Form->fromModel($TextModel);
-			$Form->attributes->set('action', WEBROOT.$this->request->data['__url']);
+			// $Form->attributes->set('action', WEBROOT.$this->request->data['__url']);
 			$Form->language_id->value($Language->id);
 			$this->data->set('AdminNodeTextForm'.ucfirst($Language->id), $Form);
 			if ($Form->ok() && $this->request->data['language_id'] == $Language->id) {
@@ -67,7 +67,7 @@ class AdminNodeController extends AdminController
 					$Form->errors = $TextModel->validationErrors;
 				} else {
 					$this->FlashMessage->set(__('Erfolgreich Seite <q>:1</q> (:2) gespeichert', $TextModel->get('headline'), $Language->get('name')));
-					$this->redirect(WEBROOT.$this->request->data['__url']);
+					$this->redirect(Router::url());
 				}
 			}
 		}

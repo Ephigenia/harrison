@@ -34,8 +34,8 @@ class Wall extends AppComponent
 			}
 			if (empty($timeField)) continue;
 			// read items and add them with ordered time index to return array
-			$Model->order = array();
-			$Items = $Model->findAll(null, $order, 0, 10, 1);
+			$Model->order = $order;
+			$Items = $Model->findAll(array('depth' => 1, 'offset' => 0, 'limit' => 10));
 			if ($Items) foreach ($Items as $Item) {
 				$WallItems[$Item->get($timeField)] = $Item;
 			}

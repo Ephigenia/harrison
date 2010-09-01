@@ -17,9 +17,9 @@
  */
 switch(strtolower(@get_current_user())) {
 	case 'ephigenia':
-		require '/Users/ephigenia/Sites/ephFrame/trunc/ephFrame/startup.php';
+		require '/Users/ephigenia/Sites/ephFrame/trunc/ephFrame/bootstrap.php';
 		break;
 	default:
-		require dirname(__FILE__).'/../../../ephFrame/startup.php';
+		require dirname(__FILE__).'/../../../ephFrame/bootstrap.php';
 		break;
 }

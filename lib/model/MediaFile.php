@@ -1,7 +1,7 @@
 <?php
 
-class_exists('Image') or loadClass('ephFrame.lib.Image');
-class_exists('I18n') or loadClass('ephFrame.lib.component.I18n');
+class_exists('Image') or Library::load('ephFrame.lib.file.image.Image');
+class_exists('I18n') or Library::load('ephFrame.lib.component.I18n');
 
 /**
  * Media File class

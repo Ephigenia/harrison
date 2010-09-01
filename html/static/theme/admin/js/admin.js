@@ -13,7 +13,7 @@ $(document).ready(function() {
 	/** jQuery UI **/
 	if (jQuery().autocomplete) $('#AdminSearchForm input.q').autocomplete({
 		minLength: 3,
-		delay: 500,
+		delay: 800,
 		source: function(request, response) {
 			$.ajax({
 				url: $('#AdminSearchForm').attr('action') + '/search/' + request.term,

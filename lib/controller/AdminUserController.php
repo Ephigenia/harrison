@@ -68,7 +68,10 @@ class AdminUserController extends AdminController
 		$pagination = $this->User->paginate($page, $perPage);
 		$pagination['url'] = Router::getRoute('adminUserPaged');
 		$this->data->set('pagination', $pagination);
-		$this->data->set('Users', $this->User->findAll(null, null, ($page-1) * $perPage, $perPage));
+		$this->data->set('Users', $this->User->findAll(array(
+			'offset' => ($page-1) * $perPage,
+			'limit' => $perPage,
+		)));
 		$this->data->set('pageTitle', __n(':1 Benutzer', ':1 Benutzer', $pagination['total']));
 	}
 	
@@ -89,7 +92,7 @@ class AdminUserController extends AdminController
 				$this->redirect($this->User->adminDetailPageUri());
 				return true;
 			}
-			$this->AdminUserForm->errors = $this->User->validationErrors();
+			$this->AdminUserForm->errors = $this->User->validationErrors;
 		}
 	}
 	
@@ -113,7 +116,7 @@ class AdminUserController extends AdminController
 			if ($this->AdminUserForm->sendMail->value()) {
 				$this->ViewMailer->subject = __('Neue Zugangsdaten für :1', AppController::NAME);
 				if (!$this->ViewMailer->send($this->User->email, 'adminUserCreate')) {
-					$this->set('errorEmail', true);
+					$this->data->set('errorEmail', true);
 					$User->delete();
 					return true;
 				}
@@ -126,7 +129,7 @@ class AdminUserController extends AdminController
 	public function nodes()
 	{
 		$this->Node->unbind('MediaFile');
-		$this->data->set('Nodes', $this->Node->findAll(array('Node.user_id' => $this->User->id)));
+		$this->data->set('Nodes', $this->Node->findAll(array('conditions' => array('Node.user_id' => $this->User->id))));
 	}
 	
 	public function log()
@@ -137,7 +140,7 @@ class AdminUserController extends AdminController
 		$pagination = $this->LogEntry->paginate($page, $perPage);
 		$pagination['url'] = Router::getRoute('adminUserPaged');
 		$this->data->set('pagination', $pagination);
-		$this->data->set('LogEntries', $this->LogEntry->findAll(null, null, ($page-1) * $perPage, $perPage));
+		$this->data->set('LogEntries', $this->LogEntry->findAll(array('offset' => ($page-1) * $perPage, 'limit' => $perPage)));
 	}
 	
 	public function resendPassword()

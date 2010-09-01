@@ -58,14 +58,20 @@ class AdminFolderController extends AdminController
 			$this->data->set('Folder', $this->Folder);
 			$this->MediaFile->findConditions = array('MediaFile.folder_id' => $this->Folder->id);
 		} else {
-			$this->set('Folders', $this->Folder->findAll(array('Folder.level' => '>0')));
+			$this->data->set('Folders', $this->Folder->findAll(array('conditions' => array('Folder.level' => '>0'))));
 			$this->MediaFile->findConditions = array('MediaFile.folder_id IS NULL OR MediaFile.folder_id <= 0');
 		}
 		// get files in current folder
 		$perPage = 15;
 		$page = @$this->params['page'] or 1;
-		$files = $this->MediaFile->findAll(null, array('MediaFile.created DESC'), ($page-1) * $perPage, $perPage);
-		$this->set('Files', $files);
+		$files = $this->MediaFile->findAll(array(
+			'order' => array(
+				'MediaFile.created' => DBQuery::ORDER_DESC,
+			),
+			'offset' => ($page-1) * $perPage,
+			'limit' => $perPage,
+		));
+		$this->data->set('Files', $files);
 		$pagination = $this->MediaFile->paginate($page, $perPage);
 		if ($this->Folder->exists()) {
 			$pagination['url'] = Router::getRoute('adminFolderViewPaged', array('id' => $this->Folder->id));

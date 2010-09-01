@@ -12,8 +12,6 @@
  * @filesource
  */
 
-ephFrame::loadClass('ephFrame.lib.model.Model');
-
 /**
  * The AppModel should be the parent class for every model used in the
  * application. So you can include basic methods that should be accessible

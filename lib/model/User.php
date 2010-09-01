@@ -115,11 +115,15 @@ class User extends AppModel
 	 */
 	public function isUnique()
 	{
-		$findConditions = array('User.email' => DBQuery::quote($this->email));
+		$params = array(
+			'conditions' => array(
+				'User.email' => DBQuery::quote($this->email),
+			),
+		);
 		if ($this->exists()) {
-			$findConditions[] = 'User.id <> '.intval($this->id);
+			$params['conditions']['User.id <>'] = (int) $this->id;
 		}
-		if ($doubleUser = $this->find($findConditions, null, 0)) {
+		if ($doubleUser = $this->find($params)) {
 			return false;
 		}
 		return true;

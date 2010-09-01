@@ -37,7 +37,10 @@ class AdminCommentController extends AdminController
 			$this->data->set('BlogPost', $BlogPost);
 		}
 		$page = intval((@$this->params['page'] > 1) ? $this->params['page'] : 1);
-		$this->data->set('Comments', $this->Comment->findAll(null, null, ($page - 1) * $this->Comment->perPage, $this->Comment->perPage));
+		$this->data->set('Comments', $this->Comment->findAll(array(
+			'offset' => ($page - 1) * $this->Comment->perPage,
+			'limit' => $this->Comment->perPage,
+		)));
 		$pagination = $this->Comment->paginate($page, $this->Comment->perPage);
 		$pagination['url'] = Router::getRoute('adminCommentPaged');
 		$this->data->set('pagination', $pagination);

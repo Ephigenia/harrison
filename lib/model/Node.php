@@ -153,6 +153,6 @@ class Node extends AppModel
 		} else {
 			$conditions = array('NodeText'.ucfirst(substr($languageId, 0, 2)).'.uri' => DBQuery::quote($idOrNodeName));
 		}
-		return $this->find($conditions);
+		return $this->find(array('conditions' => $conditions));
 	}
 }

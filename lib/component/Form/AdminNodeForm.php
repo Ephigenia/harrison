@@ -44,7 +44,11 @@ class AdminNodeForm extends AdminForm
 				'fields' => array(
 					'user_id' => array(
 						'type' => 'DropDown',
-						'options' => $this->controller->User->listAll('User.name', null, 'User.name ASC'),
+						'options' => $this->controller->User->listAll('User.name', array(
+							'order' => array(
+								'User.name' => DBQuery::ORDER_ASC,
+							),
+						)),
 						'value' => $this->controller->UserLogin->User->id,
 						'label' => __('Autor'),
 					),

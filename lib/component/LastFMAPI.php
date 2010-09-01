@@ -1,6 +1,6 @@
 <?php
 
-ephFrame::loadClass('ephFrame.lib.CURL');
+Library::load('ephFrame.lib.net.socket.CURL');
 
 /**
  * Simple LastFMAPI Example

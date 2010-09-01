@@ -2,7 +2,7 @@
 $CSS->link($elementBaseName);
 $avatarSize = (isset($avatarSize)) ? $avatarSize : 34;
 ?>
-<li id="<?php echo $elementBaseName.$Comment->uniqueId(); ?>" class="<?php echo $elementBaseName; ?>">
+<li class="<?php echo $elementBaseName; ?>">
 	<?php if (isset($truncated)) { ?>
 	<h4>
 		<?php echo $HTML->link($Comment->BlogPost->detailPageUri().'#Comments', $Comment->BlogPost->get('headline')); ?>

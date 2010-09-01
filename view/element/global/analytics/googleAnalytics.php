@@ -4,6 +4,10 @@
  *	
  * Parameters
  * ==========
+ * $id				string			Google-Analytics ID
+ * $GATrackURL		string			Url that should be tracked as pageview
+ * $GATrackEvent	array(string)	array with index `category` and `action`
+ * 									of event that should be tracked
  *
  * @since 2009-09-16
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
@@ -18,6 +22,7 @@
 	try {
 		var pageTracker = _gat._getTracker("<?php echo @$id ?>");
 		window.google_analytics_uacct = "<?php echo @$id ?>";
+		pageTracker._setDomainName("<?php echo $_SERVER['HTTP_HOST']; ?>");
 		pageTracker._trackPageview(<?php echo coalesce('\''.@$GATrackURL.'\'', ''); ?>);
 		<?php		
 		if (isset($GATrackEvent) && !empty($GATrackEvent['category']) && !empty($GATrackEvent['action'])) {
