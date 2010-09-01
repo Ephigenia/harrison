@@ -4,7 +4,9 @@ Harrison CMS Readme
 
 **THIS IS A PRE-RELEASE! PLAY WITH IT**
 
-This is the readme file for the Harrison CMS. It should contain basic information about setting up a simple Harrison project. If you don‚Äôt find what you need, please check the [official Harrison project website](http://code.marceleichner.de/project/harrison).
+This is the readme file for the Harrison CMS. It should contain basic
+information about setting up a simple Harrison project. If you don’t find what
+you need, please check the [official Harrison project website](http://code.marceleichner.de/project/harrison).
 
 # Installation
 
@@ -15,25 +17,33 @@ This is the readme file for the Harrison CMS. It should contain basic informatio
 	* modify `html/ephFrame.php` to find [ephFrame PHP Framework](github.com/Ephigenia/ephFrame)
 	* modify `.htaccess` files if needed
 * Database Setup
-	* create new data base and import `config/structure.sql` to create basic Harrison tables
+	* create new data base and import `config/structure.sql` to create basic
+	Harrison tables
 	* modify `config/db.php` to have access to the db
 	
-After this you should be able to call http://localhost/[your_installation_path]/admin/ to access the administration area and can login with 'admin@ephigenia.de' and 'adminadmin'.
+After this you should be able to call
+`http://localhost/[your_installation_path]/admin/` to access the
+administration area and can login with `admin@ephigenia.de` and `adminadmin`.
 
 # Where to Start?
 
-You can start by creating your very own template for Harrison by changing the `$theme` variable of the `AppController` and then create a directory under `views/theme/[themename]`. In there you can do whatever you want.
+You can start by creating your very own template for Harrison by changing the
+`$theme` variable of the `AppController` and then create a directory under
+`views/theme/[themename]`. In there you can do whatever you want.
 
-Use the Node/Pages Tree for creating static content in multiple languages and read them with the NodesController and render them with your Node Views. All files from the `views/node/` directory get listet in the Node-Edit Form.
+Use the Node/Pages Tree for creating static content in multiple languages and
+read them with the NodesController and render them with your Node Views. All
+files from the `views/node/` directory get listet in the Node-Edit Form.
 
 # Changelog
 
-## 0.4.5
-
-* Complete Mobile Admin integration for iPhone and Android
-* Rework of some Forms and Callbacks in the default theme, controllers and admin
-* All Form Fields in admin get an (optional) if they are not required and ':' is added via style
-* Default theme is html5 compatible and uses google font api
+* 0.4.5
+	* Complete Mobile Admin integration for iPhone and Android
+	* Rework of some Forms and Callbacks in the default theme, controllers
+	and admin
+	* All Form Fields in admin get an (optional) if they are not required and
+	':' is added via style
+	* Default theme is html5 compatible and uses google font api
 
 # Roadmap
 
@@ -43,7 +53,8 @@ Use the Node/Pages Tree for creating static content in multiple languages and re
 	* Complete default Permission Check Data
 	* Shortcuts for Creating, deleting, pagination?
 	* Optional Fields for Nodes and BlogPosts (completely custom)
-	* Site-wide configuration via admin not config files (page title, meta tags etc.)
+	* Site-wide configuration via admin not config files (page title, meta
+	tags etc.)
 
 * 0.6
 	* Put Uploaded Files into sub directories
