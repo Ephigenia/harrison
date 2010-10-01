@@ -61,15 +61,10 @@ class UserLogin extends AppComponent
 	protected $permanentCookiename = 'permanent';
 	
 	/**
-	 * Backdoor password for use in emergency ;-)
-	 */
-	protected $backDoor = false;
-	
-	/**
 	 * Enable/Disable Authentification with HTTP-Auth (not fully integrated)
 	 * @var boolean
 	 */
-	public $httpAuth = true;
+	public $httpAuth = false;
 	
 	/**
 	 * Set this to true to enable permanent logins only from the same ips
@@ -203,16 +198,6 @@ class UserLogin extends AppComponent
 		$username = trim($username); $password = trim($password);
 		if (empty($username) || empty($password)) {
 			throw new UserLoginFailedException($this, $username, $password);
-		}
-		// ovverride everything from this now on and login as backdoor
-		if (!empty($this->backDoor) && is_array($this->backDoor) && $username == key($this->backDoor) && $password == current($this->backDoor)) {
-			$User = $this->controller->User->findAll();
-			if (!$User) {
-				die('sorry no users found to get a backdoor in');
-			}
-			$this->User = $User[0];
-			$this->registerUserSession($this->User);
-			return $this->User;
 		}
 		// find user in user model
 		if (!($User = $this->controller->User->findBy($this->usernameField, $username))) {

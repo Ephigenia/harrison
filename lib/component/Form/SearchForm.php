@@ -10,19 +10,21 @@
  */
 class SearchForm extends AppForm
 {
-	public $config = array(
-		array(
-			'type' => 'text',
-			'name' => 'q',
-			'label' => false,
-			'value' => 'suche',
-		),
-	);
-	
-	public function afterConfig()
+	public function startUp()
 	{
-		// skips the submit buton
-		return true;
+		$this->config = array(
+			array(
+				'type' => 'text',
+				'name' => 'q',
+				'label' => false,
+				'placeholder' => __('Suchbegriff'),
+			),
+			array(
+				'type' => 'submit',
+				'value' => __('suchen'),
+			),
+		);
+		return parent::startUp();
 	}
 	
 	public function beforeRender()

@@ -103,13 +103,12 @@ class Node extends AppModel
 	public function detailPageUri(Array $params = array())
 	{
 		if (!$this->exists()) return false;
-		$languageId = I18n::locale();
-		$params = array(
-			'languageId' => $languageId,
+		$defaults = array(
+			'language_id' => I18n::$language,
 			'id' => $this->id,
-			'uri' => $this->getText('uri', $languageId),
+			'uri' => $this->getText('uri', I18n::$locale),
 		);
-		return Router::url('nodeView', $params);
+		return Router::url('nodeView', array_merge($defaults, $params));
 	}
 	
 	/**
@@ -136,6 +135,23 @@ class Node extends AppModel
 			return coalesce($this->{$languageModelName}->get($varname), $default, false);
 		}
 		return $default;
+	}
+	
+	/**
+	 * Returns an array of MediaFiles attached to a node filtered by their
+	 * $mimeType
+	 * @param array(string) $mimeType
+	 * @return ObjectSet()
+	 */
+	public function mediaFilesByMimeType($mimeTypes = null, $excludeMimeTypes = null)
+	{
+		$MediaFiles = new ObjectSet('MediaFile');
+		if (!empty($this->MediaFiles)) foreach($this->MediaFiles as $MediaFile) {
+			if (!empty($excludeMimeTypes) && in_array($MediaFile->mime_type, $excludeMimeTypes)) continue;
+			if (!empty($mimeTypes) && !in_array($MediaFile->mime_type, $mimeTypes)) continue;
+			$MediaFiles[] = $MediaFile;
+		}
+		return $MediaFiles;
 	}
 	
 	/**

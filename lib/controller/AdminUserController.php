@@ -33,19 +33,19 @@ class AdminUserController extends AdminController
 	public function login()
 	{
 		$this->data->set('pageTitle', __('Login'));
-		$this->addForm('LoginForm');
-		if ($this->LoginForm->ok()) {
+		$this->addForm('AdminLoginForm');
+		if ($this->AdminLoginForm->ok()) {
 			try {
 				$this->UserLogin->login(
-					$this->LoginForm->{$this->UserLogin->usernameField}->value(),
-					$this->LoginForm->password->value(),
-					(bool) $this->LoginForm->permanent->value()
+					$this->AdminLoginForm->{$this->UserLogin->usernameField}->value(),
+					$this->AdminLoginForm->password->value(),
+					(bool) $this->AdminLoginForm->permanent->value()
 				);
 				$this->redirect(Router::getRoute('admin'));
 			} catch (UserLoginBlockedUserException $e) {
-				$this->LoginForm->errors = __('Dieser Benutzeraccount ist zur Zeit gesperrt und kann sich nicht einloggen!');
+				$this->AdminLoginForm->errors = __('Dieser Benutzeraccount ist zur Zeit gesperrt und kann sich nicht einloggen!');
 			} catch (UserLoginFailedException $e) {
-				$this->LoginForm->errors = __('Fehler beim Einloggen. Bitte überprüfen Sie Ihre Eingaben!');
+				$this->AdminLoginForm->errors = __('Fehler beim Einloggen. Bitte überprüfen Sie Ihre Eingaben!');
 			}
 			return true;
 		}
@@ -94,6 +94,7 @@ class AdminUserController extends AdminController
 			}
 			$this->AdminUserForm->errors = $this->User->validationErrors;
 		}
+		return $this->User;
 	}
 	
 	public function create()

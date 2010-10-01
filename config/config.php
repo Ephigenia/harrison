@@ -20,8 +20,10 @@ Registry::set('AdminEmail', 'noreply@nowhere.de');
 Registry::set('ContactEmail', Registry::get('AdminEmail'));
 
 // default session name
-Registry::set('Session.name', 'harrison');
-Registry::set('Session.ttl', WEEK);
+Registry::set('Session', array(
+	'name' => 'harrison',
+	'ttl' => WEEK,
+));
 
 /**
  * Salt for use in password creation or anything else that need so be salted

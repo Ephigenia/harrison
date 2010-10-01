@@ -54,7 +54,7 @@ class BlogPost extends AppModel
 	public $hasAndBelongsToMany = array(
 		'Tag' => array(
 			'joinTable' => 'tags_model',
-			'foreignKey' => 'foreign_id',
+			'associationKey' => 'foreign_id',
 			'conditions' => array(
 				'model' => '\'BlogPost\'',
 			),

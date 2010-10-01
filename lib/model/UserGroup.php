@@ -10,8 +10,10 @@
  */
 class UserGroup extends AppModel
 {	
+	public $displayField = 'name';
+	
 	public $order = array(
-		'name',
+		'name' => DBQuery::ORDER_ASC,
 	);
 	
 	public $hasMany = array(

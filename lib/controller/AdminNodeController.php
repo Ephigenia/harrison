@@ -23,8 +23,7 @@ class AdminNodeController extends AdminController
 	
 	public function index()
 	{
-		$this->Node->unbind('MediaFile');
-		$this->data->set('Nodes', $this->Node->tree(null, 1));
+		$this->data->set('Nodes', $this->Node->tree(null, 0));
 		$this->data->set('pageTitle', __('Seiten'));
 	}
 	
@@ -74,7 +73,7 @@ class AdminNodeController extends AdminController
 		// normale form
 		if ($this->AdminNodeForm->ok()) {
 			$this->AdminNodeForm->toModel($this->Node);
-			if (!$this->Node->save()) {
+			if (!$this->Node->saveAll()) {
 				$this->AdminNodeForm->errors = $this->Node->validationErrors;
 			} else {
 				$this->FlashMessage->set(__('Änderungen erfolgreich gespeichert.'), FlashMessageType::SUCCESS);

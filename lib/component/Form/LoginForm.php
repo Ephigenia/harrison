@@ -21,14 +21,8 @@ class LoginForm extends AppForm
 				'label' => __('Passwort'),
 			),
 			array(
-				'type' => 'checkbox',
-				'name' => 'permanent',
-				'checked' => true,
-				'label' => __('Eingeloggt bleiben'),
-			),
-			array(
 				'type' => 'submit',
-				'value' => __('Einloggen'),
+				'value' => __('anmelden'),
 			),
 		);
 		return parent::startUp();

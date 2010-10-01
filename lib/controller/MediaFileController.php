@@ -8,7 +8,7 @@
  * @since 2009-08-11
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  **/
-class MediaFileController extends Controller
+class MediaFileController extends AppController
 {
 	public $publicActions = array(
 		'download',

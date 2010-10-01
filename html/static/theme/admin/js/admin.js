@@ -6,8 +6,13 @@
 $(document).ready(function() {
 	
 	/** toggle value **/
-	$.getScript($('base').attr('href') + '../static/js/jquery.plugin.toggleValue.js', function() {
-		if (jQuery().toggleValue) $('input.q').toggleValue();
+	$('input[placeholder]').each(function(index, elm) {
+		$(elm).bind('focus.placeholder', function() {
+			if ($(this).val() == $(this).attr('placeholder')) $(this).val('');
+		}).bind('blur.placeholder', function() {
+			if ($(this).val() == '') $(this).val($(this).attr('placeholder'));
+		});
+		$(elm).trigger('blur.placeholder');
 	});
 	
 	/** jQuery UI **/
@@ -81,7 +86,7 @@ $(document).ready(function() {
 	
 	// submit button ’...sending’
 	$('form').submit(function() {
-		$('form input[type=submit]').attr('value', 'sending…').attr('disabled','disabled').addClass('loading');
+		$('form input[type=submit]').attr('value', 'sending…').addClass('loading');
 	});
 	
 	// uri replace non-ascii chars

@@ -50,6 +50,7 @@ class AdminMediaFileController extends AdminController
 			$this->AdminMediaFileForm->delete('folder_id');
 			$this->MediaFile->folder_id = $this->Folder->id;
 		} elseif (!empty($this->params['nodeId'])) {
+			unset($this->Node->findConditions['Node.status']);
 			if (!$this->Node->fromId((int) $this->params['nodeId'])) {
 				return false;
 			}
@@ -72,6 +73,9 @@ class AdminMediaFileController extends AdminController
 			$MediaFile = $this->MediaFile->addFile($this->AdminMediaFileForm->file->value(), $this->AdminMediaFileForm->file->originalFilename());
 			$MediaFile->User = $this->UserLogin->User;
 			$MediaFile->Folder = $this->Folder;
+			if (isset($this->params['nodeId'])) {
+				$MediaFile->node_id = $this->params['nodeId'];
+			}
 			if (!$MediaFile->save()) {
 				return $this->AdminMediaFileForm->errors = $MediaFile->validationErrors;
 			}

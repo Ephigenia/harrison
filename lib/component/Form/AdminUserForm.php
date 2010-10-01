@@ -21,13 +21,17 @@ class AdminUserForm extends AdminForm
 					'user_group_id' => array(
 						'type' => 'DropDown',
 						'label' => __('Benutzergruppe'),
-						'options' => $this->controller->UserGroup->listAll('UserGroup.name'),
+						'options' => $this->controller->UserGroup->listAll('UserGroup.name', array('depth' => 0)),
 					),
 					'email',
 					'password' => array(
 						'mandatory' => false,
 						'value' => '',
 						'label' => __('Passwort'),
+					),
+					'description' => array(
+						'mandatory' => false,
+						'label' => __('Beschreibung'),
 					),
 					'locale' => array(
 						'label' => __('Sprache'),

@@ -117,6 +117,15 @@ class MediaFile extends AppModel
 		// return substr(md5(String::random(16)), 0, $length);
 	}
 	
+	public function __toString()
+	{
+		$label = $this->getText('title', $this->filename);
+		if (($pos = strrpos($this->filename, '.')) && $pos !== false) {
+			$label = substr($label, 0, $pos).' ('.String::upper(substr($this->filename, $pos+1)).')';
+		}
+		return $label;
+	}
+	
 	/**
 	 * Returns the original file’s filename with path
 	 * @return string 

@@ -24,9 +24,12 @@ class UserFlag
  * @since 07.11.2008
  */
 class User extends AppModel
-{	
+{
+	public $displayField = 'name';
+	
 	public $data = array(
 		'status' => Status::PUBLISHED,
+		'user_group_id' => 3,
 	);
 	
 	public $belongsTo = array(
@@ -52,7 +55,7 @@ class User extends AppModel
 			'notEmpty' => array(
 				'notEmpty' => true,
 				'message' => 'Enter the full name of the user.',
-			)
+			),
 		),
 		'password' => array(
 			'notEmpty' => array(

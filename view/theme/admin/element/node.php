@@ -26,7 +26,10 @@ if ($Node->published > 0) {
 	<td<?php if (!empty($showPadding)) echo ' style="padding-left: '.(20 * $Node->level).'px"'; ?>>
 		<?php
 		$nodeName = $Node->getText('headline', null, $Node->get('name'));
-		$nodeName = String::truncate($nodeName, 50, '…', true, true);
+		if (empty($nodeName)) {
+			$nodeName = __('(kein Name)');
+		}
+		$nodeName = String::truncate($nodeName, 50, '…', false, true);
 		if ($Node->hasFlags(NodeFlag::ALLOW_EDIT) || $Me->user_group_id == 1) {
 			echo $HTML->link($Node->adminDetailPageUri('edit'), $nodeName);
 		} else {

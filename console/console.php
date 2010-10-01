@@ -1,14 +1,23 @@
 <?php
 
+/**
+ * This file loads console tasks by it’s name, call it from the application
+ * root directory like this:
+ *
+ * $ php console/console.php cronReportEmail 
+ * 
+ * @since 2009-09-28
+ * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ * @package app
+ * @subpackage app.console
+ */
+
+// load ephFrame Framework
+define('APP_ROOT', realpath(dirname(__FILE__).'/../').'/');
+
 require (dirname(__FILE__).'/../html/ephFrame.php');
-loadClass('ephFrame.lib.ConsoleController');
+Library::load('ephFrame.lib.console.ConsoleController');
 
-$jobName = preg_replace('@[^A-Z0-9a-z_-]@i', '', @$argv[1]);
-$jobFilename = dirname(__FILE__).'/'.basename($jobName).'.php';
-
-if (empty($jobName)) die('No job-name specified.'.LF);
-if (!is_file($jobFilename)) die(sprintf('Unable to find job file or file not readable: %s', $jobFilename).LF);
-
-require $jobFilename;
-$jobClassname = Inflector::camellize($jobName, true).'Controller';
-$job = new $jobClassname(new HTTPRequest());
+chdir(APP_ROOT.'html/');
+require (dirname(__FILE__)).'/AppConsole.php';
+new AppConsoleController();

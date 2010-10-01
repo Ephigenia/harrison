@@ -1,6 +1,5 @@
-#
-#	Main webroot htaccess file for ephFrame applications
-#	if you experience problems successive delete some of the parts
+# Main webroot htaccess file for ephFrame applications
+# if you experience problems successive delete some of the parts
 # ----------------------------------------------------------------------------
 
 RewriteEngine On

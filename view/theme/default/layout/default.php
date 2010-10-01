@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo I18n::$country; ?>">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo I18n::$language; ?>">
 <head>
 	<title><?php echo $pageTitle ?></title>
 	<!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=7" /><![endif]-->
@@ -15,15 +15,12 @@
 		));
 		echo String::indent($CSS->render(), 2, TAB, 1);
 	}
-	// Favicon
-	if (file_exists('./favicon.ico')) {
-		echo TAB.TAB.'<link rel="shortcut icon" type="image/ico" href="'.WEBROOT.'favicon.ico" />'.LF;
-	}
 	?>
+	<link rel="shortcut icon" type="image/ico" href="<?php echo WEBROOT; ?>favicon.ico" />
 	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 </head>
-<body class="<?php echo I18n::locale(); ?>">
+<body class="<?php echo I18n::locale(); ?> no-js">
 	<div id="app">
 		<header>
 			<h1><?php echo $HTML->link(WEBROOT, AppController::NAME, array('rel' => 'home')); ?></h1>

@@ -10,6 +10,8 @@
  */
 class Permission extends AppModel
 {
+	public $displayField = 'name';
+	
 	public $validate = array(
 		'name' => array(
 			'name' => 'notEmpty',

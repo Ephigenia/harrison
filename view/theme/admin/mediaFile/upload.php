@@ -54,7 +54,7 @@ $JavaScript->jQuery(<<<EOT
 				alert('an error occured');
 			},
 			'onInit': function() {
-				$('#file, #AdminMediaFileForm input[type=submit]').hide();
+				$('#AdminMediaFileForm .file, #AdminMediaFileForm input[type=submit]').hide();
 				$('#AdminMediaFileForm').css('margin-bottom', '10px');
 			}
 		});

@@ -18,7 +18,8 @@ class AdminSearchForm extends AdminForm
 				'type' => 'text',
 				'name' => 'q',
 				'label' => false,
-				'value' => coalesce(@$this->controller->params['q'], __('Suchbegriff')),
+				'placeholder' => __('Suchbegriff'),
+				'value' => coalesce(@$this->controller->params['q'], false),
 			),
 		);
 		return parent::startUp();
