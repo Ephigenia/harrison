@@ -5,15 +5,15 @@
  */
 $(document).ready(function() {
 	
-	/** toggle value **/
-	$('input[placeholder]').each(function(index, elm) {
-		$(elm).bind('focus.placeholder', function() {
-			if ($(this).val() == $(this).attr('placeholder')) $(this).val('');
-		}).bind('blur.placeholder', function() {
-			if ($(this).val() == '') $(this).val($(this).attr('placeholder'));
-		});
-		$(elm).trigger('blur.placeholder');
+	$('#AdminLoginForm').submit(function() {
+		$(this).toggleClass('loading').parent().find('p,fieldset').css('display', 'none');
+		$(this).prepend('<br /><br />logging in …');
 	});
+	
+	// placeholder attribute
+	if (typeof($.fn.placeholder) == 'function') {
+		$('input[placeholder], textarea[placeholder]').placeholder();
+	}
 	
 	/** jQuery UI **/
 	if (jQuery().autocomplete) $('#AdminSearchForm input.q').autocomplete({

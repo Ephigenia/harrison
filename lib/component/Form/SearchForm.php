@@ -17,11 +17,8 @@ class SearchForm extends AppForm
 				'type' => 'text',
 				'name' => 'q',
 				'label' => false,
-				'placeholder' => __('Suchbegriff'),
-			),
-			array(
-				'type' => 'submit',
-				'value' => __('suchen'),
+				'placeholder' => __('suche'),
+				'value' => coalesce(@$this->controller->params['q'], false),
 			),
 		);
 		return parent::startUp();

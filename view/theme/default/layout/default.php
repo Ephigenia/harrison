@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo I18n::$language; ?>">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo I18n::locale(); ?>">
 <head>
-	<title><?php echo $pageTitle ?></title>
+	<title><?php echo coalesce($pageTitle, '[no title]') ?></title>
 	<!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=7" /><![endif]-->
 	<base href="<?php echo Router::url('root'); ?>">
 	<?php
-	if (isset($MetaTags)) echo String::indent($MetaTags->render(), 2, TAB, 1);
-	if (isset($CSS)) {
-		$CSS->addFiles(array(
-			'reset',
-			'app',
-			'form',
-			'debug',
-		));
-		echo String::indent($CSS->render(), 2, TAB, 1);
-	}
+	echo $AppMetaTags;
+	echo $CSS->addFiles(array(
+		'reset',
+		'app',
+		'form',
+		'debug'
+	));
 	?>
-	<link rel="shortcut icon" type="image/ico" href="<?php echo WEBROOT; ?>favicon.ico" />
+	<link rel="shortcut icon" type="image/ico" href="<?php echo WEBROOT ?>favicon.ico" />
 	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 </head>
-<body class="<?php echo I18n::locale(); ?> no-js">
+<body class="<?php echo implode(' ', array('no-js', $controller, $action, I18n::$locale)); ?>">
 	<div id="app">
 		<header>
 			<h1><?php echo $HTML->link(WEBROOT, AppController::NAME, array('rel' => 'home')); ?></h1>
@@ -52,15 +49,15 @@
 	<?php
 	// Javascript	
 	if (isset($JavaScript)) {
-		$JavaScript->addFiles(array(
+		echo $JavaScript->addFiles(array(
 			'http://html5shiv.googlecode.com/svn/trunk/html5.js', // enabling HTML5 code on IE
 			'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',
+			'jquery.placeholder/jquery.placeholder.js',
+			'js.class.core.js',
+			'controller',
 			'app',
 		));
-		echo String::indent($JavaScript->render(), 2, TAB, 1).LF;
 	}
-	echo $this->element('debug/dump');
-	?>
-	<!-- <?php echo ephFrame::compileTime(4) ?> -->
+	?><!-- <?php echo ephFrame::compileTime(4) ?> -->
 </body>
 </html>

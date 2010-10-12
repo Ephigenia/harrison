@@ -17,10 +17,13 @@ class AdminLoginForm extends AdminForm
 		$this->config = array(
 			array(
 				'type' => 'email',
+				'placeholder' => __('E-Mail'),
+				'label' => false,
 			),
 			array(
 				'type' => 'password',
-				'label' => __('Passwort'),
+				'label' => false,
+				'placeholder' => __('Passwort'),
 			),
 			array(
 				'type' => 'checkbox',

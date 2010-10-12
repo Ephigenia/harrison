@@ -12,7 +12,8 @@ class_exists('AdminForm') or require dirname(__FILE__).'/AdminForm.php';
  */
 class AdminSearchForm extends AdminForm
 {
-	public function startUp() {
+	public function startUp()
+	{
 		$this->config = array(
 			array(
 				'type' => 'text',

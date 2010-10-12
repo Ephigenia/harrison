@@ -6,7 +6,6 @@
 		
 		<!-- Page / Node / Article Administration -->
 		<li<?php if ($controller == 'Node') echo ' class="selected"'; ?>>
-			<a href="javascript:void(0);" class="toggle">+</a>
 			<?php echo $HTML->link(Router::getRoute('adminNode'), __('Seiten')) ?>
 			<ul>
 				<li<?php echo in_array($controller.$action, array('Nodeindex', 'Nodeedit')) ? ' class="selected"' : ''; ?>>
@@ -20,7 +19,6 @@
 		
 		<!-- Blog Posts Administration -->
 		<li<?php if ($controller == 'BlogPost') echo ' class="selected"'; ?>>
-			<a href="javascript:void(0);" class="toggle">+</a>
 			<?php echo $HTML->link(Router::getRoute('adminBlogPost'), __('Blog')) ?>
 			<ul>
 				<li<?php echo in_array($controller.$action, array('BlogPostindex', 'BlogPostedit')) ? ' class="selected"' : ''; ?>>
@@ -32,9 +30,13 @@
 			</ul>
 		</li>
 		
+		<!--  Comment Administration -->
+		<li<?php if ($controller == 'Comment') echo ' class="selected"'; ?>>
+			<?php echo $HTML->link(Router::getRoute('adminComment'), __('Kommentare')) ?>
+		</li>
+		
 		<!-- File Administration -->
 		<li<?php if ($controller == 'MediaFile' || $controller == 'Folder') echo ' class="selected"'; ?>>
-			<a href="javascript:void(0);" class="toggle">+</a>
 			<?php echo $HTML->link(Router::getRoute('adminMediaFiles'), __('Dateien & Bilder')) ?>
 			<ul>
 				<li<?php echo $controller.$action == 'Folderview' ? ' class="selected"' : ''; ?>><?php echo $HTML->link(Router::getRoute('adminMediaFiles'), __('Dateien & Bilder')); ?></li>
@@ -42,15 +44,19 @@
 				<li<?php echo $controller.$action == 'MediaFileupload' ? ' class="selected"' : ''; ?>><?php echo $HTML->link(Router::getRoute('adminMediaUpload'), __('Datei hochladen')); ?></li>
 			</ul>
 		</li>
-		
-		<!--  Comment Administration -->
-		<li<?php if ($controller == 'Comment') echo ' class="selected"'; ?>>
-			<?php echo $HTML->link(Router::getRoute('adminComment'), __('Kommentare')) ?>
+		<!-- Newsletter Administration -->
+		<li<?php if ($controller == 'NewsletterSubscription') echo ' class="selected"'; ?>>
+			<a href="javascript:void(0);" class="toggle">+</a>
+			<?php echo $HTML->link(Router::getRoute('adminScaffold', array('controller' => 'NewsletterSubscription')), __('Newsletter')) ?>
+			<ul>
+				<li<?php echo in_array($controller.$action, array('NewsletterSubscriptionindex')) ? ' class="selected"' : ''; ?>>
+					<?php echo $HTML->link(Router::getRoute('adminScaffold', array('controller' => 'NewsletterSubscription')), __('Abonnenten')); ?>
+				</li>
+			</ul>
 		</li>
 
 		<!-- User Configuration -->
 		<li<?php if ($controller == 'User') echo ' class="selected"'; ?>>
-			<a href="javascript:void(0);" class="toggle">+</a>
 			<?php echo $HTML->link(Router::getRoute('adminUser'), __('Benutzer')) ?>
 			<ul>
 				<li<?php echo $controller.$action == 'Userindex' ? ' class="selected"' : ''; ?>>
@@ -67,7 +73,6 @@
 		
 		<!-- configuration -->
 		<li<?php if (in_array($controller, array('UserGroup', 'Language'))) echo ' class="selected"'; ?>>
-			<a href="javascript:void(0);" class="toggle">+</a>
 			<?php echo $HTML->link(Router::getRoute('adminScaffold', array('controller' => 'UserGroup')), __('Einstellungen')) ?>
 			<ul>
 				<li<?php echo $controller == 'UserGroup' ? ' class="selected"' : ''; ?>>
@@ -77,7 +82,6 @@
 					<?php echo $HTML->link(Router::getRoute('adminLanguage'), __('Sprachen')) ?>
 				</li>
 			</ul>
-		</li>
-		
+		</li>	
 	</ul>	
 </div>

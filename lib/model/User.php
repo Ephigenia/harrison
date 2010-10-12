@@ -98,6 +98,12 @@ class User extends AppModel
 		return md5($password.$this->passwordSalt);
 	}
 	
+	public function __toString()
+	{
+		if ($this->isEmpty('name')) return $this->email;
+		return parent::__toString();
+	}
+	
 	/**
 	 *	
 	 */

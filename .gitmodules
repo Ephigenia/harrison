@@ -1,0 +1,3 @@
+[submodule "html/static/js/jquery.placeholder"]
+	path = html/static/js/jquery.placeholder
+	url = http://github.com/danielstocks/jQuery-Placeholder.git

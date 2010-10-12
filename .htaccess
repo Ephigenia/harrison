@@ -2,15 +2,21 @@
 # where additional rewrite actions happen
 # ----------------------------------------------------------------------------
 
-# 1und1 PHP5 Handling for php files
+# Add PHP5 Handlers (only on some hosts)
+# --------------------------------------
 # AddType x-mapp-php5 .php
 # AddHandler x-mapp-php5 .php
 
+# Password authentification for testing
+# -------------------------------------
+# AuthUserFile /absolute/path/to/file/.htpasswd
+# AuthType Basic
+# AuthName Secure
+# require valid-user
+
+# framework redirects to /html/index.php
+# --------------------------------------
 RewriteEngine On
-	
-# Sometimes you need to set rewrite base to current directory or root
 # RewriteBase /
-	
-# ephFrame rewrite rules
 RewriteRule ^$		html/	[L]
 RewriteRule (.*)	html/$1	[E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

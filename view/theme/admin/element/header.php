@@ -6,7 +6,13 @@
 	<span class="fr">
 		<?php echo	__('Eingeloggt als: :1 :2',
 				$HTML->link($Me->adminDetailPageUri(), $Me->get('name')),
-				$HTML->link(Router::getRoute('adminLogout'), __('logout'), array('class' => 'button'))
+				$HTML->link(
+					Router::getRoute('adminLogout'),
+					__('logout'),
+					array(
+						'class' => array('button', 'red'),
+					)
+				)
 			);
 		?>
 	</span>

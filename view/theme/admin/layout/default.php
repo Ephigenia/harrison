@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo I18n::locale(); ?>">
 	<head>
 		<title><?php echo strtr(@$pageTitle, array('<q>' => '"', '</q>' => '"')); ?></title>
 		<!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=7" /><![endif]-->
@@ -35,7 +35,7 @@
 		}
         ?>
 	</head>
-	<body class="<?php echo I18n::locale(); ?>">
+	<body class="<?php echo implode(' ', array('no-js', $controller, $action, I18n::$locale)); ?>">
 		<?php if ($action == 'login') { ?>
 			<div id="app" class="login">
 				<?php echo $this->element('flashMessage'); ?>
@@ -63,6 +63,7 @@
 				'js.class.core',
 				'php.custom.min',
 				'swfobject.js',
+				'jquery.placeholder/jquery.placeholder.js',
 				'jquery.plugin.fieldselection',
 				'jquery.plugin.dialog',
 				'jquery.plugin.simplePreview',

@@ -30,10 +30,10 @@ class AdminBlogPostController extends AdminController
 	{
 		$this->BlogPost->unbind('Tag');
 		$page = @$this->params['page'] or 1;
-		$this->BlogPost->depth = 1;
 		$BlogPosts = $this->BlogPost->findAll(array(
 			'offset' => ($page-1) * $this->BlogPost->perPage,
 			'limit' => $this->BlogPost->perPage,
+			'depth' => 1,
 		));
 		$this->data->set('BlogPosts', $BlogPosts);
 		$pagination = $this->BlogPost->paginate($page, $this->BlogPost->perPage);

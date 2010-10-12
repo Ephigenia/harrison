@@ -2,8 +2,6 @@ Harrison CMS Readme
 ==============================================================================
 2010-05-08, Marcel Eichner // Ephigenia <love@ephigenia.de>
 
-**THIS IS A PRE-RELEASE! PLAY WITH IT**
-
 This is the readme file for the Harrison CMS. It should contain basic
 information about setting up a simple Harrison project. If you don’t find what
 you need, please check the [official Harrison project website](http://code.marceleichner.de/project/harrison).
@@ -51,10 +49,9 @@ files from the `views/node/` directory get listet in the Node-Edit Form.
 	* User Admin extra Form for Password change
 	* Password Strength Indicator
 	* Complete default Permission Check Data
-	* Shortcuts for Creating, deleting, pagination?
 	* Optional Fields for Nodes and BlogPosts (completely custom)
-	* Site-wide configuration via admin not config files (page title, meta
-	tags etc.)
+	* Site-wide configuration via admin not config files (page title, meta tags etc.)
+	* workaround for uploaded files with the same name
 
 * 0.6
 	* Put Uploaded Files into sub directories

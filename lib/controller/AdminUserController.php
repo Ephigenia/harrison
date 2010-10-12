@@ -88,7 +88,7 @@ class AdminUserController extends AdminController
 				$this->User->password = $this->User->maskPassword($newPass);
 			}
 			if ($this->User->save()) {
-				$this->FlashMessage->set(__('Die Änderungen an :1 wurden erfolgreich gespeichert.', $this->User->get('name')), FlashMessageType::SUCCESS);
+				$this->FlashMessage->set(__('Die Änderungen an :1 wurden erfolgreich gespeichert.', (string) $this->User), FlashMessageType::SUCCESS);
 				$this->redirect($this->User->adminDetailPageUri());
 				return true;
 			}
@@ -122,7 +122,7 @@ class AdminUserController extends AdminController
 					return true;
 				}
 			}
-			$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich angelegt.', $this->User->get('name')), FlashMessageType::SUCCESS);
+			$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich angelegt.', (string) $this->User), FlashMessageType::SUCCESS);
 			$this->redirect(Router::getRoute('adminUser'));
 		}
 	}
@@ -154,21 +154,21 @@ class AdminUserController extends AdminController
 		} else {
 			$this->User->password = $this->User->maskPassword($this->User->password);
 			$this->User->save();
-			$this->FlashMessage->set(__('Der Benutzer :1 sollte in wenigen Minuten eine Email mit seinem neuem Passwort erhalten.', $this->User->get('name')), FlashMessageType::SUCCESS);
+			$this->FlashMessage->set(__('Der Benutzer :1 sollte in wenigen Minuten eine Email mit seinem neuem Passwort erhalten.', (string) $this->User), FlashMessageType::SUCCESS);
 		}
 		$this->redirect(Router::getRoute('adminUser'));
 	}
 	
 	public function delete($id = null)
 	{
-		$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich gelöscht.', $this->User->get('name')), FlashMessageType::SUCCESS);
+		$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich gelöscht.', (string) $this->User), FlashMessageType::SUCCESS);
 		$this->User->delete();
 		$this->redirect(Router::getRoute('adminUser'));
 	}
 	
 	public function block()
 	{
-		$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich blockiert.', $this->User->get('name')), FlashMessageType::SUCCESS);
+		$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich blockiert.', (string) $this->User), FlashMessageType::SUCCESS);
 		$this->User->addFlag(UserFlag::BLOCKED);
 		$this->User->save();
 		$this->redirect($this->User->adminDetailPageUri());
@@ -176,7 +176,7 @@ class AdminUserController extends AdminController
 	
 	public function unblock()
 	{
-		$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich freigegeben.', $this->User->get('name')), FlashMessageType::SUCCESS);
+		$this->FlashMessage->set(__('Benutzer <q>:1</q> erfolgreich freigegeben.', (string) $this->User), FlashMessageType::SUCCESS);
 		$this->User->removeFlag(UserFlag::BLOCKED);
 		$this->User->save();
 		$this->redirect($this->User->adminDetailPageUri());

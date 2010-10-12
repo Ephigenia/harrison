@@ -7,7 +7,7 @@
  */
 body {
 	font: normal 14px/1.5em Lucida Sans Unicode, Lucida Grande, Verdana, Arial, Sans Serif;
-	background: #F8F8F8;
+	background: #F7F8FA;
 }
 
 /** site wide styles **/
@@ -56,7 +56,7 @@ h1, h2, h3 {
 	font-weight: bold;
 }
 h1 {
-	text-shadow: 2px 2px 2px #eee;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.125);
 	margin: 0em 0em 0.2em 0em;
 	font-size: 2em;
 	line-height: 1.5em;
@@ -94,6 +94,13 @@ dd {
 	padding-left: 120px;
 }
 
+.loading {
+	text-align: center;
+	background-image: url('../img/spinner.gif');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 #app {
 	margin-top: 3em;
 }
@@ -105,9 +112,9 @@ dd {
 	background: rgba(0,0,0,0.9);
 	line-height: 2.3em;
 	height: 2.4em;
-	box-shadow: 0px 3px 20px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0px 3px 20px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 0px 3px 20px rgba(0,0,0,0.3);
+	box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
 }
 #header a, #header {
 	color: #ffffff;
@@ -161,7 +168,7 @@ p.error, #flashMessage.error {
 }
 p.hint, #flashMessage.hint {
 	border-color: #F8E995;
-	background-color: #FAF8EE;
+	background-color: #F9F8C9;
 }
 p.success, #flashMessage.success {
 	border-color: #b5f782;
@@ -211,7 +218,7 @@ ul.admin li {
 ul.admin li a, .button, form fieldset input.submit {
 	color: #000 !important;
 	text-shadow: #fff 0px 1px 0px;
-	font-size: 0.7em;
+	font-size: 0.85em;
 	text-decoration: none;
 	text-align: center;
 	line-height: 1.2em;
@@ -234,7 +241,7 @@ ul.admin li a:hover, .button:hover, input.submit:hover {
 	background: -moz-linear-gradient(270deg, #FEFEFE, #CFCFCF);
 }
 /** delete buttons are red **/
-ul.admin li a.delete {
+ul.admin li a.delete, a.red {
 	color: #fff !important;
 	text-shadow: #000 0px 1px 0px;
 	border-color: #800000;
@@ -242,7 +249,7 @@ ul.admin li a.delete {
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#B7190D), to(#800000));
 	background: -moz-linear-gradient(270deg, #B7190D, #800000);
 }
-ul.admin li a.delete:hover {
+ul.admin li a.delete:hover, a.red:hover {
 	background: #FF8000;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F00), to(#800000));
 	background: -moz-linear-gradient(270deg, #F00, #800000);
