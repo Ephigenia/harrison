@@ -20,7 +20,7 @@ if ($Node->published > 0) {
 			echo '('.Status::$list[$Node->status].')';
 		}
 		?><br />
-		<?php echo $this->renderElement('nodeMenu', array('Node' => $Node)); ?>
+		<?php echo $this->element('nodeMenu', array('Node' => $Node)); ?>
 	</td>
 	<?php } ?>
 	<td<?php if (!empty($showPadding)) echo ' style="padding-left: '.(20 * $Node->level).'px"'; ?>>
@@ -50,7 +50,7 @@ if ($Node->published > 0) {
 				echo '('.Status::$list[$Node->status].')';
 			}
 			?><br />
-			<?php echo $this->renderElement('nodeMenu', array('Node' => $Node)); ?>
+			<?php echo $this->element('nodeMenu', array('Node' => $Node)); ?>
 		</td>
 	<?php } ?>
 </tr>

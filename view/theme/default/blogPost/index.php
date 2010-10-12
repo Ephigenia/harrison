@@ -9,7 +9,7 @@ if (empty($BlogPosts)) {
 } else {
 	// show blog entries
 	foreach($BlogPosts as $index => $BlogPost) {
-		echo $this->renderElement('blogPost', array('BlogPost' => $BlogPost));
+		echo $this->element('blogPost', array('BlogPost' => $BlogPost));
 	}
 }
-echo $this->renderElement('global/pagination'); ?>
+echo $this->element('global/pagination'); ?>

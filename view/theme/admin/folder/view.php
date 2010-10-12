@@ -9,7 +9,7 @@
 
 <?php
 if (isset($Folder) && !$Folder->isRoot()) {
-	echo $this->renderElement('folderMenu', array('Folder' => $Folder)).'<br />';
+	echo $this->element('folderMenu', array('Folder' => $Folder)).'<br />';
 }
 ?>
 
@@ -38,13 +38,13 @@ if (empty($Files[0])) {
 		echo '<h2>'.__('Dateien & Bilder ohne Kategorie').'</h2>'.LF;
 	}
 	echo $AdminSearchForm;
- 	echo $this->renderElement('pagination');
+ 	echo $this->element('pagination');
 	echo '<br />';
 	foreach($Files as $MediaFile) {
-		echo $this->renderElement('mediaFileIcon', array('MediaFile' => $MediaFile));
+		echo $this->element('mediaFileIcon', array('MediaFile' => $MediaFile));
 	}
 	echo '<br class="c" />';
- 	echo $this->renderElement('pagination');
+ 	echo $this->element('pagination');
 }
 
 // add js for image adding

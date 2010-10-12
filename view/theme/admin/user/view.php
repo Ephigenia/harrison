@@ -5,7 +5,7 @@
 	<li><?php echo $User->get('name'); ?></li>
 </ul>
 
-<?php echo $this->renderElement('userMenu'); ?>
+<?php echo $this->element('userMenu'); ?>
 
 <?php
 // blocked message
@@ -18,7 +18,7 @@ if ($User->hasFlag(UserFlag::BLOCKED)) { ?>
 </p>
 <?php } ?>
 
-<?php echo $this->renderElement('gravatar', array('User' => $User, 'size' => 60)); ?>
+<?php echo $this->element('gravatar', array('User' => $User, 'size' => 60)); ?>
 <dl>
 	<dt><?php echo __('Name') ?></dt>
 	<dd><?php echo $User->get('name') ?></dd>

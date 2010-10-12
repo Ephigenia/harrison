@@ -1,11 +1,11 @@
-<?php echo $this->renderElement('blogPost', array('blogPost' => $BlogPost)) ?>
+<?php echo $this->element('blogPost', array('blogPost' => $BlogPost)) ?>
 
 <div id="Comments">
 	<?php if ($BlogPost->Comments->count() > 0) { ?>
 	<h2><?php echo __('Kommentare') ?></h2>
 	<ul class="comments">
 	<?php foreach($BlogPost->Comments->reversed() as $Comment) {
-		echo $this->renderElement('comment', array('Comment' => $Comment));
+		echo $this->element('comment', array('Comment' => $Comment));
 	} ?>
 	</ul>
 	<?php } ?>

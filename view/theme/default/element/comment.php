@@ -10,7 +10,7 @@ $avatarSize = (isset($avatarSize)) ? $avatarSize : 34;
 	<?php } ?>
 	<h3>
 		<?php
-		echo $this->renderElement('gravatar', array('email' => $Comment->get('email'), 'size' => $avatarSize));
+		echo $this->element('gravatar', array('email' => $Comment->get('email'), 'size' => $avatarSize));
 		echo date(__('d.m.Y H:i'), $Comment->created).'<br />';
 		if ($Comment->url) {
 			echo $HTML->link('http://'.$Comment->url, $Comment->get('name'), array('rel' => 'external'));

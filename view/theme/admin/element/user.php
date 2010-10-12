@@ -1,6 +1,6 @@
 <tr id="User-<?php echo $User->id; ?>" class="user">
 	<td class="name">
-		<?php echo $this->renderElement('gravatar', array('User' => $User))?>
+		<?php echo $this->element('gravatar', array('User' => $User))?>
 		<?php echo $HTML->link($User->adminDetailPageUri(), $User->get('name')); ?>
 	</td>
 	<td class="userRole">

@@ -7,7 +7,7 @@
 	echo $HTML->p(__('Es sind noch keine Blogeinträge vorhanden.'), array('class' => 'hint'));
 } else {
 	echo $AdminSearchForm;
-	echo $this->renderElement('pagination');
-	echo $this->renderElement('blogPosts', array('BlogPosts' => $BlogPosts));
-	echo $this->renderElement('pagination');
+	echo $this->element('pagination');
+	echo $this->element('blogPosts', array('BlogPosts' => $BlogPosts));
+	echo $this->element('pagination');
 }

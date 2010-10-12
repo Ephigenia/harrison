@@ -5,11 +5,11 @@
 		<abbr title="<?php echo date('c', $Comment->created); ?>">
 			<?php echo strftime('%x %H:%M', $Comment->created); ?>
 		</abbr><br />
-		<?php echo $this->renderElement('commentMenu', array('Comment' => $Comment))?>
+		<?php echo $this->element('commentMenu', array('Comment' => $Comment))?>
 	</td>
 	<td class="object">
 		<?php
-		$gravatar = $this->renderElement('gravatar', array('email' => $Comment->get('email')));
+		$gravatar = $this->element('gravatar', array('email' => $Comment->get('email')));
 		if ($Comment->User->exists()) {
 			$username = $gravatar.' '.$HTML->link($Comment->User->detailPageUri(), $Comment->get('name'));
 		} else {

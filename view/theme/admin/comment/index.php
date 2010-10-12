@@ -17,7 +17,7 @@
 <?php if (empty($Comments)) { 
 	echo $HTML->p(__('Es sind noch keine Kommentare vorhanden.'), array('class' => 'hint'));
 } else {
-	echo $this->renderElement('pagination');
-	echo $this->renderElement('comments', array('comments' => $Comments)); 
-	echo $this->renderElement('pagination');
+	echo $this->element('pagination');
+	echo $this->element('comments', array('comments' => $Comments)); 
+	echo $this->element('pagination');
 }

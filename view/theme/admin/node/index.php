@@ -8,7 +8,7 @@
 <table id="NodeTree">
 	<tbody>
 		<?php foreach($Nodes as $Node) {
-			echo $this->renderElement('node', array('Node' => $Node, 'showPadding' => true));
+			echo $this->element('node', array('Node' => $Node, 'showPadding' => true));
 		} ?>
 	</tbody>
 </table>

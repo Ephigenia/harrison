@@ -15,7 +15,7 @@ if ($MediaFile->isImage() && $MediaFile->file()) {
 	echo $HTML->link(WEBROOT.$MediaFile->filename(), $HTML->image($MediaFile->src(320, 240, 'resize')), array('title' => __('Klicken um Originalauflösung zu sehen.')));	
 	echo '</div>'.LF;
 } else {
-	echo $this->renderElement('mediaFile', array('mediaFile' => $MediaFile)).'<br class="c" />';
+	echo $this->element('mediaFile', array('mediaFile' => $MediaFile)).'<br class="c" />';
 } ?>
 
 <h2>Datei</h2>

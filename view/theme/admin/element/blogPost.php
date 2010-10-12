@@ -11,7 +11,7 @@
 			echo Status::$list[$BlogPost->status].'<br />';
 		}
 		?>
-		<?php echo $this->renderElement('blogPostMenu', array('BlogPost' => $BlogPost))?>
+		<?php echo $this->element('blogPostMenu', array('BlogPost' => $BlogPost))?>
 	</td>
 	<td>
 		<?php
@@ -25,7 +25,7 @@
 			<?php echo wordwrap($BlogPost->excerpt(500), 30, LF, true) ?> …
 		</p>
 		<cite>
-			<?php echo $this->renderElement('gravatar', array('User' => $BlogPost->User)); ?>
+			<?php echo $this->element('gravatar', array('User' => $BlogPost->User)); ?>
 			<?php echo $HTML->link($BlogPost->User->detailPageUri(), $BlogPost->User->get('name')); ?>
 		</cite>
 		<?php

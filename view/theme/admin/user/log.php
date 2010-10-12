@@ -6,7 +6,7 @@
 	<li><?php echo __('Log'); ?></li>
 </ul>
 
-<?php echo $this->renderElement('userMenu'); ?>
+<?php echo $this->element('userMenu'); ?>
 
-<?php echo $this->renderElement('logEntries', array('LogEntries' => $LogEntries)); ?>
-<?php echo $this->renderElement('pagination'); ?>
+<?php echo $this->element('logEntries', array('LogEntries' => $LogEntries)); ?>
+<?php echo $this->element('pagination'); ?>

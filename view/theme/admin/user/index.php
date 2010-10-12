@@ -11,7 +11,7 @@
 ); ?>
 
 <?php echo $AdminSearchForm; ?>
-<?php echo $this->renderElement('pagination'); ?>
+<?php echo $this->element('pagination'); ?>
 <table class="Users">
 	<thead>
 		<tr>
@@ -26,4 +26,4 @@
 	</tbody>
 </table><br />
 <br />
-<?php echo $this->renderElement('pagination'); ?>
+<?php echo $this->element('pagination'); ?>

@@ -5,7 +5,7 @@
 	<li><?php echo $HTML->link($User->adminDetailPageUri(), $User->get('name')); ?></li>
 	<li><?php echo __('Seiten'); ?></li>
 </ul>
-<?php echo $this->renderElement('userMenu', array('User' => $User)); ?>
+<?php echo $this->element('userMenu', array('User' => $User)); ?>
 
 <p class="hint">
 	<?php echo __('Hier sind alle Seiten zu sehen die von :1 angelegt wurden', $User->get('name')); ?>
@@ -16,7 +16,7 @@
 	<tbody>
 		<?php
 		foreach($Nodes as $Node) {
-			echo $this->renderElement('node', array('Node' => $Node));
+			echo $this->element('node', array('Node' => $Node));
 		} ?>
 	</tbody>
 </table>

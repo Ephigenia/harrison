@@ -38,21 +38,21 @@
 	<body class="<?php echo I18n::locale(); ?>">
 		<?php if ($action == 'login') { ?>
 			<div id="app" class="login">
-				<?php echo $this->renderElement('flashMessage'); ?>
+				<?php echo $this->element('flashMessage'); ?>
 				<div id="content">
 					<?php echo @$content ?>
 				</div>
 			</div>
 		<?php } else {
-			echo $this->renderElement('header');
+			echo $this->element('header');
 			?>
 			<div id="app">
-				<?php echo $this->renderElement('mainMenu'); ?>
-				<?php echo $this->renderElement('flashMessage'); ?>
+				<?php echo $this->element('mainMenu'); ?>
+				<?php echo $this->element('flashMessage'); ?>
 				<div id="content">
 					<?php echo @$content ?>
 				</div>
-				<?php echo $this->renderElement('footer'); ?>
+				<?php echo $this->element('footer'); ?>
 			</div>
 			<?php
 		}

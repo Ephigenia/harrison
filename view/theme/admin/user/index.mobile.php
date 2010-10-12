@@ -9,7 +9,7 @@
 	<?php foreach($Users as $User) { ?>
 	<li class="arrow">
 		<a href="<?php echo $User->adminDetailPageUri('edit'); ?>">
-			<?php echo $this->renderElement('gravatar', array('User' => $User, 'size' => 16)); ?>
+			<?php echo $this->element('gravatar', array('User' => $User, 'size' => 16)); ?>
 			<?php echo $User->get('name') ?>
 		</a>
 	</li>
