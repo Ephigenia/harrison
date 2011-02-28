@@ -121,7 +121,7 @@ class AppController extends Controller
 	 * @deprecated move this to component
 	 * @param string $keyword
 	 */
-	public function search($q, $fields = array()) 
+	public function search($q = null, $fields = array())
 	{
 		$results = new IndexedArray();
 		$this->data->set('q', $q);
