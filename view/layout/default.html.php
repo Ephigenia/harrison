@@ -11,31 +11,34 @@
 	<script src="<?php echo $baseUri ?>/js/min/modernizr-1.6.min.js"></script>
 </head>
 <body>
-	<header>
-		<h1><a href="<?php echo $Router->root->uri(); ?>" rel="home">Homepage</a></h1>
-	</header>
-	<aside id="content">
-		<?php echo $content ?>
-	</aside>
-	<aside id="sidebar">
-		<section>
-			<h2>About</h2>
-			<p>
-				This is the example default theme for harrison.
-			</p>
-		</section>
-		<section>
-			<h2>Blogroll</h2>
-			<ul>
-				<li><a href="http://www.marceleichner.de/" rel="external">Marcel Eichner</a></li>
-				<li><a href="http://www.codinghorror.com/" rel="external">Coding Horror</a></li>
-			</ul>
-		</section>
-	</aside>
-	<footer>
-		<a href="http://code.marceleichner.de/project/harrison" rel="external">Harrison</a> Theme (<a href="http://validator.w3.org/check/referer" rel="external" title="Validate this page’s source">Validate Source</a>),
-		© 2010 by <a href="http://www.marceleichner.de" rel="external">Ephigenia M. Eichner</a>
-	</footer>
+	<div id="app">
+		<header>
+			<h1><a href="<?php echo $Router->root->uri(); ?>" rel="home">Homepage</a></h1>
+		</header>
+		<aside id="content">
+			Content is king
+			<?php echo $content ?>
+		</aside>
+		<aside id="sidebar">
+			<section>
+				<h2>About</h2>
+				This is the default template that comes with harrison.
+				You can change it by editing the templates in the <pre>/view/</pre>
+				directory.
+			</section>
+			<section>
+				<h2>Blogroll</h2>
+				<ul>
+					<li><a href="http://www.marceleichner.de/" rel="external">Marcel Eichner</a></li>
+					<li><a href="http://www.codinghorror.com/" rel="external">Coding Horror</a></li>
+				</ul>
+			</section>
+		</aside>
+		<footer>
+			Default <a href="http://code.marceleichner.de/project/harrison" rel="external">Harrison</a> Theme (<a href="http://validator.w3.org/check/referer" rel="external" title="Validate this page’s source">Validate Source</a>),
+			© 2010 by <a href="http://www.marceleichner.de" rel="external">Ephigenia M. Eichner</a>
+		</footer>
+	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 	<script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $baseUri ?>/js/min/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
 	<!-- javascript includes -->

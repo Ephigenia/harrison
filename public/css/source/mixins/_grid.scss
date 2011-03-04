@@ -1,0 +1,23 @@
+// default values
+$gridColumns: 8 !default;
+$gridColumnWidth: 100px !default;
+$gridMargin: 10px !default;
+
+@mixin container() {
+	width: ($gridColumnWidth + $gridMargin) * $gridColumns;
+	margin: 0 auto;
+	clear: both;
+}
+
+@mixin column($n, $last: false) {
+	width: $gridColumnWidth * $n + $gridMargin * ($n - 1);
+	float: left;
+	margin-right: $gridMargin;
+	@if $last {
+		@include last;
+	}
+}
+
+@mixin last() {
+	margin-right: 0;
+}

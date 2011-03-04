@@ -6,6 +6,12 @@ This is the readme file for the Harrison CMS. It should contain basic
 information about setting up a simple Harrison project. If you don’t find what
 you need, please check the [official Harrison project website](http://code.marceleichner.de/project/harrison).
 
+# Requirements
+
+* Phing
+* HAML / SASS
+* GIT
+
 # Installation
 
 * Copy everything, including .htaccess file to an empty folder
@@ -34,6 +40,10 @@ read them with the NodesController and render them with your Node Views. All
 files from the `views/node/` directory get listet in the Node-Edit Form.
 
 # Changelog
+
+* 0.5
+	* big rewrite to split admin and frontend sources, also using doctrine
+	  and ephFrame 0.3 as base
 
 * 0.4.5
 	* Complete Mobile Admin integration for iPhone and Android
