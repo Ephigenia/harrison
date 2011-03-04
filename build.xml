@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="application" default="default" basedir="." phingVersion="2.4.2">
+	<property name="build.tasks_dir" value="${project.basedir}/build/tasks" />
+	<property name="build.env_dir" value="${project.basedir}/build/environment" />
+	<tstamp>
+		<format property="date" pattern="%Y%m%d-%H%M" />
+	</tstamp>
+	<property file="build.properties" />
+	<import file="${build.tasks_dir}/config.xml" optional="true" />
+	<import file="${build.tasks_dir}/install.xml" optional="true" />
+	<import file="${build.tasks_dir}/deploy.xml" optional="true" />
+	<import file="${build.tasks_dir}/git.xml" optional="true" />
+	<import file="${build.tasks_dir}/assets.xml" optional="true" />
+	<import file="${build.tasks_dir}/metrics.xml" optional="true" />
+	<import file="${build.tasks_dir}/cq.xml" optional="true" />
+	<import file="${build.tasks_dir}/tests.xml" optional="true" />
+	<import file="${build.tasks_dir}/release.xml" optional="true" />
+	<!-- default target -->
+	<target name="default" depends="assets"></target>
+	<target name="cleanup" depends="install-cleanup" />
+</project>

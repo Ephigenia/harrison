@@ -1,0 +1,48 @@
+<project>
+	<!-- default target -->
+	<target name="assets" depends="js,css" description="css/sass &amp; js compiling/compression"></target>
+	
+	<!-- Preparation -->
+	<target name="assets-prepare">
+		<fail unless="assets.css.target_dir" message="no css target directory specified" />
+		<fail unless="assets.js.target_dir" message="no js target directory specified" />
+		<mkdir dir="${assets.root}/${assets.js.target_dir}" />
+		<mkdir dir="${assets.root}/${assets.css.target_dir}" />
+	</target>
+	
+	<!-- development watching -->
+	<target name="watch" depends="assets-prepare" description="watch asset directory and watch for changes, compile them imidiently">
+		<echo level="info" msg="Watching ${assets.css.source_dir}" />
+		<exec passthru="true" command="sass --style assets.css.style --watch ${assets.root}/${assets.css.source_dir}:${assets.root}/${assets.css.target_dir}" escape="false" />
+	</target>
+	
+	<!-- Javascript stuff -->
+	<target name="js" depends="assets-prepare" description="compile and prepare all js files">
+		<property name="js_source_files" value="app" />
+	    <foreach list="${js_source_files}" param="filename" target="js-closure-compile" />
+	</target>
+	<target name="js-closure-compile" depends="assets-prepare">
+		<property name="assets.closure.charset" value="UTF-8" />
+		<property name="assets.closure.level" value="ADVANCED_OPTIMIZATIONS" />
+		<property name="assets.closure.compiler" value="bin/closure-compiler.jar" />
+		<echo msg="closure compiling '${filename}'.js" />
+		<exec checkreturn="true" passthru="true" command="java -jar ${assets.closure.compiler}
+			--charset ${assets.closure.charset} 
+			--compilation_level ${assets.closure.level}
+			--js ${assets.root}/${assets.js.source_dir}/${filename}.js 
+			--js_output_file ${assets.root}/${assets.js.target_dir}/${filename}.js" escape="false" />
+	</target>
+	
+	<!-- SASS stuff -->
+	<target name="css" depends="assets-prepare" description="compile and preapre all css an js files">
+		<property name="sassfiles" value="screen,print" />
+	    <foreach list="${sassfiles}" param="filename" target="sass-compile" />
+	</target>
+	<target name="sass-compile" depends="assets-prepare">
+		<property name="assets.css.style" value="compressed" />
+		<fail unless="filename" msg="no sass filename passed" />
+		<fail unless="assets.css.source_dir" msg="no css source directory defined" />
+		<echo msg="Compiling '${filename}.scss'" />
+		<exec checkreturn="true" passthru="true" command="sass --style ${assets.css.style} ${assets.root}/${assets.css.source_dir}/${filename}.scss:${assets.root}/${assets.css.target_dir}/${filename}.css" escape="false" />
+	</target>
+</project>

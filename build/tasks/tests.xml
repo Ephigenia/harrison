@@ -1,0 +1,6 @@
+<project>
+	<target name="tests" depends="phpunit" description="run all available tests" />
+	<target name="phpunit" description="run phpunit">
+		<exec checkreturn="true" command="phpunit" escape="false" passthru="true" />
+	</target>
+</project>

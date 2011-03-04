@@ -1,0 +1,16 @@
+<project>
+	<property name="metrics.target_dir" value="${reports.target}/metric" />
+	
+	<!-- Default Target -->
+	<target name="metrics" depends="phploc" description="generate different metric reports"></target>
+	
+	<!-- Preparation -->
+	<target name="metrics-prepare">
+		<mkdir dir="${metrics.target_dir}" />
+	</target>
+	
+	<target name="phploc" depends="metrics-prepare" description="generate sloc report for php files">
+		<echo level="info" msg="creating phploc report for application" />
+		<exec command="phploc --verbose ${project.basedir} | tee ${metrics.target_dir}/phploc_`date +%F`.txt" escape="false" />
+	</target>
+</project>

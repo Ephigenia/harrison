@@ -1,22 +1,13 @@
-# this .htaccess file will silently redirect users to the html folder
+# this .htaccess file will silently redirect users to the public folder
 # where additional rewrite actions happen
 # ----------------------------------------------------------------------------
-
-# Add PHP5 Handlers (only on some hosts)
-# --------------------------------------
-# AddType x-mapp-php5 .php
-# AddHandler x-mapp-php5 .php
-
-# Password authentification for testing
-# -------------------------------------
-# AuthUserFile /absolute/path/to/file/.htpasswd
-# AuthType Basic
-# AuthName Secure
-# require valid-user
-
-# framework redirects to /html/index.php
-# --------------------------------------
 RewriteEngine On
-# RewriteBase /
-RewriteRule ^$		html/	[L]
-RewriteRule (.*)	html/$1	[E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+# Sometimes RewriteBase is needed to set correct document root to /
+RewriteRule ^$			public/		[QSA,L]
+
+# rewriteconditions for directory & file access
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$	public/$0	[QSA,L]
