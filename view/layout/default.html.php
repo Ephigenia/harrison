@@ -37,6 +37,7 @@
 		<footer>
 			Default <a href="http://code.marceleichner.de/project/harrison" rel="external">Harrison</a> Theme (<a href="http://validator.w3.org/check/referer" rel="external" title="Validate this page’s source">Validate Source</a>),
 			© 2010 by <a href="http://www.marceleichner.de" rel="external">Ephigenia M. Eichner</a>
+			compile time: <?php echo round((microtime(true) - COMPILE_START), 6); ?>s
 		</footer>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>

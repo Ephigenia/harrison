@@ -3,8 +3,7 @@
 use Doctrine\Common\ClassLoader,
     Doctrine\ORM\Configuration,
     Doctrine\ORM\EntityManager,
-    Doctrine\Common\Cache\ApcCache,
-    Entities\User, Entities\Address;
+    Doctrine\Common\Cache\ApcCache;
 
 $lib = APP_ROOT.'/vendor/doctrine/lib';
 require_once $lib.'/vendor/doctrine-common/lib/Doctrine/Common/ClassLoader.php';
@@ -32,6 +31,10 @@ $config->setQueryCacheImpl(new \Doctrine\Common\Cache\ArrayCache);
 $config->setProxyDir(APP_ROOT.'/tmp/proxies');
 $config->setProxyNamespace('proxies');
 $config->setAutoGenerateProxyClasses(true);
+
+$logger = new Doctrine\DBAL\Logging\DebugStack;
+$config->setSQLLogger($logger);
+$GLOBALS['logger'] = $logger;
 
 $connectionOptions = array(
 	'driver' => 'pdo_mysql',
