@@ -9,3 +9,7 @@
 	<br />
 	Viel Spass weiterhin!
 </p>
+<pre>
+	<?php echo $Exception->getMessage(); ?>
+	<?php throw $Exception; ?>
+</pre>
