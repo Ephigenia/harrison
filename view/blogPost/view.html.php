@@ -2,7 +2,7 @@
 
 <?php if ($BlogPost->comments) { ?>
 <div id="Comments">
-	<h2><?php echo count($BlogPost->comments); ?> Kommentare</h2>
+	<h2><?php echo $BlogPost->comments->count(); ?> Kommentare</h2>
 	<ol class="comments">
 	<?php foreach($BlogPost->comments as $Comment) {
 		echo $this->view->render('element', 'comment', array('Comment' => $Comment));

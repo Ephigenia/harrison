@@ -77,12 +77,14 @@ input, select {
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  */
 body {
-  font: normal normal normal 14px/1.75em "Lucida Grande", Lucida, Verdana, sans-serif;
+  font: normal normal normal 14px/1.75em "Droid Serif", "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
   color: #3c3c3c;
   background: white; }
 
 a {
   color: #0080ff; }
+a:hover {
+  color: #004d99; }
 a.more {
   font-weight: bold; }
 a.more:after {
@@ -96,6 +98,7 @@ a.more:after {
 #app > header {
   margin: 2em 0em 2em 0em; }
 #app > header > h1 {
+  display: inline;
   font-size: 3em;
   padding: 1em 0.75em 0.25em 0.75em;
   margin: -1em 0em 0em -0.5em;
@@ -109,7 +112,7 @@ a.more:after {
 #app > header > h1 * {
   color: #fff; }
 #app > header > h1:hover {
-  background-color: #f8ad00; }
+  background-color: #004d99; }
 #app > footer {
   clear: both;
   margin: 3em 0em 2em 0em;
@@ -161,6 +164,7 @@ pre {
 
 /** Headline styles **/
 h1, h2, h3 {
+  font-family: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
   font-weight: bold;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
 h1 a, h2 a, h3 a {
@@ -308,3 +312,42 @@ form fieldset input.submit:hover {
 
 #SearchForm input.q {
   width: 95%; }
+
+/**
+ * Different CSS3 specific mixins
+ * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ */
+#DebugConsole {
+  background: white;
+  border-top: 1px solid #d9d9d9;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  -moz-box-shadow: -5px 0px 10px 2px rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: -5px 0px 10px 2px rgba(0, 0, 0, 0.125);
+  box-shadow: -5px 0px -5px 0px 10px 2px rgba(0, 0, 0, 0.125); }
+#DebugConsole, #DebugConsole * {
+  font: normal normal normal 11px/1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
+  color: black; }
+#DebugConsole .inner {
+  padding: 1em;
+  overflow-y: scroll;
+  max-height: 120px; }
+#DebugConsole > header {
+  padding: 0.25em 0.125em;
+  color: white;
+  font-weight: bold;
+  background: black; }
+#DebugConsole table {
+  width: 100%; }
+#DebugConsole table th, #DebugConsole table td {
+  padding: 0.125em; }
+#DebugConsole table td:last-child, #DebugConsole table th:last-child {
+  text-align: right; }
+#DebugConsole table thead tr th {
+  font-weight: bold;
+  border-bottom: 3px solid #999999; }
+#DebugConsole table tbody tr:nth-of-type(even) {
+  background-color: #f2f2f2; }
+#DebugConsole table tfoot tr td {
+  border-top: 1px solid #999999; }

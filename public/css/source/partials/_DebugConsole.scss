@@ -1,0 +1,51 @@
+@import "../mixins/css3";
+
+$DebugConsoleTitleBarBaseColor: #000000 !default;
+$DebugConsoleBaseColor: #ffffff !default;
+$DebugConsoleTextColor: #000 !default;
+
+#DebugConsole {
+	&, * {
+		font: normal normal normal 11px/1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
+		color: $DebugConsoleTextColor;
+	}
+	.inner {
+		padding: 1em;
+		overflow-y: scroll;
+		max-height: 120px;
+	}
+	background: $DebugConsoleBaseColor;
+	border-top: 1px solid darken($DebugConsoleBaseColor, 15);
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	@include box-shadow(rgba(0,0,0,0.125), -5px, 0px, 10px);
+	
+	> header {
+		padding: 0.25em 0.125em;
+		color: lighten($DebugConsoleTitleBarBaseColor, 100);
+		font-weight: bold;
+		background: $DebugConsoleTitleBarBaseColor;
+	}
+	
+	table {
+		width: 100%;
+		$borderColor: darken($DebugConsoleBaseColor, 40);
+		th, td {
+			padding: 0.125em;
+		}
+		td:last-child, th:last-child {
+			text-align: right
+		}
+		thead tr th {
+			font-weight: bold;
+			border-bottom: 3px solid $borderColor;
+		}
+		tbody tr:nth-of-type(even) {
+			background-color: darken($DebugConsoleBaseColor, 5);
+		}
+		tfoot tr td {
+			border-top: 1px solid $borderColor;
+		}
+	}
+}

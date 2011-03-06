@@ -4,13 +4,16 @@
 @import "../mixins/grid";
 
 body {
-	font: normal normal normal 14px/1.75em $font1;
+	font: normal normal normal 14px/1.75em $font2;
 	color: $textColor;
 	background: $background;
 }
 
 a {
 	color: $linkColor;
+	&:hover {
+		color: $linkHoverColor;
+	}
 	&.more {
 		font-weight: bold;
 		&:after {
@@ -26,6 +29,7 @@ a {
 	> header {
 		margin: 2em 0em 2em 0em;
 		> h1 {
+			display: inline;
 			font-size: 3em;
 			padding: 1em 0.75em 0.25em 0.75em;
 			margin: -1em 0em 0em -0.5em;
@@ -102,6 +106,7 @@ pre {
 
 /** Headline styles **/
 h1, h2, h3 {
+	font-family: $font1;
 	font-weight: bold;
 	text-shadow: 1px 1px 1px rgba(0,0,0,.25);
 	a {

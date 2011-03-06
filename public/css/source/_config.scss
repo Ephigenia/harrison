@@ -1,5 +1,5 @@
-$font1: "Lucida Grande", Lucida, Verdana, sans-serif;
-$font2: $font1;
+$font1: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
+$font2: "Droid Serif", $font1;
 
 $textColor: #3C3C3C;
 $background: #fff;
@@ -8,7 +8,7 @@ $appBackground: inherit;
 $appWidth: 960px;
 
 $linkColor: #0080FF;
-$linkHoverColor: #F8AD00;
+$linkHoverColor: darken($linkColor, 20);
 $buttonColor: $linkColor;
 
 $gridColumns: 19 !default;

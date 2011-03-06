@@ -16,32 +16,7 @@ $classLoader = new ClassLoader('Doctrine\DBAL', realpath($lib.'/vendor/doctrine-
 $classLoader->register();
 $classLoader = new ClassLoader('Doctrine\Common', realpath($lib.'/vendor/doctrine-common/lib'));
 $classLoader->register();
-$classLoader = new ClassLoader('Entities', APP_ROOT);
+$classLoader = new ClassLoader('Entities', APP_ROOT.'/entities');
 $classLoader->register();
 $classLoader = new ClassLoader('Proxies', APP_ROOT);
 $classLoader->register();
-
-$config = new Configuration;
-// Entities
-$config->setMetadataDriverImpl($config->newDefaultAnnotationDriver(array(APP_ROOT.'/entities')));
-// Cache
-$config->setMetadataCacheImpl(new \Doctrine\Common\Cache\ArrayCache);
-$config->setQueryCacheImpl(new \Doctrine\Common\Cache\ArrayCache);
-// Proxy
-$config->setProxyDir(APP_ROOT.'/tmp/proxies');
-$config->setProxyNamespace('proxies');
-$config->setAutoGenerateProxyClasses(true);
-
-$logger = new Doctrine\DBAL\Logging\DebugStack;
-$config->setSQLLogger($logger);
-$GLOBALS['logger'] = $logger;
-
-$connectionOptions = array(
-	'driver' => 'pdo_mysql',
-	'host' => 'localhost',
-	'dbname' => 'horrorblog.org',
-	'user' => 'root',
-	'password' => '',
-);
-$em = EntityManager::create($connectionOptions, $config);
-$GLOBALS['EntityManager'] = $em;

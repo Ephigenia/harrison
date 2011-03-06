@@ -4,10 +4,13 @@
 	<meta charset="utf-8">
 	<title><?php echo @$pageTitle ?: '[no title]' ?></title>
 	<base href="<?php echo $baseUri ?>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="<?php $baseUri ?>/favicon.ico">
 	<link rel="stylesheet" href="<?php echo $baseUri ?>/css/min/screen.css">
 	<link rel="profile" href="http://microformats.org/profile/hcard">
+	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 	<script src="<?php echo $baseUri ?>/js/min/modernizr-1.6.min.js"></script>
 </head>
 <body>
@@ -16,7 +19,6 @@
 			<h1><a href="<?php echo $Router->root->uri(); ?>" rel="home">Homepage</a></h1>
 		</header>
 		<aside id="content">
-			Content is king
 			<?php echo $content ?>
 		</aside>
 		<aside id="sidebar">
@@ -37,7 +39,6 @@
 		<footer>
 			Default <a href="http://code.marceleichner.de/project/harrison" rel="external">Harrison</a> Theme (<a href="http://validator.w3.org/check/referer" rel="external" title="Validate this page’s source">Validate Source</a>),
 			© 2010 by <a href="http://www.marceleichner.de" rel="external">Ephigenia M. Eichner</a>
-			compile time: <?php echo round((microtime(true) - COMPILE_START), 6); ?>s
 		</footer>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
@@ -50,5 +51,6 @@
 	<script src="<?php echo $baseUri ?>/js/libs/dd_belatedpng.js"></script>
 	<script>DD_belatedPNG.fix('img, .png_bg');</script>
 	<![endif]-->
+	<?php echo $this->view->render('element', 'debug/console')?>
 </body>
 </html>

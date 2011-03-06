@@ -9,9 +9,14 @@ $router->addRoutes(array(
 		'controller' => 'app\controller\BlogPostController',
 		'action' => 'index',
 	)),
+	'BlogPosts' => new Route('/blog/page-:page<\d+>', array(
+		'controller' => 'app\controller\BlogPostController',
+		'action' => 'index',
+		'page' => 1,
+	)),
 	'BlogPostScaffold' => new Route('/blog/:id', array(
 		'controller' => 'app\controller\BlogPostController',
 		'action' => 'view',
 		'id' => false,
-	))
+	)),
 ));
