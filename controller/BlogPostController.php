@@ -20,7 +20,14 @@ class BlogPostController extends Controller
 	
 	public function view($id)
 	{
-		$this->view->data['BlogPost'] = $BlogPost = $this->entityManager()->find('app\entities\BlogPost', $id);
+		if (isset($this->params['id'])) {
+			$BlogPost = $this->entityManager()->find('app\entities\BlogPost', (int) $id);
+		} elseif (isset($this->params['uri'])) {
+			$query = $this->entityManager()->createQuery('SELECT b, u FROM app\entities\BlogPost b JOIN b.user u WHERE b.uri = :uri');
+			$query->setParameter('uri', $this->params['uri']);
+			$BlogPost = $query->getSingleResult();
+		}
+		$this->view->data['BlogPost'] = $BlogPost;
 		return $BlogPost;
 	}
 }
