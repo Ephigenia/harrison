@@ -94,7 +94,7 @@ a.more:after {
   width: 950px;
   margin: 0 auto;
   clear: both;
-  background: inherit; }
+  background: white; }
 #app > header {
   margin: 2em 0em 2em 0em; }
 #app > header > h1 {
@@ -103,12 +103,15 @@ a.more:after {
   padding: 1em 0.75em 0.25em 0.75em;
   margin: -1em 0em 0em -0.5em;
   background-color: #0080ff;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
   -webkit-transform: rotate(-1.5deg);
   -moz-transform: rotate(-1.5deg);
   -o-transform: rotate(-1.5deg);
   -moz-box-shadow: 0.125em 0.125em 0.25em 0.05em rgba(0, 0, 0, 0.125);
   -webkit-box-shadow: 0.125em 0.125em 0.25em 0.05em rgba(0, 0, 0, 0.125);
-  box-shadow: 0.125em 0.125em 0.125em 0.125em 0.25em 0.05em rgba(0, 0, 0, 0.125); }
+  box-shadow: 0.125em 0.125em 0.125em 0.125em 0.25em 0.05em rgba(0, 0, 0, 0.125);
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=black,offX=0.125em,offY=0.125em,positive=true)";
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true); }
 #app > header > h1 * {
   color: #fff; }
 #app > header > h1:hover {
@@ -165,8 +168,7 @@ pre {
 /** Headline styles **/
 h1, h2, h3 {
   font-family: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
+  font-weight: bold; }
 h1 a, h2 a, h3 a {
   text-decoration: none;
   color: #000; }
@@ -174,13 +176,21 @@ h1 a, h2 a, h3 a {
 h1 {
   word-spacing: -0.05em;
   line-height: 1.125em;
-  font-size: 2em;
-  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=#EFEFEF,offX=2,offY=2,positive=true)";
-  filter: progid:DXImageTransform.Microsoft.dropShadow(color=#EFEFEF,offX=2,offY=2,positive=true); }
+  font-size: 2em; }
 
 h2 {
   line-height: 1.125em;
   font-size: 1.5em; }
+
+.gravatar {
+  vertical-align: text-bottom;
+  padding: 1px;
+  border: 1px solid rgba(125, 125, 125, 0.3);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(125, 125, 125, 0.4);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(125, 125, 125, 0.4);
+  box-shadow: 0px 2px 0px 2px 3px 0px rgba(125, 125, 125, 0.4);
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=#7d7d7d,offX=0px,offY=2px,positive=true)";
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true); }
 
 /* Notification Boxes */
 p.error, p.hint, p.success, #flashMessage {
@@ -232,17 +242,6 @@ ul.pagination li a {
 ul.pagination li.current, ul.pagination li:hover {
   background-color: #878787;
   color: #000; }
-
-article {
-  display: block;
-  margin: 0em 0em 2em 0em; }
-article > section {
-  display: block;
-  padding: 0.1em 0.3em;
-  background-color: rgba(200, 200, 200, 0.1); }
-article > footer {
-  display: block;
-  border-top: 1px solid #C1C2C1; }
 
 /**
  * Example Application Form Styles
@@ -313,11 +312,36 @@ form fieldset input.submit:hover {
 #SearchForm input.q {
   width: 95%; }
 
+article {
+  display: block;
+  margin: 0em 0em 2em 0em; }
+article > section {
+  display: block;
+  padding: 0.1em 0.3em;
+  background-color: rgba(200, 200, 200, 0.1); }
+article > footer {
+  display: block;
+  border-top: 1px solid #C1C2C1; }
+
+#Comments {
+  margin-top: 2em; }
+#Comments > header {
+  margin-bottom: 1em; }
+#Comments article header {
+  font-weight: bold;
+  border-bottom: 1px solid #cccccc; }
+#Comments article:last-child {
+  border-bottom: none; }
+#Comments article img.gravatar {
+  width: 16px;
+  height: 16px; }
+
 /**
  * Different CSS3 specific mixins
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  */
 #DebugConsole {
+  display: none;
   background: white;
   border-top: 1px solid #d9d9d9;
   position: fixed;
@@ -325,7 +349,9 @@ form fieldset input.submit:hover {
   width: 100%;
   -moz-box-shadow: -5px 0px 10px 2px rgba(0, 0, 0, 0.125);
   -webkit-box-shadow: -5px 0px 10px 2px rgba(0, 0, 0, 0.125);
-  box-shadow: -5px 0px -5px 0px 10px 2px rgba(0, 0, 0, 0.125); }
+  box-shadow: -5px 0px -5px 0px 10px 2px rgba(0, 0, 0, 0.125);
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=black,offX=-5px,offY=0px,positive=true)";
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true); }
 #DebugConsole, #DebugConsole * {
   font: normal normal normal 11px/1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
   color: black; }

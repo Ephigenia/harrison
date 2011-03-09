@@ -1,0 +1,14 @@
+
+article {
+	display: block;
+	margin: 0em 0em 2em 0em;
+	> section {
+		display: block;
+		padding: 0.1em 0.3em;
+		background-color: rgba(200, 200, 200, 0.1);
+	}
+	> footer {
+		display: block;
+		border-top: 1px solid #C1C2C1;
+	}
+}

@@ -1,5 +1,7 @@
 <?php
 
+namespace app\helper;
+
 /**
  * Helper for formating node texts
  *
@@ -7,12 +9,8 @@
  * @package harrison
  * @subpackage harrison.lib.helper
  */
-class NodeTextFormater extends Helper
-{	
-	public $helpers = array(
-		'HTML',
-	);
-	
+class NodeTextFormater
+{
 	public function format($text)
 	{
 		// image replace

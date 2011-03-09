@@ -46,6 +46,8 @@ class Controller extends \ephFrame\core\Controller
 	{
 		$this->view->data += array(
 			'HTML' => new \ephFrame\view\helper\HTML(),
+			'Text' => new \ephFrame\view\helper\Text(),
+			'BlogPostFormater' => new \app\helper\BlogPostFormater(),
 			'pageTitle' => 'Harrison',
 		);
 		return parent::beforeRender();

@@ -11,7 +11,7 @@ class BlogPostController extends Controller
 	
 	public function index()
 	{
-		$query = $this->entityManager()->createQuery('SELECT b, u FROM app\entities\BlogPost b JOIN b.user u WHERE b.status = '.Status::PUBLISHED.' AND b.published <= CURRENT_TIMESTAMP() ORDER BY b.published ASC');
+		$query = $this->entityManager()->createQuery('SELECT b, u FROM app\entities\BlogPost b JOIN b.user u WHERE b.status = '.Status::PUBLISHED.' AND b.published <= CURRENT_TIMESTAMP() ORDER BY b.published DESC');
 		$query->setMaxResults(10);
 		$query->setFirstResult(((@$this->params['page'] ?: 1) - 1) * $this->perPage);
 		$this->view->data['BlogPosts'] = $BlogPosts = $query->getResult();

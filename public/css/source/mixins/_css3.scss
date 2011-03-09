@@ -107,4 +107,6 @@
 	-moz-box-shadow: $full;
 	-webkit-box-shadow: $full;
 	box-shadow: $x $y $full;
+	-ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=" + rgb(red($color), green($color), blue($color)) + ",offX=" + $x + ",offY=" + $y + ",positive=true)";
+	filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true);
 }

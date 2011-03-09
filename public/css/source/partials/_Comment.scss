@@ -1,0 +1,21 @@
+#Comments {
+	$avatarSize: 16px;
+	
+	margin-top: 2em;
+	> header {
+		margin-bottom: 1em;
+	}
+	article {
+		header {
+			font-weight: bold;
+			border-bottom: 1px solid darken($appBackground, 20);
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+		img.gravatar {
+			width: $avatarSize;
+			height: $avatarSize;
+		}
+	}
+}

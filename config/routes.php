@@ -15,6 +15,11 @@ $router->addRoutes(array(
 		'action' => 'view',
 	)),
 	// Blogposts
+	'Feed' => new Route('/feed*', array(
+		'controller' => 'app\controller\BlogPostController',
+		'action' => 'index',
+		'type' => 'rss',
+	)),
 	'BlogPosts' => new Route('/blog/page-:page<\d+>', array(
 		'controller' => 'app\controller\BlogPostController',
 		'action' => 'index',

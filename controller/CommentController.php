@@ -8,12 +8,8 @@
  * @since 2009-07-16
  * @author Marcel Eichner
  */
-class CommentController extends AppController
+class CommentController extends Controller
 {
-	public $publicActions = array(
-		'rss',
-	);
-	
 	public function add($model, $id)
 	{
 		// comments
@@ -35,11 +31,5 @@ class CommentController extends AppController
 				$this->redirect($this->BlogPost->detailPageUri());
 			}
 		}
-	}
-	
-	public function rss()
-	{
-		$this->Comment->perPage = 10;
-		return parent::rss();
 	}
 }
