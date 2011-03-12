@@ -3,7 +3,8 @@
 namespace app\entities;
 
 /**
- * @Entity @Table(name="blog_post_comment")
+ * @Entity
+ * @Table(name="blog_post_comment")
  */
 class Comment
 {

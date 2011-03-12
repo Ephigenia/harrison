@@ -83,4 +83,15 @@ class BlogPost
 	 * @var Comment[]
 	 */
 	public $comments;
+	
+	/**
+	 * @ManyToMany(targetEntity="Tag", inversedBy="blogposts")
+	 * @var Tag[]
+	 */
+	public $tags;
+	
+	public function __toString()
+	{
+		return $this->headline ?: '[no headline]';
+	}
 }

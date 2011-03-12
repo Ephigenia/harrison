@@ -6,8 +6,14 @@
 	-o-transition: $property $duration $timingFunction;
 }
 
-@mixin rotate($degrees) {
-	-webkit-transform: rotate(-1.5deg);
-	-moz-transform: rotate(-1.5deg);
-	-o-transform: rotate(-1.5deg);
+@mixin rotate($degrees: 90deg) {
+	-webkit-transform: rotate($degrees);
+	-moz-transform: rotate($degrees);
+	-o-transform: rotate($degrees);
+}
+
+@mixin scale($factor: 2.0) {
+	-webkit-transform: scale($factor);
+	-moz-transform: scale($factor);
+	-o-transform: scale($factor);
 }

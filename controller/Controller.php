@@ -44,6 +44,9 @@ class Controller extends \ephFrame\core\Controller
 	
 	public function beforeRender()
 	{
+		if (!empty($this->params['q'])) {
+			$this->view->data['q'] = $this->params['q'];
+		}
 		$this->view->data += array(
 			'HTML' => new \ephFrame\view\helper\HTML(),
 			'Text' => new \ephFrame\view\helper\Text(),

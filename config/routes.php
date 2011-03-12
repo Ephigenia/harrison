@@ -14,6 +14,10 @@ $router->addRoutes(array(
 		'controller' => 'app\controller\UserController',
 		'action' => 'view',
 	)),
+	'search' => new Route('/search/:q', array(
+		'controller' => 'app\controller\BlogPostController',
+		'action' => 'index',
+	)),
 	// Blogposts
 	'Feed' => new Route('/feed*', array(
 		'controller' => 'app\controller\BlogPostController',

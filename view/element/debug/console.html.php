@@ -1,8 +1,8 @@
 <div id="DebugConsole">
-	<header>
+	<header onclick="$('#DebugConsole .body').slideToggle();">
 		Debug
 	</header>
-	<div class="inner">
+	<div class="body">
 		<dl>
 			<dd>Compile time (ms)</dd>
 			<dt><?php echo round((microtime(true) - COMPILE_START) * 1000, 4); ?></dt>
@@ -10,8 +10,8 @@
 		<?php if (isset($SQLLogger)) { ?>
 		<table class="SQLLog">
 			<colgroup>
-				<col width="5%">
-				<col width="85%">
+				<col width="3%">
+				<col width="87%">
 				<col width="10%">
 			</colgroup>
 			<thead>

@@ -1,1 +1,0 @@
-<?php echo $this->element('mediaFile', array('MediaFile' => $MediaImage)); ?>

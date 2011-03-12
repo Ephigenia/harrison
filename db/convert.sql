@@ -39,6 +39,7 @@ AS
 		horrorblog_blog_posts
 ;
 
+DROP TABLE user;
 CREATE VIEW
 	user
 AS
@@ -58,4 +59,28 @@ AS
 		FROM_UNIXTIME(lastlogin) as lastlogin
 	FROM
 		horrorblog_users
+;
+
+DROP TABLE tag;
+CREATE VIEW
+	tag
+AS
+	SELECT
+		id, name
+	FROM
+		horrorblog_tags
+;
+
+DROP TABLE blogpost_tag;
+CREATE VIEW
+	blogpost_tag
+AS
+	SELECT
+		id,
+		tag_id,
+		foreign_id as blogpost_id
+	FROM
+		horrorblog_tags_model
+	WHERE
+		model = 'BlogPost'
 ;

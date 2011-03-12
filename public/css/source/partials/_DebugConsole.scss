@@ -1,37 +1,54 @@
 @import "../mixins/css3";
 
-$DebugConsoleTitleBarBaseColor: #000000 !default;
-$DebugConsoleBaseColor: #ffffff !default;
-$DebugConsoleTextColor: #000 !default;
+$DebugConsoleTitleBarBaseColor: #000 !default;
+$DebugConsoleBaseColor: #FEF5E1 !default;
+$DebugConsoleTextColor: #3C3C3C !default;
 
 #DebugConsole {
-	display: none;
 	&, * {
 		font: normal normal normal 11px/1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
 		color: $DebugConsoleTextColor;
 	}
-	.inner {
-		padding: 1em;
-		overflow-y: scroll;
-		max-height: 120px;
-	}
 	background: $DebugConsoleBaseColor;
-	border-top: 1px solid darken($DebugConsoleBaseColor, 15);
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
 	@include box-shadow(rgba(0,0,0,0.125), -5px, 0px, 10px);
 	
 	> header {
-		padding: 0.25em 0.125em;
-		color: lighten($DebugConsoleTitleBarBaseColor, 100);
+		padding: 0.25em 0.5em;
+		color: lighten($DebugConsoleTitleBarBaseColor, 90);
 		font-weight: bold;
 		background: $DebugConsoleTitleBarBaseColor;
+		cursor: pointer;
+		&:hover {
+			background: lighten($DebugConsoleTitleBarBaseColor, 10);
+		}
+	}
+	
+	.body {
+		display: none;
+		padding: 1em;
+		overflow-y: scroll;
+		max-height: 320px;
+	}
+	
+	dl {
+		dd {
+			font-weight: bold;
+			display: inline-block;
+			float: left;
+			width: 120px;
+			&:after {
+				content: ":";
+			}
+		}
 	}
 	
 	table {
 		width: 100%;
-		$borderColor: darken($DebugConsoleBaseColor, 40);
+		$borderColor1: darken($DebugConsoleBaseColor, 40);
+		$borderColor2: lighten($borderColor1, 30);
 		th, td {
 			padding: 0.125em;
 		}
@@ -40,13 +57,17 @@ $DebugConsoleTextColor: #000 !default;
 		}
 		thead tr th {
 			font-weight: bold;
-			border-bottom: 3px solid $borderColor;
+			border-bottom: 1px solid $borderColor1;
 		}
-		tbody tr:nth-of-type(even) {
+		tbody tr td {
+			border-bottom: 1px solid $borderColor2;
+		}
+		tbody tr:nth-of-type(odd) {
 			background-color: darken($DebugConsoleBaseColor, 5);
 		}
 		tfoot tr td {
-			border-top: 1px solid $borderColor;
+			border-top: 1px solid $borderColor1;
+			font-weight: bold;
 		}
 	}
 }
