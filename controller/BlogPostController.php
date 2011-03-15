@@ -13,21 +13,29 @@ class BlogPostController extends Controller
 	
 	public function index()
 	{
-		$q = $this->entityManager()->createQueryBuilder();
-		$q->add('select', 'b, u')
+		$query = $this->entityManager()->createQueryBuilder()
+			->add('select', 'b, u')
 			->from('app\entities\BlogPost', 'b')
-			->leftJoin('b.user', 'u')
+			->join('b.user', 'u')
 			->where('b.status='.Status::PUBLISHED)
-			->orderBy(new Expr\OrderBy('b.published', 'DESC'));
+			->orderBy(new Expr\OrderBy('b.published', 'DESC'))
+			->setMaxResults($this->perPage)
+			->setFirstResult(
+				$offset = ((@$this->params['page'] ?: 1) - 1) * $this->perPage
+			);
 		// if admin skip this
-		$q->andWhere(new Expr\Comparison('b.published', '<=', 'CURRENT_TIMESTAMP()'));
+		$query->andWhere(new Expr\Comparison('b.published', '<=', 'CURRENT_TIMESTAMP()'));
 		if (isset($this->params['q'])) {
-			$q->setParameter('q', $this->params['q']);
-			$q->andWhere('b.headline LIKE "%:q%" OR b.text LIKE "%:q%"');
+			$q = rawurldecode($this->params['q']);
+			$this->view->data['q'] = $q;			
+			$query
+				->setParameter('search', $q.'%')
+				->innerJoin('b.tags', 't')
+				->andWhere(
+					'b.headline LIKE :search OR b.text LIKE :search OR t.name LIKE :search'
+				);
 		}
-		$q->setMaxResults(10);
-		$q->setFirstResult(((@$this->params['page'] ?: 1) - 1) * $this->perPage);
-		$this->view->data['BlogPosts'] = $BlogPosts = $q->getQuery()->getResult();
+		$this->view->data['BlogPosts'] = $BlogPosts = $query->getQuery()->getResult();
 		return $BlogPosts;
 	}
 	

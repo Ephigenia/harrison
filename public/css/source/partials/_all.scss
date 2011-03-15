@@ -32,6 +32,11 @@ a {
 	}
 }
 
+.selected a, a.selected {
+	background: $linkHoverColor;
+	color: $linkColor;
+}
+
 #app {
 	@include container();
 	background: $appBackground;
@@ -128,6 +133,7 @@ h1 {
 	word-spacing: -0.05em;
 	line-height: 1.125em;
 	font-size: 2em;
+	margin-bottom: 0.5em;
 }
 h2 {
 	line-height: 1.125em;
@@ -138,7 +144,6 @@ h2 {
 	vertical-align: text-bottom;
 	padding: 1px;
 	border: 1px solid rgba(125,125,125,0.3);
-	@include box-shadow(rgba(125,125,125,0.4), 0px, 2px, 3px, 0px);
 }
 
 /* Notification Boxes */
