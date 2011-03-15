@@ -105,12 +105,13 @@ class BlogPostFormater
 			\]{2}@ix', $text, $found, PREG_SET_ORDER)) {
 			foreach($found as $arr) {
 				$videoUrl = \ephFrame\core\Router::base().STATIC_DIR.'/swf/VideoPlayer.swf?url='.$arr[1].'&name='.urlencode(@$arr[3]);
-				$videoTag = $this->HTML->tag('embed', null, array(
+				$HTML = new \ephFrame\view\helper\HTML($this->controller);
+				$videoTag = $HTML->tag('embed', null, array(
 					'src' => $videoUrl,
 					'allowFullScreen' => 'true',
 					'type' => 'application/x-shockwave-flash',
 					'width' => 440,
-					'height' => coalesce(@$arr[2], 440),
+					'height' => @$arr[2] ?: 440,
 				));
 				$text = str_replace($arr[0], $videoTag, $text);
 			}

@@ -19,11 +19,13 @@ AS
 		model = 'BlogPost'
 ;
 
+DROP TABLE blogpost;
 CREATE VIEW
 	blogpost
 AS
 	SELECT
 		id,
+		flags & 2048 as sticky,
 		flags,
 		status,
 		language_id,

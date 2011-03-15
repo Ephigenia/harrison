@@ -27,6 +27,12 @@ class BlogPost
 	public $flags;
 	
 	/**
+	 * @Column(type="boolean")
+	 * @var boolean
+	 */
+	public $sticky;
+	
+	/**
      * @Column(type="string", length=2, nullable=false)
      * @var string
      */

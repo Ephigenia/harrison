@@ -3,6 +3,7 @@
 namespace app\controller;
 
 use app\entities\BlogPost;
+use app\entities\BlogPostFlag;
 use app\entities\Status;
 
 use \Doctrine\ORM\Query\Expr;
@@ -17,8 +18,8 @@ class BlogPostController extends Controller
 			->add('select', 'b, u')
 			->from('app\entities\BlogPost', 'b')
 			->join('b.user', 'u')
-			->where('b.status='.Status::PUBLISHED)
-			->orderBy(new Expr\OrderBy('b.published', 'DESC'))
+			->where('b.status = '.Status::PUBLISHED)
+			->add('orderBy', 'b.sticky DESC, b.published DESC')
 			->setMaxResults($this->perPage)
 			->setFirstResult(
 				$offset = ((@$this->params['page'] ?: 1) - 1) * $this->perPage

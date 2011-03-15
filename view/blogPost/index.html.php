@@ -7,7 +7,7 @@ if (empty($BlogPosts)) {
 	}
 } else {
 	if (!empty($q)) {
-		echo sprintf('<h1>Suche nach <q>:s</q></h1>', $q);
+		echo sprintf('<h1>Suche nach <q>%s</q></h1>', $q);
 	}
 	// show blog entries
 	foreach($BlogPosts as $index => $BlogPost) {

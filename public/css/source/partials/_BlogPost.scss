@@ -7,11 +7,16 @@ article {
 		padding: 0.1em 0.3em;
 		background-color: rgba(200, 200, 200, 0.1);
 	}
+	iframe {
+		@include column(12);
+		@include last();
+		height: 275px;
+	}
 	> footer {
 		display: block;
 		border-top: 1px solid #C1C2C1;
 		.tags li {
-			line-height: 2em;
+			font-size: 75%;
 			display: inline;
 		}
 	}
