@@ -1,6 +1,6 @@
 [submodule "vendor/doctrine"]
 	path = vendor/doctrine
 	url = git://github.com/doctrine/doctrine2.git
-[submodule "vendor/redbean"]
-	path = vendor/redbean
-	url = git://github.com/gabordemooij/redbean.git
+[submodule "vendor/php-markdown"]
+	path = vendor/php-markdown
+	url = http://git.michelf.com/php-markdown

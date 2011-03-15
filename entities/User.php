@@ -37,4 +37,10 @@ class User
 	 * @var BlogPost[]
 	 */
 	public $blogPosts;
+	
+	/**
+	 * @OneToMany(targetEntity="Node", mappedBy="user")
+	 * @var Node[]
+	 */
+	public $nodes;
 }

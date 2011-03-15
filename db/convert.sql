@@ -1,3 +1,4 @@
+DROP VIEW IF EXISTS blog_post_comment;
 CREATE VIEW
 	blog_post_comment
 AS
@@ -19,7 +20,7 @@ AS
 		model = 'BlogPost'
 ;
 
-DROP TABLE blogpost;
+DROP VIEW IF EXISTS blogpost;
 CREATE VIEW
 	blogpost
 AS
@@ -41,7 +42,7 @@ AS
 		horrorblog_blog_posts
 ;
 
-DROP TABLE user;
+DROP VIEW IF EXISTS user;
 CREATE VIEW
 	user
 AS
@@ -63,7 +64,7 @@ AS
 		horrorblog_users
 ;
 
-DROP TABLE tag;
+DROP VIEW IF EXISTS tag;
 CREATE VIEW
 	tag
 AS
@@ -73,7 +74,7 @@ AS
 		horrorblog_tags
 ;
 
-DROP TABLE blogpost_tag;
+DROP VIEW IF EXISTS blogpost_tag;
 CREATE VIEW
 	blogpost_tag
 AS
@@ -85,4 +86,28 @@ AS
 		horrorblog_tags_model
 	WHERE
 		model = 'BlogPost'
+;
+
+DROP VIEW IF EXISTS node;
+CREATE VIEW
+	node
+AS
+	SELECT
+		node.id,
+		node.status,
+		node.user_id,
+		node.name,
+		translation.uri,
+		translation.headline,
+		translation.text,
+		node.template,
+		FROM_UNIXTIME(node.created) as created,
+		FROM_UNIXTIME(node.updated) as updated,
+		FROM_UNIXTIME(node.published) as published
+	FROM
+		horrorblog_nodes as node
+	JOIN
+		horrorblog_node_texts translation ON
+					node.id = translation.node_id
+			AND	translation.language_id = 'de'
 ;

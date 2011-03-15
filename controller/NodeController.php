@@ -1,5 +1,11 @@
 <?php
 
+namespace app\controller;
+
+use app\controller\Controller;
+
+use app\entities\Node;
+
 /**
  *
  * @package harrison
@@ -7,10 +13,11 @@
  * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
  * @since 16.12.2008
  */
-class NodeController extends AppController
+class NodeController extends Controller
 {
 	public function view($id = null)
 	{
+		$this->view->renderer['view'] = new \app\component\MarkdownRenderer();
 		if (isset($this->params['id'])) {
 			$Node = $this->entityManager()->find('app\entities\Node', (int) $id);
 		} elseif (isset($this->params['uri'])) {

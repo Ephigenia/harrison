@@ -133,10 +133,16 @@ h1 {
 	word-spacing: -0.05em;
 	line-height: 1.125em;
 	font-size: 2em;
+	margin: 1em 0em 0.5em;
 }
 h2 {
 	line-height: 1.125em;
 	font-size: 1.5em;
+	margin: 1em 0em 0.5em;
+}
+p {
+	display: block;
+	margin: 0.5em 0em 0.5em 0em;
 }
 
 .gravatar {
