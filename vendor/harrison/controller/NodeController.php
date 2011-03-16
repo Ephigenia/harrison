@@ -2,7 +2,7 @@
 
 namespace app\controller;
 
-use app\controller\Controller;
+namespace harrison\controller;
 
 use app\entities\Node;
 

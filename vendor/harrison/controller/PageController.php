@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controller;
+namespace harrison\controller;
 
 use app\controller\Controller;
 

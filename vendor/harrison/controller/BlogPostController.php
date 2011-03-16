@@ -1,12 +1,10 @@
 <?php
 
-namespace app\controller;
+namespace harrison\controller;
 
 use app\entities\BlogPost;
 use app\entities\BlogPostFlag;
 use app\entities\Status;
-
-use \Doctrine\ORM\Query\Expr;
 
 class BlogPostController extends Controller
 {
@@ -25,7 +23,7 @@ class BlogPostController extends Controller
 				$offset = ((@$this->params['page'] ?: 1) - 1) * $this->perPage
 			);
 		// if admin skip this
-		$query->andWhere(new Expr\Comparison('b.published', '<=', 'CURRENT_TIMESTAMP()'));
+		$query->andWhere('b.published <= CURRENT_TIMESTAMP()');
 		if (isset($this->params['q'])) {
 			$q = rawurldecode($this->params['q']);
 			$this->view->data['q'] = $q;			

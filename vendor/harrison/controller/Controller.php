@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controller;
+namespace harrison\controller;
 
 use Doctrine\Common\ClassLoader,
     Doctrine\ORM\Configuration,
@@ -50,7 +50,7 @@ class Controller extends \ephFrame\core\Controller
 		$this->view->data += array(
 			'HTML' => new \ephFrame\view\helper\HTML(),
 			'Text' => new \ephFrame\view\helper\Text(),
-			'BlogPostFormater' => new \app\helper\BlogPostFormater(),
+			'BlogPostFormater' => new \harrison\helper\BlogPostFormater(),
 			'pageTitle' => 'Harrison',
 		);
 		return parent::beforeRender();

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\helper;
+namespace harrison\helper;
 
 /**
  * Helper for formating node texts
