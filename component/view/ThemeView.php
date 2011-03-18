@@ -6,17 +6,19 @@ class ThemeView extends \ephFrame\view\View
 {
 	public $theme = false;
 	
-	public function render($part, $path, Array $data = array()) {
-		if (isset($data['theme'])) {
-			$this->theme = $data['theme'];
-		}
+	public function render($part, $path, Array $data = array())
+	{
+		$data += array(
+			'theme' => $this->theme
+		);
+		$themePrefix = 'theme'.DIRECTORY_SEPARATOR.$this->theme.DIRECTORY_SEPARATOR;
 		try {
-			if ($part == 'view') {
-				$path = 'theme'.DIRECTORY_SEPARATOR.$this->theme.DIRECTORY_SEPARATOR.$path;
+			if ($part == 'view' || $part == false) {
+				$path = $themePrefix.$path;
 			}
 			return parent::render($part, $path, $data);
-		} catch (TemplateNotFoundException $e) {
-			return parent::render($part, $path, $data);
+		} catch (\Exception $e) {
+			return parent::render($part, substr($path, strlen($themePrefix)), $data);
 		}
 	}
 }
