@@ -3,9 +3,9 @@
 namespace app\model;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="app\model\BlogPostRepository")
  */
-class BlogPost
+class BlogPost extends Model
 {
 	/**
 	 * @Id
@@ -33,10 +33,10 @@ class BlogPost
 	public $sticky;
 	
 	/**
-     * @Column(type="string", length=2, nullable=false)
-     * @var string
-     */
-	public $language_id;
+	 * @ManyToOne(targetEntity="User", inversedBy="blogPosts")
+	 * @var Language
+	 */
+	public $language;
 	
 	/**
      * @Column(type="string")

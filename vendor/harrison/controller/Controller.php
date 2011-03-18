@@ -42,6 +42,12 @@ class Controller extends \ephFrame\core\Controller
 		return $this->entityManager;
 	}
 	
+	protected function afterConstruct()
+	{
+		$this->view = new \app\component\view\ThemeView();
+		$this->view->theme = 'horrorblog';
+	}
+	
 	public function beforeRender()
 	{
 		if (!empty($this->params['q'])) {

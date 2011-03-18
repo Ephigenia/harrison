@@ -12,40 +12,40 @@ $router->addRoutes(array(
 	
 	// Author Pages
 	'User' => new Route('/author/:uri', array(
-		'controller' => 'app\controller\UserController',
+		'controller' => 'harrison\controller\UserController',
 		'action' => 'view',
 	)),
 	
 	// global search
 	'search' => new Route('/search/:q', array(
-		'controller' => 'app\controller\BlogPostController',
+		'controller' => 'harrison\controller\BlogPostController',
 		'action' => 'index',
 	)),
 	
 	// Page
 	'Page' => new Route('/page/:name', array(
-		'controller' => 'app\controller\PageController',
+		'controller' => 'harrison\controller\PageController',
 		'action' => 'view',
 	)),
 	
 	// Blogposts
 	'Feed' => new Route('/feed*', array(
-		'controller' => 'app\controller\BlogPostController',
+		'controller' => 'harrison\controller\BlogPostController',
 		'action' => 'index',
 		'type' => 'rss',
 	)),
 	'BlogPosts' => new Route('/blog/page-:page<\d+>', array(
-		'controller' => 'app\controller\BlogPostController',
+		'controller' => 'harrison\controller\BlogPostController',
 		'action' => 'index',
 		'page' => 1,
 	)),
 	'BlogPostScaffold' => new Route('/blog/:id', array(
-		'controller' => 'app\controller\BlogPostController',
+		'controller' => 'harrison\controller\BlogPostController',
 		'action' => 'view',
 		'id' => false,
 	)),
 	'BlogPost' => new Route('/blog/:uri', array(
-		'controller' => 'app\controller\BlogPostController',
+		'controller' => 'harrison\controller\BlogPostController',
 		'action' => 'view',
 	)),
 ));

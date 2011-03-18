@@ -5,3 +5,5 @@ vendor/doctrine/*
 .htaccess
 .htpasswd
 public/.htaccess
+tmp/cache/*
+tmp/proxies/*

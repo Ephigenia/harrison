@@ -6,7 +6,7 @@ namespace app\model;
  * @Entity
  * @Table(name="blog_post_comment")
  */
-class Comment
+class Comment extends Model
 {
 	/**
 	 * @Id @Column(type="integer") @GeneratedValue

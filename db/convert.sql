@@ -51,7 +51,7 @@ AS
 		user_group_id,
 		flags,
 		status,
-		locale,
+		locale as language_id,
 		name,
 		email,
 		password,
@@ -111,3 +111,14 @@ AS
 					node.id = translation.node_id
 			AND	translation.language_id = 'de'
 ;
+
+DROP VIEW IF EXISTS language;
+CREATE VIEW
+	language
+AS
+	SELECT
+		locale as id,
+		status,
+		name
+	FROM
+		horrorblog_languages;

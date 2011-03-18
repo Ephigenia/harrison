@@ -27,10 +27,10 @@ class User
 	public $email;
 	
 	/**
-     * @Column(type="string")
-     * @var string
-     */
-	public $locale;
+	 * @ManyToOne(targetEntity="User", inversedBy="users")
+	 * @var Language
+	 */
+	public $language;
 	
 	/**
 	 * @OneToMany(targetEntity="BlogPost", mappedBy="user")
