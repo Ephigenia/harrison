@@ -2,9 +2,9 @@
 
 namespace harrison\controller;
 
-use app\entities\BlogPost;
-use app\entities\BlogPostFlag;
-use app\entities\Status;
+use app\model\BlogPost;
+use app\model\BlogPostFlag;
+use app\model\Status;
 
 class BlogPostController extends Controller
 {
@@ -14,7 +14,7 @@ class BlogPostController extends Controller
 	{
 		$query = $this->entityManager()->createQueryBuilder()
 			->add('select', 'b, u')
-			->from('app\entities\BlogPost', 'b')
+			->from('app\model\BlogPost', 'b')
 			->join('b.user', 'u')
 			->where('b.status = '.Status::PUBLISHED)
 			->add('orderBy', 'b.sticky DESC, b.published DESC')
@@ -41,9 +41,9 @@ class BlogPostController extends Controller
 	public function view($id)
 	{
 		if (isset($this->params['id'])) {
-			$BlogPost = $this->entityManager()->find('app\entities\BlogPost', (int) $id);
+			$BlogPost = $this->entityManager()->find('app\model\BlogPost', (int) $id);
 		} elseif (isset($this->params['uri'])) {
-			$query = $this->entityManager()->createQuery('SELECT b, u, t FROM app\entities\BlogPost b JOIN b.user u JOIN b.tags t WHERE b.uri = :uri');
+			$query = $this->entityManager()->createQuery('SELECT b, u, t FROM app\model\BlogPost b JOIN b.user u JOIN b.tags t WHERE b.uri = :uri');
 			$query->setParameter('uri', $this->params['uri']);
 			$BlogPost = $query->getSingleResult();
 		}

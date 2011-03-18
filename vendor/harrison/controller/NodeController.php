@@ -4,7 +4,7 @@ namespace app\controller;
 
 namespace harrison\controller;
 
-use app\entities\Node;
+use app\model\Node;
 
 /**
  *
@@ -19,9 +19,9 @@ class NodeController extends Controller
 	{
 		$this->view->renderer['view'] = new \app\component\MarkdownRenderer();
 		if (isset($this->params['id'])) {
-			$Node = $this->entityManager()->find('app\entities\Node', (int) $id);
+			$Node = $this->entityManager()->find('app\model\Node', (int) $id);
 		} elseif (isset($this->params['uri'])) {
-			$query = $this->entityManager()->createQuery('SELECT node FROM app\entities\Node node WHERE node.uri = :uri');
+			$query = $this->entityManager()->createQuery('SELECT node FROM app\model\Node node WHERE node.uri = :uri');
 			$query->setParameter('uri', $this->params['uri']);
 			$Node = $query->getSingleResult();
 		}
