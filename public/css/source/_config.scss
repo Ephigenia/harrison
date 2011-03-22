@@ -2,15 +2,15 @@ $font1: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
 $font2: "Droid Serif", $font1;
 
 $textColor: #3C3C3C;
-$background: #fff;
+$background: #F3F0E7;
 
-$appBackground: $background;
+$appBackground: #fff;
 $appWidth: 960px;
 
 $linkColor: #0080FF;
 $linkHoverColor: darken($linkColor, 20);
 $buttonColor: $linkColor;
 
-$gridColumns: 19 !default;
+$gridColumns: 18 !default;
 $gridColumnWidth: 30px !default;
 $gridMargin: 20px !default;

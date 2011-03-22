@@ -12,26 +12,17 @@ class BlogPostController extends Controller
 	
 	public function index()
 	{
-		$query = $this->entityManager()->createQueryBuilder()
-			->add('select', 'b, u')
-			->from('app\model\BlogPost', 'b')
-			->join('b.user', 'u')
-			->where('b.status = '.Status::PUBLISHED)
-			->add('orderBy', 'b.sticky DESC, b.published DESC')
+		$query = $this->repository()
+			->createQueryBuilder('BlogPost')
 			->setMaxResults($this->perPage)
-			->setFirstResult(
-				$offset = ((@$this->params['page'] ?: 1) - 1) * $this->perPage
-			);
-		// if admin skip this
-		$query->andWhere('b.published <= CURRENT_TIMESTAMP()');
+			->setFirstResult($offset = ((@$this->params['page'] ?: 1) - 1) * $this->perPage);
 		if (isset($this->params['q'])) {
-			$q = rawurldecode($this->params['q']);
-			$this->view->data['q'] = $q;			
+			$this->view->data['q'] = $q = rawurldecode($this->params['q']);
 			$query
 				->setParameter('search', $q.'%')
-				->innerJoin('b.tags', 't')
+				->innerJoin('BlogPost.tags', 't')
 				->andWhere(
-					'b.headline LIKE :search OR b.text LIKE :search OR t.name LIKE :search'
+					'BlogPost.headline LIKE :search OR BlogPost.text LIKE :search OR t.name LIKE :search'
 				);
 		}
 		$this->view->data['BlogPosts'] = $BlogPosts = $query->getQuery()->getResult();
@@ -40,12 +31,16 @@ class BlogPostController extends Controller
 	
 	public function view($id)
 	{
-		if (isset($this->params['id'])) {
-			$BlogPost = $this->entityManager()->find('app\model\BlogPost', (int) $id);
-		} elseif (isset($this->params['uri'])) {
-			$query = $this->entityManager()->createQuery('SELECT b, u, t FROM app\model\BlogPost b JOIN b.user u JOIN b.tags t WHERE b.uri = :uri');
-			$query->setParameter('uri', $this->params['uri']);
-			$BlogPost = $query->getSingleResult();
+		try {
+			if (isset($this->params['id'])) {
+				$BlogPost = $this->repository()->findOneById((int) $id);
+			} elseif (isset($this->params['uri'])) {
+				$BlogPost = $this->repository()->findOneByUri($this->params['uri']);
+			} else {
+				return false;
+			}
+		} catch (\Doctrine\ORM\NoResultException $e) {
+			return false;
 		}
 		$this->view->data['BlogPost'] = $BlogPost;
 		return $BlogPost;

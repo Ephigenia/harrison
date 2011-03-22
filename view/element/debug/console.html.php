@@ -4,8 +4,27 @@
 	</header>
 	<div class="body">
 		<dl>
-			<dd>Compile time (ms)</dd>
-			<dt><?php echo round((microtime(true) - COMPILE_START) * 1000, 4); ?></dt>
+			<dd>Compile time</dd>
+			<dt><?php echo round((microtime(true) - COMPILE_START) * 1000); ?> ms</dt>
+			<dd>Memory usage</dd>
+			<dt>
+				<?php
+				if (function_exists('memory_get_usage')) {
+					$usage = memory_get_usage();
+				} else if (substr(PHP_OS, 0, 3) == 'WIN') {
+		        	if (substr( PHP_OS, 0, 3) == 'WIN') { 
+						$output = array(); 
+						exec('tasklist /FI "PID eq ' . getmypid() . '" /FO LIST', $output); 
+						$usage = preg_replace( '/[\D]/', '', $output[5] ) * 1024; 
+					} 
+				} else {
+					$pid = getmypid(); 
+					exec('ps -o rss -p '.$pid, $output);
+					$usage = $output[1] * 1024;
+				}
+				printf ('%d kB (%d bytes)', $usage / 1024, $usage);
+				?>
+			</dt>	
 		</dl>
 		<?php if (isset($SQLLogger)) { ?>
 		<table class="SQLLog">

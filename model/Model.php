@@ -4,5 +4,4 @@ namespace app\model;
 
 class Model
 {
-	
 }

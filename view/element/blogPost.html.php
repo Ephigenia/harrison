@@ -6,7 +6,14 @@
 	</header>
 	<?php
 		if ($action !== 'view') {
-			$text = $Text->more($BlogPost->text, $Router->BlogPost(array('uri' => $BlogPost->uri)), 'Artikel weiterlesen …');
+			$text = $Text->more(
+				$BlogPost->text,
+				$Router->BlogPost(array('uri' => $BlogPost->uri)),
+				'Artikel & weiterlesen',
+				array(
+					'escaped' => false,
+				)
+			);
 		} else {
 			$text = $BlogPost->text;
 		}

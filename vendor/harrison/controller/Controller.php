@@ -42,6 +42,11 @@ class Controller extends \ephFrame\core\Controller
 		return $this->entityManager;
 	}
 	
+	protected function repository()
+	{
+		return $this->entityManager()->getRepository('app\model\\'.$this->name);
+	}
+	
 	protected function afterConstruct()
 	{
 		$this->view = new \app\component\view\ThemeView();

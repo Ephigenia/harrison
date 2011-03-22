@@ -40,15 +40,16 @@ a {
 #app {
 	@include container();
 	background: $appBackground;
-
+	padding: 0em 1em;
+	margin: 2em auto;
 	> header {
-		margin: 2em 0em 4em 0em;
+		margin: 2em 0em;
 		@include rotate(-1.5deg);
 		> h1 {
 			display: inline;
 			font-size: 3em;
 			padding: 1em 0.75em 0.25em 0.75em;
-			margin: -1em 0em 0em -0.5em;
+			margin: -1em 0em 0em -0.75em;
 			background-color: $linkColor;
 			@include box-shadow(rgba(0,0,0,0.125), 0.125em, 0.125em, 0.25em);
 			text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
@@ -76,7 +77,7 @@ a {
 	@include column(12);
 }
 #sidebar {
-	@include column(7, true);
+	@include column(6, true);
 	section {
 		display: block;
 		margin: 0em 0em 1em 0em;
