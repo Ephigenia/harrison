@@ -79,7 +79,7 @@ input, select {
 body {
   font: normal normal normal 14px/1.75em "Droid Serif", "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
   color: #3c3c3c;
-  background: #f3f0e7; }
+  background: #3c4545; }
 
 a {
   color: #0080ff; }
@@ -117,6 +117,23 @@ a[rel="tag"]:hover {
   width: 900px;
   margin: 0 auto;
   clear: both;
+  -moz-box-shadow: 0px 0px 10px 5px #303737;
+  -webkit-box-shadow: 0px 0px 10px 5px #303737;
+  box-shadow: 0px 0px 0px 0px 10px 5px #303737;
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=#303737,offX=0px,offY=0px,positive=true)";
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true);
+  border-top-left-radius: 0.25em;
+  -moz-border-radius-topleft: 0.25em;
+  -webkit-border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em;
+  -moz-border-radius-topright: 0.25em;
+  -webkit-border-top-right-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+  -moz-border-radius-bottomleft: 0.25em;
+  -webkit-border-bottom-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  -moz-border-radius-bottomright: 0.25em;
+  -webkit-border-bottom-right-radius: 0.25em;
   background: white;
   padding: 0em 1em;
   margin: 2em auto; }
@@ -142,8 +159,9 @@ a[rel="tag"]:hover {
 #app > header > h1:hover {
   background-color: #004d99; }
 #app > footer {
+  padding-bottom: 1em;
   clear: both;
-  margin: 3em 0em 2em 0em;
+  margin: 3em 0em 3em 0em;
   border-top: 1px dotted #a2a2a2;
   font-size: 0.8em; }
 #app > footer * {
@@ -163,28 +181,33 @@ a[rel="tag"]:hover {
   display: block;
   margin: 0em 0em 1em 0em; }
 
-/** quoting **/
-body q:before, body.en_EN q:before, body.en_EN blockquote p:before {
-  content: '“'; }
+q:before {
+  content: open-quote; }
 
-body q:after, body.en_EN q:after, body.en_EN blockquote p:after {
-  content: '“'; }
+q:after {
+  content: close-quote; }
 
-body.de_DE q:before, body.de_DE blockquote p:before {
-  content: '„'; }
+*:lang(de) {
+  quotes: "„" "“" "‚" "‘"; }
 
-body.de_DE q:after, body.de_DE blockquote p:after {
-  content: '“'; }
+*:lang(en) {
+  quotes: "“" "”" "‘" "’"; }
+
+*:lang(fr) {
+  quotes: "«" "»" "‹" "›"; }
 
 blockquote {
-  border-top: 2px solid #999;
-  border-bottom: 2px solid #999; }
+  border-top: 2px solid #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
+  background: #f2f2f2;
+  padding: 0.5em 0.75em;
+  color: #565656; }
 blockquote > p {
   font-style: italic; }
 blockquote > cite {
   text-align: right;
   display: block;
-  color: #7F7F7F;
+  color: #7c7c7c;
   padding-top: 0.5em; }
 
 pre {
@@ -379,7 +402,6 @@ article > footer .tags li {
   background: #fef5e1;
   position: fixed;
   bottom: 0px;
-  width: 100%;
   -moz-box-shadow: -5px 0px 10px 2px rgba(0, 0, 0, 0.125);
   -webkit-box-shadow: -5px 0px 10px 2px rgba(0, 0, 0, 0.125);
   box-shadow: -5px 0px -5px 0px 10px 2px rgba(0, 0, 0, 0.125);

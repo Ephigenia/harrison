@@ -39,6 +39,8 @@ a {
 
 #app {
 	@include container();
+	@include box-shadow(darken($background, 5), 0px, 0px, 10px, 5px);
+	@include border-radius(0.25em);
 	background: $appBackground;
 	padding: 0em 1em;
 	margin: 2em auto;
@@ -63,8 +65,9 @@ a {
 	}
 
 	> footer {
+		padding-bottom: 1em;
 		clear: both;
-		margin: 3em 0em 2em 0em;
+		margin: 3em 0em 3em 0em;
 		border-top: 1px dotted lighten($textColor, 40);
 		font-size: 0.8em;
 		* {
@@ -84,35 +87,32 @@ a {
 	}
 }
 
-/** quoting **/
-body q:before,
-body.en_EN q:before,
-body.en_EN blockquote p:before {
-	content: '“'
+q:before {content: open-quote;}
+q:after  {content: close-quote;}
+*:lang(de) {
+	quotes: "„" "“" "‚" "‘";
 }
-body q:after,
-body.en_EN q:after,
-body.en_EN blockquote p:after {
-	content: '“'
+*:lang(en) {
+	quotes: "“" "”" "‘" "’";
 }
-body.de_DE q:before,
-body.de_DE blockquote p:before {
-	content: '„'
+*:lang(fr) {
+	quotes: "«" "»" "‹" "›";
 }
-body.de_DE q:after,
-body.de_DE blockquote p:after {
-	content: '“'
-}
+
 blockquote {
-	border-top: 2px solid #999;
-	border-bottom: 2px solid #999;
+	$baseColor: darken($appBackground, 15);
+	border-top: 2px solid $baseColor;
+	border-bottom: 2px solid $baseColor;
+	background: lighten($baseColor, 10);
+	padding: 0.5em 0.75em;
+	color: lighten($textColor, 10);
 	> p {
 		font-style: italic;
 	}
 	> cite {
 		text-align: right;
 		display: block;
-		color: #7F7F7F;
+		color: lighten($textColor, 25);
 		padding-top: 0.5em;
 	}
 }

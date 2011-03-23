@@ -12,7 +12,6 @@ $DebugConsoleTextColor: #3C3C3C !default;
 	background: $DebugConsoleBaseColor;
 	position: fixed;
 	bottom: 0px;
-	width: 100%;
 	@include box-shadow(rgba(0,0,0,0.125), -5px, 0px, 10px);
 	
 	> header {

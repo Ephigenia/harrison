@@ -44,7 +44,7 @@ $router->addRoutes(array(
 		'action' => 'view',
 		'id' => false,
 	)),
-	'BlogPost' => new Route('/blog/:uri', array(
+	'BlogPost' => new Route('/blog/:uri/?', array(
 		'controller' => 'harrison\controller\BlogPostController',
 		'action' => 'view',
 	)),
