@@ -176,23 +176,3 @@ p.success, #flashMessage.success {
 	border-color: #b5f782;
 	background-color: #dcffdc;
 }
-
-/* Pagination style **/
-ul.pagination {
-	padding: 1em 0em;
-	li {
-		display: inline;
-		a {
-			padding: 0.2em 0.4em;
-			text-decoration: none;
-			margin: 10px 1px 0px 0px;
-			color: #3B3B3B;
-			background-color: #C0C0C0;
-			@include border-radius(0.5em);
-		}
-		&.current, &:hover {
-			background-color: #878787;
-			color: #000;
-		}
-	}
-}

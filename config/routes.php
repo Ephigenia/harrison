@@ -21,6 +21,10 @@ $router->addRoutes(array(
 		'controller' => 'harrison\controller\BlogPostController',
 		'action' => 'index',
 	)),
+	'searchPaged' => new Route('/search/:q/page-:page', array(
+		'controller' => 'harrison\controller\BlogPostController',
+		'action' => 'index',
+	)),
 	
 	// Page
 	'Page' => new Route('/page/:name', array(

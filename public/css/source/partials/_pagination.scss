@@ -1,0 +1,26 @@
+@import "../config";
+@import "../mixins/css3";
+@import "../mixins/transitions";
+
+/* Pagination style **/
+ul.pagination {
+	$baseColor: $buttonColor;
+	padding: 1em 0em;
+	li {
+		display: inline;
+		&.selected a {
+			font-weight: bold;
+			font-size: 150%;
+		}
+		a {
+			padding: 0.2em 0.4em;
+			text-decoration: none;
+			margin: 10px 1px 0px 0px;
+			background: lighten($buttonColor, 40);
+			@include border-radius(0.5em);
+		}
+		a:hover {
+			
+		}
+	}
+}

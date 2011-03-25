@@ -265,33 +265,6 @@ p.success, #flashMessage.success {
   border-color: #b5f782;
   background-color: #dcffdc; }
 
-/* Pagination style **/
-ul.pagination {
-  padding: 1em 0em; }
-ul.pagination li {
-  display: inline; }
-ul.pagination li a {
-  padding: 0.2em 0.4em;
-  text-decoration: none;
-  margin: 10px 1px 0px 0px;
-  color: #3B3B3B;
-  background-color: #C0C0C0;
-  border-top-left-radius: 0.5em;
-  -moz-border-radius-topleft: 0.5em;
-  -webkit-border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
-  -moz-border-radius-topright: 0.5em;
-  -webkit-border-top-right-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-  -moz-border-radius-bottomleft: 0.5em;
-  -webkit-border-bottom-left-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
-  -moz-border-radius-bottomright: 0.5em;
-  -webkit-border-bottom-right-radius: 0.5em; }
-ul.pagination li.current, ul.pagination li:hover {
-  background-color: #878787;
-  color: #000; }
-
 /**
  * Example Application Form Styles
  * @since  2010-05-30
@@ -360,6 +333,36 @@ form fieldset input.submit:hover {
 
 #SearchForm input.q {
   width: 95%; }
+
+/**
+ * Different CSS3 specific mixins
+ * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
+ */
+/* Pagination style **/
+ul.pagination {
+  padding: 1em 0em; }
+ul.pagination li {
+  display: inline; }
+ul.pagination li.selected a {
+  font-weight: bold;
+  font-size: 150%; }
+ul.pagination li a {
+  padding: 0.2em 0.4em;
+  text-decoration: none;
+  margin: 10px 1px 0px 0px;
+  background: #cce6ff;
+  border-top-left-radius: 0.5em;
+  -moz-border-radius-topleft: 0.5em;
+  -webkit-border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  -moz-border-radius-topright: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomleft: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em; }
 
 article {
   display: block;

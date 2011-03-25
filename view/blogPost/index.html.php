@@ -13,5 +13,5 @@ if (empty($BlogPosts)) {
 	foreach($BlogPosts as $index => $BlogPost) {
 		echo $this->view->render('element', 'blogPost', array('BlogPost' => $BlogPost));
 	}
-	echo $HTML->tag('ul', $Paginator->numbers(), array('class' => 'pagination', 'escaped' => false));
+	echo $HTML->tag('ul', $Paginator->numbers('li', array(), 5), array('class' => 'pagination', 'escaped' => false));
 }

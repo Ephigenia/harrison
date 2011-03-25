@@ -20,6 +20,7 @@ class BlogPostController extends Controller
 	{
 		$query = $this->repository()->createQueryBuilder('BlogPost');
 		if (isset($this->params['q'])) {
+			$this->Paginator->url = \ephFrame\core\Router::getInstance()->searchPaged;
 			$this->view->data['q'] = $q = rawurldecode($this->params['q']);
 			$query
 				->setParameter('search', $q.'%')
