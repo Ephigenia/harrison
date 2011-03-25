@@ -4,3 +4,6 @@
 [submodule "vendor/php-markdown"]
 	path = vendor/php-markdown
 	url = http://git.michelf.com/php-markdown
+[submodule "vendor/DoctrineExtensions"]
+	path = vendor/DoctrineExtensions
+	url = https://github.com/beberlei/DoctrineExtensions.git

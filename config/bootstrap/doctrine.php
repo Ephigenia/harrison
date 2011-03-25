@@ -20,3 +20,7 @@ $classLoader = new ClassLoader('Entities', APP_ROOT.'/entities');
 $classLoader->register();
 $classLoader = new ClassLoader('Proxies', APP_ROOT);
 $classLoader->register();
+
+// Extensions
+$classLoader = new \Doctrine\Common\ClassLoader('DoctrineExtensions', APP_ROOT.'/vendor/DoctrineExtensions/lib');
+$classLoader->register();

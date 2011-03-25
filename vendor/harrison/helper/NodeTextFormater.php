@@ -24,7 +24,7 @@ class NodeTextFormater
 		if (empty($maxImgWidth)) {
 			$maxImgWidth = 0;
 		};
-		$HTML = new HTML($this->controller);
+		$HTML = new \ephFrame\view\helper\HTML($this->controller);
 		if (preg_match_all('@\[{2}  (?P<filename>[^\|\]]+\.(jpg|jpeg|gif|png))  \|?  (?P<attributes>[^\]]{2,})?  \]{2}@xi', $text, $found, PREG_SET_ORDER)) {
 			foreach($found as $match) {
 				$filename = $match['filename'];
