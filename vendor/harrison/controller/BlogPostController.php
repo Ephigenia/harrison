@@ -11,7 +11,7 @@ class BlogPostController extends Controller
 	public function beforeAction()
 	{
 		$this->Paginator = new \app\component\Paginator($this);
-		$this->Paginator->page = (int) $this->params['page'] ?: 1;
+		$this->Paginator->page = (int) @$this->params['page'] ?: 1;
 		$this->Paginator->url = \ephFrame\core\Router::getInstance()->BlogPosts;
 		return parent::beforeAction();
 	}

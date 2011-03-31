@@ -13,6 +13,8 @@ class Paginator
 	public $pagesTotal = 0;
 	public $total = 0;
 	
+	public $seperator = PHP_EOL;
+	
 	public $url;
 	
 	public function __construct(\ephFrame\core\Controller $controller)
@@ -31,7 +33,9 @@ class Paginator
 	
 	public function page($page, $label = null, Array $attributes = array()) 
 	{
-		if (!$this->hasPage($page)) return false;
+		if (!$this->hasPage($page)) {
+			return false;
+		}
 		return $this->HTML->link(
 			$this->url($page),
 			@$label ?: $page,
@@ -54,7 +58,7 @@ class Paginator
 	
 	public function hasPage($page) 
 	{
-		return ((int) $page <= $this->pagesTotal);
+		return ((int) $page <= $this->pagesTotal && $page > 0);
 	}
 	
 	public function first($label = null, Array $attributes = array()) 
@@ -87,31 +91,36 @@ class Paginator
 		return $this->page($this->page + 1, $label, $attributes);
 	}
 	
-	public function numbers($tag = 'li', Array $attributes = array(), $padding = 2) 
+	public function numbers($tag = 'li', $padding = 2, Array $attributes = array()) 
 	{
-		$numbers = array();
-		for ($i = 1; $i <= $this->pagesTotal; $i++) {
-			if (
-				$i == $this->page - $padding - 1 ||
-				$i == $this->page + $padding + 1
-				) {
-				$numbers[] = $this->HTML->tag($tag, '…');
-				continue;
-			}
-			if (!(
-				$i >= ($this->page - $padding) && $i <= ($this->page + $padding)
-				|| $i < $padding + 1
-				|| $i > $this->pagesTotal - $padding
-				)) {
-				continue;
-			}
-			$a = $attributes;
-			if ($i == $this->page) {
-				$a['class'] = 'current';
-			}
-			$numbers[] = $this->HTML->tag($tag, $this->page($i, $i, $a));
+		$pages = array();
+		if ($this->page > $padding) {
+			$pages = range(1, $padding);
+			$pages[] = '…';
 		}
-		return implode(PHP_EOL, $numbers);
+		for ($page = ($this->page - $padding); $page < ($this->page + $padding) + 1; $page++) {
+			if ($page < 0 && $page > $this->pagesTotal) continue;
+			$pages[] = $page;
+		}
+		if ($this->page < $this->pagesTotal - $padding) {
+			$pages[] = '…';
+			$pages = array_merge($pages, range($this->pagesTotal - $padding, $this->pagesTotal));
+		}
+		$tags = array();
+		foreach($pages as $page) {
+			if (is_numeric($page)) {
+				if ($page == $this->page) {
+					$a = $attributes + array('class' => 'selected');
+				} else {
+					$a = $attributes;
+				}
+				$value = $this->HTML->tag($tag, $this->page($page, $page), $a + array('escape' => false));	
+			} else {
+				$value = '…';
+			}
+			$tags[] = $value;
+		}
+		return implode($tags, $this->seperator);
 	}
 	
 	public function __toString()

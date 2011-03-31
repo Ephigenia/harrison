@@ -342,10 +342,12 @@ form fieldset input.submit:hover {
 ul.pagination {
   padding: 1em 0em; }
 ul.pagination li {
-  display: inline; }
+  display: inline-block;
+  vertical-align: middle; }
 ul.pagination li.selected a {
   font-weight: bold;
-  font-size: 150%; }
+  color: #cce6ff;
+  background: #0080ff; }
 ul.pagination li a {
   padding: 0.2em 0.4em;
   text-decoration: none;

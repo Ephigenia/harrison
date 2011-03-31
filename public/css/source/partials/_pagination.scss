@@ -7,10 +7,12 @@ ul.pagination {
 	$baseColor: $buttonColor;
 	padding: 1em 0em;
 	li {
-		display: inline;
+		display: inline-block;
+		vertical-align: middle;
 		&.selected a {
 			font-weight: bold;
-			font-size: 150%;
+			color: lighten($buttonColor, 40);
+			background: $buttonColor;
 		}
 		a {
 			padding: 0.2em 0.4em;
