@@ -170,7 +170,8 @@ a[rel="tag"]:hover {
 #content {
   width: 580px;
   float: left;
-  margin-right: 20px; }
+  margin-right: 20px;
+  margin-bottom: 3em; }
 
 #sidebar {
   width: 280px;
@@ -265,74 +266,94 @@ p.success, #flashMessage.success {
   border-color: #b5f782;
   background-color: #dcffdc; }
 
-/**
- * Example Application Form Styles
- * @since  2010-05-30
- * @author Marcel Eichner // Ephigenia <love@ephigenia.de>
- * @theme  default
- */
-form {
-  margin: 0em 0em 1em 0em; }
-
-form fieldset p {
-  clear: both; }
-
-form fieldset label {
-  font-weight: bold;
-  width: 100%;
-  float: left;
-  margin: 0.5em 0em 0em 0em; }
-
-form fieldset label:after {
+form > fieldset > div {
+  margin: 0em 0em 0.5em 0em; }
+form > fieldset > div > label {
+  display: block; }
+form > fieldset > div > label:after {
   content: ':'; }
-
-form fieldset input, form fieldset textarea {
+form > fieldset > div > input, form > fieldset > div > select, form > fieldset > div > textarea {
+  background-color: #f7f7f7;
+  padding: 0.25em 0.25em;
+  font-size: 1em;
   width: 98%;
-  outline: none;
-  padding: 5px 0em 5px 5px;
-  border: 1px solid #999;
-  background-color: #F1F1F1;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -khtml-border-radius: 2px; }
-
-form fieldset textarea.error, form fieldset input.error {
-  border: 1px solid #AA1A10; }
-
-form fieldset input:hover, form fieldset input:active, form fieldset input.active, form fieldset textarea:hover, form fieldset textarea:active, form fieldset textarea.active {
-  color: #000;
-  border: 1px solid #000; }
-
-form fieldset input.submit {
-  margin-top: 1em;
-  color: #333;
-  padding: 0em 1.25em;
-  line-height: 2.25em;
-  height: 2.5em;
-  text-align: center;
-  text-shadow: 0px 1px 0px #FFF;
-  background: #FFF;
-  background: -webkit-gradient(linear, 0% 80%, 0% 100%, from(white), to(#dedede));
-  background: -moz-linear-gradient(center bottom, #dedede 0%, white 20%);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -khtml-border-radius: 5px; }
-
-form fieldset input.submit:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-left-color: #ababab;
+  border-top-color: #ababab;
+  border-right-color: #c4c4c4;
+  border-bottom-color: #c4c4c4;
+  border-top-left-radius: 0.125em;
+  -moz-border-radius-topleft: 0.125em;
+  -webkit-border-top-left-radius: 0.125em;
+  border-top-right-radius: 0.125em;
+  -moz-border-radius-topright: 0.125em;
+  -webkit-border-top-right-radius: 0.125em;
+  border-bottom-left-radius: 0.125em;
+  -moz-border-radius-bottomleft: 0.125em;
+  -webkit-border-bottom-left-radius: 0.125em;
+  border-bottom-right-radius: 0.125em;
+  -moz-border-radius-bottomright: 0.125em;
+  -webkit-border-bottom-right-radius: 0.125em;
+  -moz-box-shadow: 0px 1px 2px 2px #dedede inset;
+  -webkit-box-shadow: 0px 1px 2px 2px #dedede inset;
+  box-shadow: 0px 1px 0px 1px 2px 2px #dedede inset;
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=#dedede,offX=0px,offY=1px,positive=true)";
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true); }
+form > fieldset > div > input:hover, form > fieldset > div > select:hover, form > fieldset > div > textarea:hover {
+  border-left-color: #919191;
+  border-top-color: #919191;
+  border-right-color: #ababab;
+  border-bottom-color: #ababab;
+  background-color: white; }
+form > fieldset > div > p.hint {
+  margin-top: 0.25em;
+  color: #bcbcbc;
+  font-size: 0.75em;
+  line-height: 1.25em; }
+form > fieldset > input {
+  color: white;
   cursor: pointer;
-  background: #B3B3B3;
-  background: -webkit-gradient(linear, 0% 80%, 0% 100%, from(#dedede), to(#a1a1a1));
-  background: -moz-linear-gradient(center bottom, #a1a1a1 0%, #dedede 20%);
-  text-shadow: 0px 1px 0px #FFF; }
-
-#SearchForm p {
-  display: inline; }
-
-#SearchForm p.submit {
-  display: none; }
-
-#SearchForm input.q {
-  width: 95%; }
+  display: inline-block;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.25em;
+  padding: 0.45em 1em;
+  margin: 0.25em;
+  min-width: 3em;
+  border-top: 1px solid #0073e6;
+  border-left: 1px solid #006cd6;
+  border-right: 1px solid #005ab3;
+  border-bottom: 1px solid #004d99;
+  text-shadow: 0px 1px 1px #004d99;
+  text-decoration: none;
+  border-top-left-radius: 0.5em;
+  -moz-border-radius-topleft: 0.5em;
+  -webkit-border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  -moz-border-radius-topright: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomleft: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em;
+  background-color: #0080ff;
+  background-image:  -webkit-gradient(linear, left top, left bottom, color-stop(0.4, #0080ff), color-stop(0.6, #005ab3));
+  background-image:  -moz-linear-gradient(center top, #0080ff 40%, #005ab3 60%);
+  -moz-box-shadow: 0px 0px 1px 0.1em #3d9eff inset;
+  -webkit-box-shadow: 0px 0px 1px 0.1em #3d9eff inset;
+  box-shadow: 0px 0px 0px 0px 1px 0.1em #3d9eff inset;
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=#3d9eff,offX=0px,offY=0px,positive=true)";
+  filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true); }
+form > fieldset > input:hover {
+  color: white;
+  background-color: #1a8dff;
+  background-image:  -webkit-gradient(linear, left top, left bottom, color-stop(0.4, #1a8dff), color-stop(0.6, #0066cc));
+  background-image:  -moz-linear-gradient(center top, #1a8dff 40%, #0066cc 60%); }
+form > fieldset > input:active {
+  text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.3), 0px 1px 0px rgba(0, 0, 0, 0.3); }
 
 /**
  * Different CSS3 specific mixins

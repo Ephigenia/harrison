@@ -9,4 +9,6 @@
 		echo $this->view->render('element', 'comment', array('Comment' => $Comment));
 	} ?>
 	<?php } ?>
+	<h1>Kommentieren</h1>
+	<?= $CommentForm ?>
 </section>

@@ -78,6 +78,7 @@ a {
 
 #content {
 	@include column(12);
+	margin-bottom: 3em;
 }
 #sidebar {
 	@include column(6, true);

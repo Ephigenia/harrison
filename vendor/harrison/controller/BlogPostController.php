@@ -44,6 +44,9 @@ class BlogPostController extends Controller
 		} catch (\Doctrine\ORM\NoResultException $e) {
 			return false;
 		}
+		$Router = \ephFrame\core\Router::getInstance();
+		$this->view->data['CommentForm'] = $CommentForm = new \app\component\Form\Comment();;
+		$CommentForm->attributes['action'] = $Router->CommentPost(array('blogPostId' => $BlogPost->id));
 		$this->view->data['BlogPost'] = $BlogPost;
 		return $BlogPost;
 	}

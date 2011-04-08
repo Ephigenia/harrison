@@ -10,6 +10,10 @@ $router->addRoutes(array(
 		'action' => 'index',
 	)),
 	
+	'sessiontest' => new Route('/test/:action', array(
+		'controller' => 'app\controller\TestController',
+	)),
+	
 	// Author Pages
 	'User' => new Route('/author/:uri', array(
 		'controller' => 'harrison\controller\UserController',
@@ -30,6 +34,12 @@ $router->addRoutes(array(
 	'Page' => new Route('/page/:name', array(
 		'controller' => 'harrison\controller\PageController',
 		'action' => 'view',
+	)),
+	
+	// Comment
+	'CommentPost' => new Route('/comment/:blogPostId/:action', array(
+		'controller' => 'harrison\controller\CommentController',
+		'action' => 'add',
 	)),
 	
 	// Blogposts
