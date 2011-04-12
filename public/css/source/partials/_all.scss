@@ -99,6 +99,9 @@ q:after  {content: close-quote;}
 *:lang(fr) {
 	quotes: "«" "»" "‹" "›";
 }
+q {
+	font-style: italic;
+}
 
 blockquote {
 	$baseColor: darken($appBackground, 15);

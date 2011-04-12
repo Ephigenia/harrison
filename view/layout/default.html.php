@@ -19,7 +19,7 @@
 			<h1><a href="<?php echo $Router->root->uri(); ?>" rel="home">Homepage</a></h1>
 		</header>
 		<aside id="content">
-			<?php echo $content ?>
+			<?= $content ?>
 		</aside>
 		<aside id="sidebar">
 			<section>
@@ -29,6 +29,7 @@
 				directory.
 			</section>
 			<section>
+				<?= $SearchForm ?>
 				<h2>Blogroll</h2>
 				<ul>
 					<li><a href="http://www.marceleichner.de/" rel="external">Marcel Eichner</a></li>

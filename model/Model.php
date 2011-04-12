@@ -9,7 +9,6 @@ class Model
 		if (is_array($idOrArray)) {
 			$this->fromArray($idOrArray);
 		} elseif (is_int($idOrArray)) {
-			$em = $GLOBALS['entityManager'];
 			$this->fromArray((array) $em->getRepository(__CLASS__)->findOneById($id));
 		}
 	}

@@ -37,7 +37,7 @@ $router->addRoutes(array(
 	)),
 	
 	// Comment
-	'CommentPost' => new Route('/comment/:blogPostId/:action', array(
+	'CommentPost' => new Route('/comment/:model/:blogPostId/:action', array(
 		'controller' => 'harrison\controller\CommentController',
 		'action' => 'add',
 	)),

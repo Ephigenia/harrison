@@ -12,28 +12,6 @@ form {
 					content: ':';
 				}
 			}
-			> input, > select, > textarea {
-				$inputBGColor: darken(#fff, 3);
-				background-color: $inputBGColor;
-				padding: 0.25em 0.25em;
-				font-size: 1em;
-				width: 98%;
-				border-style: solid;
-				border-width: 1px;
-				border-left-color: darken($inputBGColor, 30);
-				border-top-color: darken($inputBGColor, 30);
-				border-right-color: darken($inputBGColor, 20);
-				border-bottom-color: darken($inputBGColor, 20);
-				@include border-radius(0.125em);
-				@include box-shadow(darken($inputBGColor, 10), 0px, 1px, 2px, 2px, true);
-				&:hover {
-					border-left-color: darken($inputBGColor, 40);
-					border-top-color: darken($inputBGColor, 40);
-					border-right-color: darken($inputBGColor, 30);
-					border-bottom-color: darken($inputBGColor, 30);
-					background-color: lighten($inputBGColor, 30);
-				}
-			}
 			> p.hint {
 				margin-top: 0.25em;
 				color: lighten($textColor, 50);
@@ -41,7 +19,32 @@ form {
 				line-height: 1.25em;
 			}
 		}
-		> input {
+		
+		input, select, textarea {
+			$inputBGColor: darken(#fff, 3);
+			background-color: $inputBGColor;
+			padding: 0.25em 0.25em;
+			font-size: 1em;
+			width: 98%;
+			border-style: solid;
+			border-width: 1px;
+			border-left-color: darken($inputBGColor, 30);
+			border-top-color: darken($inputBGColor, 30);
+			border-right-color: darken($inputBGColor, 20);
+			border-bottom-color: darken($inputBGColor, 20);
+			@include border-radius(0.125em);
+			@include box-shadow(darken($inputBGColor, 10), 0px, 1px, 2px, 2px, true);
+			&:hover {
+				border-left-color: darken($inputBGColor, 40);
+				border-top-color: darken($inputBGColor, 40);
+				border-right-color: darken($inputBGColor, 30);
+				border-bottom-color: darken($inputBGColor, 30);
+				background-color: lighten($inputBGColor, 30);
+			}
+		}
+		
+		> input[type="button"], input[type="submit"] {
+			width: auto;
 			@include button($linkColor, #fff);
 		}
 		

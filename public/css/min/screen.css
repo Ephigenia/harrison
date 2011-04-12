@@ -197,6 +197,9 @@ q:after {
 *:lang(fr) {
   quotes: "«" "»" "‹" "›"; }
 
+q {
+  font-style: italic; }
+
 blockquote {
   border-top: 2px solid #d9d9d9;
   border-bottom: 2px solid #d9d9d9;
@@ -272,7 +275,12 @@ form > fieldset > div > label {
   display: block; }
 form > fieldset > div > label:after {
   content: ':'; }
-form > fieldset > div > input, form > fieldset > div > select, form > fieldset > div > textarea {
+form > fieldset > div > p.hint {
+  margin-top: 0.25em;
+  color: #bcbcbc;
+  font-size: 0.75em;
+  line-height: 1.25em; }
+form > fieldset input, form > fieldset select, form > fieldset textarea {
   background-color: #f7f7f7;
   padding: 0.25em 0.25em;
   font-size: 1em;
@@ -300,18 +308,14 @@ form > fieldset > div > input, form > fieldset > div > select, form > fieldset >
   box-shadow: 0px 1px 0px 1px 2px 2px #dedede inset;
   -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=#dedede,offX=0px,offY=1px,positive=true)";
   filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true); }
-form > fieldset > div > input:hover, form > fieldset > div > select:hover, form > fieldset > div > textarea:hover {
+form > fieldset input:hover, form > fieldset select:hover, form > fieldset textarea:hover {
   border-left-color: #919191;
   border-top-color: #919191;
   border-right-color: #ababab;
   border-bottom-color: #ababab;
   background-color: white; }
-form > fieldset > div > p.hint {
-  margin-top: 0.25em;
-  color: #bcbcbc;
-  font-size: 0.75em;
-  line-height: 1.25em; }
-form > fieldset > input {
+form > fieldset > input[type="button"], form > fieldset input[type="submit"] {
+  width: auto;
   color: white;
   cursor: pointer;
   display: inline-block;
@@ -347,12 +351,12 @@ form > fieldset > input {
   box-shadow: 0px 0px 0px 0px 1px 0.1em #3d9eff inset;
   -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(color=#3d9eff,offX=0px,offY=0px,positive=true)";
   filter: progid:DXImageTransform.Microsoft.dropShadow(color=rgb(red($color), green($color), blue($color)),offX=$x,offY=$y,positive=true); }
-form > fieldset > input:hover {
+form > fieldset > input[type="button"]:hover, form > fieldset input[type="submit"]:hover {
   color: white;
   background-color: #1a8dff;
   background-image:  -webkit-gradient(linear, left top, left bottom, color-stop(0.4, #1a8dff), color-stop(0.6, #0066cc));
   background-image:  -moz-linear-gradient(center top, #1a8dff 40%, #0066cc 60%); }
-form > fieldset > input:active {
+form > fieldset > input[type="button"]:active, form > fieldset input[type="submit"]:active {
   text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.3), 0px 1px 0px rgba(0, 0, 0, 0.3); }
 
 /**

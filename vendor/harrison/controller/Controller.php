@@ -7,6 +7,10 @@ use Doctrine\Common\ClassLoader,
     Doctrine\ORM\EntityManager,
     Doctrine\Common\Cache\ApcCache
 	;
+	
+use ephFrame\HTTP\Header,
+	ephFrame\HTTP\Response,
+	ephFrame\HTTP\StatusCode as HTTPStatusCode;
 
 class Controller extends \ephFrame\core\Controller
 {
@@ -14,7 +18,7 @@ class Controller extends \ephFrame\core\Controller
 	
 	protected function entityManager()
 	{
-		if (empty($this->entitiyManager)) {
+		if (empty($this->entityManager)) {
 			$config = new Configuration;
 			// Entities
 			$config->setMetadataDriverImpl($config->newDefaultAnnotationDriver(array(APP_ROOT.'/entities')));
@@ -47,17 +51,30 @@ class Controller extends \ephFrame\core\Controller
 		return $this->entityManager()->getRepository('app\model\\'.$this->name);
 	}
 	
+	protected function attachSearchForm()
+	{
+		$this->view->data['SearchForm'] = $this->SearchForm = new \app\component\Form\Search();
+		$this->SearchForm->bind($this->request->data);
+		// redirect to search if search submitted
+		if ($this->SearchForm['q']->data) {
+			$this->response = new Response(
+				HTTPStatusCode::TEMPORARY_REDIRECT, new Header(array(
+					'Location' => \ephFrame\core\Router::getInstance()->search(array('q' => $this->SearchForm['q']->data))
+				))
+			);
+			return true;
+		}
+	}
+	
 	protected function afterConstruct()
 	{
 		$this->view = new \app\component\view\ThemeView();
 		$this->view->theme = 'horrorblog';
+		$this->attachSearchForm();
 	}
 	
 	public function beforeRender()
 	{
-		if (!empty($this->params['q'])) {
-			$this->view->data['q'] = $this->params['q'];
-		}
 		$this->view->data += array(
 			'HTML' => new \ephFrame\view\helper\HTML(),
 			'Text' => new \ephFrame\view\helper\Text(),
