@@ -7,8 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="<?php $baseUri ?>/favicon.ico">
-	<link rel="stylesheet" href="<?php echo $baseUri ?>/css/min/screen.css">
-	<link rel="profile" href="http://microformats.org/profile/hcard">
+	<link rel="stylesheet" media="screen, projection" href="<?php echo $baseUri ?>/css/screen.css">
+	<link rel="stylesheet" media="print" href="<?php echo $baseUri ?>/css/print.css">
 	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 	<script src="<?php echo $baseUri ?>/js/min/modernizr-1.6.min.js"></script>
