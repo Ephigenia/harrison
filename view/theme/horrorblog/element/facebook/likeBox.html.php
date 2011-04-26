@@ -1,0 +1,1 @@
+<fb:like-box href="http://www.facebook.com/horrorblog" width="200" colorscheme="dark" show_faces="true" stream="false" header="false"></fb:like-box>

@@ -30,7 +30,7 @@ class Controller extends \ephFrame\core\Controller
 			$config->setProxyNamespace('proxies');
 			$config->setAutoGenerateProxyClasses(true);
 			$logger = new \Doctrine\DBAL\Logging\DebugStack;
-			$this->view->data['SQLLogger'] = $logger;
+			$this->view->SQLLogger = $logger;
 			$config->setSQLLogger($logger);
 			// establish connection
 			$connectionOptions = array(
@@ -53,34 +53,27 @@ class Controller extends \ephFrame\core\Controller
 	
 	protected function attachSearchForm()
 	{
-		$this->view->data['SearchForm'] = $this->SearchForm = new \app\component\Form\Search();
-		$this->SearchForm->bind($this->request->data);
+		$this->view->SearchForm = new \app\component\Form\Search();
+		$this->view->SearchForm->bind($this->request->data);
 		// redirect to search if search submitted
-		if ($this->SearchForm['q']->data) {
+		if ($this->view->SearchForm['q']->data) {
 			$this->response = new Response(
 				HTTPStatusCode::TEMPORARY_REDIRECT, new Header(array(
-					'Location' => \ephFrame\core\Router::getInstance()->search(array('q' => $this->SearchForm['q']->data))
+					'Location' => \ephFrame\core\Router::getInstance()->search(array('q' => $this->view->SearchForm['q']->data))
 				))
 			);
 			return true;
 		}
 	}
 	
-	protected function afterConstruct()
+	public function init()
 	{
 		$this->view = new \app\component\view\ThemeView();
 		$this->view->theme = 'horrorblog';
+		$this->view->HTML = new \ephFrame\view\helper\HTML();
+		$this->view->Text = new \ephFrame\view\helper\Text();
+		$this->view->BlogPostFormater = new \harrison\helper\BlogPostFormater();
+		$this->view->pageTitle = 'Harrison';
 		$this->attachSearchForm();
-	}
-	
-	public function beforeRender()
-	{
-		$this->view->data += array(
-			'HTML' => new \ephFrame\view\helper\HTML(),
-			'Text' => new \ephFrame\view\helper\Text(),
-			'BlogPostFormater' => new \harrison\helper\BlogPostFormater(),
-			'pageTitle' => 'Harrison',
-		);
-		return parent::beforeRender();
 	}
 }
