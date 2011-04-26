@@ -68,31 +68,33 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 1, ../sass/partial/_pagination.scss */
+/* line 3, ../sass/partial/_pagination.scss */
 ul.pagination {
-  font-size: 80%;
-  margin: 1em 0px;
+  padding: 1em 0em;
 }
-/* line 4, ../sass/partial/_pagination.scss */
+/* line 5, ../sass/partial/_pagination.scss */
 ul.pagination li {
-  display: inline;
+  display: inline-block;
+  vertical-align: middle;
 }
-/* line 6, ../sass/partial/_pagination.scss */
-ul.pagination li a {
-  background-color: #000;
-  padding: 2px 4px;
-  border: 2px solid #4b3b04;
-  text-decoration: none;
-}
-/* line 11, ../sass/partial/_pagination.scss */
-ul.pagination li a:hover {
-  border: 2px solid #f4c527;
-}
-/* line 15, ../sass/partial/_pagination.scss */
+/* line 8, ../sass/partial/_pagination.scss */
 ul.pagination li.selected a {
-  border: 2px solid #f4c527;
-  background-color: #f4c527;
-  color: #000;
+  font-weight: bold;
+  color: #cce6ff;
+  background: #0080ff;
+}
+/* line 13, ../sass/partial/_pagination.scss */
+ul.pagination li a {
+  padding: 0.2em 0.4em;
+  text-decoration: none;
+  margin: 10px 1px 0px 0px;
+  background: #cce6ff;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -khtml-border-radius: 0.5em;
+  border-radius: 0.5em;
 }
 
 /* line 1, ../sass/partial/_quoting.scss */
@@ -128,8 +130,8 @@ q {
 /* line 16, ../sass/partial/_quoting.scss */
 blockquote {
   font-size: 90%;
-  border-top: 2px solid ligthen(#f4c527, 30);
-  border-bottom: 2px solid ligthen(#f4c527, 30);
+  border-top: 2px solid ligthen(#0080ff, 30);
+  border-bottom: 2px solid ligthen(#0080ff, 30);
   margin: 0.5em 0em;
   padding: 0.3em 0.2em;
   color: white;
@@ -142,108 +144,20 @@ blockquote > cite {
   padding-top: 0.5em;
 }
 
-/* line 1, ../sass/partial/_blogpost.scss */
-#content article {
-  margin: 0px 0px 1.8em 0px;
-  display: table;
-}
-/* line 6, ../sass/partial/_blogpost.scss */
-#content article div.img {
-  background: #262626;
-  border: 1px solid #404040;
-}
-/* line 9, ../sass/partial/_blogpost.scss */
-#content article div.img > img {
-  display: block;
-  clear: both;
-}
-/* line 13, ../sass/partial/_blogpost.scss */
-#content article div.img .description {
-  font-size: 0.8em;
-  color: #999;
-  display: table;
-  padding: 0.4em 0.6em 0.3em 0.6em;
-}
-/* line 20, ../sass/partial/_blogpost.scss */
-#content article div.right {
-  float: right;
-  display: table;
-  margin: 0.4em 0em 0em 0.5em;
-}
-/* line 25, ../sass/partial/_blogpost.scss */
-#content article div.left {
-  float: left;
-  display: table;
-  margin: 0.4em 0.5em 0em 0em;
-}
-/* line 31, ../sass/partial/_blogpost.scss */
-#content article footer {
-  border-top: 1px solid #404040;
-  display: block;
-  padding-top: 0.2em;
-  margin: 0.75em 0em 0em 0em;
-  color: #404040;
-  line-height: 1.25em;
-}
-/* line 38, ../sass/partial/_blogpost.scss */
-#content article footer a {
-  color: #404040;
-}
-/* line 41, ../sass/partial/_blogpost.scss */
-#content article footer ul.tags {
-  font-size: 75%;
-  line-height: 125%;
-}
-/* line 44, ../sass/partial/_blogpost.scss */
-#content article footer ul.tags li {
-  display: inline;
-}
-
-/* line 51, ../sass/partial/_blogpost.scss */
-#rightColumn .blogPost {
-  font-size: 0.7em;
-}
-
-/** comment bubble **/
-/* line 56, ../sass/partial/_blogpost.scss */
-.blogPost .comments {
-  text-align: center;
-  width: 32px;
-  line-height: 1.6em;
-  height: 32px;
-  display: table;
-  margin: 0px 0px 0em 0.5em;
-  float: right;
-  background: transparent url(../img/bubble.png) no-repeat 0px 0px;
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
-}
-/* line 68, ../sass/partial/_blogpost.scss */
-.blogPost .comments:hover {
-  background-position: 0px -32px;
-}
-
-/* line 74, ../sass/partial/_blogpost.scss */
-.SimilarBlogPosts {
-  list-style-type: decimal;
-  margin: 0em 0em 2em 1.5em;
-}
-
-/* line 13, ../sass/partial/_application.scss */
+/* line 12, ../sass/partial/_application.scss */
 body {
   font: normal 16px/1.25em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
   color: white;
-  background: #000;
+  background: #52667a;
 }
 
-/* line 19, ../sass/partial/_application.scss */
+/* line 18, ../sass/partial/_application.scss */
 a {
-  color: #f4c527;
+  color: #0080ff;
 }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 a:visited {
-  color: #ddad0b;
+  color: #0066cc;
 }
 /* line 24, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 a:hover {
@@ -253,38 +167,38 @@ a:hover {
 a:active {
   color: black;
 }
-/* line 21, ../sass/partial/_application.scss */
+/* line 20, ../sass/partial/_application.scss */
 a:hover {
   color: black;
-  background: #f4c527;
+  background: #0080ff;
 }
-/* line 25, ../sass/partial/_application.scss */
+/* line 24, ../sass/partial/_application.scss */
 a.more {
   font-weight: bold;
 }
-/* line 27, ../sass/partial/_application.scss */
+/* line 26, ../sass/partial/_application.scss */
 a.more:after {
   content: ' »';
 }
-/* line 30, ../sass/partial/_application.scss */
+/* line 29, ../sass/partial/_application.scss */
 a.more:hover {
   color: #000;
   background: #F4C527;
 }
 
-/* line 36, ../sass/partial/_application.scss */
+/* line 35, ../sass/partial/_application.scss */
 ::-moz-selection {
   color: black;
-  background: #f4c527;
+  background: #0080ff;
 }
 
-/* line 37, ../sass/partial/_application.scss */
+/* line 36, ../sass/partial/_application.scss */
 ::selection {
   color: black;
-  background: #f4c527;
+  background: #0080ff;
 }
 
-/* line 39, ../sass/partial/_application.scss */
+/* line 38, ../sass/partial/_application.scss */
 #app {
   display: table;
   width: 1140px;
@@ -292,55 +206,9 @@ a.more:hover {
   clear: both;
 }
 
-/* line 42, ../sass/partial/_application.scss */
-#sidebar {
-  width: 280px;
-  float: left;
-  margin-right: 20px;
-}
-
-/* line 45, ../sass/partial/_application.scss */
+/* line 41, ../sass/partial/_application.scss */
 #content {
   width: 640px;
   float: left;
   margin-right: 20px;
-}
-
-/* line 49, ../sass/partial/_application.scss */
-h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
-}
-
-/* line 52, ../sass/partial/_application.scss */
-h1 {
-  font-size: 1.5em;
-  line-height: 1.25em;
-}
-/* line 55, ../sass/partial/_application.scss */
-h1 q {
-  font-size: 125%;
-  font-style: italic;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px red;
-}
-
-/* line 62, ../sass/partial/_application.scss */
-h2 {
-  font-size: 1.35em;
-  margin-bottom: 0.30em;
-  line-height: 1.15em;
-}
-
-/* line 67, ../sass/partial/_application.scss */
-h3 {
-  margin-top: 1em;
-  font-weight: bold;
-  font-size: 1em;
-  text-transform: uppercase;
-}
-
-/* line 73, ../sass/partial/_application.scss */
-h4 {
-  font-size: 1em;
-  line-height: 1.5em;
 }

@@ -1,0 +1,43 @@
+// config
+@import "partial/config";
+
+// mixins
+@import "../../default/sass/mixins/grid";
+@import "../../default/sass/mixins/button";
+
+// partials
+@import "partial/pagination";
+@import "partial/quoting";
+
+body {
+	font: normal 16px/1.25em $font1;
+	color: $text-color;
+	background: $background;
+}
+
+a {
+	@include link-colors($link-color, $link-hover-color, $link-hover-color, darken($link-color, 10));
+	&:hover {
+		color: $link-hover-color;
+		background: $link-hover-background-color;
+	}
+	&.more {
+		font-weight: bold;
+		&:after {
+			content: ' »';
+		}
+		&:hover {
+			color: #000;
+			background: #F4C527;
+		}
+	}
+}
+::-moz-selection { color: $link-hover-color;  background: $link-hover-background-color; }
+::selection      { color: $link-hover-color;  background: $link-hover-background-color; }
+
+#app {
+	@include container();
+}
+#content {
+	@include column(22);
+}

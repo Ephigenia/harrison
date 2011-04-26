@@ -1,0 +1,29 @@
+q:before {content: open-quote;}
+q:after  {content: close-quote;}
+*:lang(de) {
+	quotes: "„" "“" "‚" "‘";
+}
+*:lang(en) {
+	quotes: "“" "”" "‘" "’";
+}
+*:lang(fr) {
+	quotes: "«" "»" "‹" "›";
+}
+q {
+	font-style: italic;
+}
+
+blockquote {
+	font-size: 90%;
+	border-top: 2px solid ligthen($base-color, 30);
+	border-bottom: 2px solid ligthen($base-color, 30);
+	margin: 0.5em 0em;
+	padding: 0.3em 0.2em;
+	color: lighten($text-color, 10);
+	> cite {
+		text-align: right;
+		display: block;
+		color: lighten($text-color, 25);
+		padding-top: 0.5em;
+	}
+}

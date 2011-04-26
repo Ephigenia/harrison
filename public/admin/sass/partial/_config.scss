@@ -1,0 +1,23 @@
+$font1: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+$font2: $font1;
+
+$base-color: #0080FF;
+
+$background: darken(desaturate($base-color, 80), 10);
+
+$app-background-color: #fff;
+$app-background: $app-background-color;
+$app-width: 960px;
+
+$text-color: #fff;
+
+$link-color: $base-color;
+$link-hover-color: #000;
+$link-hover-background-color: $link-color;
+$button-base-color: $link-color;
+
+$grid-columns: 38 !default;
+$grid-column-width: 10px !default;
+$grid-margin: 20px !default;
+
+$default-border-radius: 1em;
