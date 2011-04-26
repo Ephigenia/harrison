@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="fb:page_id" content="115046791864216" />
 	<link rel="shortcut icon" href="<?php $baseUri ?>/favicon.ico">
-	<link rel="stylesheet" media="screen, projection" href="<?php echo $baseUri ?>/css/screen.css">
+	<link rel="stylesheet" media="screen, projection" href="<?php echo $baseUri ?>/horrorblog/css/screen.css">
 	<script src="<?php echo $baseUri ?>/js/min/modernizr-1.6.min.js"></script>
 	<script type="text/javascript" src="http://openx.socialad.org/delivery/spcjs.php?id=1&amp;target=_blank&amp;charset=UTF-8"></script>
 	<script src="http://wlf.verticalnetwork.de/scripts/wlf_hob/immer_oben.js" type="text/javascript"></script>
@@ -36,12 +36,12 @@
 		</aside>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $baseUri ?>/js/min/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+	<script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $baseUri ?>/default/js/min/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
 	<!-- javascript includes -->
 	<!-- application script -->
-	<script src="<?php echo $baseUri ?>/<?php echo $theme; ?>/js/source/app.js"></script>
+	<script src="<?php echo $baseUri ?>/<?php echo $theme; ?>/horrorblog/js/source/app.js"></script>
 	<!--[if lt IE 7 ]>
-	<script src="<?php echo $baseUri ?>/js/libs/dd_belatedpng.js"></script>
+	<script src="<?php echo $baseUri ?>/default/js/libs/dd_belatedpng.js"></script>
 	<script>DD_belatedPNG.fix('img, .png_bg');</script>
 	<![endif]-->
 </body>

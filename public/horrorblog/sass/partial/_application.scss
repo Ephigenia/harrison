@@ -1,0 +1,76 @@
+// config
+@import "partial/config";
+
+// mixins
+@import "../../default/sass/mixins/grid";
+@import "../../default/sass/mixins/button";
+
+// partials
+@import "partial/pagination";
+@import "partial/quoting";
+@import "partial/blogpost";
+
+body {
+	font: normal 16px/1.25em $font1;
+	color: $text-color;
+	background: #000;
+}
+
+a {
+	@include link-colors($link-color, $link-hover-color, $link-hover-color, darken($link-color, 10));
+	&:hover {
+		color: $link-hover-color;
+		background: $link-hover-background-color;
+	}
+	&.more {
+		font-weight: bold;
+		&:after {
+			content: ' »';
+		}
+		&:hover {
+			color: #000;
+			background: #F4C527;
+		}
+	}
+}
+::-moz-selection { color: $link-hover-color;  background: $link-hover-background-color; }
+::selection      { color: $link-hover-color;  background: $link-hover-background-color; }
+
+#app {
+	@include container();
+}
+#sidebar {
+	@include column(10);
+}
+#content {
+	@include column(22);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #ffffff;
+}
+h1 {
+	font-size: 1.5em;
+	line-height: 1.25em;
+	q {
+		font-size: 125%;
+		font-style:	italic;
+		font-weight: bold;
+		text-shadow: 1px 1px 3px red;
+	}
+}
+h2 {
+	font-size: 1.35em;
+	margin-bottom: 0.30em;
+	line-height: 1.15em;
+}
+h3 {
+	margin-top: 1em;
+	font-weight: bold;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+h4 {
+	font-size: 1em;
+	line-height: 1.5em;
+}

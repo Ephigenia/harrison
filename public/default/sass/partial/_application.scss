@@ -1,15 +1,15 @@
 // config
-@import "partials/config";
+@import "partial/config";
 
 // mixins
 @import "mixins/grid";
 @import "mixins/button";
 
 // partials
-@import "partials/blogpost";
-@import "partials/comment";
-@import "partials/form";
-@import "partials/pagination";
+@import "partial/blogpost";
+@import "partial/comment";
+@import "partial/form";
+@import "partial/pagination";
 
 body {
 	font: normal normal normal 14px/1.75em $font2;

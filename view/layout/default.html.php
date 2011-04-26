@@ -7,8 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="<?php $baseUri ?>/favicon.ico">
-	<link rel="stylesheet" media="screen, projection" href="<?php echo $baseUri ?>/css/screen.css">
-	<link rel="stylesheet" media="print" href="<?php echo $baseUri ?>/css/print.css">
+	<link rel="stylesheet" media="screen, projection" href="<?php echo $baseUri ?>/default/css/screen.css">
+	<link rel="stylesheet" media="print" href="<?php echo $baseUri ?>/default/css/print.css">
 	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 	<script src="<?php echo $baseUri ?>/js/min/modernizr-1.6.min.js"></script>
@@ -43,13 +43,13 @@
 		</footer>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $baseUri ?>/js/min/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+	<script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo $baseUri ?>/default/js/min/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
 	<!-- javascript includes -->
 	
 	<!-- application script -->
-	<script src="<?php echo $baseUri ?>/js/source/app.js"></script>
+	<script src="<?php echo $baseUri ?>/default/js/source/app.js"></script>
 	<!--[if lt IE 7 ]>
-	<script src="<?php echo $baseUri ?>/js/libs/dd_belatedpng.js"></script>
+	<script src="<?php echo $baseUri ?>/default/js/libs/dd_belatedpng.js"></script>
 	<script>DD_belatedPNG.fix('img, .png_bg');</script>
 	<![endif]-->
 	<?php echo $this->view->render('element', 'debug/console')?>
