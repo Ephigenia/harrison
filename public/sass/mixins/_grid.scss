@@ -1,0 +1,24 @@
+// default values
+$grid-columns: 8 !default;
+$grid-column-width: 100px !default;
+$grid-margin: 10px !default;
+
+@mixin container() {
+	display: table;
+	width: ($grid-column-width + $grid-margin) * $grid-columns;
+	margin: 0 auto;
+	clear: both;
+}
+
+@mixin column($n, $last: false) {
+	width: $grid-column-width * $n + $grid-margin * ($n - 1);
+	float: left;
+	margin-right: $grid-margin;
+	@if $last {
+		@include last;
+	}
+}
+
+@mixin last() {
+	margin-right: 0;
+}

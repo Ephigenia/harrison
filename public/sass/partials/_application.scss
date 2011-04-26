@@ -1,19 +1,24 @@
-@import "../config";
-@import "../mixins/css3";
-@import "../mixins/transitions";
-@import "../mixins/grid";
+// config
+@import "partials/config";
+
+// mixins
+@import "mixins/grid";
+@import "mixins/button";
+
+// partials
+@import "partials/blogpost";
+@import "partials/comment";
+@import "partials/form";
+@import "partials/pagination";
 
 body {
 	font: normal normal normal 14px/1.75em $font2;
-	color: $textColor;
+	color: $text-color;
 	background: $background;
 }
 
 a {
-	color: $linkColor;
-	&:hover {
-		color: $linkHoverColor;
-	}
+	@include link-colors($link-color, $link-hover-color, $link-hover-color, darken($link-color, 10));
 	&.more {
 		font-weight: bold;
 		&:after {
@@ -21,45 +26,47 @@ a {
 		}
 	}
 	&[rel="tag"] {
+		@include border-radius($default-border-radius / 2);
 		text-decoration: none;
-		@include border-radius(0.25em);
-		padding: 0.25em;
-		color: #fff;
-		background: lighten($buttonColor, 30);
+		padding: $default-border-radius / 4 $default-border-radius / 2;
+		color: invert($button-text-color);
+		background: lighten($button-base-color, 30);
 		&:hover {
-			background: $buttonColor;
+			color: $link-color;
+			background: $link-hover-color;
 		}
 	}
 }
 
 .selected a, a.selected {
-	background: $linkHoverColor;
-	color: $linkColor;
+	background: $link-hover-color;
+	color: $link-color;
 }
 
 #app {
 	@include container();
-	@include box-shadow(darken($background, 5), 0px, 0px, 10px, 5px);
-	@include border-radius(0.25em);
-	background: $appBackground;
+	@include box-shadow(darken($background, 5) 0px 0px 10px 5px);
+	@include border-radius();
+	background: $app-background;
 	padding: 0em 1em;
 	margin: 2em auto;
+	
 	> header {
 		margin: 2em 0em;
 		@include rotate(-1.5deg);
 		> h1 {
 			display: inline;
 			font-size: 3em;
-			padding: 1em 0.75em 0.25em 0.75em;
+			padding: 2em 0.75em 0.25em 0.75em;
 			margin: -1em 0em 0em -0.75em;
-			background-color: $linkColor;
+			background-color: $link-color;
 			@include box-shadow(rgba(0,0,0,0.125), 0.125em, 0.125em, 0.25em);
 			text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
 			* {
 				color: #fff;
 			}
 			&:hover {
-				background-color: $linkHoverColor;
+				background-color: $link-color;
 			}
 		}
 	}
@@ -68,20 +75,20 @@ a {
 		padding-bottom: 1em;
 		clear: both;
 		margin: 3em 0em 3em 0em;
-		border-top: 1px dotted lighten($textColor, 40);
+		border-top: 1px dotted lighten($text-color, 40);
 		font-size: 0.8em;
 		* {
-			color: lighten($textColor, 30);
+			color: lighten($text-color, 30);
 		}
 	}
 }
 
 #content {
 	@include column(12);
-	margin-bottom: 3em;
 }
 #sidebar {
 	@include column(6, true);
+	float: right;
 	section {
 		display: block;
 		margin: 0em 0em 1em 0em;
@@ -104,19 +111,19 @@ q {
 }
 
 blockquote {
-	$baseColor: darken($appBackground, 15);
+	$baseColor: darken($app-background-color, 15);
 	border-top: 2px solid $baseColor;
 	border-bottom: 2px solid $baseColor;
 	background: lighten($baseColor, 10);
 	padding: 0.5em 0.75em;
-	color: lighten($textColor, 10);
+	color: lighten($text-color, 10);
 	> p {
 		font-style: italic;
 	}
 	> cite {
 		text-align: right;
 		display: block;
-		color: lighten($textColor, 25);
+		color: lighten($text-color, 25);
 		padding-top: 0.5em;
 	}
 }
@@ -162,10 +169,6 @@ p.error, p.hint, p.success, #flashMessage {
 	padding: 0.5em 0.75em;
 	margin: 1em 0.5em 1em 0em;
 	border: 1px solid #000;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	border-radius: 3px;
 }
 p.error, #flashMessage.error {
 	color: #A41910;

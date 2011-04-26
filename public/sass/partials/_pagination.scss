@@ -1,0 +1,24 @@
+$pagination-base-color: $link-color;
+
+ul.pagination {
+	padding: 1em 0em;
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		&.selected a {
+			font-weight: bold;
+			color: lighten($pagination-base-color, 40);
+			background: $pagination-base-color;
+		}
+		a {
+			padding: 0.2em 0.4em;
+			text-decoration: none;
+			margin: 10px 1px 0px 0px;
+			background: lighten($pagination-base-color, 40);
+			@include border-radius($default-border-radius / 2);
+		}
+		a:hover {
+			
+		}
+	}
+}

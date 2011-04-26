@@ -8,7 +8,7 @@
 	article {
 		header {
 			font-weight: bold;
-			border-bottom: 1px solid darken($appBackground, 20);
+			border-bottom: 1px solid darken($app-background-color, 20);
 		}
 		&:last-child {
 			border-bottom: none;

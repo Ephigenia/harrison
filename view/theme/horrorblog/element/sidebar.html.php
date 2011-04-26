@@ -1,6 +1,5 @@
 <aside id="sidebar">
-	<?= $SearchForm ?>
-	
+	<?= $SearchForm ?>	
 	<section id="blogRoll">
 		<header>
 			<h2>Blogs &amp; Freunde</h2>
@@ -34,4 +33,5 @@
 			<a href="http://www.la-petite-provence.de/" title="Pension in Leisnig im Muldental">La Petite Provence - Pension und Festsaal in Leisnig</a>
 		</div>
 	</section>
+	<?= $this->view->render('element', 'facebook/likeBox'); ?>
 </aside>

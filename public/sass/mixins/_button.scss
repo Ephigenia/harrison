@@ -1,0 +1,33 @@
+$button-base-color: #f00 !default;
+$button-background-color: $button-base-color !default;
+$button-text-color: invert($button-base-color) !default;
+
+@mixin button($backgroundColor: $button-background-color, $color: $button-text-color) {
+	color: $color;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+	line-height: 1.25em;
+	padding: 0.45em 1em;
+	margin: 0.25em;
+	min-width: 3em;
+	border: {
+		top: 1px solid darken($backgroundColor, 5);
+		left: 1px solid darken($backgroundColor, 8);
+		right: 1px solid darken($backgroundColor, 15);
+		bottom: 1px solid darken($backgroundColor, 20);
+	}
+	text-shadow: 0px 1px 1px darken($backgroundColor, 20);
+	text-decoration: none;
+	@include border-radius();
+/*	@include linear-gradient($bgColor, darken($bgColor, 15), 0.4, 0.6, 'horizontal');
+	@include box-shadow(lighten($bgColor, 12), 0px, 0px, 1px, 0.1em, true);*/
+	&:hover {
+		color: lighten($color, 5);
+/*		@include linear-gradient(lighten($backgroundColor, 5), darken($backgroundColor, 10), 0.4, 0.6);*/
+	}
+	&:active {
+		text-shadow: 0px -1px 0px rgba(255,255,255,0.3), 0px 1px 0px rgba(0,0,0,0.3);
+	}
+}

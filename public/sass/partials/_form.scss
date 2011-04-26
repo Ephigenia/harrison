@@ -1,5 +1,3 @@
-@import "../mixins/button";
-
 form {
 	
 	> fieldset {
@@ -14,7 +12,7 @@ form {
 			}
 			> p.hint {
 				margin-top: 0.25em;
-				color: lighten($textColor, 50);
+				color: lighten($text-color, 50);
 				font-size: 0.75em;
 				line-height: 1.25em;
 			}
@@ -45,8 +43,8 @@ form {
 		
 		> input[type="button"], input[type="submit"] {
 			width: auto;
-			@include button($linkColor, #fff);
+			@include button($link-color, #fff);
 		}
 		
-	} // fieldset
-} // form
+	}
+}
