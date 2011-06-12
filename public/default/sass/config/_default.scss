@@ -1,6 +1,3 @@
-$font1: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
-$font2: "Droid Serif", $font1;
-
 $base-color: #0080FF;
 
 $background: darken(desaturate($base-color, 80), 10);
@@ -9,7 +6,12 @@ $app-background-color: #fff;
 $app-background: $app-background-color;
 $app-width: 960px;
 
-$text-color: lighten(desaturate(invert($app-background-color), 90), 20);
+$headline-font: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
+
+$text-font: "Droid Serif", $headline-font;
+$text-color: #3B3B3B;
+$line-height: 26px;
+$text-size: 15px;
 
 $link-color: $base-color;
 $link-hover-color: darken($link-color, 20);

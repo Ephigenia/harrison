@@ -1,72 +1,93 @@
-@import "../mixins/css3";
+$debug-background-color: #191919 !default;
+$debug-text-color: invert($debug-background-color) !default;
+$debug-max-height: 400px;
 
-$DebugConsoleTitleBarBaseColor: #000 !default;
-$DebugConsoleBaseColor: #FEF5E1 !default;
-$DebugConsoleTextColor: #3C3C3C !default;
-
-#DebugConsole {
-	&, * {
-		font: normal normal normal 11px/1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
-		color: $DebugConsoleTextColor;
-	}
-	background: $DebugConsoleBaseColor;
+#debug-dump {
+	left: 0px;
+	font: normal normal normal 12px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+	text-align: center;
 	position: fixed;
 	bottom: 0px;
-	@include box-shadow(rgba(0,0,0,0.125), -5px, 0px, 10px);
-	
-	> header {
-		padding: 0.25em 0.5em;
-		color: lighten($DebugConsoleTitleBarBaseColor, 90);
-		font-weight: bold;
-		background: $DebugConsoleTitleBarBaseColor;
-		cursor: pointer;
-		&:hover {
-			background: lighten($DebugConsoleTitleBarBaseColor, 10);
-		}
+	clear: both;
+	margin: 0px auto;
+	width: 100%;
+	#{headings()} {
+		margin: 0;
+		padding: 0;
+		display: block;
+		clear: both;
+		color: #fff;
 	}
-	
-	.body {
+	a, & * {
+		color: #C0C0C0;
+	}
+	a.toggle {
+		outline: 0;
+		border-top: 1px solid lighten($debug-background-color, 20);
+		color: #fff;
+		padding: 0.4em 0.7em 0.2em 0.7em;
+		background-color: $debug-background-color;
+		text-decoration: none;
+		@include border-top-radius(0.5em);
+		@include background($debug-background-color);
+	}
+	div.body {
+		text-align: left;
+		border-top: 4px solid $debug-background-color;
+		font-size: 12px;
+		background-color: $debug-background-color;
+		text-align: left;
 		display: none;
-		padding: 1em;
+		padding: 0.5em 0.75em;
+		max-height: $debug-max-height;
 		overflow-y: scroll;
-		max-height: 320px;
-	}
-	
-	dl {
-		dd {
-			font-weight: bold;
-			display: inline-block;
-			float: left;
-			width: 120px;
-			&:after {
-				content: ":";
+		dl {
+			dt {
+				float: left;
+				font-weight: bold;
+				width: 15%;
+				margin-right: 0.25em;
+				&:after {
+					content: ':';
+				}
+			}
+			dd {
+				display: block;
+				width: 80%;
+				padding-left: 16%;
+				vertical-align: top;
 			}
 		}
-	}
-	
-	table {
-		width: 100%;
-		$borderColor1: darken($DebugConsoleBaseColor, 40);
-		$borderColor2: lighten($borderColor1, 30);
-		th, td {
-			padding: 0.125em;
+		li {
+			display: inline;
 		}
-		td:last-child, th:last-child {
-			text-align: right
+		> ul > li {
+			display: inline-block;
 		}
-		thead tr th {
-			font-weight: bold;
-			border-bottom: 1px solid $borderColor1;
+		> ul > li > ul > li {
+			display: inline;
 		}
-		tbody tr td {
-			border-bottom: 1px solid $borderColor2;
+		table {
+			td {
+				vertical-align: top;
+			}
+			thead tr th {
+				
+			}
+			tbody tr td {
+				
+			}
 		}
-		tbody tr:nth-of-type(odd) {
-			background-color: darken($DebugConsoleBaseColor, 5);
+		table pre {
+			margin: 0;
 		}
-		tfoot tr td {
-			border-top: 1px solid $borderColor1;
-			font-weight: bold;
+		pre {
+			color: #FFFDE0;
+			white-space: pre-wrap;
+			@include box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset);
+			@include background(rgba(0,0,0,0.3));
+			@include border-radius();
+			padding: 0.3em 0.4em;
 		}
 	}
 }

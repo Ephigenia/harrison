@@ -1,32 +1,34 @@
-<div id="DebugConsole">
-	<header onclick="$('#DebugConsole .body').slideToggle();">
-		Debug
-	</header>
+<div id="debug-dump">
+	<a href="javascript:void(0)" onclick="$(this).parent().find('.body').slideToggle();return false;" class="toggle">Toggle Debug</a>
 	<div class="body">
+		<h1>Debug</h1>
 		<dl>
-			<dd>Compile time</dd>
-			<dt><?php echo round((microtime(true) - COMPILE_START) * 1000); ?> ms</dt>
-			<dd>Memory usage</dd>
-			<dt>
-				<?php
-				if (function_exists('memory_get_usage')) {
-					$usage = memory_get_usage();
-				} else if (substr(PHP_OS, 0, 3) == 'WIN') {
-		        	if (substr( PHP_OS, 0, 3) == 'WIN') { 
-						$output = array(); 
-						exec('tasklist /FI "PID eq ' . getmypid() . '" /FO LIST', $output); 
-						$usage = preg_replace( '/[\D]/', '', $output[5] ) * 1024; 
-					} 
+			<dt>Compile-time</dt>
+			<dd><?php echo round((microtime(true) - COMPILE_START) * 1000); ?>ms</dd>
+			<dt>Memory-usage</dt>
+			<dd><?php echo (memory_get_usage(true) / 1024 / 1024); ?>MB</dd>
+			<dt>Version</dt>
+			<dd>
+				<?php if (file_exists(APP_ROOT.'/VERSION')) {
+					echo readfile(APP_ROOT.'/VERSION');
 				} else {
-					$pid = getmypid(); 
-					exec('ps -o rss -p '.$pid, $output);
-					$usage = $output[1] * 1024;
-				}
-				printf ('%d kB (%d bytes)', $usage / 1024, $usage);
-				?>
-			</dt>	
+					echo 'unknown';
+				} ?>
+			</dd>
 		</dl>
+		
+		<?php if (isset($_SESSION)) { ?>
+		<h1>Session</h1>
+		<?php var_export((array) $_SESSION); ?>
+		<?php } ?>
+		
+		<?php if (isset($_COOKIE)) { ?>
+		<h1>Cookie</h1>
+		<?php var_dump((array)$_COOKIE); ?>
+		<?php } ?>
+		
 		<?php if (isset($SQLLogger)) { ?>
+		<h1>Queries</h1>
 		<table class="SQLLog">
 			<colgroup>
 				<col width="3%">

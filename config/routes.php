@@ -11,10 +11,6 @@ $router->addRoutes(array(
 		'action' => 'index',
 	)),
 	
-	'sessiontest' => new Route('/test/:action', array(
-		'controller' => 'app\controller\TestController',
-	)),
-	
 	// Author Pages
 	'User' => new Route('/author/:uri', array(
 		'controller' => 'harrison\controller\UserController',

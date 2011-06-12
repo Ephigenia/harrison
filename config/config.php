@@ -1,7 +1,6 @@
 <?php
 
 require __DIR__.'/routes.php';
-
 require __DIR__.'/harrison/routes.php';
 
 define('SITE_NAME', 'Horrorblog.org');

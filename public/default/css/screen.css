@@ -68,6 +68,146 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+/* line 9, ../sass/partial/_typography.scss */
+body {
+  font-size: 15px;
+  line-height: 26px;
+  font-family: "Droid Serif", "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
+  color: #3b3b3b;
+}
+
+/* line 16, ../sass/partial/_typography.scss */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+/* line 19, ../sass/partial/_typography.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+/* line 26, ../sass/partial/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+/* line 30, ../sass/partial/_typography.scss */
+h1 {
+  line-height: 1.125em;
+  font-size: 2em;
+  margin: 1em 0em 0.5em;
+}
+
+/* line 35, ../sass/partial/_typography.scss */
+h2 {
+  line-height: 1.125em;
+  font-size: 1.5em;
+  margin: 1em 0em 0.5em;
+}
+
+/* line 40, ../sass/partial/_typography.scss */
+p {
+  display: block;
+  margin: 0.5em 0em 0.5em 0em;
+}
+
+/** quoting styles for q-tag **/
+/* line 2, ../sass/partial/_quoting.scss */
+*:lang(de) {
+  quotes: "„" "“" "‚" "‘";
+}
+/* line 5, ../sass/partial/_quoting.scss */
+*:lang(de) q:before {
+  content: "„";
+}
+/* line 6, ../sass/partial/_quoting.scss */
+*:lang(de) q:after {
+  content: "“";
+}
+/* line 8, ../sass/partial/_quoting.scss */
+*:lang(de) q q:before {
+  content: "‚";
+}
+/* line 9, ../sass/partial/_quoting.scss */
+*:lang(de) q q:after {
+  content: "‘";
+}
+
+/* line 13, ../sass/partial/_quoting.scss */
+*:lang(fr) {
+  quotes: "«" "»" "‹" "›";
+}
+/* line 16, ../sass/partial/_quoting.scss */
+*:lang(fr) q:before {
+  content: "«";
+}
+/* line 17, ../sass/partial/_quoting.scss */
+*:lang(fr) q:after {
+  content: "»";
+}
+/* line 19, ../sass/partial/_quoting.scss */
+*:lang(fr) q q:before {
+  content: "‹";
+}
+/* line 20, ../sass/partial/_quoting.scss */
+*:lang(fr) q q:after {
+  content: "›";
+}
+
+/* line 24, ../sass/partial/_quoting.scss */
+*:lang(en) {
+  quotes: "“" "”" "‘" "’";
+}
+/* line 27, ../sass/partial/_quoting.scss */
+*:lang(en) q:before {
+  content: "“";
+}
+/* line 28, ../sass/partial/_quoting.scss */
+*:lang(en) q:after {
+  content: "”";
+}
+/* line 30, ../sass/partial/_quoting.scss */
+*:lang(en) q q:before {
+  content: "‘";
+}
+/* line 31, ../sass/partial/_quoting.scss */
+*:lang(en) q q:after {
+  content: "’";
+}
+
+/** additional styles **/
+/* line 37, ../sass/partial/_quoting.scss */
+q {
+  font-style: italic;
+}
+
+/* line 40, ../sass/partial/_quoting.scss */
+blockquote {
+  font-size: 0.9em;
+  border-top: 2px solid #999;
+  border-bottom: 2px solid #999;
+  margin: 0.5em 0em;
+  padding: 0.3em 0.2em;
+}
+/* line 46, ../sass/partial/_quoting.scss */
+blockquote > p {
+  color: #E6E6E6;
+  font-size: 1.0em;
+  font-style: italic;
+}
+/* line 51, ../sass/partial/_quoting.scss */
+blockquote > cite {
+  font-size: 0.9em;
+  text-align: right;
+  display: block;
+  color: #656565;
+  padding-top: 0.25em;
+}
+
 /* line 1, ../sass/partial/_blogpost.scss */
 article {
   display: block;
@@ -136,7 +276,7 @@ form > fieldset > div > label:after {
 /* line 13, ../sass/partial/_form.scss */
 form > fieldset > div > p.hint {
   margin-top: 0.25em;
-  color: #b3b3b3;
+  color: #bbbbbb;
   font-size: 0.75em;
   line-height: 1.25em;
 }
@@ -237,14 +377,125 @@ ul.pagination li a {
   border-radius: 0.5em;
 }
 
-/* line 14, ../sass/partial/_application.scss */
+/* line 5, ../sass/partial/_debug.scss */
+#debug-dump {
+  left: 0px;
+  font: normal normal normal 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  clear: both;
+  margin: 0px auto;
+  width: 100%;
+}
+/* line 14, ../sass/partial/_debug.scss */
+#debug-dump h1, #debug-dump h2, #debug-dump h3, #debug-dump h4, #debug-dump h5, #debug-dump h6 {
+  margin: 0;
+  padding: 0;
+  display: block;
+  clear: both;
+  color: #fff;
+}
+/* line 21, ../sass/partial/_debug.scss */
+#debug-dump a, #debug-dump * {
+  color: #C0C0C0;
+}
+/* line 24, ../sass/partial/_debug.scss */
+#debug-dump a.toggle {
+  outline: 0;
+  border-top: 1px solid #4c4c4c;
+  color: #fff;
+  padding: 0.4em 0.7em 0.2em 0.7em;
+  background-color: #191919;
+  text-decoration: none;
+  -moz-border-radius-topleft: 0.5em;
+  -webkit-border-top-left-radius: 0.5em;
+  -o-border-top-left-radius: 0.5em;
+  -ms-border-top-left-radius: 0.5em;
+  -khtml-border-top-left-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  -moz-border-radius-topright: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  -o-border-top-right-radius: 0.5em;
+  -ms-border-top-right-radius: 0.5em;
+  -khtml-border-top-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  background: #191919;
+}
+/* line 34, ../sass/partial/_debug.scss */
+#debug-dump div.body {
+  text-align: left;
+  border-top: 4px solid #191919;
+  font-size: 12px;
+  background-color: #191919;
+  text-align: left;
+  display: none;
+  padding: 0.5em 0.75em;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+/* line 45, ../sass/partial/_debug.scss */
+#debug-dump div.body dl dt {
+  float: left;
+  font-weight: bold;
+  width: 15%;
+  margin-right: 0.25em;
+}
+/* line 50, ../sass/partial/_debug.scss */
+#debug-dump div.body dl dt:after {
+  content: ':';
+}
+/* line 54, ../sass/partial/_debug.scss */
+#debug-dump div.body dl dd {
+  display: block;
+  width: 80%;
+  padding-left: 16%;
+  vertical-align: top;
+}
+/* line 61, ../sass/partial/_debug.scss */
+#debug-dump div.body li {
+  display: inline;
+}
+/* line 64, ../sass/partial/_debug.scss */
+#debug-dump div.body > ul > li {
+  display: inline-block;
+}
+/* line 67, ../sass/partial/_debug.scss */
+#debug-dump div.body > ul > li > ul > li {
+  display: inline;
+}
+/* line 71, ../sass/partial/_debug.scss */
+#debug-dump div.body table td {
+  vertical-align: top;
+}
+/* line 81, ../sass/partial/_debug.scss */
+#debug-dump div.body table pre {
+  margin: 0;
+}
+/* line 84, ../sass/partial/_debug.scss */
+#debug-dump div.body pre {
+  color: #FFFDE0;
+  white-space: pre-wrap;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset;
+  background: rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -o-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -khtml-border-radius: 1em;
+  border-radius: 1em;
+  padding: 0.3em 0.4em;
+}
+
+/* line 10, ../sass/partial/_application.scss */
 body {
-  font: normal normal normal 14px/1.75em "Droid Serif", "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
-  color: #333333;
   background: #52667a;
 }
 
-/* line 20, ../sass/partial/_application.scss */
+/* line 14, ../sass/partial/_application.scss */
 a {
   color: #0080ff;
 }
@@ -260,15 +511,15 @@ a:hover {
 a:active {
   color: #004d99;
 }
-/* line 22, ../sass/partial/_application.scss */
+/* line 16, ../sass/partial/_application.scss */
 a.more {
   font-weight: bold;
 }
-/* line 24, ../sass/partial/_application.scss */
+/* line 18, ../sass/partial/_application.scss */
 a.more:after {
-  content: ' »';
+  content: '\00a0»';
 }
-/* line 28, ../sass/partial/_application.scss */
+/* line 22, ../sass/partial/_application.scss */
 a[rel="tag"] {
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
@@ -281,19 +532,19 @@ a[rel="tag"] {
   color: #0080ff;
   background: #99ccff;
 }
-/* line 34, ../sass/partial/_application.scss */
+/* line 28, ../sass/partial/_application.scss */
 a[rel="tag"]:hover {
   color: #0080ff;
   background: #004d99;
 }
 
-/* line 41, ../sass/partial/_application.scss */
+/* line 35, ../sass/partial/_application.scss */
 .selected a, a.selected {
   background: #004d99;
   color: #0080ff;
 }
 
-/* line 46, ../sass/partial/_application.scss */
+/* line 40, ../sass/partial/_application.scss */
 #app {
   display: table;
   width: 900px;
@@ -313,7 +564,7 @@ a[rel="tag"]:hover {
   padding: 0em 1em;
   margin: 2em auto;
 }
-/* line 54, ../sass/partial/_application.scss */
+/* line 48, ../sass/partial/_application.scss */
 #app > header {
   margin: 2em 0em;
   -moz-transform: rotate(-1.5deg);
@@ -322,7 +573,7 @@ a[rel="tag"]:hover {
   -ms-transform: rotate(-1.5deg);
   transform: rotate(-1.5deg);
 }
-/* line 57, ../sass/partial/_application.scss */
+/* line 51, ../sass/partial/_application.scss */
 #app > header > h1 {
   display: inline;
   font-size: 3em;
@@ -335,35 +586,35 @@ a[rel="tag"]:hover {
   box-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.125);
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
 }
-/* line 65, ../sass/partial/_application.scss */
+/* line 59, ../sass/partial/_application.scss */
 #app > header > h1 * {
   color: #fff;
 }
-/* line 68, ../sass/partial/_application.scss */
+/* line 62, ../sass/partial/_application.scss */
 #app > header > h1:hover {
   background-color: #0080ff;
 }
-/* line 74, ../sass/partial/_application.scss */
+/* line 68, ../sass/partial/_application.scss */
 #app > footer {
   padding-bottom: 1em;
   clear: both;
   margin: 3em 0em 3em 0em;
-  border-top: 1px dotted #999999;
+  border-top: 1px dotted #a1a1a1;
   font-size: 0.8em;
 }
-/* line 80, ../sass/partial/_application.scss */
+/* line 74, ../sass/partial/_application.scss */
 #app > footer * {
-  color: gray;
+  color: #888888;
 }
 
-/* line 86, ../sass/partial/_application.scss */
+/* line 80, ../sass/partial/_application.scss */
 #content {
   width: 580px;
   float: left;
   margin-right: 20px;
 }
 
-/* line 89, ../sass/partial/_application.scss */
+/* line 83, ../sass/partial/_application.scss */
 #sidebar {
   width: 280px;
   float: left;
@@ -371,101 +622,13 @@ a[rel="tag"]:hover {
   margin-right: 0;
   float: right;
 }
-/* line 92, ../sass/partial/_application.scss */
+/* line 86, ../sass/partial/_application.scss */
 #sidebar section {
   display: block;
   margin: 0em 0em 1em 0em;
 }
 
-/* line 98, ../sass/partial/_application.scss */
-q:before {
-  content: open-quote;
-}
-
-/* line 99, ../sass/partial/_application.scss */
-q:after {
-  content: close-quote;
-}
-
-/* line 100, ../sass/partial/_application.scss */
-*:lang(de) {
-  quotes: "„" "“" "‚" "‘";
-}
-
-/* line 103, ../sass/partial/_application.scss */
-*:lang(en) {
-  quotes: "“" "”" "‘" "’";
-}
-
-/* line 106, ../sass/partial/_application.scss */
-*:lang(fr) {
-  quotes: "«" "»" "‹" "›";
-}
-
-/* line 109, ../sass/partial/_application.scss */
-q {
-  font-style: italic;
-}
-
-/* line 113, ../sass/partial/_application.scss */
-blockquote {
-  border-top: 2px solid #d9d9d9;
-  border-bottom: 2px solid #d9d9d9;
-  background: #f2f2f2;
-  padding: 0.5em 0.75em;
-  color: #4d4d4d;
-}
-/* line 120, ../sass/partial/_application.scss */
-blockquote > p {
-  font-style: italic;
-}
-/* line 123, ../sass/partial/_application.scss */
-blockquote > cite {
-  text-align: right;
-  display: block;
-  color: #737373;
-  padding-top: 0.5em;
-}
-
-/* line 131, ../sass/partial/_application.scss */
-pre {
-  display: inline;
-}
-
-/** Headline styles **/
-/* line 136, ../sass/partial/_application.scss */
-h1, h2, h3 {
-  font-family: "Droid Sans", "Lucida Grande", Lucida, Verdana, sans-serif;
-  font-weight: bold;
-}
-/* line 139, ../sass/partial/_application.scss */
-h1 a, h2 a, h3 a {
-  text-decoration: none;
-  color: #000;
-}
-
-/* line 144, ../sass/partial/_application.scss */
-h1 {
-  word-spacing: -0.05em;
-  line-height: 1.125em;
-  font-size: 2em;
-  margin: 1em 0em 0.5em;
-}
-
-/* line 150, ../sass/partial/_application.scss */
-h2 {
-  line-height: 1.125em;
-  font-size: 1.5em;
-  margin: 1em 0em 0.5em;
-}
-
-/* line 155, ../sass/partial/_application.scss */
-p {
-  display: block;
-  margin: 0.5em 0em 0.5em 0em;
-}
-
-/* line 160, ../sass/partial/_application.scss */
+/* line 92, ../sass/partial/_application.scss */
 .gravatar {
   vertical-align: text-bottom;
   padding: 1px;
@@ -473,7 +636,7 @@ p {
 }
 
 /* Notification Boxes */
-/* line 167, ../sass/partial/_application.scss */
+/* line 99, ../sass/partial/_application.scss */
 p.error, p.hint, p.success, #flashMessage {
   display: inline-block;
   padding: 0.5em 0.75em;
@@ -481,20 +644,20 @@ p.error, p.hint, p.success, #flashMessage {
   border: 1px solid #000;
 }
 
-/* line 173, ../sass/partial/_application.scss */
+/* line 105, ../sass/partial/_application.scss */
 p.error, #flashMessage.error {
   color: #A41910;
   border-color: #AA1A10;
   background-color: #FBF3F0;
 }
 
-/* line 178, ../sass/partial/_application.scss */
+/* line 110, ../sass/partial/_application.scss */
 p.hint, #flashMessage.hint {
   border-color: #F8E995;
   background-color: #FAF8EE;
 }
 
-/* line 182, ../sass/partial/_application.scss */
+/* line 114, ../sass/partial/_application.scss */
 p.success, #flashMessage.success {
   border-color: #b5f782;
   background-color: #dcffdc;

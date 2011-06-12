@@ -1,19 +1,13 @@
-// config
-@import "partial/config";
-
-// mixins
-@import "mixins/grid";
-@import "mixins/button";
-
-// partials
+@import "partial/typography";
+@import "partial/quoting";
 @import "partial/blogpost";
 @import "partial/comment";
 @import "partial/form";
 @import "partial/pagination";
 
+@import "partial/debug";
+
 body {
-	font: normal normal normal 14px/1.75em $font2;
-	color: $text-color;
 	background: $background;
 }
 
@@ -22,7 +16,7 @@ a {
 	&.more {
 		font-weight: bold;
 		&:after {
-			content: ' »';
+			content: '\00a0»';
 		}
 	}
 	&[rel="tag"] {
@@ -93,68 +87,6 @@ a {
 		display: block;
 		margin: 0em 0em 1em 0em;
 	}
-}
-
-q:before {content: open-quote;}
-q:after  {content: close-quote;}
-*:lang(de) {
-	quotes: "„" "“" "‚" "‘";
-}
-*:lang(en) {
-	quotes: "“" "”" "‘" "’";
-}
-*:lang(fr) {
-	quotes: "«" "»" "‹" "›";
-}
-q {
-	font-style: italic;
-}
-
-blockquote {
-	$baseColor: darken($app-background-color, 15);
-	border-top: 2px solid $baseColor;
-	border-bottom: 2px solid $baseColor;
-	background: lighten($baseColor, 10);
-	padding: 0.5em 0.75em;
-	color: lighten($text-color, 10);
-	> p {
-		font-style: italic;
-	}
-	> cite {
-		text-align: right;
-		display: block;
-		color: lighten($text-color, 25);
-		padding-top: 0.5em;
-	}
-}
-
-pre {
-	display: inline;
-}
-
-/** Headline styles **/
-h1, h2, h3 {
-	font-family: $font1;
-	font-weight: bold;
-	a {
-		text-decoration: none;
-		color: #000;
-	}
-}
-h1 {
-	word-spacing: -0.05em;
-	line-height: 1.125em;
-	font-size: 2em;
-	margin: 1em 0em 0.5em;
-}
-h2 {
-	line-height: 1.125em;
-	font-size: 1.5em;
-	margin: 1em 0em 0.5em;
-}
-p {
-	display: block;
-	margin: 0.5em 0em 0.5em 0em;
 }
 
 .gravatar {

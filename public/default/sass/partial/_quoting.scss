@@ -1,0 +1,58 @@
+/** quoting styles for q-tag **/
+*:lang(de) {
+	quotes: "„" "“" "‚" "‘";
+	q {
+		&:before { content: "„"; }
+		&:after { content: "“"; }
+		q {
+			&:before { content: "‚"; }
+			&:after { content: "‘"; }
+		}
+	}
+}
+*:lang(fr) {
+	quotes: "«" "»" "‹" "›";
+	q {
+		&:before { content: "«"; }
+		&:after { content: "»";	}
+		q {
+			&:before { content: "‹"; }
+			&:after { content: "›"; }
+		}
+	}
+}
+*:lang(en) {
+	quotes: "“" "”" "‘" "’";
+	q {
+		&:before { content: "“"; }
+		&:after { content: "”";	}
+		q {
+			&:before { content: "‘"; }
+			&:after { content: "’"; }
+		}
+	}
+}
+
+/** additional styles **/
+q {
+	font-style: italic;
+}
+blockquote {
+	font-size: 0.9em;
+	border-top: 2px solid #999;
+	border-bottom: 2px solid #999;
+	margin: 0.5em 0em;
+	padding: 0.3em 0.2em;
+	> p {
+		color: #E6E6E6;
+		font-size: 1.0em;
+		font-style: italic;
+	}
+	> cite {
+		font-size: 0.9em;
+		text-align: right;
+		display: block;
+		color: #656565;
+		padding-top: 0.25em;
+	}
+}
