@@ -3,101 +3,28 @@
 namespace app\model;
 
 /**
- * @Entity(repositoryClass="app\model\BlogPostRepository")
+ * Entity(repositoryClass="app\model\BlogPostRepository")
+ * @Document
  */
 class BlogPost extends Model
 {
+	/** @Id */
+	private $id;
+	
 	/**
-	 * @Id
-	 * @Column(type="integer")
-	 * @GeneratedValue
+	 * @Field(type="string")
 	 */
-	public $id;
+	private $name;
 	
 	/**
-	 * @Column(type="smallint")
-	 * @var integer
+	 * @ReferenceMany(targetDocument="Tag", cascade={"persist", "remove"})
 	 */
-	public $status;
+	public $tags = array();
 	
-	/**
-     * @Column(type="smallint")
-     * @var integer
-     */
-	public $flags;
-	
-	/**
-	 * @Column(type="boolean")
-	 * @var boolean
-	 */
-	public $sticky;
-	
-	/**
-	 * @ManyToOne(targetEntity="User", inversedBy="blogPosts")
-	 * @var Language
-	 */
-	public $language;
-	
-	/**
-     * @Column(type="string")
-     * @var string
-     */
-	public $headline;
-	
-	/**
-     * @Column(type="string")
-     * @var string
-     */
-	public $text;
-	
-	/**
-     * @Column(type="integer")
-     * @var integer
-     */
-	public $views;
-	
-	/**
-	 * @Column(type="string", unique=true, nullable=false)
-	 * @var string
-	 */
-	public $uri;
-	
-	/**
-	 * @Column(type="datetime")
-	 */
-	public $created;
-	
-	/**
-	 * @Column(type="datetime")
-	 */
-	public $updated;
-	
-	/**
-	 * @Column(type="datetime")
-	 */
-	public $published;
-	
-	/**
-	 * @ManyToOne(targetEntity="User", inversedBy="blogPosts")
-	 * @var User
-	 */
-	public $user;
-	
-	/**
-	 * @OneToMany(targetEntity="Comment", mappedBy="blogPost")
-	 * @OrderBy({"created" = "ASC"})
-	 * @var Comment[]
-	 */
-	public $comments;
-	
-	/**
-	 * @ManyToMany(targetEntity="Tag", inversedBy="blogposts")
-	 * @var Tag[]
-	 */
-	public $tags;
-	
-	public function __toString()
-	{
-		return $this->headline ?: '[no headline]';
+	public function __construct($name, array $tags = array()) {
+		$this->name = $name;
+		foreach($tags as $tag) {
+			$this->tags[] = new Tag($tag);
+		}
 	}
 }

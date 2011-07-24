@@ -3,24 +3,22 @@
 namespace app\model;
 
 /**
- * @Entity
+ * @Document
  */
 class Tag
 {
 	/**
 	 * @Id
-	 * @Column(type="integer")
-	 * @GeneratedValue
 	 */
-	public $id;
+	private $id;
 	
 	/**
 	 * @Column(type="string")
 	 */
-	public $name;
+	private $name;
 	
-	public function __toString()
+	public function __construct($name)
 	{
-		return $this->name;
+		$this->name = $name;
 	}
 }

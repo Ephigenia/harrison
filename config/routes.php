@@ -1,7 +1,8 @@
 <?php
 
-use \ephFrame\core\Router;
-use \ephFrame\core\Route;
+use
+	ephFrame\core\Router,
+	ephFrame\core\Route;
 
 $router = Router::getInstance();
 

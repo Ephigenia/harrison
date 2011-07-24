@@ -19,6 +19,7 @@ if (!include EPHFRAME_PATH.'/core/Library.php') {
 	trigger_error($message, E_USER_ERROR);
 }
 
+\ephFrame\core\Library::add('ephFrame', EPHFRAME_PATH);
 \ephFrame\core\Library::add('app', APP_ROOT);
 \ephFrame\core\Library::add('harrison', APP_ROOT.'/vendor/harrison');
 

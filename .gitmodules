@@ -7,3 +7,6 @@
 [submodule "vendor/DoctrineExtensions"]
 	path = vendor/DoctrineExtensions
 	url = https://github.com/beberlei/DoctrineExtensions.git
+[submodule "vendor/couchdb_odm"]
+	path = vendor/couchdb_odm
+	url = https://github.com/doctrine/couchdb-odm.git
