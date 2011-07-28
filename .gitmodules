@@ -4,3 +4,9 @@
 [submodule "lib/plugin/markdown/php-markdown"]
 	path = lib/plugin/markdown/php-markdown
 	url = http://git.michelf.com/php-markdown
+[submodule "lib/doctrine"]
+	path = lib/doctrine
+	url = git://github.com/doctrine/doctrine2.git
+[submodule "lib/DoctrineExtensions"]
+	path = lib/DoctrineExtensions
+	url = https://github.com/beberlei/DoctrineExtensions.git
