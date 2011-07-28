@@ -25,7 +25,7 @@ class Comment extends Form
 			$email = new Element\Email('email', null, array(
 				'label' => 'E-Mail (wird nicht veröffentlicht)',
 				'validators' => array(
-					new Validator\MinLength(array('length' => 10, 'message' => 'too short')),
+					new Validator\MinLength(array('limit' => 10, 'message' => 'too short')),
 					new Validator\Email(),
 				),
 			)),
