@@ -23,7 +23,7 @@ class BlogPostController extends Controller
 	
 	public function index()
 	{
-		$query = $this->repository()->createQueryBuilder('BlogPost');
+		$query = $this->repository()->createQueryBuilder('\harrison\model\BlogPost');
 		// searching for keywords
 		if (isset($this->params['q'])) {
 			$this->view->Paginator->url = Router::getInstance()->searchPaged;
