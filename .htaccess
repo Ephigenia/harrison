@@ -1,4 +1,4 @@
-# this .htaccess file will silently redirect users to the public folder
+# this .htaccess file will silently redirect users to the html folder
 # where additional rewrite actions happen
 # ----------------------------------------------------------------------------
 RewriteEngine On
